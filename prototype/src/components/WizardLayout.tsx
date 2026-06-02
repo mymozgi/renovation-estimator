@@ -1,0 +1,84 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+import { ArrowLeft } from 'lucide-react'
+
+interface WizardLayoutProps {
+  step?: number
+  totalSteps?: number
+  onBack?: () => void
+  backHref?: string
+  children: React.ReactNode
+  footer?: React.ReactNode
+  hideBack?: boolean
+}
+
+export function WizardLayout({
+  step,
+  totalSteps,
+  onBack,
+  backHref,
+  children,
+  footer,
+  hideBack,
+}: WizardLayoutProps) {
+  const router = useRouter()
+
+  const handleBack = () => {
+    if (onBack) onBack()
+    else if (backHref) router.push(backHref)
+    else router.back()
+  }
+
+  return (
+    <div className="flex flex-col min-h-screen bg-bg max-w-md mx-auto">
+      {/* Header */}
+      <div className="flex items-center justify-between px-5 pt-5 pb-3">
+        {!hideBack ? (
+          <button
+            onClick={handleBack}
+            className="w-9 h-9 rounded-full bg-surface border border-border flex items-center justify-center"
+          >
+            <ArrowLeft size={16} className="text-fg" />
+          </button>
+        ) : (
+          <div className="w-9" />
+        )}
+
+        {step && totalSteps ? (
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-medium text-muted tracking-wide">
+              STEP {step} OF {totalSteps}
+            </span>
+            <div className="flex gap-1 ml-1">
+              {Array.from({ length: totalSteps }).map((_, i) => (
+                <div
+                  key={i}
+                  className={`h-1 rounded-full transition-all ${
+                    i < step ? 'w-5 bg-primary' : 'w-2 bg-border'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div />
+        )}
+
+        <div className="w-9" />
+      </div>
+
+      {/* Content */}
+      <div className="flex-1 px-5 pb-4 overflow-y-auto">
+        {children}
+      </div>
+
+      {/* Footer */}
+      {footer && (
+        <div className="px-5 pb-8 pt-3 border-t border-border bg-bg">
+          {footer}
+        </div>
+      )}
+    </div>
+  )
+}

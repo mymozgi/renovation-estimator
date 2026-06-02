@@ -1,32 +1,56 @@
 # /REFERENCE.md
 
-Task:
+Purpose:
 
-{{TASK}}
+Use all assets from:
 
-Files:
+./references/
 
-Primary:
+as visual input.
 
-* ./wireframes/main.png
+Automatically discover:
 
-Secondary:
+* PNG
+* JPG
+* JPEG
+* WEBP
+* PDF
 
-* ./references/ref-01.png
-* ./references/ref-02.pdf
+Treat assets as references only.
+
+Do not reproduce literally.
 
 Reuse:
 
-* structure
+* layout
+* hierarchy
 * UX patterns
-* component ideas
+* interaction ideas
+* information structure
 
 Ignore:
 
-* visuals
+* branding
+* colors
 * copy
-* implementation
+* unfinished details
+* exact implementation
+
+Follow:
+
+* PRD.md
+* USER_FLOW.md
+* DESIGN_SYSTEM.md
+
+Rules:
+
+If multiple references exist:
+
+1. Detect common patterns
+2. Prioritize newest files
+3. Merge only compatible ideas
+4. Prefer simplicity
 
 Output:
 
-Build project-specific solution.
+Generate project-specific solution using assets from ./references/

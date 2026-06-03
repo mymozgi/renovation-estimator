@@ -1,0 +1,341 @@
+{
+  "landing": {
+    "title": "Быстрая смета ремонта.",
+    "description": "Получите реалистичный бюджет ремонта на основе размеров комнат, качества отделки и региональных цен в Польше.",
+    "cta": "Начать бесплатный расчёт →",
+    "subtext": "Без регистрации · Без предоплаты · Займёт ~10 минут",
+    "howWeEstimate": "Как мы считаем",
+    "fullMethodology": "Полная методология",
+    "formula": {
+      "materials": "Материалы",
+      "labor": "Работа",
+      "preparation": "Подготовка",
+      "regional": "Региональная цена"
+    },
+    "precisionNote": "Цены отражают средние рыночные ставки в Польше {year}. Итоговая стоимость зависит от подрядчика и условий. Точность: ±10–15%.",
+    "badges": {
+      "precision": "Точность ±10–15%",
+      "marketData": "Данные польского рынка",
+      "time": "Смета за ~10 минут",
+      "noAccount": "Без регистрации"
+    }
+  },
+  "features": {
+    "localPrices": "Местные цены",
+    "laborIncluded": "Работа включена",
+    "pdfReport": "Отчёт PDF",
+    "noAccount": "Без аккаунта"
+  },
+  "estimate": {
+    "title": "О вашей недвижимости",
+    "subtitle": "Помогает откалибровать стоимость материалов и работ.",
+    "propertyType": "Тип недвижимости",
+    "propertyCondition": "Состояние недвижимости",
+    "renovationScope": "Объём ремонта",
+    "yourCity": "Ваш город",
+    "cta": "Начать бесплатный расчёт →",
+    "types": {
+      "apartment": "Квартира",
+      "house": "Дом"
+    },
+    "conditions": {
+      "new": "Новостройка",
+      "new_desc": "Отделка от застройщика",
+      "preowned": "Вторичное жильё",
+      "preowned_desc": "Вторичный рынок"
+    },
+    "scopes": {
+      "cosmetic": "Косметический",
+      "cosmetic_desc": "Покраска, полы, мелкие обновления",
+      "premium": "Премиум",
+      "premium_desc": "Дорогие материалы и роскошная отделка",
+      "full": "Капитальный ремонт",
+      "full_desc": "Полная перестройка помещений"
+    },
+    "cities": {
+      "warsaw": "Варшава",
+      "krakow": "Краков",
+      "wroclaw": "Вроцлав",
+      "gdansk": "Гданьск",
+      "poznan": "Познань",
+      "other": "Другой город"
+    }
+  },
+  "rooms": {
+    "title": "Ваши комнаты",
+    "subtitle": "Добавьте каждую комнату, которую хотите отремонтировать.",
+    "addRoom": "Добавить комнату",
+    "seeEstimate": "Смотреть полную смету",
+    "runningEstimate": "Текущая смета",
+    "roomCount": "{count, plural, one {# комната} few {# комнаты} many {# комнат} other {# комнат}}",
+    "removeTitle": "Удалить комнату?",
+    "removeDesc": "Эта комната и её смета будут удалены.",
+    "cancel": "Отмена",
+    "remove": "Удалить"
+  },
+  "wizard": {
+    "step": "ШАГ {step} ИЗ {total}",
+    "continue": "Продолжить",
+    "saveRoom": "Сохранить комнату",
+    "roomSettings": "Настройки комнаты",
+    "roomSettingsDesc": "Площади рассчитываются автоматически.",
+    "dimensions": "Размеры",
+    "dimensionsDesc": "Площади рассчитываются автоматически.",
+    "width": "Ширина",
+    "length": "Длина",
+    "height": "Высота",
+    "windows": "Окна",
+    "doors": "Двери",
+    "calculatedAreas": "Расчётные площади",
+    "floor": "Пол",
+    "walls": "Стены",
+    "ceiling": "Потолок",
+    "wallCondition": "Состояние стен",
+    "wallConditionDesc": "Определяет затраты на подготовку. Выберите состояние, наиболее соответствующее действительности.",
+    "floorCondition": "Состояние пола",
+    "floorConditionDesc": "Определяет затраты на подготовку. Выберите состояние, наиболее соответствующее действительности.",
+    "ceilingCondition": "Состояние потолка",
+    "ceilingConditionDesc": "Выберите состояние, наиболее соответствующее действительности.",
+    "chooseFinishes": "Выберите отделку",
+    "chooseFinishesDesc": "Выберите материалы и уровень качества для этой комнаты.",
+    "qualityTier": "Уровень качества",
+    "wallFinish": "Отделка стен",
+    "floorFinish": "Отделка пола",
+    "ceilingFinish": "Отделка потолка",
+    "confirmRoom": "Подтверждение комнаты",
+    "confirmRoomDesc": "Проверьте настройки перед сохранением.",
+    "roomType": "Тип комнаты",
+    "dimensionsSummary": "Размеры",
+    "floorArea": "Площадь пола",
+    "wallArea": "Площадь стен",
+    "quality": "Качество",
+    "roomTypes": {
+      "kitchen": "Кухня",
+      "living_room": "Гостиная",
+      "bedroom": "Спальня",
+      "bathroom": "Ванная",
+      "hallway": "Коридор",
+      "office": "Кабинет"
+    },
+    "qualityTiers": {
+      "economy": "Эконом",
+      "standard": "Стандарт",
+      "premium": "Премиум"
+    },
+    "wallFinishes": {
+      "paint": "Краска",
+      "wallpaper": "Обои",
+      "decorative_plaster": "Декоративная штукатурка"
+    },
+    "floorFinishes": {
+      "laminate": "Ламинат",
+      "tile": "Плитка",
+      "vinyl": "Винил"
+    },
+    "ceilingFinishes": {
+      "paint": "Краска",
+      "stretch_ceiling": "Натяжной потолок",
+      "drywall": "Гипсокартон"
+    },
+    "wallConditions": {
+      "ready": "Готово к отделке",
+      "ready_desc": "Ровная поверхность, подготовка не нужна",
+      "primer": "Нужна грунтовка",
+      "primer_desc": "Поверхность требует грунтования",
+      "putty": "Нужна шпатлёвка",
+      "putty_desc": "Необходимо выравнивание и шпатлёвка",
+      "full_prep": "Полная подготовка",
+      "full_prep_desc": "Демонтаж, выравнивание, шпатлёвка, грунт"
+    },
+    "floorConditions": {
+      "ready": "Готово",
+      "ready_desc": "Пол ровный и подготовлен",
+      "leveling": "Нужна нивелировка",
+      "leveling_desc": "Необходима самовыравнивающаяся смесь"
+    },
+    "ceilingConditions": {
+      "ready": "Готово",
+      "ready_desc": "Потолок ровный",
+      "primer": "Нужна грунтовка",
+      "primer_desc": "Потолок требует грунтования",
+      "full_prep": "Полная подготовка",
+      "full_prep_desc": "Ремонт, шпатлёвка и грунтование"
+    }
+  },
+  "report": {
+    "title": "Ваша смета",
+    "totalEstimate": "Итоговая смета",
+    "rooms": "{count, plural, one {# комната} few {# комнаты} many {# комнат} other {# комнат}}",
+    "basedOn": "На основе цен региона {city}",
+    "precision": "±10–15%",
+    "breakdown": "Разбивка расходов",
+    "materials": "Материалы",
+    "labor": "Работа",
+    "preparation": "Подготовка поверхностей",
+    "supporting": "Вспомогательные материалы",
+    "roomBreakdown": "Разбивка по комнатам",
+    "downloadPdf": "Скачать отчёт PDF",
+    "methodologyLink": "Как рассчитывается смета →",
+    "disclaimer": "Цены — средние оценки для {city}. Реальные затраты могут отличаться на ±10–15%.",
+    "noRooms": "Комнаты ещё не добавлены.",
+    "addRooms": "← Добавить комнаты"
+  },
+  "download": {
+    "title": "Скачать результат",
+    "subtitle": "Автоматически рассчитано для {city} на основе ваших материалов.",
+    "totalEstimate": "Итоговая смета",
+    "roomsCount": "{count, plural, one {# комната} few {# комнаты} many {# комнат} other {# комнат}} · Точность ±10–15%",
+    "disclaimer": "Цены — средние оценки для {city}. Реальные затраты могут отличаться на ±10–15%.",
+    "emailLabel": "Ваш адрес электронной почты",
+    "emailPlaceholder": "ваш@email.com",
+    "sendButton": "Отправить на почту",
+    "sending": "Отправка…",
+    "savePdf": "Сохранить как PDF (печать)",
+    "sentTitle": "Отчёт отправлен!",
+    "sentDesc": "Проверьте почту {email}. Отчёт PDF содержит полную смету для {city}.",
+    "sendAnother": "Отправить на другой адрес",
+    "newEstimate": "Начать новый расчёт",
+    "notConfiguredTitle": "Отправка не настроена",
+    "notConfiguredDesc": "Добавьте RESEND_API_KEY в .env.local для включения отправки.",
+    "tryAgain": "← Попробовать снова",
+    "networkError": "Ошибка сети. Проверьте подключение и попробуйте снова.",
+    "noEstimate": "Нет сметы для скачивания.",
+    "addRooms": "← Добавить комнаты"
+  },
+  "methodology": {
+    "title": "Как рассчитываются сметы",
+    "subtitle": "Каждая смета строится на основе размеров комнат, состояния поверхностей, выбора материалов и региональных ставок работ.",
+    "back": "Методология",
+    "cta": "Начать бесплатный расчёт →"
+  },
+  "nav": {
+    "home": "Главная",
+    "howItWorks": "Как это работает",
+    "articles": "Советы",
+    "methodology": "Методология",
+    "startEstimate": "Начать смету"
+  },
+  "articles": {
+    "title": "Советы по ремонту",
+    "subtitle": "Практические знания до, во время и после ремонта.",
+    "readMore": "Читать далее →",
+    "cta": "Рассчитать свою смету →",
+    "clusters": {
+      "budget": "Бюджет",
+      "contractors": "Подрядчики",
+      "rooms": "Комнаты",
+      "regional": "Регионы",
+      "materials": "Материалы",
+      "property": "Недвижимость"
+    }
+  },
+  "common": {
+    "back": "Назад",
+    "currency": "PLN",
+    "perSqm": "PLN/м²"
+  },
+  "a11y": {
+    "open": "Доступность",
+    "fontSize": "Размер шрифта",
+    "contrast": "Контраст",
+    "font": "Шрифт",
+    "reset": "Сбросить",
+    "sizes": {
+      "small": "S",
+      "normal": "M",
+      "large": "L",
+      "xl": "XL"
+    },
+    "contrasts": {
+      "normal": "Обычный",
+      "high": "Высокий контраст",
+      "inverted": "Инвертированный"
+    },
+    "fonts": {
+      "system": "Стандартный",
+      "readable": "Читаемый",
+      "dyslexic": "Для дислексиков"
+    }
+  },
+  "footer": {
+    "tagline": "Реалистичные сметы ремонта для Польши.",
+    "product": "Продукт",
+    "resources": "Ресурсы",
+    "languages": "Языки",
+    "privacy": "Конфиденциальность",
+    "terms": "Условия",
+    "rights": "Все права защищены."
+  },
+  "faq": {
+    "title": "Часто задаваемые вопросы",
+    "items": [
+      {
+        "q": "How accurate is the estimate?",
+        "a": "Our estimates are accurate to ±10-15%."
+      },
+      {
+        "q": "What is included?",
+        "a": "Materials, labor, surface preparation, and supporting materials."
+      },
+      {
+        "q": "What is NOT included?",
+        "a": "Structural work, electrical, plumbing, furniture, permits."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "About 10 minutes."
+      },
+      {
+        "q": "Is my data saved?",
+        "a": "No. The estimate exists only in your browser session."
+      },
+      {
+        "q": "How do I get the PDF?",
+        "a": "Enter your email on the Download screen."
+      },
+      {
+        "q": "Can I use this outside Poland?",
+        "a": "The calculator uses Polish market pricing."
+      },
+      {
+        "q": "What does Economy/Standard/Premium mean?",
+        "a": "Material quality tiers from basic to luxury."
+      }
+    ]
+  },
+  "hero": {
+    "socialProof": "Poland-first renovation estimator"
+  },
+  "howItWorks": {
+    "title": "Как это работает",
+    "step1Title": "Configure rooms",
+    "step1Desc": "Enter dimensions and surface conditions.",
+    "step2Title": "Choose finish quality",
+    "step2Desc": "Economy, Standard or Premium per room.",
+    "step3Title": "Get your estimate",
+    "step3Desc": "Room-by-room breakdown with regional pricing."
+  },
+  "forWhom": {
+    "title": "Для кого",
+    "card1Title": "Apartment owners",
+    "card1Desc": "Planning first renovation.",
+    "card2Title": "Homeowners",
+    "card2Desc": "Estimating full renovation.",
+    "card3Title": "Pre-sale renovators",
+    "card3Desc": "Calculating renovation ROI."
+  },
+  "whatYouGet": {
+    "title": "Что вы получаете",
+    "items": [
+      "Room-by-room cost breakdown",
+      "Materials, labor and preparation",
+      "Regional pricing for Polish cities",
+      "Downloadable PDF report",
+      "No account needed"
+    ]
+  },
+  "finalCta": {
+    "title": "Готовы рассчитать ремонт?",
+    "subtitle": "Займёт 10 минут. Без регистрации."
+  }
+}

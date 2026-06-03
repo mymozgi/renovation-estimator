@@ -2,6 +2,7 @@
 
 import { useRouter } from 'next/navigation'
 import { ArrowLeft } from 'lucide-react'
+import { LanguageSwitcher } from './LanguageSwitcher'
 
 interface WizardLayoutProps {
   step?: number
@@ -34,6 +35,7 @@ export function WizardLayout({
     <div className="flex flex-col min-h-screen bg-bg max-w-md mx-auto">
       {/* Header */}
       <div className="flex items-center justify-between px-5 pt-5 pb-3">
+        {/* Left: back button */}
         {!hideBack ? (
           <button
             onClick={handleBack}
@@ -45,12 +47,13 @@ export function WizardLayout({
           <div className="w-9" />
         )}
 
+        {/* Centre: step indicator */}
         {step && totalSteps ? (
           <div className="flex items-center gap-2">
             <span className="text-xs font-medium text-muted tracking-wide">
-              STEP {step} OF {totalSteps}
+              {step}/{totalSteps}
             </span>
-            <div className="flex gap-1 ml-1">
+            <div className="flex gap-1">
               {Array.from({ length: totalSteps }).map((_, i) => (
                 <div
                   key={i}
@@ -65,7 +68,8 @@ export function WizardLayout({
           <div />
         )}
 
-        <div className="w-9" />
+        {/* Right: language switcher */}
+        <LanguageSwitcher />
       </div>
 
       {/* Content */}

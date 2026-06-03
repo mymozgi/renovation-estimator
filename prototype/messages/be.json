@@ -1,0 +1,341 @@
+{
+  "landing": {
+    "title": "Хуткі каштарыс рамонту.",
+    "description": "Атрымайце рэалістычны бюджэт рамонту на аснове памераў пакояў, якасці аздаблення і рэгіянальных цэн у Польшчы.",
+    "cta": "Пачаць бясплатны каштарыс →",
+    "subtext": "Без рэгістрацыі · Без перадаплаты · Займе ~10 хвілін",
+    "howWeEstimate": "Як мы лічым",
+    "fullMethodology": "Поўная метадалогія",
+    "formula": {
+      "materials": "Матэрыялы",
+      "labor": "Праца",
+      "preparation": "Падрыхтоўка",
+      "regional": "Рэгіянальная цана"
+    },
+    "precisionNote": "Цэны адлюстроўваюць сярэднія рынкавыя стаўкі ў Польшчы {year}. Канчатковы кошт залежыць ад падрадчыка і ўмоў. Дакладнасць: ±10–15%.",
+    "badges": {
+      "precision": "Дакладнасць ±10–15%",
+      "marketData": "Дадзеныя польскага рынку",
+      "time": "Каштарыс за ~10 хвілін",
+      "noAccount": "Без рэгістрацыі"
+    }
+  },
+  "features": {
+    "localPrices": "Мясцовыя цэны",
+    "laborIncluded": "Праца ўключана",
+    "pdfReport": "Справаздача PDF",
+    "noAccount": "Без акаўнту"
+  },
+  "estimate": {
+    "title": "Пра вашу нерухомасць",
+    "subtitle": "Дапамагае каліbraваць вартасць матэрыялаў і работ.",
+    "propertyType": "Тып нерухомасці",
+    "propertyCondition": "Стан нерухомасці",
+    "renovationScope": "Аб'ём рамонту",
+    "yourCity": "Ваш горад",
+    "cta": "Пачаць бясплатны каштарыс →",
+    "types": {
+      "apartment": "Кватэра",
+      "house": "Дом"
+    },
+    "conditions": {
+      "new": "Новабудоўля",
+      "new_desc": "Аздабленне ад забудоўніка",
+      "preowned": "Другаснае жыллё",
+      "preowned_desc": "Другасны рынак"
+    },
+    "scopes": {
+      "cosmetic": "Касметычны",
+      "cosmetic_desc": "Фарбаванне, падлога, дробныя змены",
+      "premium": "Прэміум",
+      "premium_desc": "Дарагія матэрыялы і раскошнае аздабленне",
+      "full": "Капітальны рамонт",
+      "full_desc": "Комплексная перабудова памяшканняў"
+    },
+    "cities": {
+      "warsaw": "Варшава",
+      "krakow": "Кракаў",
+      "wroclaw": "Уроцлаў",
+      "gdansk": "Гданьск",
+      "poznan": "Познань",
+      "other": "Іншы горад"
+    }
+  },
+  "rooms": {
+    "title": "Вашы пакоі",
+    "subtitle": "Дадайце кожны пакой, які хочаце адрамантаваць.",
+    "addRoom": "Дадаць пакой",
+    "seeEstimate": "Паглядзець поўны каштарыс",
+    "runningEstimate": "Бягучы каштарыс",
+    "roomCount": "{count, plural, one {# пакой} few {# пакоі} many {# пакояў} other {# пакояў}}",
+    "removeTitle": "Выдаліць пакой?",
+    "removeDesc": "Гэты пакой і яго каштарыс будуць выдалены.",
+    "cancel": "Адмена",
+    "remove": "Выдаліць"
+  },
+  "wizard": {
+    "step": "КРОК {step} З {total}",
+    "continue": "Працягнуць",
+    "saveRoom": "Захаваць пакой",
+    "roomSettings": "Налады пакоя",
+    "roomSettingsDesc": "Плошчы разлічваюцца аўтаматычна.",
+    "dimensions": "Памеры",
+    "dimensionsDesc": "Плошчы разлічваюцца аўтаматычна.",
+    "width": "Шырыня",
+    "length": "Даўжыня",
+    "height": "Вышыня",
+    "windows": "Вокны",
+    "doors": "Дзверы",
+    "calculatedAreas": "Разлічаныя плошчы",
+    "floor": "Падлога",
+    "walls": "Сцены",
+    "ceiling": "Столь",
+    "wallCondition": "Стан сцен",
+    "wallConditionDesc": "Вызначае выдаткі на падрыхтоўку. Выберыце стан, які найбольш адпавядае рэчаіснасці.",
+    "floorCondition": "Стан падлогі",
+    "floorConditionDesc": "Вызначае выдаткі на падрыхтоўку.",
+    "ceilingCondition": "Стан столі",
+    "ceilingConditionDesc": "Выберыце стан, які найбольш адпавядае рэчаіснасці.",
+    "chooseFinishes": "Выберыце аздабленне",
+    "chooseFinishesDesc": "Выберыце матэрыялы і ўзровень якасці для гэтага пакоя.",
+    "qualityTier": "Узровень якасці",
+    "wallFinish": "Аздабленне сцен",
+    "floorFinish": "Аздабленне падлогі",
+    "ceilingFinish": "Аздабленне столі",
+    "confirmRoom": "Пацвярджэнне пакоя",
+    "confirmRoomDesc": "Праверце налады перад захаваннем.",
+    "roomType": "Тып пакоя",
+    "dimensionsSummary": "Памеры",
+    "floorArea": "Плошча падлогі",
+    "wallArea": "Плошча сцен",
+    "quality": "Якасць",
+    "roomTypes": {
+      "kitchen": "Кухня",
+      "living_room": "Гасцёўня",
+      "bedroom": "Спальня",
+      "bathroom": "Ванны пакой",
+      "hallway": "Калідор",
+      "office": "Кабінет"
+    },
+    "qualityTiers": {
+      "economy": "Эканом",
+      "standard": "Стандарт",
+      "premium": "Прэміум"
+    },
+    "wallFinishes": {
+      "paint": "Фарба",
+      "wallpaper": "Шпалеры",
+      "decorative_plaster": "Дэкаратыўная тынкоўка"
+    },
+    "floorFinishes": {
+      "laminate": "Ламінат",
+      "tile": "Плітка",
+      "vinyl": "Вініл"
+    },
+    "ceilingFinishes": {
+      "paint": "Фарба",
+      "stretch_ceiling": "Нацяжная столь",
+      "drywall": "Гіпсакартон"
+    },
+    "wallConditions": {
+      "ready": "Гатова да аздаблення",
+      "ready_desc": "Роўная паверхня, падрыхтоўка не патрэбна",
+      "primer": "Патрэбна грунтоўка",
+      "primer_desc": "Паверхня патрабуе грунтавання",
+      "putty": "Патрэбна шпаклёўка",
+      "putty_desc": "Неабходна выраўноўванне і шпаклёўка",
+      "full_prep": "Поўная падрыхтоўка",
+      "full_prep_desc": "Дэмантаж, выраўноўванне, шпаклёўка, грунт"
+    },
+    "floorConditions": {
+      "ready": "Гатова",
+      "ready_desc": "Падлога роўная і падрыхтаваная",
+      "leveling": "Патрэбна нівеліроўка",
+      "leveling_desc": "Неабходная самавыраўноўваючая сумесь"
+    },
+    "ceilingConditions": {
+      "ready": "Гатова",
+      "ready_desc": "Столь роўная",
+      "primer": "Патрэбна грунтоўка",
+      "primer_desc": "Столь патрабуе грунтавання",
+      "full_prep": "Поўная падрыхтоўка",
+      "full_prep_desc": "Рамонт, шпаклёўка і грунтаванне"
+    }
+  },
+  "report": {
+    "title": "Ваш каштарыс",
+    "totalEstimate": "Агульны каштарыс",
+    "rooms": "{count, plural, one {# пакой} few {# пакоі} many {# пакояў} other {# пакояў}}",
+    "basedOn": "На аснове цэн рэгіёну {city}",
+    "precision": "±10–15%",
+    "breakdown": "Разбіўка выдаткаў",
+    "materials": "Матэрыялы",
+    "labor": "Праца",
+    "preparation": "Падрыхтоўка паверхняў",
+    "supporting": "Дапаможныя матэрыялы",
+    "roomBreakdown": "Разбіўка па пакоях",
+    "downloadPdf": "Спампаваць справаздачу PDF",
+    "methodologyLink": "Як разлічваецца каштарыс →",
+    "disclaimer": "Цэны — сярэднія ацэнкі для {city}. Рэальныя выдаткі могуць адрознівацца на ±10–15%.",
+    "noRooms": "Пакоі яшчэ не дададзены.",
+    "addRooms": "← Дадаць пакоі"
+  },
+  "download": {
+    "title": "Спампаваць вынік",
+    "subtitle": "Аўтаматычна разлічана для {city} на аснове вашых матэрыялаў.",
+    "totalEstimate": "Агульны каштарыс",
+    "roomsCount": "{count, plural, one {# пакой} few {# пакоі} many {# пакояў} other {# пакояў}} · Дакладнасць ±10–15%",
+    "disclaimer": "Цэны — сярэднія ацэнкі для {city}. Рэальныя выдаткі могуць адрознівацца на ±10–15%.",
+    "emailLabel": "Ваш адрас электроннай пошты",
+    "emailPlaceholder": "ваш@email.com",
+    "sendButton": "Адправіць на пошту",
+    "sending": "Адпраўка…",
+    "savePdf": "Захаваць як PDF (друк)",
+    "sentTitle": "Справаздача адпраўлена!",
+    "sentDesc": "Праверце пошту {email}. Справаздача PDF змяшчае поўны каштарыс для {city}.",
+    "sendAnother": "Адправіць на іншы адрас",
+    "newEstimate": "Пачаць новы каштарыс",
+    "notConfiguredTitle": "Адпраўка не наладжана",
+    "notConfiguredDesc": "Дадайце RESEND_API_KEY у .env.local для ўключэння адпраўкі.",
+    "tryAgain": "← Паспрабаваць зноў",
+    "networkError": "Памылка сеткі. Праверце злучэнне і паспрабуйце зноў.",
+    "noEstimate": "Няма каштарысу для спампоўкі.",
+    "addRooms": "← Дадаць пакоі"
+  },
+  "methodology": {
+    "title": "Як разлічваюцца каштарысы",
+    "subtitle": "Кожны каштарыс будуецца на аснове памераў пакояў, стану паверхняў, выбару матэрыялаў і рэгіянальных стаўак работ.",
+    "back": "Метадалогія",
+    "cta": "Пачаць бясплатны каштарыс →"
+  },
+  "nav": {
+    "home": "Галоўная",
+    "howItWorks": "Як гэта працуе",
+    "articles": "Парады",
+    "methodology": "Метадалогія",
+    "startEstimate": "Пачаць каштарыс"
+  },
+  "articles": {
+    "title": "Парады па рамонту",
+    "subtitle": "Практычныя веды да, падчас і пасля рамонту.",
+    "readMore": "Чытаць далей →",
+    "cta": "Разлічыць свой каштарыс →",
+    "clusters": {
+      "budget": "Бюджэт",
+      "contractors": "Падрадчыкі",
+      "rooms": "Пакоі",
+      "regional": "Рэгіёны",
+      "materials": "Матэрыялы",
+      "property": "Нерухомасць"
+    }
+  },
+  "common": {
+    "back": "Назад",
+    "currency": "PLN",
+    "perSqm": "PLN/м²"
+  },
+  "a11y": {
+    "open": "Даступнасць",
+    "fontSize": "Памер шрыфту",
+    "contrast": "Кантраст",
+    "font": "Шрыфт",
+    "reset": "Скінуць",
+    "sizes": {
+      "small": "S",
+      "normal": "M",
+      "large": "L",
+      "xl": "XL"
+    },
+    "contrasts": {
+      "normal": "Звычайны",
+      "high": "Высокі кантраст",
+      "inverted": "Інвертаваны"
+    },
+    "fonts": {
+      "system": "Стандартны",
+      "readable": "Чытэльны",
+      "dyslexic": "Для дыслексікаў"
+    }
+  },
+  "footer": {
+    "tagline": "Рэалістычныя каштарысы рамонту для Польшчы.",
+    "product": "Прадукт",
+    "resources": "Рэсурсы",
+    "languages": "Мовы",
+    "privacy": "Прыватнасць",
+    "terms": "Умовы",
+    "rights": "Усе правы абаронены."
+  },
+  "faq": {
+    "title": "Часта задаваемыя пытанні",
+    "items": [
+      {
+        "q": "How accurate is the estimate?",
+        "a": "Our estimates are accurate to ±10-15%."
+      },
+      {
+        "q": "What is included?",
+        "a": "Materials, labor, surface preparation, and supporting materials."
+      },
+      {
+        "q": "What is NOT included?",
+        "a": "Structural work, electrical, plumbing, furniture, permits."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "About 10 minutes."
+      },
+      {
+        "q": "Is my data saved?",
+        "a": "No. The estimate exists only in your browser session."
+      },
+      {
+        "q": "How do I get the PDF?",
+        "a": "Enter your email on the Download screen."
+      },
+      {
+        "q": "Can I use this outside Poland?",
+        "a": "The calculator uses Polish market pricing."
+      },
+      {
+        "q": "What does Economy/Standard/Premium mean?",
+        "a": "Material quality tiers from basic to luxury."
+      }
+    ]
+  },
+  "hero": {
+    "socialProof": "Poland-first renovation estimator"
+  },
+  "howItWorks": {
+    "title": "Як гэта працуе",
+    "step1Title": "Configure rooms",
+    "step1Desc": "Enter dimensions and surface conditions.",
+    "step2Title": "Choose finish quality",
+    "step2Desc": "Economy, Standard or Premium per room.",
+    "step3Title": "Get your estimate",
+    "step3Desc": "Room-by-room breakdown with regional pricing."
+  },
+  "forWhom": {
+    "title": "Для каго",
+    "card1Title": "Apartment owners",
+    "card1Desc": "Planning first renovation.",
+    "card2Title": "Homeowners",
+    "card2Desc": "Estimating full renovation.",
+    "card3Title": "Pre-sale renovators",
+    "card3Desc": "Calculating renovation ROI."
+  },
+  "whatYouGet": {
+    "title": "Што вы атрымліваеце",
+    "items": [
+      "Room-by-room cost breakdown",
+      "Materials, labor and preparation",
+      "Regional pricing for Polish cities",
+      "Downloadable PDF report",
+      "No account needed"
+    ]
+  },
+  "finalCta": {
+    "title": "Гатовы разлічыць рамонт?",
+    "subtitle": "Займе 10 хвілін. Без рэгістрацыі."
+  }
+}

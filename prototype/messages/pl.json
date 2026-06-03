@@ -1,0 +1,341 @@
+{
+  "landing": {
+    "title": "Szybki kosztorys remontu.",
+    "description": "Uzyskaj realistyczny budżet remontowy na podstawie powierzchni pokoi, jakości wykończeń i regionalnych cen w Polsce.",
+    "cta": "Zacznij bezpłatny kosztorys →",
+    "subtext": "Bez konta · Bez płatności z góry · Zajmuje ~10 minut",
+    "howWeEstimate": "Jak liczymy kosztorys",
+    "fullMethodology": "Pełna metodologia",
+    "formula": {
+      "materials": "Materiały",
+      "labor": "Robocizna",
+      "preparation": "Przygotowanie",
+      "regional": "Cena regionalna"
+    },
+    "precisionNote": "Ceny odzwierciedlają średnie rynkowe stawki w Polsce {year}. Koszt końcowy zależy od wykonawcy i warunków. Precyzja: ±10–15%.",
+    "badges": {
+      "precision": "Precyzja ±10–15%",
+      "marketData": "Dane z polskiego rynku",
+      "time": "Kosztorys w ~10 minut",
+      "noAccount": "Bez zakładania konta"
+    }
+  },
+  "features": {
+    "localPrices": "Lokalne cenniki",
+    "laborIncluded": "Robocizna wliczona",
+    "pdfReport": "Raport PDF",
+    "noAccount": "Bez konta"
+  },
+  "estimate": {
+    "title": "O Twojej nieruchomości",
+    "subtitle": "Pomaga skalibrować koszty materiałów i robocizny.",
+    "propertyType": "Typ nieruchomości",
+    "propertyCondition": "Stan nieruchomości",
+    "renovationScope": "Zakres remontu",
+    "yourCity": "Twoje miasto",
+    "cta": "Zacznij bezpłatny kosztorys →",
+    "types": {
+      "apartment": "Mieszkanie",
+      "house": "Dom"
+    },
+    "conditions": {
+      "new": "Nowe budownictwo",
+      "new_desc": "Wykończenie deweloperskie",
+      "preowned": "Rynek wtórny",
+      "preowned_desc": "Stan do remontu"
+    },
+    "scopes": {
+      "cosmetic": "Kosmetyczny",
+      "cosmetic_desc": "Malowanie, podłogi, drobne poprawki",
+      "premium": "Premium",
+      "premium_desc": "Wysokiej jakości materiały i luksusowe wykończenia",
+      "full": "Generalny remont",
+      "full_desc": "Kompleksowa przebudowa pomieszczeń"
+    },
+    "cities": {
+      "warsaw": "Warszawa",
+      "krakow": "Kraków",
+      "wroclaw": "Wrocław",
+      "gdansk": "Gdańsk",
+      "poznan": "Poznań",
+      "other": "Inne miasto"
+    }
+  },
+  "rooms": {
+    "title": "Twoje pokoje",
+    "subtitle": "Dodaj każdy pokój, który chcesz wyremontować.",
+    "addRoom": "Dodaj pokój",
+    "seeEstimate": "Zobacz pełny kosztorys",
+    "runningEstimate": "Bieżący kosztorys",
+    "roomCount": "{count, plural, one {# pokój} few {# pokoje} many {# pokoi} other {# pokoi}}",
+    "removeTitle": "Usunąć pokój?",
+    "removeDesc": "Ten pokój i jego kosztorys zostaną usunięte.",
+    "cancel": "Anuluj",
+    "remove": "Usuń"
+  },
+  "wizard": {
+    "step": "KROK {step} Z {total}",
+    "continue": "Kontynuuj",
+    "saveRoom": "Zapisz pokój",
+    "roomSettings": "Ustawienia pokoju",
+    "roomSettingsDesc": "Powierzchnie są obliczane automatycznie.",
+    "dimensions": "Wymiary",
+    "dimensionsDesc": "Powierzchnie są obliczane automatycznie.",
+    "width": "Szerokość",
+    "length": "Długość",
+    "height": "Wysokość",
+    "windows": "Okna",
+    "doors": "Drzwi",
+    "calculatedAreas": "Obliczone powierzchnie",
+    "floor": "Podłoga",
+    "walls": "Ściany",
+    "ceiling": "Sufit",
+    "wallCondition": "Stan ścian",
+    "wallConditionDesc": "Określa koszty przygotowania. Wybierz stan najbardziej odpowiadający rzeczywistości.",
+    "floorCondition": "Stan podłogi",
+    "floorConditionDesc": "Określa koszty przygotowania. Wybierz stan najbardziej odpowiadający rzeczywistości.",
+    "ceilingCondition": "Stan sufitu",
+    "ceilingConditionDesc": "Wybierz stan najbardziej odpowiadający rzeczywistości.",
+    "chooseFinishes": "Wybierz wykończenia",
+    "chooseFinishesDesc": "Wybierz materiały i tier jakości dla tego pokoju.",
+    "qualityTier": "Tier jakości",
+    "wallFinish": "Wykończenie ścian",
+    "floorFinish": "Wykończenie podłogi",
+    "ceilingFinish": "Wykończenie sufitu",
+    "confirmRoom": "Potwierdzenie pokoju",
+    "confirmRoomDesc": "Sprawdź ustawienia przed zapisaniem.",
+    "roomType": "Typ pokoju",
+    "dimensionsSummary": "Wymiary",
+    "floorArea": "Powierzchnia podłogi",
+    "wallArea": "Powierzchnia ścian",
+    "quality": "Jakość",
+    "roomTypes": {
+      "kitchen": "Kuchnia",
+      "living_room": "Salon",
+      "bedroom": "Sypialnia",
+      "bathroom": "Łazienka",
+      "hallway": "Korytarz",
+      "office": "Gabinet"
+    },
+    "qualityTiers": {
+      "economy": "Ekonomiczny",
+      "standard": "Standard",
+      "premium": "Premium"
+    },
+    "wallFinishes": {
+      "paint": "Farba",
+      "wallpaper": "Tapeta",
+      "decorative_plaster": "Tynk dekoracyjny"
+    },
+    "floorFinishes": {
+      "laminate": "Panele",
+      "tile": "Płytki",
+      "vinyl": "Winyl"
+    },
+    "ceilingFinishes": {
+      "paint": "Farba",
+      "stretch_ceiling": "Sufit napinany",
+      "drywall": "Płyta g-k"
+    },
+    "wallConditions": {
+      "ready": "Gotowe do wykończenia",
+      "ready_desc": "Gładź, bez przygotowania",
+      "primer": "Wymagany grunt",
+      "primer_desc": "Powierzchnia wymaga gruntowania",
+      "putty": "Wymagana gładź",
+      "putty_desc": "Konieczne wyrównanie i gładź",
+      "full_prep": "Pełne przygotowanie",
+      "full_prep_desc": "Skucie, wyrównanie, gładź, grunt"
+    },
+    "floorConditions": {
+      "ready": "Gotowe",
+      "ready_desc": "Podłoga jest pozioma i przygotowana",
+      "leveling": "Wymagane samopoziomowanie",
+      "leveling_desc": "Konieczna masa samopoziomująca"
+    },
+    "ceilingConditions": {
+      "ready": "Gotowe",
+      "ready_desc": "Sufit jest gładki",
+      "primer": "Wymagany grunt",
+      "primer_desc": "Sufit wymaga gruntowania",
+      "full_prep": "Pełne przygotowanie",
+      "full_prep_desc": "Naprawa, gładź i gruntowanie"
+    }
+  },
+  "report": {
+    "title": "Twój kosztorys",
+    "totalEstimate": "Łączny kosztorys",
+    "rooms": "{count} {count, plural, one {pokój} few {pokoje} many {pokoi} other {pokoi}}",
+    "basedOn": "Na podstawie cen w regionie {city}",
+    "precision": "±10–15%",
+    "breakdown": "Podział kosztów",
+    "materials": "Materiały",
+    "labor": "Robocizna",
+    "preparation": "Przygotowanie powierzchni",
+    "supporting": "Materiały pomocnicze",
+    "roomBreakdown": "Podział na pokoje",
+    "downloadPdf": "Pobierz raport PDF",
+    "methodologyLink": "Jak obliczamy kosztorys →",
+    "disclaimer": "Ceny są szacunkami dla {city}. Rzeczywiste koszty mogą różnić się o ±10–15%.",
+    "noRooms": "Nie dodano jeszcze żadnych pokoi.",
+    "addRooms": "← Dodaj pokoje"
+  },
+  "download": {
+    "title": "Pobierz wynik",
+    "subtitle": "Obliczone automatycznie dla {city} na podstawie Twoich wykończeń.",
+    "totalEstimate": "Łączny kosztorys",
+    "roomsCount": "{count} {count, plural, one {pokój} few {pokoje} many {pokoi} other {pokoi}} · Precyzja ±10–15%",
+    "disclaimer": "Ceny są szacunkami dla {city}. Rzeczywiste koszty mogą różnić się o ±10–15% w zależności od wykonawcy i warunków rynkowych.",
+    "emailLabel": "Twój adres e-mail",
+    "emailPlaceholder": "twoj@email.com",
+    "sendButton": "Wyślij na e-mail",
+    "sending": "Wysyłanie…",
+    "savePdf": "Zapisz jako PDF (drukuj)",
+    "sentTitle": "Raport wysłany!",
+    "sentDesc": "Sprawdź skrzynkę odbiorczą pod adresem {email}. Raport PDF zawiera pełny kosztorys dla {city}.",
+    "sendAnother": "Wyślij na inny adres e-mail",
+    "newEstimate": "Zacznij nowy kosztorys",
+    "notConfiguredTitle": "Wysyłka e-mail nie jest skonfigurowana",
+    "notConfiguredDesc": "Dodaj klucz RESEND_API_KEY do .env.local, aby włączyć wysyłkę e-mail.",
+    "tryAgain": "← Spróbuj ponownie",
+    "networkError": "Błąd sieci. Sprawdź połączenie i spróbuj ponownie.",
+    "noEstimate": "Brak kosztorysu do pobrania.",
+    "addRooms": "← Dodaj pokoje"
+  },
+  "methodology": {
+    "title": "Jak obliczamy kosztorysy",
+    "subtitle": "Każdy kosztorys tworzony jest na podstawie wymiarów Twoich pomieszczeń, stanu powierzchni, wyboru materiałów i regionalnych stawek robocizny. Oto dokładnie, jak to działa.",
+    "back": "Metodologia",
+    "cta": "Zacznij bezpłatny kosztorys →"
+  },
+  "nav": {
+    "home": "Strona główna",
+    "howItWorks": "Jak to działa",
+    "articles": "Poradniki",
+    "methodology": "Metodologia",
+    "startEstimate": "Zacznij kosztorys"
+  },
+  "articles": {
+    "title": "Poradniki remontowe",
+    "subtitle": "Praktyczna wiedza przed, w trakcie i po remoncie.",
+    "readMore": "Czytaj dalej →",
+    "cta": "Oblicz swój kosztorys →",
+    "clusters": {
+      "budget": "Budżet",
+      "contractors": "Wykonawcy",
+      "rooms": "Pokoje",
+      "regional": "Regiony",
+      "materials": "Materiały",
+      "property": "Nieruchomości"
+    }
+  },
+  "common": {
+    "back": "Wstecz",
+    "currency": "PLN",
+    "perSqm": "PLN/m²"
+  },
+  "a11y": {
+    "open": "Dostępność",
+    "fontSize": "Rozmiar czcionki",
+    "contrast": "Kontrast",
+    "font": "Czcionka",
+    "reset": "Przywróć domyślne",
+    "sizes": {
+      "small": "S",
+      "normal": "M",
+      "large": "L",
+      "xl": "XL"
+    },
+    "contrasts": {
+      "normal": "Normalny",
+      "high": "Wysoki kontrast",
+      "inverted": "Odwrócony"
+    },
+    "fonts": {
+      "system": "Domyślna",
+      "readable": "Czytelna",
+      "dyslexic": "Dla dyslektyków"
+    }
+  },
+  "footer": {
+    "tagline": "Realistyczne kosztorysy remontowe dla Polski.",
+    "product": "Produkt",
+    "resources": "Zasoby",
+    "languages": "Języki",
+    "privacy": "Prywatność",
+    "terms": "Regulamin",
+    "rights": "Wszelkie prawa zastrzeżone."
+  },
+  "faq": {
+    "title": "Najczęściej zadawane pytania",
+    "items": [
+      {
+        "q": "Jak dokładny jest kosztorys?",
+        "a": "Nasze szacunki mają dokładność ±10–15%. Odzwierciedla to rzeczywistą zmienność cen wykonawców i kosztów materiałów. Kosztorys to przedział budżetowy, nie stała cena."
+      },
+      {
+        "q": "Co jest wliczone w kosztorys?",
+        "a": "Materiały, robocizna, przygotowanie powierzchni i materiały pomocnicze (kleje, grunt itp.). Regionalne korekty cenowe dla polskich miast są stosowane automatycznie."
+      },
+      {
+        "q": "Czego NIE obejmuje kosztorys?",
+        "a": "Prac konstrukcyjnych, przeprowadzenia instalacji elektrycznej, hydrauliki, okien i drzwi, mebli, sprzętu AGD, honorariów architekta lub projektanta oraz pozwoleń budowlanych."
+      },
+      {
+        "q": "Ile czasu zajmuje obliczenie?",
+        "a": "Około 10 minut na skonfigurowanie wszystkich pomieszczeń i otrzymanie pełnego kosztorysu z raportem PDF."
+      },
+      {
+        "q": "Czy moje dane są zapisywane?",
+        "a": "Nie. Kosztorys istnieje tylko w sesji przeglądarki. Nie przechowujemy danych pomieszczeń, danych osobowych ani kosztorysów na naszych serwerach."
+      },
+      {
+        "q": "Jak otrzymać plik PDF?",
+        "a": "Po ukończeniu kosztorysu przejdź do ekranu pobierania, podaj adres e-mail, a wyślemy raport PDF na Twoją skrzynkę."
+      },
+      {
+        "q": "Czy mogę używać kalkulatora poza Polską?",
+        "a": "Kalkulator używa polskich cen rynkowych i regionalnych mnożników dla polskich miast. Jest przeznaczony do projektów remontowych w Polsce."
+      },
+      {
+        "q": "Co oznacza Ekonomiczny / Standard / Premium?",
+        "a": "To poziomy jakości materiałów. Ekonomiczny to podstawowe, funkcjonalne materiały. Standard to materiały średniej klasy. Premium to wysokiej klasy materiały luksusowe."
+      }
+    ]
+  },
+  "hero": {
+    "socialProof": "Kalkulator remontowy dla Polski"
+  },
+  "howItWorks": {
+    "title": "Jak to działa",
+    "step1Title": "Skonfiguruj pokoje",
+    "step1Desc": "Podaj wymiary, wybierz stan powierzchni ścian, podłóg i sufitów.",
+    "step2Title": "Wybierz standard wykończenia",
+    "step2Desc": "Wybierz Ekonomiczny, Standard lub Premium dla każdego pokoju. Możesz mieszać poziomy.",
+    "step3Title": "Otrzymaj kosztorys",
+    "step3Desc": "Podział kosztów na pokoje z materiałami, robocizną i cenami regionalnymi."
+  },
+  "forWhom": {
+    "title": "Dla kogo",
+    "card1Title": "Właściciele mieszkań",
+    "card1Desc": "Planujesz pierwszy remont i chcesz wiedzieć czego się spodziewać przed rozmową z wykonawcą.",
+    "card2Title": "Właściciele domów",
+    "card2Desc": "Szacujesz generalny remont przed podjęciem decyzji finansowych lub złożeniem wniosku o kredyt.",
+    "card3Title": "Sprzedający po remoncie",
+    "card3Desc": "Chcesz obliczyć ROI remontu przed wystawieniem nieruchomości na sprzedaż."
+  },
+  "whatYouGet": {
+    "title": "Co otrzymujesz",
+    "items": [
+      "Podział kosztów na pokoje",
+      "Materiały, robocizna i przygotowanie osobno",
+      "Regionalne ceny dla Warszawy, Krakowa, Gdańska i innych",
+      "Raport PDF do pobrania",
+      "Bez konta, bez płatności z góry"
+    ]
+  },
+  "finalCta": {
+    "title": "Gotowy na kosztorys remontu?",
+    "subtitle": "Zajmuje 10 minut. Bez zakładania konta."
+  }
+}

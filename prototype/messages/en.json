@@ -1,0 +1,341 @@
+{
+  "landing": {
+    "title": "Fast renovation estimates.",
+    "description": "Get a realistic renovation budget based on room size, finish quality, and regional Polish pricing.",
+    "cta": "Start free estimate →",
+    "subtext": "No account · No payment upfront · Takes ~10 minutes",
+    "howWeEstimate": "How we estimate",
+    "fullMethodology": "Full methodology",
+    "formula": {
+      "materials": "Materials",
+      "labor": "Labor",
+      "preparation": "Preparation",
+      "regional": "Regional rate"
+    },
+    "precisionNote": "Prices reflect average {year} Polish market rates. Final cost depends on contractor and conditions. Precision: ±10–15%.",
+    "badges": {
+      "precision": "±10–15% precision",
+      "marketData": "Real Polish market data",
+      "time": "Estimate in under 10 min",
+      "noAccount": "No account needed"
+    }
+  },
+  "features": {
+    "localPrices": "Local price ranges",
+    "laborIncluded": "Labor included",
+    "pdfReport": "PDF report",
+    "noAccount": "No account needed"
+  },
+  "estimate": {
+    "title": "About your property",
+    "subtitle": "Helps calibrate material and labor costs.",
+    "propertyType": "Property type",
+    "propertyCondition": "Property condition",
+    "renovationScope": "Renovation scope",
+    "yourCity": "Your city",
+    "cta": "Start free estimate →",
+    "types": {
+      "apartment": "Apartment",
+      "house": "House"
+    },
+    "conditions": {
+      "new": "New building",
+      "new_desc": "Developer finish",
+      "preowned": "Pre-owned",
+      "preowned_desc": "Secondary market"
+    },
+    "scopes": {
+      "cosmetic": "Cosmetic",
+      "cosmetic_desc": "Paint, floors, minor updates",
+      "premium": "Premium",
+      "premium_desc": "High-end materials & luxury finishes",
+      "full": "Full renovation",
+      "full_desc": "Complete room overhaul"
+    },
+    "cities": {
+      "warsaw": "Warsaw",
+      "krakow": "Kraków",
+      "wroclaw": "Wrocław",
+      "gdansk": "Gdańsk",
+      "poznan": "Poznań",
+      "other": "Other city"
+    }
+  },
+  "rooms": {
+    "title": "Your rooms",
+    "subtitle": "Add each room you want to renovate.",
+    "addRoom": "Add a room",
+    "seeEstimate": "See full estimate",
+    "runningEstimate": "Running estimate",
+    "roomCount": "{count, plural, one {# room} other {# rooms}}",
+    "removeTitle": "Remove room?",
+    "removeDesc": "This room and its estimate will be deleted.",
+    "cancel": "Cancel",
+    "remove": "Remove"
+  },
+  "wizard": {
+    "step": "STEP {step} OF {total}",
+    "continue": "Continue",
+    "saveRoom": "Save room",
+    "roomSettings": "Room settings",
+    "roomSettingsDesc": "Areas are calculated automatically.",
+    "dimensions": "Dimensions",
+    "dimensionsDesc": "Areas are calculated automatically.",
+    "width": "Width",
+    "length": "Length",
+    "height": "Height",
+    "windows": "Windows",
+    "doors": "Doors",
+    "calculatedAreas": "Calculated areas",
+    "floor": "Floor",
+    "walls": "Walls",
+    "ceiling": "Ceiling",
+    "wallCondition": "Wall condition",
+    "wallConditionDesc": "Determines preparation costs. Pick what best describes the current state.",
+    "floorCondition": "Floor condition",
+    "floorConditionDesc": "Determines preparation costs. Pick what best describes the current state.",
+    "ceilingCondition": "Ceiling condition",
+    "ceilingConditionDesc": "Pick what best describes the current ceiling state.",
+    "chooseFinishes": "Choose finishes",
+    "chooseFinishesDesc": "Select materials and quality tier for this room.",
+    "qualityTier": "Quality tier",
+    "wallFinish": "Wall finish",
+    "floorFinish": "Floor finish",
+    "ceilingFinish": "Ceiling finish",
+    "confirmRoom": "Confirm room",
+    "confirmRoomDesc": "Review settings before saving.",
+    "roomType": "Room type",
+    "dimensionsSummary": "Dimensions",
+    "floorArea": "Floor area",
+    "wallArea": "Wall area",
+    "quality": "Quality",
+    "roomTypes": {
+      "kitchen": "Kitchen",
+      "living_room": "Living Room",
+      "bedroom": "Bedroom",
+      "bathroom": "Bathroom",
+      "hallway": "Hallway",
+      "office": "Office"
+    },
+    "qualityTiers": {
+      "economy": "Economy",
+      "standard": "Standard",
+      "premium": "Premium"
+    },
+    "wallFinishes": {
+      "paint": "Paint",
+      "wallpaper": "Wallpaper",
+      "decorative_plaster": "Decorative Plaster"
+    },
+    "floorFinishes": {
+      "laminate": "Laminate",
+      "tile": "Tile",
+      "vinyl": "Vinyl"
+    },
+    "ceilingFinishes": {
+      "paint": "Paint",
+      "stretch_ceiling": "Stretch Ceiling",
+      "drywall": "Drywall"
+    },
+    "wallConditions": {
+      "ready": "Ready to finish",
+      "ready_desc": "Smooth, no prep needed",
+      "primer": "Primer needed",
+      "primer_desc": "Surface needs priming",
+      "putty": "Putty needed",
+      "putty_desc": "Leveling and putty required",
+      "full_prep": "Full preparation",
+      "full_prep_desc": "Strip, level, putty, prime"
+    },
+    "floorConditions": {
+      "ready": "Ready",
+      "ready_desc": "Floor is level and prepared",
+      "leveling": "Leveling needed",
+      "leveling_desc": "Self-leveling compound required"
+    },
+    "ceilingConditions": {
+      "ready": "Ready",
+      "ready_desc": "Ceiling is smooth",
+      "primer": "Primer needed",
+      "primer_desc": "Ceiling needs priming",
+      "full_prep": "Full preparation",
+      "full_prep_desc": "Repair, putty, and prime"
+    }
+  },
+  "report": {
+    "title": "Your estimate",
+    "totalEstimate": "Total estimate",
+    "rooms": "{count, plural, one {# room} other {# rooms}}",
+    "basedOn": "Based on {city} regional pricing",
+    "precision": "±10–15%",
+    "breakdown": "Cost breakdown",
+    "materials": "Materials",
+    "labor": "Labor",
+    "preparation": "Surface preparation",
+    "supporting": "Supporting materials",
+    "roomBreakdown": "Room breakdown",
+    "downloadPdf": "Download PDF report",
+    "methodologyLink": "How estimates are calculated →",
+    "disclaimer": "Prices are average estimates for {city}. Actual costs may vary ±10–15%.",
+    "noRooms": "No rooms configured yet.",
+    "addRooms": "← Add rooms"
+  },
+  "download": {
+    "title": "Download result",
+    "subtitle": "Auto-calculated for {city} based on your finishes.",
+    "totalEstimate": "Total estimate",
+    "roomsCount": "{count, plural, one {# room} other {# rooms}} · ±10–15% precision",
+    "disclaimer": "Prices are average estimates for {city}. Actual costs may vary ±10–15% depending on contractor and market conditions.",
+    "emailLabel": "Your email",
+    "emailPlaceholder": "your@email.com",
+    "sendButton": "Send to email",
+    "sending": "Sending…",
+    "savePdf": "Save as PDF (print)",
+    "sentTitle": "Report sent!",
+    "sentDesc": "Check your inbox at {email}. The PDF contains your full estimate for {city}.",
+    "sendAnother": "Send to a different email",
+    "newEstimate": "Start a new estimate",
+    "notConfiguredTitle": "Email delivery not set up",
+    "notConfiguredDesc": "Add RESEND_API_KEY to .env.local to enable email delivery.",
+    "tryAgain": "← Try again",
+    "networkError": "Network error. Check your connection and try again.",
+    "noEstimate": "No estimate to download.",
+    "addRooms": "← Add rooms"
+  },
+  "methodology": {
+    "title": "How estimates are calculated",
+    "subtitle": "Every estimate is built from your room dimensions, surface conditions, material choices, and regional labor rates. Here is exactly how.",
+    "back": "Methodology",
+    "cta": "Start free estimate →"
+  },
+  "nav": {
+    "home": "Home",
+    "howItWorks": "How it works",
+    "articles": "Articles",
+    "methodology": "Methodology",
+    "startEstimate": "Start estimate"
+  },
+  "articles": {
+    "title": "Renovation guides",
+    "subtitle": "Practical knowledge before, during, and after renovation.",
+    "readMore": "Read more →",
+    "cta": "Calculate your estimate →",
+    "clusters": {
+      "budget": "Budget",
+      "contractors": "Contractors",
+      "rooms": "Rooms",
+      "regional": "Regional",
+      "materials": "Materials",
+      "property": "Property types"
+    }
+  },
+  "common": {
+    "back": "Back",
+    "currency": "PLN",
+    "perSqm": "PLN/m²"
+  },
+  "a11y": {
+    "open": "Accessibility",
+    "fontSize": "Font size",
+    "contrast": "Contrast",
+    "font": "Font",
+    "reset": "Reset to defaults",
+    "sizes": {
+      "small": "S",
+      "normal": "M",
+      "large": "L",
+      "xl": "XL"
+    },
+    "contrasts": {
+      "normal": "Normal",
+      "high": "High contrast",
+      "inverted": "Inverted"
+    },
+    "fonts": {
+      "system": "Default",
+      "readable": "Readable",
+      "dyslexic": "Dyslexia-friendly"
+    }
+  },
+  "footer": {
+    "tagline": "Realistic renovation estimates for Poland.",
+    "product": "Product",
+    "resources": "Resources",
+    "languages": "Languages",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "rights": "All rights reserved."
+  },
+  "faq": {
+    "title": "Frequently asked questions",
+    "items": [
+      {
+        "q": "How accurate is the estimate?",
+        "a": "Our estimates are accurate to ±10–15%. This reflects real-world variability in contractor pricing and material costs. The estimate is a budget range, not a fixed price."
+      },
+      {
+        "q": "What is included in the estimate?",
+        "a": "Materials, labor, surface preparation, and supporting materials (adhesives, primer, etc.). Regional pricing adjustments for Polish cities are applied automatically."
+      },
+      {
+        "q": "What is NOT included?",
+        "a": "Structural work, electrical rewiring, plumbing, windows and doors, furniture, appliances, architect or designer fees, and building permits."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "About 10 minutes to configure all rooms and receive a full estimate with PDF report."
+      },
+      {
+        "q": "Is my data saved?",
+        "a": "No. The estimate exists only in your browser session. We do not store room data, personal information, or estimates on our servers."
+      },
+      {
+        "q": "How do I get the PDF?",
+        "a": "After completing the estimate, go to the Download screen, enter your email address, and we will send the PDF report to your inbox."
+      },
+      {
+        "q": "Can I use this outside Poland?",
+        "a": "The calculator uses Polish market pricing and regional multipliers for Polish cities. It is designed for renovation projects in Poland."
+      },
+      {
+        "q": "What does Economy / Standard / Premium mean?",
+        "a": "These are material quality tiers. Economy uses basic, functional materials. Standard is mid-range with a good quality-to-cost ratio. Premium uses high-end, branded, luxury materials."
+      }
+    ]
+  },
+  "hero": {
+    "socialProof": "Poland-first renovation estimator"
+  },
+  "howItWorks": {
+    "title": "How it works",
+    "step1Title": "Configure your rooms",
+    "step1Desc": "Enter dimensions, choose surface conditions for walls, floors, and ceilings.",
+    "step2Title": "Choose finish quality",
+    "step2Desc": "Select Economy, Standard, or Premium for each room. Mix tiers freely.",
+    "step3Title": "Get your estimate",
+    "step3Desc": "Receive a room-by-room cost breakdown with materials, labor, and regional pricing."
+  },
+  "forWhom": {
+    "title": "For whom",
+    "card1Title": "Apartment owners",
+    "card1Desc": "Planning your first renovation and want to know what to expect before calling contractors.",
+    "card2Title": "Homeowners",
+    "card2Desc": "Estimating a full renovation before making financial decisions or applying for a loan.",
+    "card3Title": "Pre-sale renovators",
+    "card3Desc": "Want to calculate the ROI of renovation before putting a property on the market."
+  },
+  "whatYouGet": {
+    "title": "What you get",
+    "items": [
+      "Room-by-room cost breakdown",
+      "Materials, labor, and preparation separated",
+      "Regional pricing for Warsaw, Kraków, Gdańsk and more",
+      "Downloadable PDF report",
+      "No account, no payment upfront"
+    ]
+  },
+  "finalCta": {
+    "title": "Ready to estimate your renovation?",
+    "subtitle": "Takes 10 minutes. No account needed."
+  }
+}

@@ -10,18 +10,28 @@ Prepare the growth foundation: localized product and SEO-ready content structure
 
 Languages:
 
-* Polish (primary)
-* Ukrainian
-* Russian
-* Belarusian
+* Polish — /pl (primary)
+* English — /en
+* Ukrainian — /uk
+* Russian — /ru
+* Belarusian — /be
 
 Activities:
 
-* set up i18n routing in Next.js (e.g. /pl, /uk, /ru, /be or Accept-Language detection)
-* extract all UI strings into locale files (JSON or flat key-value)
+* set up i18n routing in Next.js with locale prefix (/pl, /en, /uk, /ru, /be)
+* extract all UI strings into locale files (JSON)
 * translate: landing, wizard screens, report, download, methodology
 * apply locale-aware number formatting (PLN currency, decimal separators)
 * ensure city names render correctly in each language
+* implement language selector as dropdown with flag icons:
+  * 🇵🇱 Polski
+  * 🇬🇧 English
+  * 🇺🇦 Українська
+  * 🇷🇺 Русский
+  * 🇧🇾 Беларуская
+  * dropdown must show current language flag + name
+  * dropdown must be accessible (keyboard navigable)
+  * positioned top-right on landing, visible on all pages
 
 ---
 
@@ -92,4 +102,4 @@ i18n setup, article template, content cluster map, 3 pilot articles
 
 Validation:
 
-product renders correctly in all 4 languages; at least 1 article per cluster is publishable
+product renders correctly in all 5 languages; language dropdown shows correct flag and switches locale; at least 1 article per cluster is publishable

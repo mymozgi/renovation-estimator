@@ -1,0 +1,341 @@
+{
+  "landing": {
+    "title": "Швидкий кошторис ремонту.",
+    "description": "Отримайте реалістичний бюджет ремонту на основі розмірів кімнат, якості оздоблення та регіональних цін у Польщі.",
+    "cta": "Почати безкоштовний кошторис →",
+    "subtext": "Без реєстрації · Без оплати наперед · Займає ~10 хвилин",
+    "howWeEstimate": "Як ми рахуємо",
+    "fullMethodology": "Повна методологія",
+    "formula": {
+      "materials": "Матеріали",
+      "labor": "Робота",
+      "preparation": "Підготовка",
+      "regional": "Регіональна ціна"
+    },
+    "precisionNote": "Ціни відображають середні ринкові ставки в Польщі {year}. Кінцева вартість залежить від підрядника та умов. Точність: ±10–15%.",
+    "badges": {
+      "precision": "Точність ±10–15%",
+      "marketData": "Дані польського ринку",
+      "time": "Кошторис за ~10 хвилин",
+      "noAccount": "Без реєстрації"
+    }
+  },
+  "features": {
+    "localPrices": "Місцеві ціни",
+    "laborIncluded": "Робота включена",
+    "pdfReport": "Звіт PDF",
+    "noAccount": "Без акаунту"
+  },
+  "estimate": {
+    "title": "Про вашу нерухомість",
+    "subtitle": "Допомагає калібрувати вартість матеріалів і робіт.",
+    "propertyType": "Тип нерухомості",
+    "propertyCondition": "Стан нерухомості",
+    "renovationScope": "Обсяг ремонту",
+    "yourCity": "Ваше місто",
+    "cta": "Почати безкоштовний кошторис →",
+    "types": {
+      "apartment": "Квартира",
+      "house": "Будинок"
+    },
+    "conditions": {
+      "new": "Нова будівля",
+      "new_desc": "Стан від забудовника",
+      "preowned": "Вторинне житло",
+      "preowned_desc": "Вторинний ринок"
+    },
+    "scopes": {
+      "cosmetic": "Косметичний",
+      "cosmetic_desc": "Фарбування, підлога, дрібні зміни",
+      "premium": "Преміум",
+      "premium_desc": "Матеріали преміум-класу та розкішне оздоблення",
+      "full": "Капітальний ремонт",
+      "full_desc": "Комплексне перепланування приміщень"
+    },
+    "cities": {
+      "warsaw": "Варшава",
+      "krakow": "Краків",
+      "wroclaw": "Вроцлав",
+      "gdansk": "Гданськ",
+      "poznan": "Познань",
+      "other": "Інше місто"
+    }
+  },
+  "rooms": {
+    "title": "Ваші кімнати",
+    "subtitle": "Додайте кожну кімнату, яку хочете відремонтувати.",
+    "addRoom": "Додати кімнату",
+    "seeEstimate": "Переглянути повний кошторис",
+    "runningEstimate": "Поточний кошторис",
+    "roomCount": "{count, plural, one {# кімната} few {# кімнати} many {# кімнат} other {# кімнат}}",
+    "removeTitle": "Видалити кімнату?",
+    "removeDesc": "Ця кімната та її кошторис будуть видалені.",
+    "cancel": "Скасувати",
+    "remove": "Видалити"
+  },
+  "wizard": {
+    "step": "КРОК {step} З {total}",
+    "continue": "Продовжити",
+    "saveRoom": "Зберегти кімнату",
+    "roomSettings": "Налаштування кімнати",
+    "roomSettingsDesc": "Площі розраховуються автоматично.",
+    "dimensions": "Розміри",
+    "dimensionsDesc": "Площі розраховуються автоматично.",
+    "width": "Ширина",
+    "length": "Довжина",
+    "height": "Висота",
+    "windows": "Вікна",
+    "doors": "Двері",
+    "calculatedAreas": "Розраховані площі",
+    "floor": "Підлога",
+    "walls": "Стіни",
+    "ceiling": "Стеля",
+    "wallCondition": "Стан стін",
+    "wallConditionDesc": "Визначає витрати на підготовку. Оберіть стан, що найближче відповідає дійсності.",
+    "floorCondition": "Стан підлоги",
+    "floorConditionDesc": "Визначає витрати на підготовку. Оберіть стан, що найближче відповідає дійсності.",
+    "ceilingCondition": "Стан стелі",
+    "ceilingConditionDesc": "Оберіть стан, що найближче відповідає дійсності.",
+    "chooseFinishes": "Оберіть оздоблення",
+    "chooseFinishesDesc": "Оберіть матеріали та рівень якості для цієї кімнати.",
+    "qualityTier": "Рівень якості",
+    "wallFinish": "Оздоблення стін",
+    "floorFinish": "Оздоблення підлоги",
+    "ceilingFinish": "Оздоблення стелі",
+    "confirmRoom": "Підтвердження кімнати",
+    "confirmRoomDesc": "Перевірте налаштування перед збереженням.",
+    "roomType": "Тип кімнати",
+    "dimensionsSummary": "Розміри",
+    "floorArea": "Площа підлоги",
+    "wallArea": "Площа стін",
+    "quality": "Якість",
+    "roomTypes": {
+      "kitchen": "Кухня",
+      "living_room": "Вітальня",
+      "bedroom": "Спальня",
+      "bathroom": "Ванна кімната",
+      "hallway": "Коридор",
+      "office": "Кабінет"
+    },
+    "qualityTiers": {
+      "economy": "Економ",
+      "standard": "Стандарт",
+      "premium": "Преміум"
+    },
+    "wallFinishes": {
+      "paint": "Фарба",
+      "wallpaper": "Шпалери",
+      "decorative_plaster": "Декоративна штукатурка"
+    },
+    "floorFinishes": {
+      "laminate": "Ламінат",
+      "tile": "Плитка",
+      "vinyl": "Вініл"
+    },
+    "ceilingFinishes": {
+      "paint": "Фарба",
+      "stretch_ceiling": "Натяжна стеля",
+      "drywall": "Гіпсокартон"
+    },
+    "wallConditions": {
+      "ready": "Готово до оздоблення",
+      "ready_desc": "Рівна поверхня, підготовка не потрібна",
+      "primer": "Потрібне ґрунтування",
+      "primer_desc": "Поверхня потребує ґрунтування",
+      "putty": "Потрібна шпаклівка",
+      "putty_desc": "Необхідне вирівнювання та шпаклівка",
+      "full_prep": "Повна підготовка",
+      "full_prep_desc": "Зняття старого, вирівнювання, шпаклівка, ґрунт"
+    },
+    "floorConditions": {
+      "ready": "Готово",
+      "ready_desc": "Підлога рівна та підготовлена",
+      "leveling": "Потрібна нівелювальна суміш",
+      "leveling_desc": "Необхідна самонівелювальна суміш"
+    },
+    "ceilingConditions": {
+      "ready": "Готово",
+      "ready_desc": "Стеля рівна",
+      "primer": "Потрібне ґрунтування",
+      "primer_desc": "Стеля потребує ґрунтування",
+      "full_prep": "Повна підготовка",
+      "full_prep_desc": "Ремонт, шпаклівка та ґрунтування"
+    }
+  },
+  "report": {
+    "title": "Ваш кошторис",
+    "totalEstimate": "Загальний кошторис",
+    "rooms": "{count, plural, one {# кімната} few {# кімнати} many {# кімнат} other {# кімнат}}",
+    "basedOn": "На основі цін регіону {city}",
+    "precision": "±10–15%",
+    "breakdown": "Розбивка витрат",
+    "materials": "Матеріали",
+    "labor": "Робота",
+    "preparation": "Підготовка поверхонь",
+    "supporting": "Допоміжні матеріали",
+    "roomBreakdown": "Розбивка по кімнатах",
+    "downloadPdf": "Завантажити звіт PDF",
+    "methodologyLink": "Як розраховується кошторис →",
+    "disclaimer": "Ціни є оцінками для {city}. Реальні витрати можуть відрізнятися на ±10–15%.",
+    "noRooms": "Жодних кімнат ще не додано.",
+    "addRooms": "← Додати кімнати"
+  },
+  "download": {
+    "title": "Завантажити результат",
+    "subtitle": "Автоматично розраховано для {city} на основі ваших оздоблень.",
+    "totalEstimate": "Загальний кошторис",
+    "roomsCount": "{count, plural, one {# кімната} few {# кімнати} many {# кімнат} other {# кімнат}} · Точність ±10–15%",
+    "disclaimer": "Ціни є середніми оцінками для {city}. Реальні витрати можуть відрізнятися на ±10–15%.",
+    "emailLabel": "Ваша електронна пошта",
+    "emailPlaceholder": "ваш@email.com",
+    "sendButton": "Надіслати на пошту",
+    "sending": "Надсилання…",
+    "savePdf": "Зберегти як PDF (друк)",
+    "sentTitle": "Звіт надіслано!",
+    "sentDesc": "Перевірте вхідну пошту на адресі {email}. Звіт PDF містить повний кошторис для {city}.",
+    "sendAnother": "Надіслати на іншу адресу",
+    "newEstimate": "Почати новий кошторис",
+    "notConfiguredTitle": "Надсилання не налаштовано",
+    "notConfiguredDesc": "Додайте RESEND_API_KEY до .env.local для увімкнення надсилання.",
+    "tryAgain": "← Спробувати знову",
+    "networkError": "Помилка мережі. Перевірте з'єднання та спробуйте знову.",
+    "noEstimate": "Немає кошторису для завантаження.",
+    "addRooms": "← Додати кімнати"
+  },
+  "methodology": {
+    "title": "Як розраховуються кошториси",
+    "subtitle": "Кожен кошторис будується на основі розмірів ваших кімнат, стану поверхонь, вибору матеріалів та регіональних ставок робіт.",
+    "back": "Методологія",
+    "cta": "Почати безкоштовний кошторис →"
+  },
+  "nav": {
+    "home": "Головна",
+    "howItWorks": "Як це працює",
+    "articles": "Поради",
+    "methodology": "Методологія",
+    "startEstimate": "Почати кошторис"
+  },
+  "articles": {
+    "title": "Поради з ремонту",
+    "subtitle": "Практичні знання до, під час і після ремонту.",
+    "readMore": "Читати далі →",
+    "cta": "Розрахувати свій кошторис →",
+    "clusters": {
+      "budget": "Бюджет",
+      "contractors": "Підрядники",
+      "rooms": "Кімнати",
+      "regional": "Регіони",
+      "materials": "Матеріали",
+      "property": "Нерухомість"
+    }
+  },
+  "common": {
+    "back": "Назад",
+    "currency": "PLN",
+    "perSqm": "PLN/м²"
+  },
+  "a11y": {
+    "open": "Доступність",
+    "fontSize": "Розмір шрифту",
+    "contrast": "Контраст",
+    "font": "Шрифт",
+    "reset": "Скинути",
+    "sizes": {
+      "small": "S",
+      "normal": "M",
+      "large": "L",
+      "xl": "XL"
+    },
+    "contrasts": {
+      "normal": "Звичайний",
+      "high": "Високий контраст",
+      "inverted": "Інвертований"
+    },
+    "fonts": {
+      "system": "Стандартний",
+      "readable": "Читабельний",
+      "dyslexic": "Для дислексиків"
+    }
+  },
+  "footer": {
+    "tagline": "Реалістичні кошториси ремонту для Польщі.",
+    "product": "Продукт",
+    "resources": "Ресурси",
+    "languages": "Мови",
+    "privacy": "Конфіденційність",
+    "terms": "Умови",
+    "rights": "Всі права захищені."
+  },
+  "faq": {
+    "title": "Часті запитання",
+    "items": [
+      {
+        "q": "How accurate is the estimate?",
+        "a": "Our estimates are accurate to ±10-15%."
+      },
+      {
+        "q": "What is included?",
+        "a": "Materials, labor, surface preparation, and supporting materials."
+      },
+      {
+        "q": "What is NOT included?",
+        "a": "Structural work, electrical, plumbing, furniture, permits."
+      },
+      {
+        "q": "How long does it take?",
+        "a": "About 10 minutes."
+      },
+      {
+        "q": "Is my data saved?",
+        "a": "No. The estimate exists only in your browser session."
+      },
+      {
+        "q": "How do I get the PDF?",
+        "a": "Enter your email on the Download screen."
+      },
+      {
+        "q": "Can I use this outside Poland?",
+        "a": "The calculator uses Polish market pricing."
+      },
+      {
+        "q": "What does Economy/Standard/Premium mean?",
+        "a": "Material quality tiers from basic to luxury."
+      }
+    ]
+  },
+  "hero": {
+    "socialProof": "Poland-first renovation estimator"
+  },
+  "howItWorks": {
+    "title": "Як це працює",
+    "step1Title": "Configure rooms",
+    "step1Desc": "Enter dimensions and surface conditions.",
+    "step2Title": "Choose finish quality",
+    "step2Desc": "Economy, Standard or Premium per room.",
+    "step3Title": "Get your estimate",
+    "step3Desc": "Room-by-room breakdown with regional pricing."
+  },
+  "forWhom": {
+    "title": "Для кого",
+    "card1Title": "Apartment owners",
+    "card1Desc": "Planning first renovation.",
+    "card2Title": "Homeowners",
+    "card2Desc": "Estimating full renovation.",
+    "card3Title": "Pre-sale renovators",
+    "card3Desc": "Calculating renovation ROI."
+  },
+  "whatYouGet": {
+    "title": "Що ви отримуєте",
+    "items": [
+      "Room-by-room cost breakdown",
+      "Materials, labor and preparation",
+      "Regional pricing for Polish cities",
+      "Downloadable PDF report",
+      "No account needed"
+    ]
+  },
+  "finalCta": {
+    "title": "Готові розрахувати ремонт?",
+    "subtitle": "Займає 10 хвилин. Без реєстрації."
+  }
+}

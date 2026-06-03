@@ -1,6 +1,7 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { WizardLayout } from '@/components/WizardLayout'
 import { useEstimatorStore } from '@/lib/store'
 import { calcRoomEstimate, calcTotalEstimate, formatRange, formatPLN } from '@/lib/calculations'
@@ -80,7 +81,15 @@ export default function ReportPage() {
             <span className="text-muted text-sm">Total estimate</span>
             <span className="text-xs text-muted">{rooms.length} rooms</span>
           </div>
-          <div className="text-2xl font-bold text-fg mb-3">{formatRange(total)}</div>
+          <div className="text-2xl font-bold text-fg mb-1">{formatRange(total)}</div>
+          <div className="flex items-center gap-2 mb-3">
+            <span className="text-xs text-muted">
+              Based on <span className="font-medium text-fg">{property.city ? CITY_LABELS[property.city] : 'regional'}</span> pricing
+            </span>
+            <span className="inline-flex items-center rounded-full bg-primary/10 px-2 py-0.5 text-xs font-medium text-primary">
+              ±10–15%
+            </span>
+          </div>
           <CostBar materials={aggregated.materials} labor={aggregated.labor} preparation={aggregated.preparation} />
           <div className="flex gap-3 text-xs">
             <span className="flex items-center gap-1"><span className="w-2 h-2 rounded-full bg-primary inline-block" />Materials</span>
@@ -109,7 +118,7 @@ export default function ReportPage() {
 
       {/* Per-room breakdown */}
       <h3 className="text-sm font-semibold text-muted uppercase tracking-wide mb-3">Room breakdown</h3>
-      <div className="space-y-3 pb-4">
+      <div className="space-y-3 pb-2">
         {rooms.map((room, i) => {
           const est = estimates[i]
           return (
@@ -153,6 +162,19 @@ export default function ReportPage() {
             </div>
           )
         })}
+      </div>
+      {/* Methodology footnote */}
+      <div className="py-4 border-t border-border">
+        <p className="text-xs text-muted leading-relaxed">
+          Prices are average estimates for{' '}
+          <span className="font-medium text-fg">
+            {property.city ? CITY_LABELS[property.city] : 'the selected region'}
+          </span>
+          . Actual costs may vary ±10–15%.{' '}
+          <Link href="/methodology" className="text-primary hover:underline">
+            How estimates are calculated →
+          </Link>
+        </p>
       </div>
     </WizardLayout>
   )

@@ -8,6 +8,7 @@ import { WizardLayout } from '@/components/WizardLayout'
 import { useEstimatorStore } from '@/lib/store'
 import { calcTotalEstimate, formatRange } from '@/lib/calculations'
 import { CITY_LABELS } from '@/lib/labels'
+import { Button } from '@/components/Button'
 
 type Status = 'idle' | 'sending' | 'sent' | 'error' | 'not_configured'
 
@@ -52,7 +53,7 @@ export default function DownloadPage() {
         <h2 className="text-xl font-serif font-bold text-fg">{t('sentTitle')}</h2>
         <p className="text-muted text-sm leading-relaxed">{t('sentDesc', { email, city: cityLabel })}</p>
         <div className="flex flex-col gap-2 w-full mt-4">
-          <button onClick={() => setStatus('idle')} className="w-full border border-border rounded-xl py-3 text-fg font-medium text-sm">{t('sendAnother')}</button>
+          <Button variant="secondary" size="sm" onClick={() => setStatus('idle')} fullWidth>{t('sendAnother')}</Button>
           <button onClick={() => router.push(`/${locale}`)} className="w-full text-muted text-sm py-2">{t('newEstimate')}</button>
         </div>
       </div>
@@ -69,9 +70,9 @@ export default function DownloadPage() {
             <p className="text-muted text-xs leading-relaxed">{t('notConfiguredDesc')}</p>
           </div>
         </div>
-        <button onClick={() => window.print()} className="w-full flex items-center justify-center gap-2 bg-primary text-white font-semibold rounded-xl py-4 hover:bg-primary/90 transition-colors">
+        <Button onClick={() => window.print()} fullWidth>
           <Printer size={16} /> {t('savePdf')}
-        </button>
+        </Button>
         <button onClick={() => setStatus('idle')} className="text-muted text-sm text-center">{t('tryAgain')}</button>
       </div>
     </WizardLayout>
@@ -79,25 +80,25 @@ export default function DownloadPage() {
 
   return (
     <>
-      <div className="hidden print:block p-8 font-sans text-sm text-black">
+      <div className="hidden print:block p-8 font-sans text-sm text-fg">
         <h1 className="text-2xl font-bold mb-1">Renovation Estimate</h1>
-        <p className="text-xs text-gray-400 mb-6 border-l-2 border-green-800 pl-3">
+        <p className="text-xs text-muted mb-6 border-l-2 border-primary pl-3">
           Prices are average estimates for {cityLabel}. Actual costs may vary ±10–15%.
         </p>
-        <div className="border rounded p-4 mb-6">
-          <div className="text-gray-400 text-xs mb-1 uppercase tracking-wide">Total estimate</div>
+        <div className="border border-border rounded p-4 mb-6">
+          <div className="text-muted text-xs mb-1 uppercase tracking-wide">Total estimate</div>
           <div className="text-2xl font-bold">{formatRange(total)}</div>
-          <div className="text-xs text-gray-400 mt-1">{rooms.length} rooms · {cityLabel}</div>
+          <div className="text-xs text-muted mt-1">{rooms.length} rooms · {cityLabel}</div>
         </div>
-        <p className="text-gray-400 text-xs mt-8 border-t pt-4">Not a final quote. Prices in PLN.</p>
+        <p className="text-muted text-xs mt-8 border-t border-border pt-4">Not a final quote. Prices in PLN.</p>
       </div>
 
       <div className="print:hidden">
         <WizardLayout step={4} totalSteps={4} backHref={`/${locale}/report`}
           footer={
-            <button onClick={() => window.print()} className="w-full flex items-center justify-center gap-2 border border-border text-fg font-medium rounded-xl py-3.5 text-sm hover:border-primary/40 transition-colors">
+            <Button variant="secondary" size="sm" onClick={() => window.print()} fullWidth>
               <Printer size={15} /> {t('savePdf')}
-            </button>
+            </Button>
           }
         >
           <h2 className="text-2xl font-serif font-bold text-fg mt-2 mb-1">{t('title')}</h2>
@@ -124,10 +125,9 @@ export default function DownloadPage() {
                 <div><span className="text-fg">{errorMsg}</span><button type="button" onClick={() => setStatus('idle')} className="block text-primary text-xs mt-1">{t('tryAgain')}</button></div>
               </div>
             )}
-            <button type="submit" disabled={status === 'sending'}
-              className="w-full bg-primary text-white font-semibold rounded-xl py-4 hover:bg-primary/90 disabled:opacity-70 disabled:cursor-not-allowed transition-colors flex items-center justify-center gap-2">
+            <Button type="submit" disabled={status === 'sending'} fullWidth>
               {status === 'sending' ? <><Loader2 size={16} className="animate-spin" />{t('sending')}</> : t('sendButton')}
-            </button>
+            </Button>
           </form>
         </WizardLayout>
       </div>

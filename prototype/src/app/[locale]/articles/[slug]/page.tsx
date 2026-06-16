@@ -3,6 +3,7 @@ import { ArrowLeft, CheckCircle2 } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 import { articles } from '@/content/articles'
+import { buttonVariants } from '@/components/Button'
 
 type Props = { params: Promise<{ locale: string; slug: string }> }
 
@@ -15,16 +16,16 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) notFound()
 
   return (
-    <div className="flex flex-col min-h-screen bg-bg max-w-md mx-auto">
+    <div className="flex flex-col min-h-screen bg-bg max-w-[1000px] mx-auto">
       {/* Header */}
-      <div className="flex items-center gap-3 px-5 pt-5 pb-4">
+      <div className="flex items-center gap-3 px-8 pt-5 pb-4">
         <Link href={`/${locale}/articles`} className="w-9 h-9 rounded-full bg-surface border border-border flex items-center justify-center text-fg shrink-0">
           <ArrowLeft size={16} />
         </Link>
         <span className="text-xs font-medium text-muted tracking-wide uppercase">{t(`clusters.${article.cluster}`)}</span>
       </div>
 
-      <article className="px-5 pb-20">
+      <article className="px-8 pb-20">
         {/* Meta */}
         <div className="text-xs text-muted mb-3">{article.publishedAt}</div>
         <h1 className="font-serif font-bold text-fg text-3xl leading-tight mb-4">{article.title}</h1>
@@ -51,7 +52,7 @@ export default async function ArticlePage({ params }: Props) {
 
         {/* CTA */}
         <div className="bg-primary/5 border border-primary/20 rounded-xl p-5 text-center">
-          <Link href={`/${locale}/estimate`} className="block w-full bg-primary text-white font-semibold rounded-xl py-4 text-base text-center hover:bg-primary/90 transition-colors">
+          <Link href={`/${locale}/estimate`} className={buttonVariants({ variant: 'primary', fullWidth: true })}>
             {article.ctaText}
           </Link>
         </div>

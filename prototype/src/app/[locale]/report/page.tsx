@@ -6,6 +6,7 @@ import { useTranslations, useLocale } from 'next-intl'
 import { WizardLayout } from '@/components/WizardLayout'
 import { useEstimatorStore } from '@/lib/store'
 import { calcRoomEstimate, calcTotalEstimate, formatRange, formatPLN } from '@/lib/calculations'
+import { Button } from '@/components/Button'
 import { ROOM_TYPE_LABELS, ROOM_TYPE_ICONS, QUALITY_LABELS, WALL_FINISH_LABELS, FLOOR_FINISH_LABELS, CEILING_FINISH_LABELS, CITY_LABELS, SCOPE_LABELS, PROPERTY_TYPE_LABELS } from '@/lib/labels'
 import type { EstimateRange } from '@/lib/types'
 
@@ -56,10 +57,9 @@ export default function ReportPage() {
   return (
     <WizardLayout step={3} totalSteps={4} backHref={`/${locale}/rooms`}
       footer={
-        <button onClick={() => router.push(`/${locale}/download`)}
-          className="w-full bg-primary text-white font-semibold rounded-xl py-4 hover:bg-primary/90 transition-colors">
+        <Button onClick={() => router.push(`/${locale}/download`)} fullWidth>
           {t('downloadPdf')}
-        </button>
+        </Button>
       }
     >
       <div className="mt-2 mb-5">

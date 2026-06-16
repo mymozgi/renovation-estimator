@@ -32,9 +32,9 @@ export function WizardLayout({
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-bg max-w-md mx-auto">
+    <div className="flex flex-col min-h-screen bg-bg max-w-[1000px] mx-auto">
       {/* Header */}
-      <div className="flex items-center justify-between px-5 pt-5 pb-3">
+      <div className="flex items-center justify-between px-8 pt-5 pb-3">
         {/* Left: back button */}
         {!hideBack ? (
           <button
@@ -73,13 +73,13 @@ export function WizardLayout({
       </div>
 
       {/* Content */}
-      <div className="flex-1 px-5 pb-4 overflow-y-auto">
+      <div className="flex-1 px-8 pb-4 overflow-y-auto">
         {children}
       </div>
 
       {/* Footer */}
       {footer && (
-        <div className="px-5 pb-8 pt-3 border-t border-border bg-bg">
+        <div className="px-8 pb-8 pt-3 border-t border-border bg-bg">
           {footer}
         </div>
       )}

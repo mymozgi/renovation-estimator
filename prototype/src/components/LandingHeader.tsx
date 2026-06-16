@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Menu, X, Home } from 'lucide-react'
 import { LanguageSwitcher } from './LanguageSwitcher'
+import { buttonVariants } from './Button'
 
 export function LandingHeader() {
   const locale = useLocale()
@@ -19,7 +20,7 @@ export function LandingHeader() {
 
   return (
     <header className="sticky top-0 z-30 bg-bg/95 backdrop-blur border-b border-border">
-      <div className="max-w-2xl mx-auto px-5 h-14 flex items-center justify-between gap-4">
+      <div className="max-w-[1400px] mx-auto px-8 h-14 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-2 shrink-0">
           <div className="w-7 h-7 bg-primary rounded-lg flex items-center justify-center">
@@ -42,7 +43,7 @@ export function LandingHeader() {
           <LanguageSwitcher />
           <Link
             href={`/${locale}/estimate`}
-            className="hidden md:inline-flex bg-primary text-white text-sm font-semibold px-4 py-2 rounded-xl hover:bg-primary/90 transition-colors"
+            className={`hidden md:inline-flex ${buttonVariants({ variant: 'primary', size: 'xs' })}`}
           >
             {t('startEstimate')} →
           </Link>
@@ -59,7 +60,7 @@ export function LandingHeader() {
 
       {/* Mobile dropdown */}
       {menuOpen && (
-        <div className="md:hidden border-t border-border bg-bg px-5 py-4 flex flex-col gap-3">
+        <div className="md:hidden border-t border-border bg-bg px-8 py-4 flex flex-col gap-3">
           {links.map(({ href, label }) => (
             <Link key={href} href={href} onClick={() => setMenuOpen(false)}
               className="text-sm text-fg py-2 border-b border-border last:border-b-0">
@@ -67,7 +68,7 @@ export function LandingHeader() {
             </Link>
           ))}
           <Link href={`/${locale}/estimate`} onClick={() => setMenuOpen(false)}
-            className="mt-2 block w-full bg-primary text-white text-sm font-semibold px-4 py-3 rounded-xl text-center">
+            className={`mt-2 ${buttonVariants({ variant: 'primary', fullWidth: true })}`}>
             {t('startEstimate')} →
           </Link>
         </div>

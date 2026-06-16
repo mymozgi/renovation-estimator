@@ -8,6 +8,7 @@ import { WizardLayout } from '@/components/WizardLayout'
 import { RoomCard } from '@/components/RoomCard'
 import { RunningEstimateFooter } from '@/components/RunningEstimateFooter'
 import { RoomWizard } from '@/components/RoomWizard'
+import { Button } from '@/components/Button'
 import { useEstimatorStore } from '@/lib/store'
 import { calcRoomEstimate, calcTotalEstimate } from '@/lib/calculations'
 import type { Room } from '@/lib/types'
@@ -39,10 +40,10 @@ export default function RoomsPage() {
         footer={
           <div className="space-y-3">
             <RunningEstimateFooter total={total} roomCount={rooms.length} />
-            <button onClick={() => router.push(`/${locale}/report`)} disabled={rooms.length === 0}
-              className="w-full bg-primary text-white font-semibold rounded-xl py-4 disabled:bg-muted-green disabled:cursor-not-allowed transition-colors hover:bg-primary/90">
+            <Button onClick={() => router.push(`/${locale}/report`)} disabled={rooms.length === 0}
+              fullWidth className="disabled:!bg-muted-green disabled:!opacity-100">
               {t('seeEstimate')}
-            </button>
+            </Button>
           </div>
         }
       >
@@ -74,11 +75,10 @@ export default function RoomsPage() {
             <h3 className="font-serif font-bold text-fg text-lg mb-2">{t('removeTitle')}</h3>
             <p className="text-muted text-sm mb-5">{t('removeDesc')}</p>
             <div className="flex gap-3">
-              <button onClick={() => setConfirmRemove(null)} className="flex-1 border border-border rounded-xl py-3 font-medium text-fg">{t('cancel')}</button>
-              <button onClick={() => { removeRoom(confirmRemove); setConfirmRemove(null) }}
-                className="flex-1 bg-destructive text-white rounded-xl py-3 font-medium flex items-center justify-center gap-2">
+              <Button variant="secondary" size="sm" onClick={() => setConfirmRemove(null)} className="flex-1">{t('cancel')}</Button>
+              <Button variant="destructive" size="sm" onClick={() => { removeRoom(confirmRemove); setConfirmRemove(null) }} className="flex-1">
                 <Trash2 size={15} /> {t('remove')}
-              </button>
+              </Button>
             </div>
           </div>
         </div>

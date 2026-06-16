@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ArrowLeft } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
+import { buttonVariants } from '@/components/Button'
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
   return <div className="mb-8"><h2 className="font-serif font-bold text-fg text-xl mb-3">{title}</h2>{children}</div>
@@ -117,7 +118,7 @@ export default async function MethodologyPage({ params }: Props) {
           </div>
         </Section>
 
-        <Link href={`/${locale}/estimate`} className="block w-full bg-primary text-white font-semibold rounded-xl py-4 text-base text-center hover:bg-primary/90 transition-colors">
+        <Link href={`/${locale}/estimate`} className={buttonVariants({ variant: 'primary', fullWidth: true })}>
           {t('cta')}
         </Link>
       </div>

@@ -18,7 +18,7 @@ export function LandingFooter() {
 
   return (
     <footer className="bg-surface border-t border-border mt-16">
-      <div className="max-w-2xl mx-auto px-5 py-10">
+      <div className="max-w-[1400px] mx-auto px-8 py-10">
         {/* Top row */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
           {/* Brand */}

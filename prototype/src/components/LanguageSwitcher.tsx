@@ -6,11 +6,9 @@ import { useRouter, usePathname } from 'next/navigation'
 import { ChevronDown } from 'lucide-react'
 
 const LOCALES = [
-  { code: 'pl', flag: '🇵🇱', label: 'Polski'       },
-  { code: 'en', flag: '🇬🇧', label: 'English'      },
-  { code: 'uk', flag: '🇺🇦', label: 'Українська'   },
-  { code: 'ru', flag: '🇷🇺', label: 'Русский'      },
-  { code: 'be', flag: '🇧🇾', label: 'Беларуская'   },
+  { code: 'pl', flag: '🇵🇱', label: 'Polski'  },
+  { code: 'en', flag: '🇬🇧', label: 'English' },
+  { code: 'ru', flag: '🇷🇺', label: 'Русский' },
 ]
 
 export function LanguageSwitcher() {

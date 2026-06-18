@@ -5,9 +5,7 @@ import { Home } from 'lucide-react'
 const LANGUAGES = [
   { code: 'pl', label: '🇵🇱 Polski' },
   { code: 'en', label: '🇬🇧 English' },
-  { code: 'uk', label: '🇺🇦 Українська' },
   { code: 'ru', label: '🇷🇺 Русский' },
-  { code: 'be', label: '🇧🇾 Беларуская' },
 ]
 
 export function LandingFooter() {

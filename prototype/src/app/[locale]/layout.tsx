@@ -19,7 +19,7 @@ const ANTI_FOUC = `(function(){try{var p=JSON.parse(localStorage.getItem('a11y')
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params
-  if (!routing.locales.includes(locale as 'pl' | 'en' | 'uk' | 'ru' | 'be')) notFound()
+  if (!routing.locales.includes(locale as 'pl' | 'en' | 'ru')) notFound()
 
   const messages = await getMessages()
 

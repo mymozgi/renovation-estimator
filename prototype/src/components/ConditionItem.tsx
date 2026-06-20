@@ -20,7 +20,7 @@ export function ConditionItem({ label, description, price, image, selected, onCl
       `}
     >
       {image && (
-        <div className="aspect-video w-full overflow-hidden bg-bg">
+        <div className="relative aspect-video w-full overflow-hidden bg-bg">
           {image}
         </div>
       )}

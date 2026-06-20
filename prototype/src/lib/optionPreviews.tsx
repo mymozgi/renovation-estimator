@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 // Inline SVG previews for estimate option cards (16:9 viewBox = 160×90).
 // Replace with real <Image> components once photos are available.
 
@@ -467,54 +469,53 @@ export const ROOM_PREVIEWS: Record<string, React.ReactElement> = {
   office:      <PreviewOffice />,
 }
 
-// ── Condition & finish placeholders ──────────────────────────────────────────
+// ── Condition & finish photos (Unsplash) ─────────────────────────────────────
 
-function Ph({ bg, text }: { bg: string; text: string }) {
-  return (
-    <div className={`w-full h-full ${bg} flex items-center justify-center`}>
-      <span className="text-[10px] font-semibold uppercase tracking-widest opacity-30">{text}</span>
-    </div>
-  )
+const BASE = 'https://images.unsplash.com/photo-'
+const Q = '?w=800&q=80&auto=format&fit=crop'
+
+function UImg({ id, alt }: { id: string; alt: string }) {
+  return <Image src={`${BASE}${id}${Q}`} alt={alt} fill className="object-cover" />
 }
 
 export const WALL_CONDITION_PREVIEWS: Record<string, React.ReactElement> = {
-  ready:     <Ph bg="bg-emerald-50" text="Ready"    />,
-  primer:    <Ph bg="bg-slate-100"  text="Primer"   />,
-  putty:     <Ph bg="bg-stone-50"   text="Putty"    />,
-  full_prep: <Ph bg="bg-orange-50"  text="Full Prep"/>,
+  ready:     <UImg id="1562663474-6cbb3eaa4d14"  alt="Clean painted wall"  />,
+  primer:    <UImg id="1517420428520-0e5e4e3cc5b4" alt="Primed surface"    />,
+  putty:     <UImg id="1558618666-fcd25c85cd64"   alt="Plastering work"    />,
+  full_prep: <UImg id="1504307651254-35680f356dfd" alt="Full prep work"    />,
 }
 
 export const FLOOR_CONDITION_PREVIEWS: Record<string, React.ReactElement> = {
-  ready:    <Ph bg="bg-stone-100" text="Ready"   />,
-  leveling: <Ph bg="bg-blue-50"   text="Leveling"/>,
+  ready:    <UImg id="1541123437800-1bb1317badc2"  alt="Finished floor"   />,
+  leveling: <UImg id="1558618666-fcd25c85cd64"    alt="Floor leveling"   />,
 }
 
 export const CEILING_CONDITION_PREVIEWS: Record<string, React.ReactElement> = {
-  ready:     <Ph bg="bg-gray-50"   text="Ready"   />,
-  primer:    <Ph bg="bg-slate-100" text="Primer"  />,
-  full_prep: <Ph bg="bg-orange-50" text="Full Prep"/>,
+  ready:     <UImg id="1586023492125-27b2c045efd7" alt="Clean interior"   />,
+  primer:    <UImg id="1517420428520-0e5e4e3cc5b4" alt="Primed surface"   />,
+  full_prep: <UImg id="1534349762230-e0cadf78f5da" alt="Construction site" />,
 }
 
 export const WALL_FINISH_PREVIEWS: Record<string, React.ReactElement> = {
-  paint:              <Ph bg="bg-green-50"  text="Paint"    />,
-  wallpaper:          <Ph bg="bg-purple-50" text="Wallpaper"/>,
-  decorative_plaster: <Ph bg="bg-amber-50"  text="Plaster"  />,
+  paint:              <UImg id="1562663474-6cbb3eaa4d14"   alt="Painted wall"        />,
+  wallpaper:          <UImg id="1584622781867-1c5fe959d7ad" alt="Wallpaper interior"  />,
+  decorative_plaster: <UImg id="1507272042584-50b3a5d1da2b" alt="Textured plaster"   />,
 }
 
 export const FLOOR_FINISH_PREVIEWS: Record<string, React.ReactElement> = {
-  laminate: <Ph bg="bg-amber-100" text="Laminate"/>,
-  tile:     <Ph bg="bg-gray-100"  text="Tile"    />,
-  vinyl:    <Ph bg="bg-yellow-50" text="Vinyl"   />,
+  laminate: <UImg id="1541123437800-1bb1317badc2"  alt="Wood laminate floor" />,
+  tile:     <UImg id="1565538810643-b5bdb714032a"  alt="Tile floor"           />,
+  vinyl:    <UImg id="1608313966609-1d544adea44a"  alt="Vinyl plank floor"    />,
 }
 
 export const CEILING_FINISH_PREVIEWS: Record<string, React.ReactElement> = {
-  paint:           <Ph bg="bg-gray-50"   text="Paint"  />,
-  stretch_ceiling: <Ph bg="bg-blue-50"   text="Stretch"/>,
-  drywall:         <Ph bg="bg-stone-100" text="Drywall"/>,
+  paint:           <UImg id="1586023492125-27b2c045efd7" alt="Painted ceiling"  />,
+  stretch_ceiling: <UImg id="1615873968403-89583de0f8c9" alt="Stretch ceiling"  />,
+  drywall:         <UImg id="1573476668-f30be6c2f0e6"    alt="Drywall ceiling"  />,
 }
 
 export const QUALITY_TIER_PREVIEWS: Record<string, React.ReactElement> = {
-  economy:  <Ph bg="bg-gray-100"  text="Economy" />,
-  standard: <Ph bg="bg-green-50"  text="Standard"/>,
-  premium:  <Ph bg="bg-amber-50"  text="Premium" />,
+  economy:  <UImg id="1507089947-4e6f49a48b3e"   alt="Economy finish"     />,
+  standard: <UImg id="1502672260266-1c1ef2d93688" alt="Standard apartment"  />,
+  premium:  <UImg id="1618221195710-dd6b41faaea6" alt="Premium interior"    />,
 }

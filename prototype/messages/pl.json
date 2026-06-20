@@ -34,6 +34,13 @@
     "renovationScope": "Zakres remontu",
     "yourCity": "Twoje miasto",
     "cta": "Zacznij bezpłatny kosztorys →",
+    "summaryTitle": "Twój wybór",
+    "summarySubtitle": "Sprawdź ustawienia i przejdź do konfiguratora pomieszczeń.",
+    "qualityTiers": {
+      "economy_desc": "Podstawowe materiały, solidna robota",
+      "standard_desc": "Dobre materiały i staranne wykończenie",
+      "premium_desc": "Najwyższa jakość, luksusowe wykończenia"
+    },
     "types": {
       "apartment": "Mieszkanie",
       "house": "Dom"
@@ -270,36 +277,52 @@
     "title": "Najczęściej zadawane pytania",
     "items": [
       {
-        "q": "Jak dokładny jest kosztorys?",
-        "a": "Nasze szacunki mają dokładność ±10–15%. Odzwierciedla to rzeczywistą zmienność cen wykonawców i kosztów materiałów. Kosztorys to przedział budżetowy, nie stała cena."
+        "q": "Ile kosztuje remont mieszkania w Polsce w 2025 roku?",
+        "a": "Koszt remontu mieszkania w Polsce w 2025 roku zależy od standardu wykończeń i lokalizacji. W standardzie Ekonomicznym to około 600–900 zł/m², Standard 900–1 400 zł/m², a Premium 1 400–2 500+ zł/m². Remont kawalerki (30 m²) w standardzie Standard w Warszawie kosztuje orientacyjnie 27 000–42 000 zł. Nasz kalkulator oblicza kosztorys pokój po pokoju z regionalnymi cenami dla Twojego miasta."
       },
       {
-        "q": "Co jest wliczone w kosztorys?",
-        "a": "Materiały, robocizna, przygotowanie powierzchni i materiały pomocnicze (kleje, grunt itp.). Regionalne korekty cenowe dla polskich miast są stosowane automatycznie."
+        "q": "Ile kosztuje remont łazienki?",
+        "a": "Remont łazienki 5–8 m² kosztuje w Polsce od 8 000 do 28 000 zł w zależności od standardu. Ekonomiczny: 8 000–12 000 zł (płytki budżetowe, armatura podstawowa). Standard: 13 000–20 000 zł. Premium: 20 000–28 000 zł i więcej (płytki wielkoformatowe, armatura markowa, ogrzewanie podłogowe). Koszt robocizny w łazience jest wyższy niż w innych pomieszczeniach — to ok. 50–60% całości."
       },
       {
-        "q": "Czego NIE obejmuje kosztorys?",
-        "a": "Prac konstrukcyjnych, przeprowadzenia instalacji elektrycznej, hydrauliki, okien i drzwi, mebli, sprzętu AGD, honorariów architekta lub projektanta oraz pozwoleń budowlanych."
+        "q": "Ile kosztuje remont kuchni?",
+        "a": "Remont kuchni 9–15 m² to koszt od 12 000 do 40 000 zł (bez mebli kuchennych i AGD). Ekonomiczny: 12 000–18 000 zł. Standard: 18 000–28 000 zł. Premium: 28 000–40 000+ zł. Meble kuchenne należy wliczyć osobno — średni koszt umeblowania kuchni w Polsce to 8 000–25 000 zł. Nasz kalkulator obejmuje ściany, podłogi i sufit; meble nie są wliczone."
       },
       {
-        "q": "Ile czasu zajmuje obliczenie?",
-        "a": "Około 10 minut na skonfigurowanie wszystkich pomieszczeń i otrzymanie pełnego kosztorysu z raportem PDF."
+        "q": "Jak dokładny jest kalkulator kosztorysu?",
+        "a": "Dokładność szacunków wynosi ±10–15%, co odzwierciedla typową zmienność cen na polskim rynku budowlanym. To standardowa dokładność dla etapu planowania — przed wyborem wykonawcy. Rzeczywista cena zależy od konkretnego kontrahenta, jakości dostępnych materiałów w danym czasie i warunków na budowie. Kosztorys traktuj jako zakres budżetowy, nie cenę stałą."
       },
       {
-        "q": "Czy moje dane są zapisywane?",
-        "a": "Nie. Kosztorys istnieje tylko w sesji przeglądarki. Nie przechowujemy danych pomieszczeń, danych osobowych ani kosztorysów na naszych serwerach."
+        "q": "Co jest wliczone w kosztorys remontu?",
+        "a": "Kosztorys obejmuje: materiały wykończeniowe (farby, płytki, panele, tynki), robociznę (malowanie, układanie podłóg, tynkowanie, szpachlowanie), przygotowanie powierzchni (gruntowanie, wyrównywanie) oraz materiały pomocnicze (kleje, masy szpachlowe, grunt, taśmy). Automatycznie stosujemy regionalne korekty cenowe dla Warszawy, Krakowa, Wrocławia, Gdańska, Poznania i innych miast."
       },
       {
-        "q": "Jak otrzymać plik PDF?",
-        "a": "Po ukończeniu kosztorysu przejdź do ekranu pobierania, podaj adres e-mail, a wyślemy raport PDF na Twoją skrzynkę."
+        "q": "Czego kosztorys NIE obejmuje?",
+        "a": "Kosztorys nie uwzględnia: prac konstrukcyjnych i wyburzeń, instalacji elektrycznych i hydraulicznych, wymiany okien i drzwi, mebli i zabudów, sprzętu AGD, oświetlenia, honorariów architekta lub projektanta wnętrz, kosztów pozwoleń budowlanych oraz wywozu gruzu. Prace te znacznie zwiększają całkowity budżet — warto je oszacować osobno."
       },
       {
-        "q": "Czy mogę używać kalkulatora poza Polską?",
-        "a": "Kalkulator używa polskich cen rynkowych i regionalnych mnożników dla polskich miast. Jest przeznaczony do projektów remontowych w Polsce."
+        "q": "Jaka jest różnica między nowym budownictwem a rynkiem wtórnym?",
+        "a": "Mieszkania deweloperskie wymagają kompleksowego wykończenia od podstaw — tynki, wylewki, instalacje są wykonane, ale ściany, podłogi i sufity są gołe. Koszt wykończenia pod klucz to 800–1 800 zł/m². Mieszkania z rynku wtórnego wymagają remontu istniejących wykończeń, co może być tańsze przy kosmetycznym remoncie (400–700 zł/m²), ale droższe przy generalnym (900–1 500 zł/m²) z powodu konieczności usunięcia starych materiałów."
       },
       {
-        "q": "Co oznacza Ekonomiczny / Standard / Premium?",
-        "a": "To poziomy jakości materiałów. Ekonomiczny to podstawowe, funkcjonalne materiały. Standard to materiały średniej klasy. Premium to wysokiej klasy materiały luksusowe."
+        "q": "Jak różnią się ceny remontu w różnych miastach Polski?",
+        "a": "Ceny robocizny są najwyższe w Warszawie (mnożnik ~1,15–1,20) i Trójmieście (~1,10). Kraków i Wrocław są zbliżone do średniej krajowej (~1,05). Mniejsze miasta i regiony wschodniej Polski są tańsze (~0,85–0,95). Różnica między remontem w Warszawie a małym mieście może wynosić 15–25% przy tym samym zakresie prac. Nasz kalkulator uwzględnia te różnice automatycznie."
+      },
+      {
+        "q": "Ekonomiczny, Standard czy Premium — co wybrać?",
+        "a": "Ekonomiczny to materiały budżetowe dostępne w marketach budowlanych — dobra jakość funkcjonalna, minimalistyczny efekt końcowy. Standard to sprawdzeni producenci średniej półki — dobre wykończenie, trwałość 10–15 lat. Premium to materiały z wyższej półki (Porcelain, Bosch, Nobilis) — wysoka trwałość, unikalne wzornictwo, 15–25+ lat. Dla mieszkania na wynajem rekomendujemy Ekonomiczny lub dolny Standard. Dla własnego mieszkania — Standard lub Premium."
+      },
+      {
+        "q": "Czy remont na rynku wtórnym wymaga pozwolenia?",
+        "a": "Prace kosmetyczne (malowanie, podłogi, płytki) nie wymagają pozwolenia. Remont generalny bez ingerencji w konstrukcję wymaga zgłoszenia do urzędu gminy. Wyburzenie lub budowa ścianek działowych, zmiana układu pomieszczeń, przebudowa instalacji — wymaga pozwolenia na budowę. Warto sprawdzić te kwestie z architektem przed rozpoczęciem prac."
+      },
+      {
+        "q": "Jak przygotować się do remontu, żeby nie przekroczyć budżetu?",
+        "a": "1) Zrób kosztorys przed rozmową z wykonawcą — znasz widełki cenowe i możesz negocjować. 2) Dodaj rezerwę 15–20% na nieprzewidziane wydatki. 3) Zdecyduj, co robisz samodzielnie (malowanie), a co zlecasz (hydraulika, elektryka). 4) Kup materiały samodzielnie i zapłać wykonawcy tylko za robociznę — to może zaoszczędzić 10–15%. 5) Porównaj co najmniej 3 oferty wykonawców."
+      },
+      {
+        "q": "Czy moje dane są bezpieczne?",
+        "a": "Tak. Kalkulator działa wyłącznie w sesji przeglądarki — nie zakładamy konta, nie wymagamy danych osobowych, nie przechowujemy żadnych informacji na naszych serwerach. Kosztorys znika po zamknięciu okna przeglądarki. PDF wysyłamy jednorazowo na podany e-mail i nie przechowujemy tej wiadomości."
       }
     ]
   },

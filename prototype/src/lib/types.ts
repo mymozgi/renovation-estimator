@@ -34,6 +34,7 @@ export interface Room {
 export interface PropertySettings {
   type: PropertyType | null
   condition: PropertyCondition | null
+  qualityTier: QualityTier | null
   scope: RenovationScope | null
   city: City | null
 }

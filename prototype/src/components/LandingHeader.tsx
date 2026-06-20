@@ -20,7 +20,7 @@ export function LandingHeader() {
 
   return (
     <header className="sticky top-0 z-30 bg-bg/95 backdrop-blur border-b border-border">
-      <div className="max-w-[1400px] mx-auto px-8 h-14 flex items-center justify-between gap-4">
+      <div className="max-w-[1464px] mx-auto px-8 h-14 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href={`/${locale}`} className="flex items-center gap-2 shrink-0">
           <div className="w-7 h-7 bg-primary rounded-lg flex items-center justify-center">

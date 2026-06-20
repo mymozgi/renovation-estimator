@@ -34,6 +34,13 @@
     "renovationScope": "Renovation scope",
     "yourCity": "Your city",
     "cta": "Start free estimate →",
+    "summaryTitle": "Your selections",
+    "summarySubtitle": "Review your choices and proceed to the room configurator.",
+    "qualityTiers": {
+      "economy_desc": "Basic materials, solid workmanship",
+      "standard_desc": "Good materials and careful finish",
+      "premium_desc": "Top quality, luxury finishes"
+    },
     "types": {
       "apartment": "Apartment",
       "house": "House"
@@ -270,36 +277,48 @@
     "title": "Frequently asked questions",
     "items": [
       {
-        "q": "How accurate is the estimate?",
-        "a": "Our estimates are accurate to ±10–15%. This reflects real-world variability in contractor pricing and material costs. The estimate is a budget range, not a fixed price."
+        "q": "How much does apartment renovation cost in Poland in 2025?",
+        "a": "Renovation costs in Poland in 2025 depend heavily on finish quality and location. Economy tier runs approximately 600–900 PLN/m², Standard 900–1,400 PLN/m², and Premium 1,400–2,500+ PLN/m². A 50 m² apartment in Standard tier in Warsaw costs roughly 45,000–70,000 PLN. Our calculator gives a room-by-room breakdown with city-specific pricing so you get a realistic figure before calling a contractor."
       },
       {
-        "q": "What is included in the estimate?",
-        "a": "Materials, labor, surface preparation, and supporting materials (adhesives, primer, etc.). Regional pricing adjustments for Polish cities are applied automatically."
+        "q": "How much does bathroom renovation cost in Poland?",
+        "a": "A 5–8 m² bathroom renovation in Poland costs between 8,000 and 28,000 PLN depending on the finish tier. Economy: 8,000–12,000 PLN (budget tiles, basic fixtures). Standard: 13,000–20,000 PLN. Premium: 20,000–28,000 PLN+ (large-format tiles, designer fixtures, underfloor heating). Labor accounts for 50–60% of the total — bathrooms are the most labor-intensive room per square meter."
       },
       {
-        "q": "What is NOT included?",
-        "a": "Structural work, electrical rewiring, plumbing, windows and doors, furniture, appliances, architect or designer fees, and building permits."
+        "q": "What is included in the renovation estimate?",
+        "a": "The estimate covers: finishing materials (paint, tiles, flooring panels, plasters), labor (painting, floor installation, plastering, skimming), surface preparation (priming, leveling, sanding), and supporting consumables (adhesives, filler, primer, tape). Regional pricing multipliers for Warsaw, Kraków, Wrocław, Gdańsk, Poznań and other cities are applied automatically."
       },
       {
-        "q": "How long does it take?",
-        "a": "About 10 minutes to configure all rooms and receive a full estimate with PDF report."
+        "q": "What is NOT included in the estimate?",
+        "a": "The estimate does not cover: structural work and demolition, electrical rewiring or new circuits, plumbing, replacement of windows and doors, furniture and fitted storage, kitchen appliances, lighting fixtures, architect or interior designer fees, building permits, or skip hire for debris. These costs should be estimated separately and can significantly add to the total budget."
       },
       {
-        "q": "Is my data saved?",
-        "a": "No. The estimate exists only in your browser session. We do not store room data, personal information, or estimates on our servers."
+        "q": "How accurate is the renovation cost calculator?",
+        "a": "Our estimates are accurate to ±10–15%, which reflects normal market variability in Poland — contractor rates, material availability, and seasonal pricing fluctuations. This precision is appropriate for the planning and budgeting stage before you obtain contractor quotes. Always add a 15–20% contingency buffer on top of any estimate for unexpected discoveries during the renovation."
       },
       {
-        "q": "How do I get the PDF?",
-        "a": "After completing the estimate, go to the Download screen, enter your email address, and we will send the PDF report to your inbox."
+        "q": "What is the difference between Economy, Standard, and Premium?",
+        "a": "Economy uses widely available, budget-friendly materials from DIY chains — functional results, basic aesthetics, suitable for rentals or quick flips. Standard covers mid-range branded materials with a good quality-to-cost balance — durable finishes expected to last 10–15 years, suitable for primary residences. Premium uses high-end materials (large-format porcelain, designer tiles, specialty paints) — 15–25+ year durability, used in luxury apartments and high-value renovation projects."
       },
       {
-        "q": "Can I use this outside Poland?",
-        "a": "The calculator uses Polish market pricing and regional multipliers for Polish cities. It is designed for renovation projects in Poland."
+        "q": "How do renovation costs vary between Polish cities?",
+        "a": "Labor rates are highest in Warsaw (roughly 15–20% above the national average) and the Tri-City (Gdańsk/Gdynia/Sopot, ~10% above). Kraków and Wrocław sit close to the national average. Smaller cities and eastern Poland can be 10–15% cheaper. The same renovation in Warsaw can cost 20–25% more than in a smaller regional city purely due to labor rates. Our calculator applies these regional multipliers automatically."
       },
       {
-        "q": "What does Economy / Standard / Premium mean?",
-        "a": "These are material quality tiers. Economy uses basic, functional materials. Standard is mid-range with a good quality-to-cost ratio. Premium uses high-end, branded, luxury materials."
+        "q": "New build vs. pre-owned property — which costs more to renovate?",
+        "a": "New builds from developers (stan deweloperski) require a complete fit-out from scratch — walls, floors, and ceilings need finishing, but the shell is clean. Full finish cost: 800–1,800 PLN/m². Pre-owned properties vary widely: cosmetic renovation (paint, floors only) runs 400–700 PLN/m², but a full gut renovation can reach 900–1,500 PLN/m² because old materials must be removed first. Our calculator asks which type applies and adjusts the preparation cost component accordingly."
+      },
+      {
+        "q": "How long does it take to generate the estimate?",
+        "a": "About 10 minutes to configure all rooms and complete the 6-step property wizard. You specify each room's dimensions, surface conditions, and finish choices — the calculator instantly computes materials, labor, preparation, and regional pricing. The PDF report is generated and emailed to you immediately after."
+      },
+      {
+        "q": "Is my data stored or shared?",
+        "a": "No. The calculator runs entirely in your browser session. We do not create accounts, store room dimensions, collect personal data, or retain estimates on our servers. Closing the browser tab clears everything. We send the PDF once to the email address you provide and do not store or use that address for marketing."
+      },
+      {
+        "q": "How should I use the estimate when talking to contractors?",
+        "a": "Share the PDF with contractors as a reference scope document — it specifies rooms, dimensions, surface conditions, and finish tier. This levels the playing field: contractors know you understand the market, which reduces low-ball-then-upsell tactics. Use the estimate's price range to evaluate quotes: more than 20% below the estimate often signals hidden costs or lower-quality materials than specified."
       }
     ]
   },

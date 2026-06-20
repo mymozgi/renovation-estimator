@@ -12,6 +12,7 @@ interface WizardLayoutProps {
   children: React.ReactNode
   footer?: React.ReactNode
   hideBack?: boolean
+  containerClass?: string
 }
 
 export function WizardLayout({
@@ -22,6 +23,7 @@ export function WizardLayout({
   children,
   footer,
   hideBack,
+  containerClass,
 }: WizardLayoutProps) {
   const router = useRouter()
 
@@ -32,7 +34,7 @@ export function WizardLayout({
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-bg max-w-[1000px] mx-auto">
+    <div className={`flex flex-col min-h-screen bg-bg mx-auto ${containerClass ?? 'max-w-[1464px]'}`}>
       {/* Header */}
       <div className="flex items-center justify-between px-8 pt-5 pb-3">
         {/* Left: back button */}

@@ -16,6 +16,7 @@ interface EstimatorStore {
 const defaultProperty: PropertySettings = {
   type: null,
   condition: null,
+  qualityTier: null,
   scope: null,
   city: null,
 }

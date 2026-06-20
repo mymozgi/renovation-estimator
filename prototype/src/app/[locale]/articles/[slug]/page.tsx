@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { CheckCircle2 } from 'lucide-react'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
@@ -7,14 +8,7 @@ import { buttonVariants } from '@/components/Button'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 
-const HERO_BG: Record<string, string> = {
-  budget:      'bg-green-50',
-  contractors: 'bg-blue-50',
-  rooms:       'bg-amber-50',
-  regional:    'bg-purple-50',
-  materials:   'bg-orange-50',
-  property:    'bg-teal-50',
-}
+import { CLUSTER_HERO, CLUSTER_HERO_FALLBACK } from '@/lib/clusterColors'
 
 type Props = { params: Promise<{ locale: string; slug: string }> }
 
@@ -30,7 +24,7 @@ export default async function ArticlePage({ params }: Props) {
     <div className="flex flex-col min-h-screen bg-bg">
       <LandingHeader />
 
-      <main className="flex-1 max-w-[1000px] mx-auto w-full px-8 py-10">
+      <main className="flex-1 max-w-[1464px] mx-auto w-full px-8 py-10">
         {/* Cluster badge */}
         <div className="text-xs font-medium text-muted tracking-wide uppercase mb-4">
           {t(`clusters.${article.cluster}`)}
@@ -40,8 +34,16 @@ export default async function ArticlePage({ params }: Props) {
         <div className="text-xs text-muted mb-2">{article.publishedAt}</div>
         <h1 className="font-serif font-bold text-fg text-3xl leading-tight mb-6">{article.title}</h1>
 
-        {/* Hero image placeholder */}
-        <div className={`w-full aspect-video rounded-2xl mb-8 ${HERO_BG[article.cluster] ?? 'bg-stone-100'}`} />
+        {/* Hero image */}
+        <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
+          <Image
+            src={`https://images.unsplash.com/photo-${CLUSTER_HERO[article.cluster] ?? CLUSTER_HERO_FALLBACK}?w=1400&q=80&auto=format&fit=crop`}
+            alt={article.title}
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
 
         <article>
           {/* Hook */}

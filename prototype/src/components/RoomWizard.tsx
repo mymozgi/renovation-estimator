@@ -125,7 +125,7 @@ export function RoomWizard({ initial, onSave, onClose }: RoomWizardProps) {
   }
 
   return (
-    <div className="fixed inset-0 bg-bg z-50 flex flex-col max-w-[1464px] mx-auto">
+    <div className="fixed inset-0 bg-bg z-50 flex flex-col max-w-[800px] mx-auto">
       {/* Header */}
       <div className="flex items-center justify-between px-8 pt-5 pb-3">
         <button

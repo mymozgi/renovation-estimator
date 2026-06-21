@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import { useTranslations, useLocale } from 'next-intl'
@@ -50,23 +50,40 @@ export default function EstimatePage() {
 
   const { property, setProperty } = useEstimatorStore()
 
+  // Pending selection for the current step — not written to the store until confirmed.
+  // Syncs from the store whenever the user navigates between steps so back-navigation
+  // restores the previously committed value.
+  const [pending, setPending] = useState<string | null>(null)
+
+  useEffect(() => {
+    const stored: Record<number, string | null> = {
+      1: property.type,
+      2: property.condition,
+      3: property.qualityTier,
+      4: property.scope,
+      5: property.city,
+    }
+    setPending(stored[step] ?? null)
+  }, [step]) // eslint-disable-line react-hooks/exhaustive-deps
+
   const next = () => setStep((s) => Math.min(s + 1, TOTAL_STEPS))
   const back = step === 1
     ? () => router.push(`/${locale}`)
     : () => setStep((s) => s - 1)
 
-  const selectionDone = [
-    property.type        !== null,
-    property.condition   !== null,
-    property.qualityTier !== null,
-    property.scope       !== null,
-    property.city        !== null,
-  ]
+  const confirmAndNext = () => {
+    if (step === 1) setProperty({ type:         pending as PropertyType })
+    if (step === 2) setProperty({ condition:    pending as PropertyCondition })
+    if (step === 3) setProperty({ qualityTier:  pending as QualityTier })
+    if (step === 4) setProperty({ scope:        pending as RenovationScope })
+    if (step === 5) setProperty({ city:         pending as City })
+    next()
+  }
 
   const footer = step < TOTAL_STEPS ? (
     <Button
-      onClick={next}
-      disabled={!selectionDone[step - 1]}
+      onClick={confirmAndNext}
+      disabled={pending === null}
       fullWidth
       className="disabled:!bg-muted-green disabled:!opacity-100"
     >
@@ -91,8 +108,8 @@ export default function EstimatePage() {
               <OptionCard key={tp}
                 label={t(`types.${tp}`)}
                 image={PROPERTY_PREVIEWS[tp]}
-                selected={property.type === tp}
-                onClick={() => { setProperty({ type: tp }); next() }}
+                selected={pending === tp}
+                onClick={() => setPending(tp)}
               />
             ))}
           </div>
@@ -110,8 +127,8 @@ export default function EstimatePage() {
                 label={t(`conditions.${c}`)}
                 description={t(`conditions.${c}_desc`)}
                 image={CONDITION_PREVIEWS[c]}
-                selected={property.condition === c}
-                onClick={() => { setProperty({ condition: c }); next() }}
+                selected={pending === c}
+                onClick={() => setPending(c)}
               />
             ))}
           </div>
@@ -129,8 +146,8 @@ export default function EstimatePage() {
                 label={tw(`qualityTiers.${tier}`)}
                 description={t(`qualityTiers.${tier}_desc`)}
                 image={QUALITY_TIER_PREVIEWS[tier]}
-                selected={property.qualityTier === tier}
-                onClick={() => { setProperty({ qualityTier: tier }); next() }}
+                selected={pending === tier}
+                onClick={() => setPending(tier)}
               />
             ))}
           </div>
@@ -148,8 +165,8 @@ export default function EstimatePage() {
                 label={t(`scopes.${s}`)}
                 description={t(`scopes.${s}_desc`)}
                 image={SCOPE_PREVIEWS[s]}
-                selected={property.scope === s}
-                onClick={() => { setProperty({ scope: s }); next() }}
+                selected={pending === s}
+                onClick={() => setPending(s)}
               />
             ))}
           </div>
@@ -165,8 +182,8 @@ export default function EstimatePage() {
             {CITIES.map((c) => (
               <OptionCard key={c}
                 label={t(`cities.${c}`)}
-                selected={property.city === c}
-                onClick={() => { setProperty({ city: c }); next() }}
+                selected={pending === c}
+                onClick={() => setPending(c)}
               />
             ))}
           </div>

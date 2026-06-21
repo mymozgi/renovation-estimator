@@ -38,7 +38,7 @@ export default function DownloadPage() {
   }
 
   if (rooms.length === 0) return (
-    <WizardLayout backHref={`/${locale}/rooms`}>
+    <WizardLayout backHref={`/${locale}/rooms`} containerClass="max-w-[800px]">
       <div className="flex flex-col items-center justify-center h-64 text-center gap-3">
         <p className="text-muted">{t('noEstimate')}</p>
         <button onClick={() => router.push(`/${locale}/rooms`)} className="text-primary font-medium text-sm">{t('addRooms')}</button>
@@ -47,7 +47,7 @@ export default function DownloadPage() {
   )
 
   if (status === 'sent') return (
-    <WizardLayout backHref={`/${locale}/report`}>
+    <WizardLayout backHref={`/${locale}/report`} containerClass="max-w-[800px]">
       <div className="flex flex-col items-center justify-center min-h-[50vh] text-center gap-4 px-2">
         <CheckCircle2 size={48} className="text-primary" />
         <h2 className="text-xl font-serif font-bold text-fg">{t('sentTitle')}</h2>
@@ -61,7 +61,7 @@ export default function DownloadPage() {
   )
 
   if (status === 'not_configured') return (
-    <WizardLayout backHref={`/${locale}/report`}>
+    <WizardLayout backHref={`/${locale}/report`} containerClass="max-w-[800px]">
       <div className="flex flex-col gap-4 mt-4">
         <div className="bg-surface border border-border rounded-xl p-4 flex gap-3">
           <AlertCircle size={18} className="text-muted shrink-0 mt-0.5" />
@@ -94,7 +94,7 @@ export default function DownloadPage() {
       </div>
 
       <div className="print:hidden">
-        <WizardLayout step={4} totalSteps={4} backHref={`/${locale}/report`}
+        <WizardLayout step={4} totalSteps={4} backHref={`/${locale}/report`} containerClass="max-w-[800px]"
           footer={
             <Button variant="secondary" size="sm" onClick={() => window.print()} fullWidth>
               <Printer size={15} /> {t('savePdf')}

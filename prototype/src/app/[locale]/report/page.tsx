@@ -45,7 +45,7 @@ export default function ReportPage() {
 
   if (rooms.length === 0) {
     return (
-      <WizardLayout backHref={`/${locale}/rooms`}>
+      <WizardLayout backHref={`/${locale}/rooms`} containerClass="max-w-[800px]">
         <div className="flex flex-col items-center justify-center h-64 text-center">
           <p className="text-muted mb-4">{t('noRooms')}</p>
           <button onClick={() => router.push(`/${locale}/rooms`)} className="text-primary font-medium">{t('addRooms')}</button>
@@ -55,7 +55,7 @@ export default function ReportPage() {
   }
 
   return (
-    <WizardLayout step={3} totalSteps={4} backHref={`/${locale}/rooms`}
+    <WizardLayout step={3} totalSteps={4} backHref={`/${locale}/rooms`} containerClass="max-w-[800px]"
       footer={
         <Button onClick={() => router.push(`/${locale}/download`)} fullWidth>
           {t('downloadPdf')}

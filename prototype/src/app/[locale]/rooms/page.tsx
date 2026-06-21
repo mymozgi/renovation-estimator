@@ -36,7 +36,7 @@ export default function RoomsPage() {
 
   return (
     <>
-      <WizardLayout step={2} totalSteps={4} backHref={`/${locale}/estimate`}
+      <WizardLayout step={2} totalSteps={4} backHref={`/${locale}/estimate`} containerClass="max-w-[800px]"
         footer={
           <div className="space-y-3">
             <RunningEstimateFooter total={total} roomCount={rooms.length} />

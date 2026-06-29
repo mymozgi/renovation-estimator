@@ -360,14 +360,43 @@ export default function KalkulatorPage() {
         <h2 className="font-bold text-fg text-4xl text-center mb-3">Powierzchnia nieruchomości</h2>
         <p className="text-muted text-base text-center mb-10">Podaj przybliżoną powierzchnię całkowitą do remontu.</p>
         <div className="bg-surface border border-border rounded-2xl p-8 max-w-md mx-auto">
-          <div className="text-center mb-8">
-            <span className="font-bold text-fg text-6xl">{f.area}</span>
-            <span className="text-muted text-2xl ml-2">m²</span>
+          {/* Editable area value */}
+          <div className="flex items-baseline justify-center gap-1.5 mb-1">
+            <input
+              type="number"
+              min={10}
+              max={9999}
+              step={1}
+              value={f.area}
+              onChange={e => {
+                const v = parseInt(e.target.value)
+                if (!isNaN(v) && v > 0) upd({ area: v })
+              }}
+              onBlur={() => {
+                if (f.area < 10) upd({ area: 10 })
+                if (f.area > 9999) upd({ area: 9999 })
+              }}
+              className="font-bold text-fg text-6xl w-40 text-center bg-transparent outline-none border-b-2 border-transparent focus:border-primary transition-colors"
+            />
+            <span className="text-muted text-2xl">m²</span>
           </div>
-          <input type="range" min={20} max={300} step={5} value={f.area}
+          <p className="text-center text-xs text-muted/60 mb-8">Kliknij liczbę, aby wpisać dokładną wartość</p>
+
+          {/* Slider */}
+          <input
+            type="range"
+            min={10}
+            max={500}
+            step={5}
+            value={Math.min(f.area, 500)}
             onChange={e => upd({ area: parseInt(e.target.value) })}
-            className="w-full h-2 rounded-full bg-border accent-primary cursor-pointer" />
-          <div className="flex justify-between text-xs text-muted mt-2 mb-8"><span>20 m²</span><span>300 m²</span></div>
+            className="w-full h-2 rounded-full bg-border accent-primary cursor-pointer"
+          />
+          <div className="flex justify-between text-xs text-muted mt-2 mb-8">
+            <span>10 m²</span><span>500 m²</span>
+          </div>
+
+          {/* Quick picks */}
           <div className="grid grid-cols-4 gap-2">
             {[40, 65, 90, 120].map(v => (
               <button key={v} onClick={() => upd({ area: v })}

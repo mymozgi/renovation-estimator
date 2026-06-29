@@ -1,74 +1,44 @@
 import Link from 'next/link'
-import { useLocale, useTranslations } from 'next-intl'
-import { Home } from 'lucide-react'
-
-const LANGUAGES = [
-  { code: 'pl', label: '🇵🇱 Polski' },
-  { code: 'en', label: '🇬🇧 English' },
-  { code: 'ru', label: '🇷🇺 Русский' },
-]
 
 export function LandingFooter() {
-  const locale = useLocale()
-  const t = useTranslations('footer')
-  const nav = useTranslations('nav')
   const year = new Date().getFullYear()
 
   return (
-    <footer className="bg-surface border-t border-border mt-16">
-      <div className="max-w-[1464px] mx-auto px-8 py-10">
-        {/* Top row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
+    <footer className="bg-surface border-t border-border mt-20">
+      <div className="max-w-6xl mx-auto px-6 py-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-1">
-            <Link href={`/${locale}`} className="flex items-center gap-2 mb-3">
-              <div className="w-7 h-7 bg-primary rounded-lg flex items-center justify-center">
-                <Home size={14} className="text-white" />
-              </div>
-              <span className="font-serif font-bold text-fg text-base">EstiMate</span>
-            </Link>
-            <p className="text-xs text-muted leading-relaxed">{t('tagline')}</p>
+          <div className="md:col-span-2">
+            <div className="font-bold text-fg text-base mb-2">Remontowo</div>
+            <p className="text-xs text-muted leading-relaxed max-w-xs">
+              Bezpłatny kalkulator kosztów remontu oparty na danych z polskiego rynku budowlanego. Kosztorys gotowy w 5 minut — bez rejestracji.
+            </p>
           </div>
 
-          {/* Product */}
+          {/* Informacje */}
           <div>
-            <div className="text-xs font-semibold text-fg uppercase tracking-wide mb-3">{t('product')}</div>
+            <div className="text-xs font-semibold text-fg uppercase tracking-wider mb-3">Informacje</div>
             <div className="flex flex-col gap-2">
-              <Link href={`/${locale}/estimate`} className="text-sm text-muted hover:text-fg transition-colors">{nav('startEstimate')}</Link>
-              <Link href={`/${locale}/methodology`} className="text-sm text-muted hover:text-fg transition-colors">{nav('methodology')}</Link>
-              <Link href={`/${locale}/articles`} className="text-sm text-muted hover:text-fg transition-colors">{nav('articles')}</Link>
+              <Link href="/pl/o-nas" className="text-sm text-muted hover:text-fg transition-colors">O nas</Link>
+              <Link href="/pl/regulamin" className="text-sm text-muted hover:text-fg transition-colors">Regulamin</Link>
             </div>
           </div>
 
-          {/* Resources */}
+          {/* Narzędzia */}
           <div>
-            <div className="text-xs font-semibold text-fg uppercase tracking-wide mb-3">{t('resources')}</div>
+            <div className="text-xs font-semibold text-fg uppercase tracking-wider mb-3">Narzędzia</div>
             <div className="flex flex-col gap-2">
-              <Link href={`/${locale}/methodology`} className="text-sm text-muted hover:text-fg transition-colors">{nav('methodology')}</Link>
-              <Link href={`/${locale}/articles`} className="text-sm text-muted hover:text-fg transition-colors">{nav('articles')}</Link>
-            </div>
-          </div>
-
-          {/* Languages */}
-          <div>
-            <div className="text-xs font-semibold text-fg uppercase tracking-wide mb-3">{t('languages')}</div>
-            <div className="flex flex-col gap-2">
-              {LANGUAGES.map(({ code, label }) => (
-                <Link key={code} href={`/${code}`}
-                  className={`text-sm transition-colors ${locale === code ? 'text-primary font-medium' : 'text-muted hover:text-fg'}`}>
-                  {label}
-                </Link>
-              ))}
+              <Link href="/pl/kalkulator" className="text-sm text-muted hover:text-fg transition-colors">Kalkulator remontu</Link>
+              <Link href="/pl/articles" className="text-sm text-muted hover:text-fg transition-colors">Poradniki</Link>
             </div>
           </div>
         </div>
 
-        {/* Bottom row */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-3 pt-6 border-t border-border">
-          <p className="text-xs text-muted">© {year} EstiMate. {t('rights')}</p>
+        <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs text-muted">© {year} Remontowo. Wszelkie prawa zastrzeżone.</p>
           <div className="flex gap-4">
-            <Link href="#" className="text-xs text-muted hover:text-fg transition-colors">{t('privacy')}</Link>
-            <Link href="#" className="text-xs text-muted hover:text-fg transition-colors">{t('terms')}</Link>
+            <Link href="/pl/regulamin" className="text-xs text-muted hover:text-fg transition-colors">Regulamin</Link>
+            <Link href="/pl/o-nas" className="text-xs text-muted hover:text-fg transition-colors">O nas</Link>
           </div>
         </div>
       </div>

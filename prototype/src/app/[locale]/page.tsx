@@ -1,217 +1,225 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { getTranslations } from 'next-intl/server'
-import { type LucideIcon, ArrowRight, Clock, LayoutGrid, Layers, MapPin, FileDown, ShieldCheck } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Shield, Clock, Pencil, Layers, FileText, Home, TrendingUp } from 'lucide-react'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
-import { FAQAccordion } from '@/components/FAQAccordion'
+import { HeroSlider } from '@/components/HeroSlider'
 import { articles } from '@/content/articles'
-import { CLUSTER_COLORS, CLUSTER_FALLBACK, CLUSTER_HERO, CLUSTER_HERO_FALLBACK } from '@/lib/clusterColors'
-import { buttonVariants } from '@/components/Button'
-import { HowItWorksSection } from '@/components/HowItWorksSection'
+import { CLUSTER_LABELS, CLUSTER_COLORS } from '@/content/clusters'
 
-// ── For-whom card images ──────────────────────────────────────────────────────
-const FORWHO_IMGS: Record<1 | 2 | 3, string> = {
-  1: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=800&q=80&auto=format&fit=crop',
-  2: 'https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=800&q=80&auto=format&fit=crop',
-  3: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80&auto=format&fit=crop',
-}
-
-// ── Benefit icons (index matches whatYouGet.items order) ─────────────────────
-const BENEFIT_ICONS: LucideIcon[] = [LayoutGrid, Layers, MapPin, FileDown, ShieldCheck]
-
-// ── Section wrapper ───────────────────────────────────────────────────────────
-function Section({ id, children, className = '' }: { id?: string; children: React.ReactNode; className?: string }) {
-  return (
-    <section id={id} className={`max-w-[1464px] mx-auto px-8 py-12 ${className}`}>
-      {children}
-    </section>
-  )
-}
-
-function SectionTitle({ children }: { children: React.ReactNode }) {
-  return <h2 className="font-serif font-bold text-fg text-2xl mb-6">{children}</h2>
-}
-
-// ── Main page ─────────────────────────────────────────────────────────────────
 type Props = { params: Promise<{ locale: string }> }
 
 export default async function LandingPage({ params }: Props) {
   const { locale } = await params
-  const t   = await getTranslations()
-  const faqItems = (t.raw('faq.items') as { q: string; a: string }[])
-  const whatItems = (t.raw('whatYouGet.items') as string[])
   const localeArticles = (articles[locale] ?? articles['pl']).slice(0, 3)
-  const year = new Date().getFullYear()
 
   return (
     <div className="min-h-screen bg-bg">
       <LandingHeader />
 
-      {/* ── Hero ──────────────────────────────────────────────────────────── */}
-      <section className="max-w-[1464px] mx-auto px-8 pt-10 pb-4">
-        <div className="relative aspect-video w-full rounded-2xl overflow-hidden mb-8">
-          <Image
-            src="https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1400&q=80&auto=format&fit=crop"
-            alt="Renovation"
-            fill
-            className="object-cover"
-            priority
-          />
-        </div>
-        <h1 className="font-serif font-bold text-fg text-4xl md:text-5xl leading-tight mb-4">
-          {t('landing.title')}
+      {/* ── Hero ──────────────────────────────────────────────────── */}
+      <section className="bg-surface pt-14 pb-10 text-center px-6">
+        <h1 className="font-bold text-fg text-4xl md:text-5xl leading-tight mb-4 max-w-xl mx-auto">
+          Dowiedz się, ile kosztuje Twój remont
         </h1>
-        <p className="text-muted text-base md:text-lg leading-relaxed mb-6">
-          {t('landing.description')}
+        <p className="text-muted text-base leading-relaxed mb-7 max-w-lg mx-auto">
+          Bezpłatny kalkulator kosztów remontu. Kosztorys dopasowany do metrażu, lokalizacji i standardu wykończenia — gotowy w 5 minut.
         </p>
-        <div className="flex flex-col sm:flex-row gap-3 mb-6">
-          <Link href={`/${locale}/estimate`} className={buttonVariants({ variant: 'primary' })}>
-            {t('landing.cta')} <ArrowRight size={16} />
-          </Link>
-          <Link href="#how-it-works" className={buttonVariants({ variant: 'secondary' })}>
-            {t('nav.howItWorks')}
-          </Link>
-        </div>
-        <div className="flex items-center gap-2 text-xs text-muted">
-          <Clock size={13} />
-          <span>{t('landing.subtext')}</span>
-        </div>
-      </section>
+        <Link
+          href={`/${locale}/kalkulator`}
+          className="inline-flex items-center gap-2 bg-primary text-white px-7 py-3 rounded-full font-medium text-sm hover:bg-primary/90 transition-colors"
+        >
+          Oblicz koszt remontu
+        </Link>
 
-      {/* ── Feature pills ─────────────────────────────────────────────────── */}
-      <section className="max-w-[1464px] mx-auto px-8 py-4">
-        <div className="flex flex-wrap gap-2">
-          {(['precision', 'marketData', 'time', 'noAccount'] as const).map((badge) => (
-            <span key={badge} className="inline-flex items-center rounded-full border border-border bg-surface px-3 py-1 text-xs text-muted font-medium">
-              {t(`landing.badges.${badge}`)}
-            </span>
+        {/* Trust badges */}
+        <div className="flex items-center justify-center gap-6 mt-6 flex-wrap">
+          {[
+            { icon: Shield, label: 'BEZ REJESTRACJI' },
+            { icon: Clock,  label: '3-4 MINUTY' },
+            { icon: CheckCircle2, label: 'OD PLN 2026' },
+          ].map(({ icon: Icon, label }) => (
+            <div key={label} className="flex items-center gap-1.5 text-xs text-muted font-medium">
+              <Icon size={13} className="text-primary" />
+              {label}
+            </div>
           ))}
         </div>
       </section>
 
-      {/* ── How it works ──────────────────────────────────────────────────── */}
-      <Section id="how-it-works">
-        <SectionTitle>{t('howItWorks.title')}</SectionTitle>
-        <HowItWorksSection />
-      </Section>
+      {/* ── Hero image carousel ───────────────────────────────────── */}
+      <section className="max-w-6xl mx-auto px-6 py-8">
+        <HeroSlider />
+      </section>
 
-      {/* ── For whom ──────────────────────────────────────────────────────── */}
-      <Section>
-        <div className="bg-surface rounded-3xl p-8 sm:p-10">
-          <SectionTitle>{t('forWhom.title')}</SectionTitle>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {([1, 2, 3] as const).map((n) => (
-              <div key={n} className="border border-border rounded-2xl overflow-hidden flex flex-col">
-                <div className="relative aspect-[4/3] w-full shrink-0">
-                  <Image src={FORWHO_IMGS[n]} alt={t(`forWhom.card${n}Title`)} fill className="object-cover" />
-                </div>
-                <div className="p-5 flex flex-col flex-1">
-                  <div className="font-semibold text-fg text-sm mb-1">{t(`forWhom.card${n}Title`)}</div>
-                  <div className="text-muted text-xs leading-relaxed">{t(`forWhom.card${n}Desc`)}</div>
-                </div>
+      {/* ── Jak to działa? ────────────────────────────────────────── */}
+      <section id="jak-to-dziala" className="max-w-6xl mx-auto px-6 py-14">
+        <h2 className="font-bold text-fg text-3xl text-center mb-2">Jak to działa?</h2>
+        <p className="text-muted text-sm text-center mb-12">Trzy proste kroki. Konkretny wynik.</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              Icon: Pencil,
+              title: 'Opisz nieruchomość',
+              desc: 'Podaj typ, stan mieszkania lub domu i lokalizację. Obsługujemy całą Polskę.',
+            },
+            {
+              Icon: Layers,
+              title: 'Określ zakres prac',
+              desc: 'Wybierz pomieszczenia, podaj wymiary i standard wykończenia — ekonomiczny, optymalny lub premium.',
+            },
+            {
+              Icon: FileText,
+              title: 'Pobierz kosztorys PDF',
+              desc: 'Szczegółowe zestawienie materiałów i robocizny — gotowe do porównania z ofertami wykonawców.',
+            },
+          ].map(({ Icon, title, desc }) => (
+            <div key={title} className="flex flex-col items-center text-center">
+              <div className="w-12 h-12 rounded-full bg-[#C8E6C9] flex items-center justify-center mb-4">
+                <Icon size={20} className="text-primary" strokeWidth={1.8} />
               </div>
-            ))}
+              <h3 className="font-semibold text-fg text-base mb-2">{title}</h3>
+              <p className="text-muted text-sm leading-relaxed">{desc}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Dla kogo? ─────────────────────────────────────────────── */}
+      <section className="max-w-6xl mx-auto px-6 py-10">
+        <h2 className="font-bold text-fg text-3xl text-center mb-10">Dla kogo jest Remontowo?</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          {[
+            {
+              Icon: Home,
+              title: 'Właściciele mieszkań i domów',
+              desc: 'Planujesz remont i chcesz wiedzieć, ile to realnie kosztuje — zanim trafisz do pierwszego wykonawcy.',
+            },
+            {
+              Icon: TrendingUp,
+              title: 'Kupujący i inwestorzy',
+              desc: 'Szybka wycena przed zakupem nieruchomości lub kalkulacja opłacalności remontu pod wynajem czy sprzedaż.',
+            },
+          ].map(({ Icon, title, desc }) => (
+            <div key={title} className="flex gap-4 bg-surface border border-border rounded-2xl p-6">
+              <div className="w-10 h-10 rounded-full bg-[#C8E6C9] flex items-center justify-center shrink-0">
+                <Icon size={18} className="text-primary" strokeWidth={1.8} />
+              </div>
+              <div>
+                <h3 className="font-semibold text-fg text-sm mb-1">{title}</h3>
+                <p className="text-muted text-sm leading-relaxed">{desc}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ── Wypróbuj kalkulator ───────────────────────────────────── */}
+      <section className="max-w-6xl mx-auto px-6 py-10">
+        <div className="bg-bg border border-border rounded-2xl p-8 grid md:grid-cols-2 gap-8 items-center">
+          {/* Left: copy */}
+          <div>
+            <h2 className="font-bold text-fg text-2xl mb-3">Wypróbuj kalkulator</h2>
+            <p className="text-muted text-sm leading-relaxed mb-5">
+              Narzędzie oparte na danych z polskiego rynku budowlanego. Ceny aktualizowane kwartalnie — zawsze zgodnie z realiami 2026 roku.
+            </p>
+            <ul className="flex flex-col gap-2 mb-6">
+              {[
+                'Natychmiastowe wyniki — kosztorys bez czekania i tygodniami na wycenę.',
+                'Ceny rynkowe 2026 — dane lokalne, bez ukrytych marż i szacowania na oko.',
+                'Anonimowo i bezpłatnie — planuj budżet bez presji sprzedażowej.',
+              ].map((item) => (
+                <li key={item} className="flex items-start gap-2 text-sm text-muted">
+                  <CheckCircle2 size={15} className="text-primary mt-0.5 shrink-0" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <Link
+              href={`/${locale}/kalkulator`}
+              className="inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full font-medium text-sm hover:bg-primary/90 transition-colors"
+            >
+              Uruchom kalkulator
+            </Link>
+          </div>
+
+          {/* Right: mini widget */}
+          <div className="bg-surface rounded-xl border border-border p-6 flex flex-col gap-4">
+            <div>
+              <label className="text-xs font-medium text-muted mb-1.5 block">Powierzchnia mieszkania [m²]</label>
+              <div className="flex items-center justify-between border border-border rounded-lg px-3 py-2">
+                <span className="text-sm text-muted">m²</span>
+                <span className="font-semibold text-fg">65m²</span>
+              </div>
+            </div>
+            <div>
+              <label className="text-xs font-medium text-muted mb-1.5 block">Jaki standard wykończenia?</label>
+              <div className="flex gap-2">
+                {['Ekonomiczny', 'Optymalny', 'Premium'].map((s, i) => (
+                  <button key={s}
+                    className={`flex-1 text-xs py-2 px-1 rounded-lg border font-medium transition-colors ${i === 0 ? 'bg-primary text-white border-primary' : 'border-border text-fg hover:border-primary/40'}`}>
+                    {s}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
         </div>
-      </Section>
+      </section>
 
-      {/* ── What you get ──────────────────────────────────────────────────── */}
-      <Section>
-        <SectionTitle>{t('whatYouGet.title')}</SectionTitle>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {whatItems.map((item: string, i: number) => {
-            const Icon: LucideIcon = BENEFIT_ICONS[i] ?? ShieldCheck
+      {/* ── Poradniki remontowe ───────────────────────────────────── */}
+      <section className="max-w-6xl mx-auto px-6 py-10">
+        <div className="flex items-center justify-between mb-6">
+          <h2 className="font-bold text-fg text-2xl">Poradniki remontowe</h2>
+          <Link href={`/${locale}/articles`} className="text-sm text-primary font-medium hover:underline flex items-center gap-1">
+            Wszystkie artykuły <ArrowRight size={14} />
+          </Link>
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {localeArticles.map((article) => {
+            const tagClass = CLUSTER_COLORS[article.cluster] ?? 'bg-primary-fixed text-primary'
             return (
-              <div key={i} className="flex flex-col gap-4 bg-surface border border-border rounded-2xl p-6 transition-all duration-200 hover:border-primary/30 hover:shadow-[0_4px_16px_rgba(0,0,0,0.06)]">
-                <div className="w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center shrink-0">
-                  <Icon size={22} className="text-primary" />
+              <Link key={article.slug} href={`/${locale}/articles/${article.slug}`}
+                className="group flex flex-col rounded-xl overflow-hidden bg-surface border border-border hover:shadow-md transition-shadow">
+                <div className="relative aspect-[16/10] w-full overflow-hidden shrink-0">
+                  <Image
+                    src={article.img}
+                    alt={article.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
+                  />
+                  <span className={`absolute top-3 left-3 ${tagClass} text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide`}>
+                    {CLUSTER_LABELS[article.cluster] ?? article.cluster}
+                  </span>
                 </div>
-                <p className="text-sm text-fg leading-relaxed">{item}</p>
-              </div>
+                <div className="p-4 flex flex-col gap-2">
+                  <p className="text-[10px] text-muted">{article.publishedAt}</p>
+                  <h3 className="font-semibold text-fg text-sm leading-snug line-clamp-2">{article.title}</h3>
+                  <p className="text-muted text-xs leading-relaxed line-clamp-2">{article.description}</p>
+                  <div className="flex items-center gap-1 text-primary text-xs font-medium mt-1">
+                    Czytaj dalej <ArrowRight size={12} />
+                  </div>
+                </div>
+              </Link>
             )
           })}
         </div>
-      </Section>
+      </section>
 
-      {/* ── Mid CTA ───────────────────────────────────────────────────────── */}
-      <Section>
-        <div className="bg-primary rounded-2xl px-6 py-8 text-center text-white">
-          <h2 className="font-serif font-bold text-2xl mb-2">{t('finalCta.title')}</h2>
-          <p className="text-white/80 text-sm mb-5">{t('finalCta.subtitle')}</p>
-          <Link href={`/${locale}/estimate`} className={buttonVariants({ variant: 'inverse' })}>
-            {t('landing.cta')} <ArrowRight size={15} />
+      {/* ── CTA dark green ────────────────────────────────────────── */}
+      <section className="max-w-6xl mx-auto px-6 py-6 mb-10">
+        <div className="bg-primary rounded-2xl px-8 py-12 text-center text-white">
+          <h2 className="font-bold text-3xl mb-3">Zaplanuj remont bez niespodzianek</h2>
+          <p className="text-white/70 text-sm mb-7">Kosztorys wyceny, zanim trafisz do wykonawcy. Bezpłatnie, bez rejestracji.</p>
+          <Link
+            href={`/${locale}/kalkulator`}
+            className="inline-flex items-center gap-2 bg-white text-primary px-7 py-3 rounded-full font-medium text-sm hover:bg-white/90 transition-colors"
+          >
+            Oblicz koszt remontu
           </Link>
         </div>
-      </Section>
-
-      {/* ── FAQ ───────────────────────────────────────────────────────────── */}
-      <Section>
-        <SectionTitle>{t('faq.title')}</SectionTitle>
-        <FAQAccordion items={faqItems} />
-      </Section>
-
-      {/* ── Articles preview ──────────────────────────────────────────────── */}
-      <Section>
-        <div className="bg-surface rounded-3xl p-8 sm:p-10">
-          <div className="flex items-center justify-between mb-6">
-            <SectionTitle>{t('articles.title')}</SectionTitle>
-            <Link href={`/${locale}/articles`} className="text-sm text-primary font-medium hover:underline shrink-0">
-              {t('articles.readMore')}
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {localeArticles.map((article) => (
-              <Link
-                key={article.slug}
-                href={`/${locale}/articles/${article.slug}`}
-                className="group flex flex-col rounded-2xl overflow-hidden border border-border bg-bg transition-all duration-200 hover:-translate-y-1 hover:shadow-[0_8px_30px_rgba(0,0,0,0.08)] hover:border-primary/30"
-              >
-                {/* Image */}
-                <div className="relative aspect-[16/10] w-full overflow-hidden bg-border shrink-0">
-                  <Image
-                    src={`https://images.unsplash.com/photo-${CLUSTER_HERO[article.cluster] ?? CLUSTER_HERO_FALLBACK}?w=800&q=80&auto=format&fit=crop`}
-                    alt={article.title}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.03]"
-                  />
-                </div>
-                {/* Content */}
-                <div className="flex flex-col flex-1 p-5">
-                  <span className={`self-start inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium mb-3 ${CLUSTER_COLORS[article.cluster] ?? CLUSTER_FALLBACK}`}>
-                    {t(`articles.clusters.${article.cluster}`)}
-                  </span>
-                  <h3 className="font-serif font-bold text-fg text-base leading-snug mb-2 line-clamp-2 group-hover:text-primary transition-colors duration-200">
-                    {article.title}
-                  </h3>
-                  <p className="text-muted text-xs leading-relaxed line-clamp-3 flex-1">
-                    {article.description}
-                  </p>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* ── Final CTA ─────────────────────────────────────────────────────── */}
-      <Section>
-        <div className="relative overflow-hidden rounded-2xl">
-          <Image
-            src="https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=1400&q=80&auto=format&fit=crop"
-            alt=""
-            fill
-            className="object-cover opacity-30"
-          />
-          <div className="relative z-10 px-6 py-10 text-center">
-            <h2 className="font-serif font-bold text-fg text-3xl mb-2">{t('finalCta.title')}</h2>
-            <p className="text-muted text-sm mb-6">{t('finalCta.subtitle')}</p>
-            <Link href={`/${locale}/estimate`} className={buttonVariants({ variant: 'primary', className: 'px-8' })}>
-              {t('landing.cta')} <ArrowRight size={16} />
-            </Link>
-          </div>
-        </div>
-      </Section>
+      </section>
 
       <LandingFooter />
     </div>

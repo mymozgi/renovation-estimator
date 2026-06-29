@@ -1,76 +1,72 @@
 'use client'
 
 import Link from 'next/link'
-import { useLocale, useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 import { useState } from 'react'
-import { Menu, X, Home } from 'lucide-react'
-import { LanguageSwitcher } from './LanguageSwitcher'
-import { buttonVariants } from './Button'
+import { Menu, X } from 'lucide-react'
+import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 
 export function LandingHeader() {
   const locale = useLocale()
-  const t = useTranslations('nav')
   const [menuOpen, setMenuOpen] = useState(false)
 
   const links = [
-    { href: '#how-it-works', label: t('howItWorks') },
-    { href: `/${locale}/articles`, label: t('articles') },
-    { href: `/${locale}/methodology`, label: t('methodology') },
+    { href: `/${locale}#jak-to-dziala`, label: 'Jak to działa' },
+    { href: `/${locale}/kalkulator`, label: 'Kalkulator' },
+    { href: `/${locale}/articles`, label: 'Poradniki' },
   ]
 
   return (
-    <header className="sticky top-0 z-30 bg-bg/95 backdrop-blur border-b border-border">
-      <div className="max-w-[1464px] mx-auto px-8 h-14 flex items-center justify-between gap-4">
+    <header className="sticky top-0 z-30 bg-surface border-b border-border">
+      <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between gap-4">
         {/* Logo */}
-        <Link href={`/${locale}`} className="flex items-center gap-2 shrink-0">
-          <div className="w-7 h-7 bg-primary rounded-lg flex items-center justify-center">
-            <Home size={14} className="text-white" />
-          </div>
-          <span className="font-serif font-bold text-fg text-base">EstiMate</span>
+        <Link href={`/${locale}`} className="font-bold text-fg text-lg tracking-tight">
+          Remontowo
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-6">
+        <nav className="hidden md:flex items-center gap-8">
           {links.map(({ href, label }) => (
-            <Link key={href} href={href} className="text-sm text-muted hover:text-fg transition-colors">
+            <Link key={href} href={href} className="text-sm text-fg/70 hover:text-fg transition-colors">
               {label}
             </Link>
           ))}
         </nav>
 
         {/* Right side */}
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2">
           <LanguageSwitcher />
           <Link
-            href={`/${locale}/estimate`}
-            className={`hidden md:inline-flex ${buttonVariants({ variant: 'primary', size: 'xs' })}`}
+            href={`/${locale}/kalkulator`}
+            className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-primary-fixed text-primary hover:bg-primary-fixed/80 transition-colors"
           >
-            {t('startEstimate')} →
+            Darmowa wycena
           </Link>
-          {/* Mobile hamburger */}
           <button
-            className="md:hidden w-9 h-9 flex items-center justify-center rounded-xl border border-border bg-surface"
+            className="md:hidden w-9 h-9 flex items-center justify-center"
             onClick={() => setMenuOpen((o) => !o)}
-            aria-label="Toggle menu"
           >
-            {menuOpen ? <X size={16} /> : <Menu size={16} />}
+            {menuOpen ? <X size={20} /> : <Menu size={20} />}
           </button>
         </div>
       </div>
 
-      {/* Mobile dropdown */}
+      {/* Mobile menu */}
       {menuOpen && (
-        <div className="md:hidden border-t border-border bg-bg px-8 py-4 flex flex-col gap-3">
+        <div className="md:hidden border-t border-border bg-surface px-6 py-4 flex flex-col gap-4">
           {links.map(({ href, label }) => (
             <Link key={href} href={href} onClick={() => setMenuOpen(false)}
-              className="text-sm text-fg py-2 border-b border-border last:border-b-0">
+              className="text-sm text-fg py-1">
               {label}
             </Link>
           ))}
-          <Link href={`/${locale}/estimate`} onClick={() => setMenuOpen(false)}
-            className={`mt-2 ${buttonVariants({ variant: 'primary', fullWidth: true })}`}>
-            {t('startEstimate')} →
-          </Link>
+          <div className="pt-1 border-t border-border flex items-center justify-between">
+            <LanguageSwitcher />
+            <Link href={`/${locale}/kalkulator`} onClick={() => setMenuOpen(false)}
+              className="inline-flex justify-center px-4 py-2 rounded-full text-sm font-medium bg-primary text-white">
+              Darmowa wycena
+            </Link>
+          </div>
         </div>
       )}
     </header>

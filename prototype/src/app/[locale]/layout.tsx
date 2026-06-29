@@ -2,9 +2,22 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
+import { Manrope, Work_Sans } from 'next/font/google'
 import { routing } from '@/i18n/routing'
 import { AccessibilityWidget } from '@/components/AccessibilityWidget'
 import '../globals.css'
+
+const manrope = Manrope({
+  subsets: ['latin', 'cyrillic', 'cyrillic-ext'],
+  variable: '--font-manrope',
+  display: 'swap',
+})
+
+const workSans = Work_Sans({
+  subsets: ['latin'],
+  variable: '--font-work-sans',
+  display: 'swap',
+})
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> }
 
@@ -19,27 +32,15 @@ const ANTI_FOUC = `(function(){try{var p=JSON.parse(localStorage.getItem('a11y')
 
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params
-  if (!routing.locales.includes(locale as 'pl' | 'en' | 'ru')) notFound()
+  if (!routing.locales.includes(locale as 'pl' | 'en' | 'ru' | 'uk')) notFound()
 
   const messages = await getMessages()
 
   return (
-    <html lang={locale} suppressHydrationWarning>
-      {/*
-        <script> inside <head> in a Server Component is emitted as raw HTML.
-        React never "renders" it on the client — it's already in the DOM.
-        suppressHydrationWarning on both <html> and <script> silences
-        the mismatch caused by the anti-FOUC setting data-a11y-* attributes
-        before React hydrates.
-      */}
-      <head>
-        {/* eslint-disable-next-line @next/next/no-sync-scripts */}
-        <script
-          suppressHydrationWarning
-          dangerouslySetInnerHTML={{ __html: ANTI_FOUC }}
-        />
-      </head>
+    <html lang={locale} suppressHydrationWarning className={`${manrope.variable} ${workSans.variable}`}>
       <body className="min-h-full bg-bg">
+        {/* Anti-FOUC: runs before React hydrates, reads a11y prefs from localStorage */}
+        <script suppressHydrationWarning dangerouslySetInnerHTML={{ __html: ANTI_FOUC }} />
         <NextIntlClientProvider messages={messages}>
           {children}
           <AccessibilityWidget />

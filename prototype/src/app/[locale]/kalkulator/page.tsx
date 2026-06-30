@@ -1,10 +1,14 @@
 'use client'
 
 import { useState, useCallback } from 'react'
+import dynamic from 'next/dynamic'
 import Image from 'next/image'
 import { useRouter, useParams } from 'next/navigation'
 import { CalcWizardLayout } from '@/components/CalcWizardLayout'
 import { Check, Plus, Pencil, Trash2 } from 'lucide-react'
+import type { PDFData } from '@/lib/kosztorys-types'
+
+const PDFDownloadButton = dynamic(() => import('@/components/PDFDownloadButton'), { ssr: false })
 
 /* ─── Types ─────────────────────────────────────────────────────────────── */
 type CalcType = 'wykończenie' | 'remont-generalny' | 'rynek-wtorny'
@@ -206,14 +210,18 @@ function FinishCard({ selected, label, desc, img, onClick }: { selected: boolean
 
 function SubStepBar({ current }: { current: number }) {
   return (
-    <div className="flex items-center justify-center gap-1.5 mb-8">
+    <div className="flex items-start justify-center mb-8">
       {ROOM_EDIT_LABELS.map((label, i) => (
-        <div key={label} className="flex items-center gap-1.5">
-          <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold ${i < current ? 'bg-primary-fixed text-primary' : i === current ? 'bg-primary text-white' : 'bg-border text-muted'}`}>
-            {i < current ? <Check size={12} /> : i + 1}
+        <div key={label} className="flex items-start">
+          <div className="flex flex-col items-center gap-1.5 w-16">
+            <div className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold shrink-0 ${i < current ? 'bg-primary-fixed text-primary' : i === current ? 'bg-primary text-white' : 'bg-border text-muted'}`}>
+              {i < current ? <Check size={12} /> : i + 1}
+            </div>
+            <span className={`text-[10px] text-center leading-tight ${i === current ? 'text-fg font-medium' : 'text-muted'}`}>{label}</span>
           </div>
-          <span className={`text-xs hidden sm:block ${i === current ? 'text-fg font-medium' : 'text-muted'}`}>{label}</span>
-          {i < ROOM_EDIT_LABELS.length - 1 && <div className="w-5 h-px bg-border" />}
+          {i < ROOM_EDIT_LABELS.length - 1 && (
+            <div className="w-6 h-px bg-border mt-3.5 shrink-0" />
+          )}
         </div>
       ))}
     </div>
@@ -724,6 +732,31 @@ export default function KalkulatorPage() {
     const laborPct = Math.round(est.labor / total * 100)
     const prepPct = 100 - matPct - laborPct
 
+    const pdfData: PDFData = {
+      city:        f.city        ?? '',
+      propType:    f.propType    ?? '',
+      standard:    f.standard    ?? '',
+      calcType:    f.calcType    ?? '',
+      area:        est.m2,
+      est,
+      rooms: f.rooms.map(room => {
+        const m2 = room.width * room.length
+        const rc = m2 * 2200 * (CITY_M[f.city!] ?? 1) * (STD_M[f.standard!] ?? 1)
+        const rnd = (v: number) => Math.round(v / 100) * 100
+        return {
+          label:   getDisplayLabel(room, f.rooms),
+          width:   room.width,
+          length:  room.length,
+          height:  room.height,
+          walls:   room.walls,
+          floor:   room.floor,
+          ceiling: room.ceiling,
+          cost:    { mat: rnd(rc * 0.55), labor: rnd(rc * 0.35), prep: rnd(rc * 0.10), total: rnd(rc) },
+        }
+      }),
+      generatedAt: new Date().toLocaleDateString('pl-PL', { day: '2-digit', month: 'long', year: 'numeric' }),
+    }
+
     return (
       <div className="flex flex-col min-h-screen bg-bg">
         <div className="bg-surface border-b border-border">
@@ -824,62 +857,101 @@ export default function KalkulatorPage() {
             </div>
           )}
 
-          {/* Locked premium */}
-          <div className="relative bg-surface border border-border rounded-2xl overflow-hidden mb-8" style={{ minHeight: '420px' }}>
-            {/* Blurred background content */}
-            <div className="p-6 blur-sm pointer-events-none select-none" aria-hidden>
-              <h2 className="font-semibold text-fg text-sm mb-3">Szczegółowy raport materiałów</h2>
-              {['Farby i grunty', 'Płytki i kleje', 'Podłogi i listwy', 'Instalacje i osprzęt', 'Robocizna wg. ekip'].map(r => (
-                <div key={r} className="border border-border rounded-xl p-4 mb-2">
-                  <div className="font-medium text-fg text-sm">{r}</div>
-                  <div className="text-muted text-xs mt-1">szczegółowe pozycje i stawki</div>
-                </div>
-              ))}
+          {/* PDF paywall */}
+          <div id="pdf-paywall" className="border border-border rounded-2xl overflow-hidden mb-8">
+            {/* Blurred PDF preview strip */}
+            <div className="bg-surface px-5 pt-5 pb-3 blur-[3px] pointer-events-none select-none border-b border-border" aria-hidden>
+              <div className="text-[10px] font-semibold text-muted uppercase tracking-widest mb-3">Podgląd · Kosztorys PDF</div>
+              <div className="grid grid-cols-1 gap-2">
+                {(f.rooms.length > 0 ? f.rooms.slice(0, 2) : [null]).map((room, i) => {
+                  const label = room ? getDisplayLabel(room, f.rooms) : 'POMIESZCZENIE'
+                  const cost = room ? Math.round(room.width * room.length * 2200 * (CITY_M[f.city!] ?? 1) * (STD_M[f.standard!] ?? 1) / 100) * 100 : 0
+                  return (
+                    <div key={i} className="bg-white rounded-xl p-3 flex gap-4">
+                      <div className="flex-1">
+                        <div className="font-bold text-fg text-xs mb-1.5">{label.toUpperCase()}</div>
+                        {[
+                          { cat: 'MATERIAŁY',     pct: '55%' },
+                          { cat: 'ROBOCIZNA',     pct: '35%' },
+                          { cat: 'PRZYGOTOWANIE', pct: '10%' },
+                        ].map(({ cat, pct }) => (
+                          <div key={cat} className="flex items-center justify-between py-0.5 text-[9px] text-muted border-t border-border/50">
+                            <span>{cat}</span>
+                            <span className="text-primary font-medium">{pct} · ████████</span>
+                          </div>
+                        ))}
+                      </div>
+                      {cost > 0 && (
+                        <div className="text-right shrink-0">
+                          <div className="text-[9px] text-muted">RAZEM</div>
+                          <div className="font-bold text-primary text-sm">~{fmt(cost)} PLN</div>
+                        </div>
+                      )}
+                    </div>
+                  )
+                })}
+              </div>
             </div>
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-surface/70 backdrop-blur-[6px] flex items-center justify-center p-4 rounded-2xl">
-              <div className="bg-white rounded-2xl p-8 text-center w-full max-w-sm shadow-xl">
-                <div className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center mx-auto mb-4">
-                  <Check size={18} className="text-primary" />
-                </div>
-                <h3 className="font-bold text-fg text-xl mb-2">Odblokuj pełny raport</h3>
-                <p className="text-muted text-xs leading-relaxed mb-5">
-                  Zyskaj dostęp do szczegółowych wyliczeń i precyzyjnie zaplanuj budżet.
-                </p>
-                <ul className="flex flex-col gap-2 text-left mb-6">
-                  {[
-                    'Szczegółowy podział kosztów na każde pomieszczenie',
-                    'Aktualne stawki robocizny dla Twojego regionu',
-                    'Interaktywna lista kontrolna do rozmów z ekipą',
-                  ].map(item => (
-                    <li key={item} className="flex items-start gap-2 text-xs text-muted">
-                      <Check size={13} className="text-primary mt-0.5 shrink-0" />{item}
-                    </li>
-                  ))}
-                </ul>
-                <div className="text-[10px] text-muted uppercase tracking-widest mb-1">Dostęp Premium</div>
-                <div className="font-bold text-fg text-3xl mb-5">
-                  29,00 PLN
-                  <span className="font-normal text-muted text-sm ml-1">/ jednorazowo</span>
-                </div>
-                <button className="w-full bg-primary text-white py-3 rounded-full font-semibold text-sm hover:bg-primary/90 transition-colors">
-                  Odblokuj raport
-                </button>
+            {/* Sales card */}
+            <div className="bg-white px-6 py-6 text-center">
+              <div className="w-11 h-11 rounded-xl bg-primary flex items-center justify-center mx-auto mb-4">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                  <polyline points="14,2 14,8 20,8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                </svg>
               </div>
+
+              <h3 className="font-bold text-fg text-lg mb-1">Pobierz Kosztorys PDF</h3>
+              <p className="text-muted text-xs leading-relaxed mb-4 max-w-xs mx-auto">
+                Szczegółowy raport z podziałem na materiały, robociznę i przygotowanie — gotowy do druku i wysyłki do ekipy.
+              </p>
+
+              <ul className="flex flex-col gap-1.5 text-left mb-5 max-w-xs mx-auto">
+                {[
+                  'MATERIAŁY / ROBOCIZNA / PRZYGOTOWANIE dla każdej komnaty',
+                  'Konkretne pozycje dobrane do wybranych wykończeń',
+                  'Format A4 · Pobierz natychmiast',
+                ].map(item => (
+                  <li key={item} className="flex items-start gap-2 text-xs text-muted">
+                    <Check size={12} className="text-primary mt-0.5 shrink-0" />{item}
+                  </li>
+                ))}
+              </ul>
+
+              <div className="font-bold text-fg text-3xl mb-0.5">29 PLN</div>
+              <div className="text-muted text-xs mb-5">jednorazowo · bez subskrypcji</div>
+
+              <PDFDownloadButton
+                data={pdfData}
+                className="w-full bg-primary text-white py-3 rounded-full font-semibold text-sm hover:bg-primary/90 transition-colors flex items-center justify-center"
+              />
+              <p className="text-[10px] text-muted/70 mt-2.5">Płatność przez Stripe · bez rejestracji</p>
             </div>
           </div>
         </div>
 
         <div className="sticky bottom-0 z-10 border-t border-border bg-surface shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
-          <div className="max-w-3xl mx-auto px-6 py-4 flex justify-between items-center">
-            <button onClick={() => upd({ phase: 'rooms' })}
-              className="px-5 py-2 rounded-full border border-border text-fg text-sm font-medium hover:bg-bg transition-colors">
-              Wróć do pomieszczeń
+          <div className="max-w-3xl mx-auto px-6 py-3.5 flex justify-between items-center gap-4">
+            <button onClick={() => router.push(`/${locale}/kalkulator`)}
+              className="px-5 py-2 rounded-full border border-border text-fg text-sm font-medium hover:bg-bg transition-colors shrink-0">
+              Zacznij od nowa
             </button>
-            <button onClick={() => router.push(`/${locale}`)}
-              className="text-muted text-xs hover:text-fg transition-colors">
-              Strona główna
+            <button
+              onClick={() => document.getElementById('pdf-paywall')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
+              className="flex items-center gap-3 bg-primary hover:bg-primary/90 transition-colors text-white pl-5 pr-4 py-2.5 rounded-full"
+            >
+              <div className="text-left">
+                <div className="text-xs font-semibold leading-none mb-0.5">Pobierz Kosztorys PDF</div>
+                <div className="text-[10px] text-white/70 leading-none">Szczegółowy raport · 29 PLN</div>
+              </div>
+              <div className="w-7 h-7 rounded-full bg-white/15 flex items-center justify-center shrink-0">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+                </svg>
+              </div>
             </button>
           </div>
         </div>

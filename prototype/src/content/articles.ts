@@ -216,6 +216,7 @@ Drzwi wewnętrzne: 600–4 000 PLN/szt. Oświetlenie: projekt + montaż. Montaż
         'Сравните предложения минимум 3 подрядчиков',
       ],
       ctaText: 'Рассчитать смету ремонта →',
+      img: '/images/paint.jpg',
     },
   ],
 }

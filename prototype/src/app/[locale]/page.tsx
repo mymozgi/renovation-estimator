@@ -189,7 +189,7 @@ export default async function LandingPage({ params }: Props) {
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
                   />
-                  <span className={`absolute top-3 left-3 ${tagClass} text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide`}>
+                  <span className={`absolute top-3 left-3 ${tagClass} text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wide`}>
                     {CLUSTER_LABELS[article.cluster] ?? article.cluster}
                   </span>
                 </div>

@@ -8,7 +8,7 @@ import { CalcWizardLayout } from '@/components/CalcWizardLayout'
 import { Check, Plus, Pencil, Trash2 } from 'lucide-react'
 import type { PDFData } from '@/lib/kosztorys-types'
 
-const PDFDownloadButton = dynamic(() => import('@/components/PDFDownloadButton'), { ssr: false })
+const BuyPDFButton = dynamic(() => import('@/components/BuyPDFButton'), { ssr: false })
 
 /* ─── Types ─────────────────────────────────────────────────────────────── */
 type CalcType = 'wykończenie' | 'remont-generalny' | 'rynek-wtorny'
@@ -924,9 +924,10 @@ export default function KalkulatorPage() {
               <div className="font-bold text-fg text-3xl mb-0.5">29 PLN</div>
               <div className="text-muted text-xs mb-5">jednorazowo · bez subskrypcji</div>
 
-              <PDFDownloadButton
+              <BuyPDFButton
                 data={pdfData}
                 className="w-full bg-primary text-white py-3 rounded-full font-semibold text-sm hover:bg-primary/90 transition-colors flex items-center justify-center"
+                label="Kup Kosztorys PDF · 29 PLN"
               />
               <p className="text-[10px] text-muted/70 mt-2.5">Płatność przez Stripe · bez rejestracji</p>
             </div>

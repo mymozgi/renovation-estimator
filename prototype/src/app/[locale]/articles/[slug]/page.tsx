@@ -58,7 +58,7 @@ export default async function ArticlePage({ params }: Props) {
           <div className="text-muted text-sm leading-relaxed mb-8 whitespace-pre-line">{article.explanation}</div>
 
           {/* Checklist */}
-          <h2 className="font-serif font-bold text-fg text-xl mb-4">Checklist</h2>
+          <h2 className="font-serif font-bold text-fg text-xl mb-4">{t('checklist')}</h2>
           <div className="space-y-3 mb-10">
             {article.checklist.map((item, i) => (
               <div key={i} className="flex items-start gap-3">

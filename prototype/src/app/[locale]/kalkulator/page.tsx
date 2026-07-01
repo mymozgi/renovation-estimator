@@ -935,7 +935,12 @@ export default function KalkulatorPage() {
 
         <div className="sticky bottom-0 z-10 border-t border-border bg-surface shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
           <div className="max-w-[1440px] mx-auto px-10 py-3.5 flex justify-between items-center gap-4">
-            <button onClick={() => router.push(`/${locale}/kalkulator`)}
+            <button onClick={() => setF({
+                calcType: null, city: null, propType: null, area: 65, standard: null,
+                conds: { electrical: false, plumbing: false, wallDemo: false, newWalls: false, ceilingReplace: false, floorRemoval: false },
+                rynek: { age: null, finish: null, windows: false, doors: false, heating: false, plaster: false },
+                rooms: [], phase: 'setup', ss: -1, erid: null, res: 0,
+              })}
               className="px-5 py-2 rounded-full border border-border text-fg text-sm font-medium hover:bg-bg transition-colors shrink-0">
               {t('estStartOver')}
             </button>

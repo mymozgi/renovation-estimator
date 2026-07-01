@@ -1,17 +1,19 @@
-import type { Metadata } from 'next'
 import { getTranslations } from 'next-intl/server'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 import { articles } from '@/content/articles'
 import { ArticlesClient } from '@/components/ArticlesClient'
 
-export const metadata: Metadata = {
-  title: 'Poradniki remontowe — Remontowo | Wiedza o remontach w Polsce',
-  description:
-    'Profesjonalne poradniki o remontach: kosztorysy, wybór wykonawców, materiały, ceny regionalne. Aktualna baza wiedzy dla właścicieli mieszkań i inwestorów.',
-}
-
 type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'articlesPage' })
+  return {
+    title: `${t('title')} — Remontowo`,
+    description: t('subtitle'),
+  }
+}
 
 export default async function ArticlesPage({ params }: Props) {
   const { locale } = await params

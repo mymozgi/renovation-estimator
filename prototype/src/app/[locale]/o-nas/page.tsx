@@ -56,7 +56,7 @@ export default async function AboutPage({ params }: Props) {
       </section>
 
       {/* Stats */}
-      <section className="max-w-6xl mx-auto px-6 py-12">
+      <section className="max-w-[1440px] mx-auto px-10 py-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {STATS.map(({ value, label, Icon }) => (
             <div key={label} className="bg-surface border border-border rounded-2xl p-6 text-center">
@@ -71,7 +71,7 @@ export default async function AboutPage({ params }: Props) {
       </section>
 
       {/* Mission */}
-      <section className="max-w-6xl mx-auto px-6 py-6">
+      <section className="max-w-[1440px] mx-auto px-10 py-6">
         <div className="bg-surface border border-border rounded-2xl p-8 md:p-12 grid md:grid-cols-2 gap-10 items-start">
           <div>
             <h2 className="font-bold text-fg text-2xl mb-4">{t('missionTitle')}</h2>
@@ -102,7 +102,7 @@ export default async function AboutPage({ params }: Props) {
       </section>
 
       {/* Values */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-[1440px] mx-auto px-10 py-10">
         <h2 className="font-bold text-fg text-2xl text-center mb-8">{t('valuesTitle')}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {VALUES.map(({ title, desc }) => (
@@ -115,7 +115,7 @@ export default async function AboutPage({ params }: Props) {
       </section>
 
       {/* CTA */}
-      <section className="max-w-6xl mx-auto px-6 py-6 mb-10">
+      <section className="max-w-[1440px] mx-auto px-10 py-6 mb-10">
         <div className="bg-primary rounded-2xl px-8 py-12 text-center text-white">
           <h2 className="font-bold text-3xl mb-3">{t('ctaTitle')}</h2>
           <p className="text-white/70 text-sm mb-7 max-w-md mx-auto">{t('ctaSubtitle')}</p>

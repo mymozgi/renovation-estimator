@@ -19,7 +19,7 @@ export function LandingHeader() {
 
   return (
     <header className="sticky top-0 z-30 bg-surface border-b border-border">
-      <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between gap-4">
+      <div className="max-w-[1440px] mx-auto px-10 h-14 flex items-center justify-between gap-4">
         <Link href={`/${locale}`} className="font-bold text-fg text-lg tracking-tight">
           Remontowo
         </Link>

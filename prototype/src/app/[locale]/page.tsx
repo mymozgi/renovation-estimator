@@ -49,12 +49,12 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── Hero image carousel ───────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-8">
+      <section className="max-w-[1440px] mx-auto px-10 py-8">
         <HeroSlider />
       </section>
 
       {/* ── Jak to działa? ────────────────────────────────────────── */}
-      <section id="jak-to-dziala" className="max-w-6xl mx-auto px-6 py-14">
+      <section id="jak-to-dziala" className="max-w-[1440px] mx-auto px-10 py-14">
         <h2 className="font-bold text-fg text-3xl text-center mb-2">{t('howItWorksTitle')}</h2>
         <p className="text-muted text-sm text-center mb-12">{t('howItWorksSubtitle')}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -75,7 +75,7 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── Dla kogo? ─────────────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-[1440px] mx-auto px-10 py-10">
         <h2 className="font-bold text-fg text-3xl text-center mb-10">{t('forWhomTitle')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
@@ -96,7 +96,7 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── Wypróbuj kalkulator ───────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-[1440px] mx-auto px-10 py-10">
         <div className="bg-bg border border-border rounded-2xl p-8 grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="font-bold text-fg text-2xl mb-3">{t('tryTitle')}</h2>
@@ -141,7 +141,7 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── Poradniki remontowe ───────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-10">
+      <section className="max-w-[1440px] mx-auto px-10 py-10">
         <div className="flex items-center justify-between mb-6">
           <h2 className="font-bold text-fg text-2xl">{t('articlesTitle')}</h2>
           <Link href={`/${locale}/articles`} className="text-sm text-primary font-medium hover:underline flex items-center gap-1">
@@ -181,7 +181,7 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── CTA dark green ────────────────────────────────────────── */}
-      <section className="max-w-6xl mx-auto px-6 py-6 mb-10">
+      <section className="max-w-[1440px] mx-auto px-10 py-6 mb-10">
         <div className="bg-primary rounded-2xl px-8 py-12 text-center text-white">
           <h2 className="font-bold text-3xl mb-3">{t('ctaTitle')}</h2>
           <p className="text-white/70 text-sm mb-7">{t('ctaSubtitle')}</p>

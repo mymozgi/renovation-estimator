@@ -22,7 +22,7 @@ export default async function ArticlesPage({ params }: Props) {
     <div className="min-h-screen bg-surface flex flex-col">
       <LandingHeader />
 
-      <main className="flex-1 max-w-6xl mx-auto w-full px-6 pt-10 pb-20">
+      <main className="flex-1 max-w-[1440px] mx-auto w-full px-10 pt-10 pb-20">
         <div className="mb-8">
           <p className="text-xs font-semibold text-muted uppercase tracking-widest mb-3">{t('badge')}</p>
           <h1 className="font-bold text-fg text-4xl leading-tight mb-3 max-w-md">{t('title')}</h1>

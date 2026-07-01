@@ -35,9 +35,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     <html lang={locale} className={`${manrope.variable} ${workSans.variable}`}>
       <body className="min-h-full bg-bg">
         <NextIntlClientProvider messages={messages}>
-          <div className="min-h-screen max-w-[1440px] mx-auto relative">
-            {children}
-          </div>
+          {children}
         </NextIntlClientProvider>
       </body>
     </html>

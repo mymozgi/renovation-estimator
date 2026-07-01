@@ -227,6 +227,10 @@
     "subtitle": "Practical knowledge before, during, and after renovation.",
     "readMore": "Read more →",
     "cta": "Calculate your estimate →",
+    "filterAll": "All",
+    "noArticles": "No articles in this category.",
+    "problem": "Problem",
+    "solution": "Solution",
     "clusters": {
       "budget": "Budget",
       "contractors": "Contractors",

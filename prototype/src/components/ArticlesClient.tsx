@@ -4,10 +4,11 @@ import { useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useTranslations } from 'next-intl'
 import type { Article } from '@/content/articles'
-import { CLUSTER_LABELS, CLUSTER_COLORS } from '@/content/clusters'
+import { CLUSTER_COLORS } from '@/content/clusters'
 
-export { CLUSTER_LABELS, CLUSTER_COLORS }
+export { CLUSTER_COLORS }
 
 const PAGE_SIZE = 9
 
@@ -17,6 +18,7 @@ type Props = {
 }
 
 export function ArticlesClient({ articles, locale }: Props) {
+  const t = useTranslations('articles')
   const clusters = Array.from(new Set(articles.map(a => a.cluster)))
   const [active, setActive] = useState<string | null>(null)
   const [page, setPage] = useState(1)
@@ -42,7 +44,7 @@ export function ArticlesClient({ articles, locale }: Props) {
               : 'border border-border text-fg hover:border-primary/40'
           }`}
         >
-          Wszystkie
+          {t('filterAll')}
         </button>
         {clusters.map((c) => (
           <button
@@ -54,7 +56,7 @@ export function ArticlesClient({ articles, locale }: Props) {
                 : 'border border-border text-fg hover:border-primary/40'
             }`}
           >
-            {CLUSTER_LABELS[c] ?? c}
+            {t(`clusters.${c}`)}
           </button>
         ))}
       </div>
@@ -62,7 +64,7 @@ export function ArticlesClient({ articles, locale }: Props) {
       {/* Article grid */}
       {paged.length === 0 ? (
         <div className="py-20 text-center text-muted text-sm">
-          Brak artykułów w tej kategorii.
+          {t('noArticles')}
         </div>
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
@@ -86,14 +88,14 @@ export function ArticlesClient({ articles, locale }: Props) {
                 <div className="p-4 flex flex-col gap-2">
                   <div className="flex items-center gap-2">
                     <span className={`${tagClass} text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide`}>
-                      {CLUSTER_LABELS[article.cluster] ?? article.cluster}
+                      {t(`clusters.${article.cluster}`)}
                     </span>
                     <span className="text-xs text-muted">{article.publishedAt}</span>
                   </div>
                   <h2 className="font-bold text-fg text-base leading-snug line-clamp-2">{article.title}</h2>
                   <p className="text-muted text-sm leading-relaxed line-clamp-2">{article.description}</p>
                   <div className="flex items-center gap-1 text-primary text-sm font-medium mt-1">
-                    Czytaj dalej <ArrowRight size={13} />
+                    {t('readMore')} <ArrowRight size={13} />
                   </div>
                 </div>
               </Link>

@@ -227,6 +227,10 @@
     "subtitle": "Praktyczna wiedza przed, w trakcie i po remoncie.",
     "readMore": "Czytaj dalej →",
     "cta": "Oblicz swój kosztorys →",
+    "filterAll": "Wszystkie",
+    "noArticles": "Brak artykułów w tej kategorii.",
+    "problem": "Problem",
+    "solution": "Rozwiązanie",
     "clusters": {
       "budget": "Budżet",
       "contractors": "Wykonawcy",

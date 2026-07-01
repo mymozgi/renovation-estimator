@@ -14,7 +14,7 @@ type Props = { params: Promise<{ locale: string; slug: string }> }
 
 export default async function ArticlePage({ params }: Props) {
   const { locale, slug } = await params
-  const t = await getTranslations('articles')
+  const t = await getTranslations({ locale, namespace: 'articles' })
 
   const localeArticles = articles[locale] ?? articles['pl']
   const article = localeArticles.find((a) => a.slug === slug)
@@ -50,11 +50,11 @@ export default async function ArticlePage({ params }: Props) {
           <p className="text-muted text-base leading-relaxed mb-8 border-l-2 border-primary pl-4">{article.hook}</p>
 
           {/* Problem */}
-          <h2 className="font-serif font-bold text-fg text-xl mb-3">Problem</h2>
+          <h2 className="font-serif font-bold text-fg text-xl mb-3">{t('problem')}</h2>
           <div className="text-muted text-sm leading-relaxed mb-8 whitespace-pre-line">{article.problem}</div>
 
           {/* Explanation */}
-          <h2 className="font-serif font-bold text-fg text-xl mb-3">Rozwiązanie</h2>
+          <h2 className="font-serif font-bold text-fg text-xl mb-3">{t('solution')}</h2>
           <div className="text-muted text-sm leading-relaxed mb-8 whitespace-pre-line">{article.explanation}</div>
 
           {/* Checklist */}

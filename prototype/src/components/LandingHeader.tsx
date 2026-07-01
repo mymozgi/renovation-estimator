@@ -1,30 +1,29 @@
 'use client'
 
 import Link from 'next/link'
-import { useLocale } from 'next-intl'
+import { useLocale, useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 
 export function LandingHeader() {
   const locale = useLocale()
+  const t = useTranslations('nav')
   const [menuOpen, setMenuOpen] = useState(false)
 
   const links = [
-    { href: `/${locale}#jak-to-dziala`, label: 'Jak to działa' },
-    { href: `/${locale}/kalkulator`, label: 'Kalkulator' },
-    { href: `/${locale}/articles`, label: 'Poradniki' },
+    { href: `/${locale}#jak-to-dziala`, label: t('howItWorks') },
+    { href: `/${locale}/kalkulator`,    label: t('calculator') },
+    { href: `/${locale}/articles`,      label: t('articles')   },
   ]
 
   return (
     <header className="sticky top-0 z-30 bg-surface border-b border-border">
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between gap-4">
-        {/* Logo */}
         <Link href={`/${locale}`} className="font-bold text-fg text-lg tracking-tight">
           Remontowo
         </Link>
 
-        {/* Desktop nav */}
         <nav className="hidden md:flex items-center gap-8">
           {links.map(({ href, label }) => (
             <Link key={href} href={href} className="text-sm text-fg/70 hover:text-fg transition-colors">
@@ -33,14 +32,13 @@ export function LandingHeader() {
           ))}
         </nav>
 
-        {/* Right side */}
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
           <Link
             href={`/${locale}/kalkulator`}
             className="hidden md:inline-flex items-center px-4 py-1.5 rounded-full text-sm font-medium bg-primary-fixed text-primary hover:bg-primary-fixed/80 transition-colors"
           >
-            Darmowa wycena
+            {t('freePricing')}
           </Link>
           <button
             className="md:hidden w-9 h-9 flex items-center justify-center"
@@ -51,7 +49,6 @@ export function LandingHeader() {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div className="md:hidden border-t border-border bg-surface px-6 py-4 flex flex-col gap-4">
           {links.map(({ href, label }) => (
@@ -64,7 +61,7 @@ export function LandingHeader() {
             <LanguageSwitcher />
             <Link href={`/${locale}/kalkulator`} onClick={() => setMenuOpen(false)}
               className="inline-flex justify-center px-4 py-2 rounded-full text-sm font-medium bg-primary text-white">
-              Darmowa wycena
+              {t('freePricing')}
             </Link>
           </div>
         </div>

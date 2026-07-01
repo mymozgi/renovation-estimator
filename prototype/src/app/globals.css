@@ -69,30 +69,6 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-manrope, 'Manrope', sans-serif);
 }
 
-/* ─── Accessibility overrides ──────────────────────────────────────────── */
-
-[data-a11y-size="small"]  { font-size: 87.5% !important; }
-[data-a11y-size="large"]  { font-size: 118.75% !important; }
-[data-a11y-size="xl"]     { font-size: 137.5% !important; }
-
-[data-a11y-contrast="high"] {
-  --color-bg:      #FFFEF5 !important;
-  --color-fg:      #000000 !important;
-  --color-muted:   #333333 !important;
-  --color-border:  #777777 !important;
-  --color-surface: #FFFFFF !important;
-  filter: contrast(1.2);
-}
-[data-a11y-contrast="inverted"] {
-  filter: invert(1) hue-rotate(180deg);
-}
-
-[data-a11y-font="readable"] body,
-[data-a11y-font="readable"] { font-family: Georgia, 'Times New Roman', serif !important; }
-
-[data-a11y-font="dyslexic"] body,
-[data-a11y-font="dyslexic"] { font-family: 'OpenDyslexic', sans-serif !important; }
-
 /* ─── Inputs ─────────────────────────────────────────────────────────── */
 
 input[type=number]::-webkit-inner-spin-button,

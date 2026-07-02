@@ -583,7 +583,6 @@ export default function KalkulatorPage() {
           nextLabel={f.rooms.length === 0 ? t('addFirstRoom') : t('calcEstimate')}
           nextDisabled={f.rooms.length === 0}
         />
-        </div>
       </div>
     )
   }

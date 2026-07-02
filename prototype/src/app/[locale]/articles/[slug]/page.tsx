@@ -70,7 +70,7 @@ export default async function ArticlePage({ params }: Props) {
 
           {/* CTA */}
           <div className="bg-primary/5 border border-primary/20 rounded-xl p-5 text-center">
-            <Link href={`/${locale}/estimate`} className={buttonVariants({ variant: 'primary', fullWidth: true })}>
+            <Link href={`/${locale}/kalkulator`} className={buttonVariants({ variant: 'primary', fullWidth: true })}>
               {article.ctaText}
             </Link>
           </div>

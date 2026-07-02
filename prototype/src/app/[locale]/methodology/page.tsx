@@ -118,7 +118,7 @@ export default async function MethodologyPage({ params }: Props) {
           </div>
         </Section>
 
-        <Link href={`/${locale}/estimate`} className={buttonVariants({ variant: 'primary', fullWidth: true })}>
+        <Link href={`/${locale}/kalkulator`} className={buttonVariants({ variant: 'primary', fullWidth: true })}>
           {t('cta')}
         </Link>
       </div>

@@ -62,7 +62,7 @@ export function CalcWizardLayout({
             {showBack ? (
               <button
                 onClick={onBack}
-                className="px-5 py-2 rounded-full border border-border text-fg text-base font-medium hover:bg-bg transition-colors"
+                className="px-5 py-2 rounded-[12px] border border-border text-fg text-base font-medium hover:bg-bg transition-colors"
               >
                 {t('prevStep')}
               </button>

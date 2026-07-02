@@ -146,19 +146,22 @@ export default async function LandingPage({ params }: Props) {
 
       {/* ── Poradniki remontowe ───────────────────────────────────── */}
       <section className="max-w-[1140px] mx-auto px-4 sm:px-10 py-12 sm:py-24">
-        <div className="flex items-center justify-between mb-8">
-          <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px]">{t('articlesTitle')}</h2>
-          <Link href={`/${locale}/articles`} className="text-base text-primary font-medium hover:underline flex items-center gap-1">
-            {t('articlesAll')} <ArrowRight size={14} />
+        <div className="flex items-end justify-between mb-12">
+          <div className="flex flex-col gap-2">
+            <h2 className="font-semibold text-fg text-[32px] leading-10 tracking-[-0.32px]">{t('articlesTitle')}</h2>
+            <p className="text-base text-[#414943] leading-6">{t('articlesSubtitle')}</p>
+          </div>
+          <Link href={`/${locale}/articles`} className="text-base text-primary font-normal hover:underline flex items-center gap-1 shrink-0 mb-0.5">
+            {t('articlesAll')} <ArrowRight size={20} />
           </Link>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {localeArticles.map((article) => {
             const tagClass = CLUSTER_COLORS[article.cluster] ?? 'bg-primary-fixed text-fg'
             return (
               <Link key={article.slug} href={`/${locale}/articles/${article.slug}`}
-                className="group flex flex-col rounded-[12px] overflow-hidden bg-white shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow">
-                <div className="relative aspect-[364/205] w-full overflow-hidden shrink-0">
+                className="group flex flex-col gap-3">
+                <div className="relative aspect-[364/205] w-full overflow-hidden rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] shrink-0">
                   <Image
                     src={article.img}
                     alt={article.title}
@@ -167,18 +170,16 @@ export default async function LandingPage({ params }: Props) {
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
                   />
                 </div>
-                <div className="p-4 flex flex-col gap-3">
-                  <div className="flex items-center gap-2">
-                    <span className={`${tagClass} font-medium text-xs px-3 py-1 rounded-sm tracking-[0.06em]`}>
-                      {CLUSTER_LABELS[article.cluster] ?? article.cluster}
-                    </span>
-                    <span className="text-sm text-[#717973]">{article.publishedAt}</span>
-                  </div>
-                  <h3 className="font-semibold text-fg text-2xl leading-8 line-clamp-2">{article.title}</h3>
-                  <p className="text-[#414943] text-base leading-6 line-clamp-2">{article.description}</p>
-                  <div className="flex items-center gap-1 text-primary text-base mt-1">
-                    {t('articlesReadMore')} <ArrowRight size={14} />
-                  </div>
+                <div className="flex items-center gap-3">
+                  <span className={`${tagClass} font-medium text-[12px] px-3 py-1 rounded-[4px] tracking-[0.05em]`}>
+                    {CLUSTER_LABELS[article.cluster] ?? article.cluster}
+                  </span>
+                  <span className="text-[14px] text-[#717973] leading-[22px]">{article.publishedAt}</span>
+                </div>
+                <h3 className="font-semibold text-fg text-2xl leading-8 line-clamp-2 pt-1">{article.title}</h3>
+                <p className="text-[#414943] text-base leading-6 line-clamp-2">{article.description}</p>
+                <div className="flex items-center gap-1 text-primary text-base">
+                  {t('articlesReadMore')} <ArrowRight size={20} />
                 </div>
               </Link>
             )

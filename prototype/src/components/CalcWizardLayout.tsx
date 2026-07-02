@@ -1,7 +1,9 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { useTranslations } from 'next-intl'
+import { useLocale } from 'next-intl'
 
 interface CalcWizardLayoutProps {
   stepLabel: string
@@ -27,6 +29,7 @@ export function CalcWizardLayout({
   hideFooterNav,
 }: CalcWizardLayoutProps) {
   const t = useTranslations('calc')
+  const locale = useLocale()
   const resolvedNextLabel = nextLabel ?? t('btnNext')
 
   return (
@@ -34,7 +37,9 @@ export function CalcWizardLayout({
       {/* Header */}
       <div className="bg-white border-b border-border w-full">
         <div className="max-w-[1140px] mx-auto px-10 h-20 flex items-center gap-4">
-          <Image src="/logo-header-remonta.png" alt="Remontowo" width={160} height={32} priority />
+          <Link href={`/${locale}`} className="shrink-0">
+            <Image src="/logo-header-remonta.png" alt="Remontowo" width={160} height={32} priority />
+          </Link>
           <div className="w-px h-5 bg-border" />
           <span className="font-mono text-xs text-fg">
             {stepLabel}

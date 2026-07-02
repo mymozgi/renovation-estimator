@@ -501,7 +501,7 @@ export default function KalkulatorPage() {
     return (
       <div className="flex flex-col min-h-screen bg-bg">
         <div className="bg-white border-b border-border">
-          <div className="max-w-[1280px] mx-auto px-10 h-20 flex items-center gap-4">
+          <div className="max-w-[1140px] mx-auto px-10 h-20 flex items-center gap-4">
             <span className="font-semibold text-fg text-2xl">Remontowo</span>
             <div className="w-px h-5 bg-border" />
             <span className="font-mono text-xs text-fg">{t('roomsBadge')}</span>
@@ -511,7 +511,7 @@ export default function KalkulatorPage() {
           </div>
         </div>
 
-        <div className="flex-1 max-w-[1280px] mx-auto px-10 py-12 w-full">
+        <div className="flex-1 max-w-[1140px] mx-auto px-10 py-12 w-full">
           <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] mb-1">{t('roomsTitle')}</h2>
           <p className="text-muted text-base mb-8">{t('roomsSubtitle')}</p>
 
@@ -573,7 +573,7 @@ export default function KalkulatorPage() {
         </div>
 
         <div className="sticky bottom-0 z-10 border-t border-border bg-white shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
-          <div className="max-w-[1280px] mx-auto px-10 py-4 flex items-center justify-between">
+          <div className="max-w-[1140px] mx-auto px-10 py-4 flex items-center justify-between">
             <button onClick={back} className="px-5 py-2 rounded-[12px] border border-border text-fg text-base font-medium hover:bg-bg transition-colors">
               {t('prevStep')}
             </button>
@@ -773,12 +773,12 @@ export default function KalkulatorPage() {
     return (
       <div className="flex flex-col min-h-screen bg-bg">
         <div className="bg-white border-b border-border">
-          <div className="max-w-[1280px] mx-auto px-10 h-20 flex items-center gap-4">
+          <div className="max-w-[1140px] mx-auto px-10 h-20 flex items-center gap-4">
             <span className="font-semibold text-fg text-2xl">Remontowo</span>
           </div>
         </div>
 
-        <div className="flex-1 max-w-[1280px] mx-auto px-10 py-12 w-full">
+        <div className="flex-1 max-w-[1140px] mx-auto px-10 py-12 w-full">
           <h1 className="font-bold text-fg text-5xl leading-[56px] tracking-[-0.96px] text-center mb-2">{t('estTitle')}</h1>
           <p className="text-muted text-base text-center mb-10">{t('estSubtitle')}</p>
 
@@ -934,7 +934,7 @@ export default function KalkulatorPage() {
         </div>
 
         <div className="sticky bottom-0 z-10 border-t border-border bg-white shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
-          <div className="max-w-[1280px] mx-auto px-10 py-4 flex justify-between items-center gap-4">
+          <div className="max-w-[1140px] mx-auto px-10 py-4 flex justify-between items-center gap-4">
             <button onClick={() => setF({
                 calcType: null, city: null, propType: null, area: 65, standard: null,
                 conds: { electrical: false, plumbing: false, wallDemo: false, newWalls: false, ceilingReplace: false, floorRemoval: false },

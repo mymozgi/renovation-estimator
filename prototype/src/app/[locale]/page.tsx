@@ -49,12 +49,12 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── Hero image carousel ───────────────────────────────────── */}
-      <section className="max-w-[1280px] mx-auto px-10 py-8">
+      <section className="max-w-[1140px] mx-auto px-10 py-8">
         <HeroSlider />
       </section>
 
       {/* ── Jak to działa? ────────────────────────────────────────── */}
-      <section id="jak-to-dziala" className="max-w-[1280px] mx-auto px-10 py-24">
+      <section id="jak-to-dziala" className="max-w-[1140px] mx-auto px-10 py-24">
         <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-2">{t('howItWorksTitle')}</h2>
         <p className="text-muted text-base text-center mb-12">{t('howItWorksSubtitle')}</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -75,7 +75,7 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── Dla kogo? ─────────────────────────────────────────────── */}
-      <section className="max-w-[1280px] mx-auto px-10 py-24">
+      <section className="max-w-[1140px] mx-auto px-10 py-24">
         <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-10">{t('forWhomTitle')}</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {[
@@ -96,7 +96,7 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── Wypróbuj kalkulator ───────────────────────────────────── */}
-      <section className="max-w-[1280px] mx-auto px-10 py-24">
+      <section className="max-w-[1140px] mx-auto px-10 py-24">
         <div className="bg-bg border border-border rounded-2xl p-8 grid md:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] mb-3">{t('tryTitle')}</h2>
@@ -141,7 +141,7 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── Poradniki remontowe ───────────────────────────────────── */}
-      <section className="max-w-[1280px] mx-auto px-10 py-24">
+      <section className="max-w-[1140px] mx-auto px-10 py-24">
         <div className="flex items-center justify-between mb-8">
           <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px]">{t('articlesTitle')}</h2>
           <Link href={`/${locale}/articles`} className="text-base text-primary font-medium hover:underline flex items-center gap-1">
@@ -183,7 +183,7 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── CTA dark green ────────────────────────────────────────── */}
-      <section className="max-w-[1280px] mx-auto px-10 py-6 mb-10">
+      <section className="max-w-[1140px] mx-auto px-10 py-6 mb-10">
         <div className="bg-[#37684f] rounded-[24px] px-8 py-24 text-center text-white">
           <h2 className="font-bold text-5xl leading-[56px] tracking-[-0.96px] mb-3">{t('ctaTitle')}</h2>
           <p className="text-white/80 text-base leading-6 mb-7">{t('ctaSubtitle')}</p>

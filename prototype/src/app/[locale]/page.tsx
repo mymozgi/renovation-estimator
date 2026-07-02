@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, CheckCircle2, Shield, Clock, Pencil, Layers, FileText, Home, TrendingUp } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Shield, Clock, Home, TrendingUp } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
@@ -54,23 +54,27 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── Jak to działa? ────────────────────────────────────────── */}
-      <section id="jak-to-dziala" className="max-w-[1140px] mx-auto px-10 py-24">
-        <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-2">{t('howItWorksTitle')}</h2>
-        <p className="text-muted text-base text-center mb-12">{t('howItWorksSubtitle')}</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            { Icon: Pencil,   title: t('step1Title'), desc: t('step1Desc') },
-            { Icon: Layers,   title: t('step2Title'), desc: t('step2Desc') },
-            { Icon: FileText, title: t('step3Title'), desc: t('step3Desc') },
-          ].map(({ Icon, title, desc }) => (
-            <div key={title} className="flex flex-col items-center text-center">
-              <div className="w-16 h-16 rounded-full bg-[#b9efcf] flex items-center justify-center mb-4">
-                <Icon size={24} className="text-primary" strokeWidth={1.8} />
+      <section id="jak-to-dziala" className="bg-[#f6f3f2] py-24">
+        <div className="max-w-[1140px] mx-auto px-10">
+          <div className="flex flex-col items-center gap-4">
+            <h2 className="font-bold text-fg text-5xl leading-[56px] tracking-[-0.96px] text-center max-w-[600px]">{t('howItWorksTitle')}</h2>
+            <p className="text-[#414943] text-base leading-6 text-center max-w-[480px]">{t('howItWorksSubtitle')}</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-12">
+            {[
+              { icon: '/icons/edit.svg',             title: t('step1Title'), desc: t('step1Desc') },
+              { icon: '/icons/workspace_premium.svg', title: t('step2Title'), desc: t('step2Desc') },
+              { icon: '/icons/description.svg',       title: t('step3Title'), desc: t('step3Desc') },
+            ].map(({ icon, title, desc }) => (
+              <div key={title} className="bg-[#fcf9f8] rounded-[12px] shadow-[0px_1px_1px_rgba(0,0,0,0.05)] flex flex-col items-center pt-8 px-8 pb-14">
+                <div className="w-16 h-16 rounded-full bg-[#b9efcf] flex items-center justify-center mb-6 shrink-0">
+                  <img src={icon} alt="" className="w-8 h-8" />
+                </div>
+                <h3 className="font-semibold text-fg text-2xl leading-8 text-center mb-3 w-full">{title}</h3>
+                <p className="text-[#414943] text-base leading-6 text-center px-2">{desc}</p>
               </div>
-              <h3 className="font-semibold text-fg text-2xl leading-8 mb-2">{title}</h3>
-              <p className="text-muted text-base leading-6">{desc}</p>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

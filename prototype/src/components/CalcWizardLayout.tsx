@@ -4,6 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useTranslations } from 'next-intl'
 import { useLocale } from 'next-intl'
+import { WizardFooterNav } from './WizardFooterNav'
 
 interface CalcWizardLayoutProps {
   stepLabel: string
@@ -63,27 +64,14 @@ export function CalcWizardLayout({
 
       {/* Footer nav */}
       {!hideFooterNav && (
-        <div className="sticky bottom-0 z-10 border-t border-border bg-white shadow-[0_-2px_12px_rgba(0,0,0,0.06)] w-full">
-          <div className="max-w-[1140px] mx-auto px-4 sm:px-10 py-4 flex items-center justify-between">
-            {showBack ? (
-              <button
-                onClick={onBack}
-                className="px-5 py-2 rounded-[12px] border border-border text-fg text-base font-medium hover:bg-bg transition-colors"
-              >
-                {t('prevStep')}
-              </button>
-            ) : <div />}
-            {onNext && (
-              <button
-                onClick={onNext}
-                disabled={nextDisabled}
-                className="px-8 py-3 rounded-[12px] bg-primary text-white text-base font-semibold tracking-[0.08em] hover:bg-primary/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-              >
-                {resolvedNextLabel}
-              </button>
-            )}
-          </div>
-        </div>
+        <WizardFooterNav
+          onBack={onBack}
+          onNext={onNext}
+          backLabel={t('prevStep')}
+          nextLabel={resolvedNextLabel}
+          nextDisabled={nextDisabled}
+          showBack={showBack}
+        />
       )}
     </div>
   )

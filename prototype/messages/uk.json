@@ -239,7 +239,12 @@
       "regional": "Регіони",
       "materials": "Матеріали",
       "property": "Нерухомість"
-    }
+    },
+    "breadcrumbHome": "Головна",
+    "breadcrumbBlog": "ПОРАДИ",
+    "tocTitle": "ЗМІСТ",
+    "sidebarCtaTitle": "Потрібна кошторис?",
+    "sidebarCtaDesc": "Розрахуйте вартість ремонту за кілька хвилин. Безкоштовно, без реєстрації."
   },
   "common": {
     "back": "Назад",

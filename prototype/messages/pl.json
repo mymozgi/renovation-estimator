@@ -239,7 +239,12 @@
       "regional": "Regiony",
       "materials": "Materiały",
       "property": "Nieruchomości"
-    }
+    },
+    "breadcrumbHome": "Strona główna",
+    "breadcrumbBlog": "PORADNIKI",
+    "tocTitle": "SPIS TREŚCI",
+    "sidebarCtaTitle": "Potrzebujesz wyceny?",
+    "sidebarCtaDesc": "Oblicz koszt remontu w kilka minut. Bezpłatnie, bez rejestracji."
   },
   "common": {
     "back": "Wstecz",

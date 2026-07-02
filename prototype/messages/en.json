@@ -239,7 +239,12 @@
       "regional": "Regional",
       "materials": "Materials",
       "property": "Property types"
-    }
+    },
+    "breadcrumbHome": "Home",
+    "breadcrumbBlog": "GUIDES",
+    "tocTitle": "TABLE OF CONTENTS",
+    "sidebarCtaTitle": "Need an estimate?",
+    "sidebarCtaDesc": "Calculate your renovation cost in minutes. Free, no registration required."
   },
   "common": {
     "back": "Back",

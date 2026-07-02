@@ -239,7 +239,12 @@
       "regional": "Регионы",
       "materials": "Материалы",
       "property": "Недвижимость"
-    }
+    },
+    "breadcrumbHome": "Главная",
+    "breadcrumbBlog": "СОВЕТЫ",
+    "tocTitle": "СОДЕРЖАНИЕ",
+    "sidebarCtaTitle": "Нужна смета?",
+    "sidebarCtaDesc": "Рассчитайте стоимость ремонта за несколько минут. Бесплатно, без регистрации."
   },
   "common": {
     "back": "Назад",

@@ -18,6 +18,9 @@ export function LandingFooter() {
               <Image src="/logo-header-remonta.png" alt="Remontowo" width={140} height={28} />
             </Link>
             <p className="text-base text-[#969998] leading-relaxed max-w-xs">{t('tagline')}</p>
+            <a href="mailto:remontapoland@gmail.com" className="text-base text-[#969998] hover:text-fg transition-colors mt-2 inline-block">
+              remontapoland@gmail.com
+            </a>
           </div>
 
           <div>

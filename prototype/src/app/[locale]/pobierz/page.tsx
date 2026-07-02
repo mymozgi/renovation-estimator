@@ -7,6 +7,7 @@ import type { PDFData } from '@/lib/kosztorys-types'
 import Confetti from '@/components/Confetti'
 
 const PDFDownloadButton = dynamic(() => import('@/components/PDFDownloadButton'), { ssr: false })
+const AutoPDFDownload   = dynamic(() => import('@/components/AutoPDFDownload'),   { ssr: false })
 
 export default function PobierzPage() {
   const searchParams = useSearchParams()
@@ -62,9 +63,11 @@ export default function PobierzPage() {
       <div className="space-y-2">
         <h1 className="text-2xl font-bold text-fg">Płatność zakończona!</h1>
         <p className="text-muted text-sm max-w-xs">
-          Twój kosztorys jest gotowy do pobrania.
+          Twój kosztorys jest pobierany automatycznie. Jeśli pobieranie nie wystartowało, użyj przycisku poniżej.
         </p>
       </div>
+
+      <AutoPDFDownload data={pdfData} />
 
       <PDFDownloadButton
         data={pdfData}

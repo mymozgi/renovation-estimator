@@ -1,5 +1,5 @@
 import React from 'react'
-import { Document, Page, View, Text, StyleSheet, Font } from '@react-pdf/renderer'
+import { Document, Page, View, Text, StyleSheet, Font, Image } from '@react-pdf/renderer'
 import type { PDFData, PDFRoomData } from '@/lib/kosztorys-types'
 
 const _o = typeof window !== 'undefined' ? window.location.origin : ''
@@ -11,6 +11,8 @@ Font.register({
     { src: `${_o}/fonts/Manrope-Variable.ttf`, fontWeight: 700 },
   ],
 })
+
+const LOGO_SRC = `${_o}/logo-header-remonta.png`
 
 /* ─── Finish descriptions ──────────────────────────────────────────────── */
 const MAT: Record<string, string[]> = {
@@ -94,99 +96,131 @@ function prepItems(r: PDFRoomData): string[] {
 const s = StyleSheet.create({
   page: { backgroundColor: '#FFFFFF', fontFamily: 'Manrope', fontSize: 10 },
 
-  // ── Footer (fixed on every page) ─────────────────────────────────────
+  // ── Footer (fixed on every page, white with top border) ──────────────
   footer: {
     position: 'absolute', bottom: 0, left: 0, right: 0,
-    height: 52, backgroundColor: '#1D5039',
-    flexDirection: 'row', alignItems: 'center',
+    height: 52,
+    backgroundColor: '#FFFFFF',
+    borderTopWidth: 1, borderTopColor: '#f0eded', borderTopStyle: 'solid',
+    flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
     paddingLeft: 44, paddingRight: 44,
   },
-  footerBrand: { color: '#FFFFFF', fontFamily: 'Manrope', fontWeight: 700, fontSize: 9, marginRight: 14 },
-  footerDisc:  { color: '#B9EFCF', fontSize: 6.5, flex: 1, lineHeight: 1.5 },
-  footerPage:  { color: '#FFFFFF', fontSize: 8, opacity: 0.65, marginLeft: 14 },
+  footerLeft:  { flexDirection: 'row', alignItems: 'center' },
+  footerCopy:  { color: '#717975', fontSize: 7.5 },
+  footerSep:   { color: '#c0c9c1', fontSize: 7.5, marginLeft: 14, marginRight: 14 },
+  footerPage:  { color: '#717975', fontSize: 7.5 },
+  footerEmail: { color: '#717975', fontSize: 7.5 },
 
-  // ── Cover banner ──────────────────────────────────────────────────────
-  coverBanner: {
-    backgroundColor: '#1D5039',
-    paddingLeft: 44, paddingRight: 44,
-    paddingTop: 44, paddingBottom: 34,
+  // ── Document header (page 1 only) ─────────────────────────────────────
+  docHeader: {
+    borderBottomWidth: 1, borderBottomColor: '#f0eded', borderBottomStyle: 'solid',
+    flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start',
+    paddingLeft: 44, paddingRight: 44, paddingTop: 44, paddingBottom: 40,
   },
-  coverLogo:    { color: '#FFFFFF', fontFamily: 'Manrope', fontWeight: 700, fontSize: 22, letterSpacing: 0.5 },
-  coverLogoSub: { color: '#B9EFCF', fontSize: 10, marginTop: 3 },
+  docBadge: {
+    backgroundColor: '#b9efcf', borderRadius: 9999,
+    paddingLeft: 10, paddingRight: 10, paddingTop: 4, paddingBottom: 4,
+    alignSelf: 'flex-start', marginBottom: 12,
+  },
+  docBadgeText: { color: '#002113', fontSize: 9 },
+  docTitle: {
+    color: '#002113', fontFamily: 'Manrope', fontWeight: 700,
+    fontSize: 36, letterSpacing: -0.9, marginBottom: 14,
+  },
+  docMeta:  { color: '#414943', fontSize: 10, marginBottom: 4 },
+  docLogo:  { width: 160, height: 32 },
 
   // ── Cover body ────────────────────────────────────────────────────────
-  coverBody:  { paddingLeft: 44, paddingRight: 44, paddingTop: 26, paddingBottom: 80 },
-  coverTitle: { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 24, marginBottom: 4 },
-  coverSub:   { color: '#717975', fontSize: 10, marginBottom: 22 },
+  coverBody: { paddingLeft: 44, paddingRight: 44, paddingTop: 32, paddingBottom: 72 },
 
-  metaRow:        { flexDirection: 'row', backgroundColor: '#F6F3F2', borderRadius: 10, padding: 16, marginBottom: 18 },
-  metaItem:       { flex: 1 },
-  metaLabel:      { color: '#717975', fontSize: 7, textTransform: 'uppercase', letterSpacing: 0.8 },
-  metaValue:      { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 10, marginTop: 2 },
+  // ── Config meta row ───────────────────────────────────────────────────
+  metaRow:   { flexDirection: 'row', backgroundColor: '#F6F3F2', borderRadius: 10, padding: 14, marginBottom: 20 },
+  metaItem:  { flex: 1 },
+  metaLabel: { color: '#717975', fontSize: 7, textTransform: 'uppercase', letterSpacing: 0.8 },
+  metaValue: { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 9, marginTop: 2 },
 
-  totalCard:      { backgroundColor: '#E8F5E9', borderRadius: 10, padding: 18, marginBottom: 18 },
-  totalLabel:     { color: '#717975', fontFamily: 'Manrope', fontWeight: 700, fontSize: 7.5, textTransform: 'uppercase', letterSpacing: 0.8 },
-  totalRange:     { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 26, marginTop: 6, marginBottom: 3 },
-  totalNote:      { color: '#717975', fontSize: 8 },
-  totalStatsRow:  { flexDirection: 'row', marginTop: 14, paddingTop: 12, borderTopWidth: 1, borderTopColor: '#B9EFCF', borderTopStyle: 'solid' },
-  totalStatItem:  { flex: 1 },
-  totalStatLabel: { color: '#717975', fontSize: 7, textTransform: 'uppercase' },
-  totalStatValue: { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 9, marginTop: 1 },
+  // ── Dark green total cost card ────────────────────────────────────────
+  totalDarkCard: {
+    backgroundColor: '#002113', borderRadius: 12,
+    paddingLeft: 32, paddingRight: 32, paddingTop: 28, paddingBottom: 28,
+    marginBottom: 20,
+  },
+  totalDarkLabel: {
+    color: '#71a488', fontFamily: 'Manrope', fontWeight: 700,
+    fontSize: 9, textTransform: 'uppercase', letterSpacing: 0.7, marginBottom: 6,
+  },
+  totalDarkRange: {
+    color: '#FFFFFF', fontFamily: 'Manrope', fontWeight: 700,
+    fontSize: 32, letterSpacing: -0.9, marginBottom: 20,
+  },
+  ratioBar: {
+    flexDirection: 'row', height: 8, borderRadius: 9999,
+    overflow: 'hidden', marginBottom: 12,
+  },
+  ratioLegend:     { flexDirection: 'row' },
+  ratioLegendItem: { flexDirection: 'row', alignItems: 'center', marginRight: 20 },
+  ratioLegendDot:  { width: 8, height: 8, borderRadius: 9999, marginRight: 6 },
+  ratioLegendText: { color: '#FFFFFF', fontSize: 11 },
 
-  structCard:       { backgroundColor: '#F6F3F2', borderRadius: 10, padding: 16 },
-  structTitle:      { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 10, marginBottom: 12 },
-  structBar:        { flexDirection: 'row', height: 7, borderRadius: 4, overflow: 'hidden', marginBottom: 10 },
-  structItemsRow:   { flexDirection: 'row' },
-  structItem:       { flex: 1, backgroundColor: '#FFFFFF', borderRadius: 7, padding: 9 },
-  structItemMid:    { flex: 1, backgroundColor: '#FFFFFF', borderRadius: 7, padding: 9, marginLeft: 6, marginRight: 6 },
-  structDot:        { width: 7, height: 7, borderRadius: 2, marginBottom: 4 },
-  structName:       { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 7.5 },
-  structPct:        { color: '#717975', fontSize: 7, marginTop: 1 },
-  structAmt:        { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 8.5, marginTop: 3 },
+  // ── Cost structure card ───────────────────────────────────────────────
+  structCard:     { backgroundColor: '#F6F3F2', borderRadius: 10, padding: 16 },
+  structTitle:    { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 10, marginBottom: 12 },
+  structBar:      { flexDirection: 'row', height: 7, borderRadius: 4, overflow: 'hidden', marginBottom: 10 },
+  structItemsRow: { flexDirection: 'row' },
+  structItem:     { flex: 1, backgroundColor: '#FFFFFF', borderRadius: 7, padding: 9 },
+  structItemMid:  { flex: 1, backgroundColor: '#FFFFFF', borderRadius: 7, padding: 9, marginLeft: 6, marginRight: 6 },
+  structDot:      { width: 7, height: 7, borderRadius: 2, marginBottom: 4 },
+  structName:     { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 7.5 },
+  structPct:      { color: '#717975', fontSize: 7, marginTop: 1 },
+  structAmt:      { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 8.5, marginTop: 3 },
+
+  // ── Disclaimer ────────────────────────────────────────────────────────
+  disclaimer:     { marginTop: 16, padding: 12, backgroundColor: '#f6f3f2', borderRadius: 8 },
+  disclaimerText: { color: '#717975', fontSize: 7.5, lineHeight: 1.5, textAlign: 'center' },
 
   // ── Rooms page ────────────────────────────────────────────────────────
-  roomsBody:      { paddingLeft: 44, paddingRight: 44, paddingTop: 36, paddingBottom: 80 },
-  roomsTitle:     { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 18, marginBottom: 4 },
-  roomsSub:       { color: '#717975', fontSize: 9, marginBottom: 24 },
+  roomsBody:  { paddingLeft: 44, paddingRight: 44, paddingTop: 36, paddingBottom: 72 },
+  roomsTitle: { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 18, marginBottom: 4 },
+  roomsSub:   { color: '#717975', fontSize: 9, marginBottom: 24 },
 
-  roomCard:       { marginBottom: 18, borderWidth: 1, borderColor: '#E1E3E2', borderStyle: 'solid', borderRadius: 10 },
-  roomHead:       { backgroundColor: '#F6F3F2', paddingLeft: 16, paddingRight: 16, paddingTop: 12, paddingBottom: 12, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', borderBottomWidth: 1, borderBottomColor: '#E1E3E2', borderBottomStyle: 'solid', borderTopLeftRadius: 10, borderTopRightRadius: 10 },
-  roomName:       { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 13 },
-  roomDims:       { color: '#717975', fontSize: 8, marginTop: 2 },
-  roomTotal:      { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 13 },
+  roomCard: { marginBottom: 18, borderWidth: 1, borderColor: '#E1E3E2', borderStyle: 'solid', borderRadius: 10 },
+  roomHead: { backgroundColor: '#F6F3F2', paddingLeft: 16, paddingRight: 16, paddingTop: 12, paddingBottom: 12, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', borderBottomWidth: 1, borderBottomColor: '#E1E3E2', borderBottomStyle: 'solid', borderTopLeftRadius: 10, borderTopRightRadius: 10 },
+  roomName: { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 13 },
+  roomDims: { color: '#717975', fontSize: 8, marginTop: 2 },
+  roomTotal:{ color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 13 },
 
-  secRow:         { paddingLeft: 16, paddingRight: 16, paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, borderBottomColor: '#E1E3E2', borderBottomStyle: 'solid' },
-  secRowLast:     { paddingLeft: 16, paddingRight: 16, paddingTop: 10, paddingBottom: 10 },
-  secHeader:      { flexDirection: 'row', alignItems: 'center', marginBottom: 7 },
-  secDot:         { width: 7, height: 7, borderRadius: 2, marginRight: 7 },
-  secName:        { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 8.5, textTransform: 'uppercase', letterSpacing: 0.5, flex: 1 },
-  secAmt:         { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 9 },
-  secItem:        { flexDirection: 'row', alignItems: 'flex-start', marginBottom: 3 },
-  secBullet:      { color: '#717975', fontSize: 8, width: 10 },
-  secText:        { color: '#717975', fontSize: 7.5, flex: 1, lineHeight: 1.4 },
+  secRow:     { paddingLeft: 16, paddingRight: 16, paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, borderBottomColor: '#E1E3E2', borderBottomStyle: 'solid' },
+  secRowLast: { paddingLeft: 16, paddingRight: 16, paddingTop: 10, paddingBottom: 10 },
+  secHeader:  { flexDirection: 'row', alignItems: 'center', marginBottom: 7 },
+  secDot:     { width: 7, height: 7, borderRadius: 2, marginRight: 7 },
+  secName:    { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 8.5, textTransform: 'uppercase', letterSpacing: 0.5, flex: 1 },
+  secAmt:     { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 9 },
+  secItem:    { flexDirection: 'row', alignItems: 'flex-start', marginBottom: 3 },
+  secBullet:  { color: '#717975', fontSize: 8, width: 10 },
+  secText:    { color: '#717975', fontSize: 7.5, flex: 1, lineHeight: 1.4 },
 
-  summaryRow:     { backgroundColor: '#E8F5E9', borderRadius: 10, padding: 14, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 4 },
-  summaryLabel:   { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 10 },
-  summaryValue:   { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 14 },
+  summaryRow:   { backgroundColor: '#E8F5E9', borderRadius: 10, padding: 14, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 4 },
+  summaryLabel: { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 10 },
+  summaryValue: { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 14 },
 
-  noRooms:        { backgroundColor: '#F6F3F2', borderRadius: 10, padding: 24 },
-  noRoomsText:    { color: '#717975', fontSize: 9, textAlign: 'center', lineHeight: 1.6 },
+  noRooms:     { backgroundColor: '#F6F3F2', borderRadius: 10, padding: 24 },
+  noRoomsText: { color: '#717975', fontSize: 9, textAlign: 'center', lineHeight: 1.6 },
 })
 
 /* ─── Footer ───────────────────────────────────────────────────────────── */
 function Footer() {
   return (
     <View style={s.footer} fixed>
-      <Text style={s.footerBrand}>Remontowo.pl</Text>
-      <Text style={s.footerDisc}>
-        Niniejszy kosztorys ma charakter orientacyjny. Za bardziej dokładnym obliczeniem należy zwracać się do profesjonalnych firm remontowych.
-        Nasz proszcz może być niepełny, a jedynie punktem wyjścia.
-      </Text>
-      <Text
-        style={s.footerPage}
-        render={({ pageNumber, totalPages }) => `${pageNumber} / ${totalPages}`}
-        fixed
-      />
+      <View style={s.footerLeft}>
+        <Text style={s.footerCopy}>© {new Date().getFullYear()} Remontowo. Wszystkie prawa zastrzeżone.</Text>
+        <Text style={s.footerSep}>·</Text>
+        <Text
+          style={s.footerPage}
+          render={({ pageNumber, totalPages }) => `Strona ${pageNumber} z ${totalPages}`}
+          fixed
+        />
+      </View>
+      <Text style={s.footerEmail}>remontapoland@gmail.com</Text>
     </View>
   )
 }
@@ -200,7 +234,6 @@ function RoomCard({ room }: { room: PDFRoomData }) {
 
   return (
     <View style={s.roomCard} wrap={false}>
-      {/* Header */}
       <View style={s.roomHead}>
         <View>
           <Text style={s.roomName}>{room.label.toUpperCase()}</Text>
@@ -211,7 +244,6 @@ function RoomCard({ room }: { room: PDFRoomData }) {
         <Text style={s.roomTotal}>~{fmt(room.cost.total)} PLN</Text>
       </View>
 
-      {/* MATERIAŁY */}
       <View style={s.secRow}>
         <View style={s.secHeader}>
           <View style={[s.secDot, { backgroundColor: '#1D5039' }]} />
@@ -229,7 +261,6 @@ function RoomCard({ room }: { room: PDFRoomData }) {
         }
       </View>
 
-      {/* ROBOCIZNA */}
       <View style={s.secRow}>
         <View style={s.secHeader}>
           <View style={[s.secDot, { backgroundColor: '#4D8F6A' }]} />
@@ -247,7 +278,6 @@ function RoomCard({ room }: { room: PDFRoomData }) {
         }
       </View>
 
-      {/* PRZYGOTOWANIE */}
       <View style={s.secRowLast}>
         <View style={s.secHeader}>
           <View style={[s.secDot, { backgroundColor: '#C4C7C5' }]} />
@@ -271,28 +301,31 @@ function RoomCard({ room }: { room: PDFRoomData }) {
 /* ─── Main document ─────────────────────────────────────────────────────── */
 export function KosztorysPDF({ data }: { data: PDFData }) {
   const { est } = data
-  const total = est.mat + est.labor + est.prep
+  const total   = est.mat + est.labor + est.prep
   const matPct  = Math.round(est.mat   / total * 100)
   const labPct  = Math.round(est.labor / total * 100)
   const prepPct = 100 - matPct - labPct
 
   return (
-    <Document
-      title="Kosztorys Remontu — Remontowo"
-      author="Remontowo.pl"
-    >
+    <Document title="Kosztorys Remontu — Remontowo" author="Remontowo">
+
       {/* ══ Page 1 — Cover + Summary ══ */}
       <Page size="A4" style={s.page}>
-        {/* Dark green banner */}
-        <View style={s.coverBanner}>
-          <Text style={s.coverLogo}>REMONTOWO</Text>
-          <Text style={s.coverLogoSub}>remontowo.pl · bezpłatny kalkulator kosztów remontu</Text>
+
+        {/* Document header: title left, logo right */}
+        <View style={s.docHeader}>
+          <View>
+            <View style={s.docBadge}>
+              <Text style={s.docBadgeText}>RAPORT KOSZTORYSOWY</Text>
+            </View>
+            <Text style={s.docTitle}>Kosztorys{'\n'}Remontu</Text>
+            <Text style={s.docMeta}>Data wygenerowania: {data.generatedAt}</Text>
+            <Text style={s.docMeta}>Lokalizacja: {CITY_L[data.city] ?? data.city}, Polska</Text>
+          </View>
+          <Image src={LOGO_SRC} style={s.docLogo} />
         </View>
 
         <View style={s.coverBody}>
-          <Text style={s.coverTitle}>Kosztorys Remontu</Text>
-          <Text style={s.coverSub}>Wygenerowano {data.generatedAt}</Text>
-
           {/* Config meta */}
           <View style={s.metaRow}>
             {[
@@ -309,37 +342,39 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
             ))}
           </View>
 
-          {/* Total cost card */}
-          <View style={s.totalCard}>
-            <Text style={s.totalLabel}>Całkowity szacowany koszt</Text>
-            <Text style={s.totalRange}>{fmt(est.min)} – {fmt(est.max)} PLN</Text>
-            <Text style={s.totalNote}>±10–15% dokładności · ceny rynkowe 2026</Text>
+          {/* Total cost — dark green, prominent */}
+          <View style={s.totalDarkCard}>
+            <Text style={s.totalDarkLabel}>SZACOWANY KOSZT CAŁKOWITY</Text>
+            <Text style={s.totalDarkRange}>{fmt(est.min)} – {fmt(est.max)} PLN</Text>
 
-            <View style={s.totalStatsRow}>
+            <View style={s.ratioBar}>
+              <View style={{ flex: matPct,  backgroundColor: '#b9efcf' }} />
+              <View style={{ flex: labPct,  backgroundColor: '#71a488' }} />
+              <View style={{ flex: prepPct, backgroundColor: '#c5c7c6' }} />
+            </View>
+
+            <View style={s.ratioLegend}>
               {[
-                { label: 'Materiały',     value: `~${fmt(est.mat)} PLN`   },
-                { label: 'Robocizna',     value: `~${fmt(est.labor)} PLN` },
-                { label: 'Przygotowanie', value: `~${fmt(est.prep)} PLN`  },
-                { label: 'Łącznie m²',   value: `${est.m2.toFixed(0)} m²` },
-              ].map(({ label, value }) => (
-                <View key={label} style={s.totalStatItem}>
-                  <Text style={s.totalStatLabel}>{label}</Text>
-                  <Text style={s.totalStatValue}>{value}</Text>
+                { label: `Materiały (${matPct}%)`,      dot: '#b9efcf' },
+                { label: `Robocizna (${labPct}%)`,      dot: '#71a488' },
+                { label: `Przygotowanie (${prepPct}%)`, dot: '#c5c7c6' },
+              ].map(({ label, dot }) => (
+                <View key={label} style={s.ratioLegendItem}>
+                  <View style={[s.ratioLegendDot, { backgroundColor: dot }]} />
+                  <Text style={s.ratioLegendText}>{label}</Text>
                 </View>
               ))}
             </View>
           </View>
 
-          {/* Cost structure */}
+          {/* Cost structure breakdown */}
           <View style={s.structCard}>
             <Text style={s.structTitle}>Struktura kosztów</Text>
-
             <View style={s.structBar}>
               <View style={{ flex: matPct,  backgroundColor: '#1D5039' }} />
               <View style={{ flex: labPct,  backgroundColor: '#4D8F6A' }} />
               <View style={{ flex: prepPct, backgroundColor: '#C4C7C5' }} />
             </View>
-
             <View style={s.structItemsRow}>
               {([
                 { label: 'Materiały',     pct: matPct,  amt: est.mat,   dot: '#1D5039', style: s.structItem    },
@@ -354,6 +389,15 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
                 </View>
               ))}
             </View>
+          </View>
+
+          {/* Disclaimer */}
+          <View style={s.disclaimer}>
+            <Text style={s.disclaimerText}>
+              Niniejszy kosztorys ma charakter orientacyjny i oparty jest na średnich cenach rynkowych (±10–15% dokładności).
+              Rzeczywisty koszt remontu może różnić się w zależności od wybranej ekipy, jakości materiałów i zakresu prac.
+              Zalecamy uzyskanie co najmniej 3 ofert od sprawdzonych wykonawców przed podjęciem decyzji.
+            </Text>
           </View>
         </View>
 
@@ -379,7 +423,6 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
             data.rooms.map((room, i) => <RoomCard key={i} room={room} />)
           )}
 
-          {/* Grand total */}
           <View style={s.summaryRow}>
             <Text style={s.summaryLabel}>Suma szacunkowa (wszystkie pomieszczenia)</Text>
             <Text style={s.summaryValue}>{fmt(est.min)} – {fmt(est.max)} PLN</Text>

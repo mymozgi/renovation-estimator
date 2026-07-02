@@ -36,7 +36,7 @@ export function CalcWizardLayout({
     <div className="flex flex-col min-h-screen bg-bg">
       {/* Header */}
       <div className="bg-white border-b border-border w-full">
-        <div className="max-w-[1140px] mx-auto px-10 h-20 flex items-center gap-4">
+        <div className="max-w-[1140px] mx-auto px-4 sm:px-10 h-20 flex items-center gap-4">
           <Link href={`/${locale}`} className="shrink-0">
             <Image src="/logo-header-remonta.png" alt="Remontowo" width={160} height={32} priority />
           </Link>
@@ -56,7 +56,7 @@ export function CalcWizardLayout({
 
       {/* Content */}
       <div className="flex-1 overflow-y-auto">
-        <div className="max-w-[1140px] mx-auto px-10 py-12">
+        <div className="max-w-[1140px] mx-auto px-4 sm:px-10 py-8 sm:py-12">
           {children}
         </div>
       </div>
@@ -64,7 +64,7 @@ export function CalcWizardLayout({
       {/* Footer nav */}
       {!hideFooterNav && (
         <div className="sticky bottom-0 z-10 border-t border-border bg-white shadow-[0_-2px_12px_rgba(0,0,0,0.06)] w-full">
-          <div className="max-w-[1140px] mx-auto px-10 py-4 flex items-center justify-between">
+          <div className="max-w-[1140px] mx-auto px-4 sm:px-10 py-4 flex items-center justify-between">
             {showBack ? (
               <button
                 onClick={onBack}

@@ -20,7 +20,7 @@ export const articles: Record<string, Article[]> = {
       title: 'Koszt remontu łazienki 2026 — ile kosztuje m² i czego się spodziewać?',
       description: 'Aktualne ceny remontu łazienki w Polsce 2026. Widełki dla standardu ekonomicznego, optymalnego i premium. Robocizna, płytki, armatura — wszystko w jednym miejscu.',
       cluster: 'rooms',
-      publishedAt: '2026-01-15',
+      publishedAt: '2026-07-02',
       hook: 'Łazienka 6 m² może kosztować 9 000 PLN albo 55 000 PLN. Różnica tkwi nie w powierzchni, ale w wyborach, które robisz na etapie planowania — zanim zamówisz wykonawcę.',
       problem: `Remont łazienki to jeden z najbardziej mylących kosztorysowo projektów. Mała powierzchnia (4–10 m²) wytwarza fałszywe poczucie niskich kosztów — bo każdy metr kwadratowy jest tu droższy niż w pozostałych pomieszczeniach.
 
@@ -61,7 +61,7 @@ Płyty wielkoformatowe 60×120 lub 120×240 cm, prysznic walk-in, ogrzewanie pod
       title: 'Ceny remontów w Polsce 2026 — Warszawa, Kraków, Wrocław, Gdańsk, Poznań',
       description: 'Porównanie cen robocizny remontowej w największych polskich miastach w 2026 roku. Gdzie remont jest najtańszy, a gdzie zapłacisz najwięcej i dlaczego.',
       cluster: 'regional',
-      publishedAt: '2026-02-01',
+      publishedAt: '2026-07-02',
       hook: 'Ten sam remont 60 m² w standardzie optymalnym kosztuje 74 000 PLN w Warszawie i 55 000 PLN w Łodzi. Różnica to prawie 20 000 PLN — i wynika wyłącznie z lokalizacji.',
       problem: `Rynek remontowy w Polsce jest silnie zróżnicowany regionalnie. Stawki robocizny w największych aglomeracjach rosną szybciej niż w mniejszych miastach, bo ekipy mają więcej zleceń i wyższe koszty stałe (dojazdy, najem magazynów, ZUS).
 
@@ -104,7 +104,7 @@ Skąd biorą się różnice? Ekipa malarska w Warszawie oczekuje 45–70 PLN/m²
       title: 'Na czym NIE oszczędzać przy remoncie w 2026 — i gdzie możesz ciąć koszty bezpiecznie',
       description: 'Które elementy remontu warto kupić w wyższym standardzie, a gdzie tańsze materiały sprawdzą się równie dobrze? Praktyczny przewodnik po materiałach budowlanych 2026.',
       cluster: 'materials',
-      publishedAt: '2026-03-01',
+      publishedAt: '2026-07-02',
       hook: 'Oszczędzanie na remoncie jest możliwe — ale tylko w odpowiednich miejscach. Źle dobrana hydroizolacja w łazience oznacza remont za 3 lata. Tańsze panele w salonie — żaden problem.',
       problem: `Pokusa oszczędzania jest zrozumiała — remonty kosztują więcej niż planowaliśmy. Problem pojawia się, gdy cięcia dotyczą elementów, których wymiana po kilku latach pochłonie więcej niż pierwotna oszczędność.
 
@@ -149,7 +149,7 @@ Najkosztowniejsze błędy oszczędzania:
       title: 'Wykończenie mieszkania od dewelopera 2026 — ile kosztuje i jak zaplanować?',
       description: 'Kompletny poradnik o kosztach wykończenia mieszkania w stanie deweloperskim w 2026 roku. Etapy prac, realne widełki cenowe i najczęstsze błędy kupujących.',
       cluster: 'property',
-      publishedAt: '2026-04-01',
+      publishedAt: '2026-07-02',
       hook: 'Kupiłeś mieszkanie od dewelopera — gratuluję. Teraz zaczyna się prawdziwa rachuba: wykończenie 50 m² może kosztować od 60 000 do 180 000 PLN. Skąd taka rozpiętość i jak nie przepłacić?',
       problem: `Stan deweloperski wygląda podobnie niezależnie od dewelopera: betonowe ściany, tynki, wylewki, okna z PCV, drzwi wejściowe, przyłącza mediów. Puste, zimne, pachnie cementem. I teraz Ty musisz z tego zrobić dom.
 
@@ -201,7 +201,7 @@ Drzwi wewnętrzne: 600–4 000 PLN/szt., montaż AGD i podpięcie.
       title: 'Bathroom renovation cost 2026 — how much per m² and what to expect?',
       description: 'Current bathroom renovation prices in Poland 2026. Cost ranges for budget, standard, and premium finishes. Labour, tiles, fittings — everything in one place.',
       cluster: 'rooms',
-      publishedAt: '2026-01-15',
+      publishedAt: '2026-07-02',
       hook: 'A 6 m² bathroom can cost 9,000 PLN or 55,000 PLN. The difference lies not in the size, but in the decisions you make at the planning stage — before you hire a contractor.',
       problem: `Bathroom renovation is one of the most misleading projects when it comes to estimating costs. The small area (4–10 m²) creates a false sense of low cost — because every square metre here is more expensive than in other rooms.
 
@@ -242,7 +242,7 @@ Large-format slabs 60×120 or 120×240 cm, walk-in shower, water underfloor heat
       title: 'Renovation prices in Poland 2026 — Warsaw, Kraków, Wrocław, Gdańsk, Poznań',
       description: 'Comparison of renovation labour costs in major Polish cities in 2026. Where is renovation cheapest, where will you pay the most and why.',
       cluster: 'regional',
-      publishedAt: '2026-02-01',
+      publishedAt: '2026-07-02',
       hook: 'The same 60 m² renovation in optimal standard costs 74,000 PLN in Warsaw and 55,000 PLN in Łódź. The difference is nearly 20,000 PLN — and it comes purely from location.',
       problem: `The renovation market in Poland is strongly differentiated by region. Labour rates in the largest cities are growing faster than in smaller towns, because crews have more orders and higher fixed costs (transport, warehouse rental, social contributions).
 
@@ -285,7 +285,7 @@ Where do the differences come from? A painting crew in Warsaw expects 45–70 PL
       title: 'What NOT to save on during renovation in 2026 — and where you can safely cut costs',
       description: 'Which renovation elements are worth buying at a higher standard, and where cheaper materials work just as well? A practical guide to construction materials 2026.',
       cluster: 'materials',
-      publishedAt: '2026-03-01',
+      publishedAt: '2026-07-02',
       hook: 'Saving on renovation is possible — but only in the right places. The wrong waterproofing in the bathroom means another renovation in 3 years. Cheaper panels in the living room — no problem.',
       problem: `The temptation to save is understandable — renovations cost more than planned. The problem arises when cuts affect elements whose replacement in a few years will cost more than the original saving.
 
@@ -330,7 +330,7 @@ The most costly savings mistakes:
       title: 'Finishing a new-build apartment 2026 — how much does it cost and how to plan?',
       description: 'A complete guide to the costs of finishing a developer-state apartment in 2026. Stages of work, realistic cost ranges and the most common buyer mistakes.',
       cluster: 'property',
-      publishedAt: '2026-04-01',
+      publishedAt: '2026-07-02',
       hook: 'You bought a new-build apartment — congratulations. Now the real calculation begins: finishing 50 m² can cost from 60,000 to 180,000 PLN. Where does that range come from and how do you avoid overpaying?',
       problem: `A developer-state apartment looks similar regardless of the developer: bare concrete walls, plaster, screeds, PVC windows, front door, utility connections. Empty, cold, smells of cement. And now you have to turn it into a home.
 
@@ -382,7 +382,7 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
       title: 'Стоимость ремонта ванной 2026 — сколько стоит м² и чего ожидать?',
       description: 'Актуальные цены на ремонт ванной комнаты в Польше в 2026 году. Диапазоны для эконом, стандарт и премиум отделки. Работа, плитка, сантехника — всё в одном месте.',
       cluster: 'rooms',
-      publishedAt: '2026-01-15',
+      publishedAt: '2026-07-02',
       hook: 'Ванная 6 м² может стоить 9 000 PLN или 55 000 PLN. Разница кроется не в площади, а в решениях, которые вы принимаете на этапе планирования — до того, как нанять подрядчика.',
       problem: `Ремонт ванной — один из самых трудно поддающихся оценке проектов. Небольшая площадь (4–10 м²) создаёт ложное ощущение низких затрат — ведь каждый квадратный метр здесь дороже, чем в других комнатах.
 
@@ -423,7 +423,7 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
       title: 'Цены на ремонт в Польше 2026 — Варшава, Краков, Вроцлав, Гданьск, Познань',
       description: 'Сравнение стоимости ремонтных работ в крупнейших городах Польши в 2026 году. Где ремонт дешевле, где дороже и почему.',
       cluster: 'regional',
-      publishedAt: '2026-02-01',
+      publishedAt: '2026-07-02',
       hook: 'Один и тот же ремонт 60 м² в оптимальном стандарте стоит 74 000 PLN в Варшаве и 55 000 PLN в Лодзи. Разница почти 20 000 PLN — и она обусловлена исключительно местоположением.',
       problem: `Рынок ремонтных услуг в Польше сильно дифференцирован по регионам. Ставки оплаты труда в крупнейших агломерациях растут быстрее, чем в небольших городах, так как у бригад больше заказов и выше постоянные расходы.
 
@@ -464,7 +464,7 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
       title: 'На чём НЕ экономить при ремонте в 2026 — и где можно безопасно сократить расходы',
       description: 'Какие элементы ремонта стоит покупать в более высоком стандарте, а где более дешёвые материалы подойдут так же хорошо? Практическое руководство по строительным материалам 2026.',
       cluster: 'materials',
-      publishedAt: '2026-03-01',
+      publishedAt: '2026-07-02',
       hook: 'Экономить на ремонте можно — но только в правильных местах. Неправильная гидроизоляция в ванной означает ремонт через 3 года. Более дешёвый ламинат в гостиной — никаких проблем.',
       problem: `Соблазн сэкономить понятен — ремонт стоит больше, чем планировалось. Проблема возникает, когда сокращения касаются элементов, замена которых через несколько лет обойдётся дороже первоначальной экономии.
 
@@ -506,7 +506,7 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
       title: 'Отделка квартиры от застройщика 2026 — сколько стоит и как планировать?',
       description: 'Полное руководство по стоимости отделки квартиры в состоянии от застройщика в 2026 году. Этапы работ, реальные ценовые диапазоны и частые ошибки покупателей.',
       cluster: 'property',
-      publishedAt: '2026-04-01',
+      publishedAt: '2026-07-02',
       hook: 'Вы купили квартиру от застройщика — поздравляем. Теперь начинается настоящий расчёт: отделка 50 м² может стоить от 60 000 до 180 000 PLN. Откуда такой разброс и как не переплатить?',
       problem: `Квартира от застройщика выглядит одинаково вне зависимости от застройщика: голые бетонные стены, штукатурка, стяжки, ПВХ-окна, входная дверь, подводки коммуникаций. Пустая, холодная, пахнет цементом. И теперь вам нужно превратить это в дом.
 
@@ -558,7 +558,7 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
       title: 'Вартість ремонту ванної 2026 — скільки коштує м² і чого очікувати?',
       description: 'Актуальні ціни на ремонт ванної кімнати в Польщі у 2026 році. Діапазони для економ, стандарт і преміум оздоблення. Робота, плитка, сантехніка — все в одному місці.',
       cluster: 'rooms',
-      publishedAt: '2026-01-15',
+      publishedAt: '2026-07-02',
       hook: 'Ванна кімната 6 м² може коштувати 9 000 PLN або 55 000 PLN. Різниця — не в площі, а в рішеннях, які ви приймаєте на етапі планування — до того, як найняти підрядника.',
       problem: `Ремонт ванної — один із найскладніших для оцінки проектів. Невелика площа (4–10 м²) створює хибне відчуття низьких витрат — адже кожен квадратний метр тут дорожчий, ніж в інших кімнатах.
 
@@ -599,7 +599,7 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
       title: 'Ціни на ремонт у Польщі 2026 — Варшава, Краків, Вроцлав, Гданськ, Познань',
       description: 'Порівняння вартості ремонтних робіт у найбільших містах Польщі у 2026 році. Де ремонт дешевший, де дорожчий і чому.',
       cluster: 'regional',
-      publishedAt: '2026-02-01',
+      publishedAt: '2026-07-02',
       hook: 'Той самий ремонт 60 м² в оптимальному стандарті коштує 74 000 PLN у Варшаві і 55 000 PLN у Лодзі. Різниця — майже 20 000 PLN, і вона зумовлена виключно місцезнаходженням.',
       problem: `Ринок ремонтних послуг у Польщі сильно диференційований за регіонами. Ставки оплати праці у найбільших агломераціях зростають швидше, ніж у менших містах.
 
@@ -640,7 +640,7 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
       title: 'На чому НЕ варто економити при ремонті 2026 — і де можна безпечно скорочувати витрати',
       description: 'Які елементи ремонту варто купувати у вищому стандарті, а де дешевші матеріали підійдуть так само добре? Практичний посібник з будівельних матеріалів 2026.',
       cluster: 'materials',
-      publishedAt: '2026-03-01',
+      publishedAt: '2026-07-02',
       hook: 'Економити на ремонті можна — але тільки у правильних місцях. Неправильна гідроізоляція у ванній означає ремонт через 3 роки. Дешевший ламінат у вітальні — жодних проблем.',
       problem: `Спокуса заощадити зрозуміла — ремонти коштують більше, ніж планувалося. Проблема виникає, коли скорочення стосуються елементів, заміна яких через кілька років обійдеться дорожче від первісної економії.
 
@@ -682,7 +682,7 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
       title: 'Оздоблення квартири від забудовника 2026 — скільки коштує і як планувати?',
       description: 'Повний посібник із вартості оздоблення квартири у стані від забудовника у 2026 році. Етапи робіт, реальні цінові діапазони та часті помилки покупців.',
       cluster: 'property',
-      publishedAt: '2026-04-01',
+      publishedAt: '2026-07-02',
       hook: 'Ви купили квартиру від забудовника — вітаємо. Тепер починається справжній розрахунок: оздоблення 50 м² може коштувати від 60 000 до 180 000 PLN. Звідки такий розкид і як не переплатити?',
       problem: `Квартира від забудовника виглядає однаково незалежно від забудовника: голі бетонні стіни, штукатурка, стяжки, ПВХ-вікна, вхідні двері, підводки комунікацій. Порожня, холодна, пахне цементом. І тепер вам потрібно перетворити це на дім.
 

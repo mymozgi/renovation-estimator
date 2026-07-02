@@ -5,6 +5,7 @@ import { getTranslations } from 'next-intl/server'
 import { articles } from '@/content/articles'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
+import { MarkdownContent } from '@/components/MarkdownContent'
 import { CLUSTER_HERO, CLUSTER_HERO_FALLBACK } from '@/lib/clusterColors'
 
 type Props = { params: Promise<{ locale: string; slug: string }> }
@@ -27,9 +28,9 @@ export default async function ArticlePage({ params }: Props) {
 
       <main className="flex-1">
         {/* ── Header area ── */}
-        <div className="max-w-[1140px] mx-auto px-10 pt-16 pb-0">
+        <div className="max-w-[1140px] mx-auto px-4 sm:px-10 pt-8 sm:pt-16 pb-0">
           {/* Breadcrumbs */}
-          <nav className="flex items-center gap-2 font-mono text-xs text-[#717973] mb-6">
+          <nav className="flex items-center gap-2 font-mono text-xs text-[#717973] mb-5 flex-wrap">
             <Link href={`/${locale}`} className="hover:text-fg transition-colors">
               {t('breadcrumbHome')}
             </Link>
@@ -42,7 +43,7 @@ export default async function ArticlePage({ params }: Props) {
           </nav>
 
           {/* Category badge + date */}
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-4 flex-wrap">
             <span className="bg-[#cde9d8] text-[#4b6457] rounded-full px-3 py-1 text-xs font-medium tracking-[0.06em]">
               {clusterLabel}
             </span>
@@ -50,12 +51,12 @@ export default async function ArticlePage({ params }: Props) {
           </div>
 
           {/* Title */}
-          <h1 className="font-bold text-fg text-5xl leading-[56px] tracking-[-0.96px] mb-8 max-w-[896px]">
+          <h1 className="font-bold text-fg text-2xl sm:text-4xl lg:text-5xl leading-tight sm:leading-[1.2] lg:leading-[56px] tracking-[-0.5px] lg:tracking-[-0.96px] mb-6 sm:mb-8 max-w-[896px]">
             {article.title}
           </h1>
 
-          {/* Hero image card */}
-          <div className="relative w-full aspect-[1140/490] rounded-[12px] overflow-hidden shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
+          {/* Hero image */}
+          <div className="relative w-full aspect-[16/7] sm:aspect-[1140/490] rounded-[12px] overflow-hidden shadow-[0px_10px_15px_-3px_rgba(0,0,0,0.1),0px_4px_6px_-4px_rgba(0,0,0,0.1)]">
             <Image
               src={heroSrc}
               alt={article.title}
@@ -67,33 +68,32 @@ export default async function ArticlePage({ params }: Props) {
           </div>
         </div>
 
-        {/* ── Two-column layout ── */}
-        <div className="max-w-[1140px] mx-auto px-10 pt-10 pb-16 flex gap-16 items-start">
+        {/* ── Two-column layout (stacks on mobile) ── */}
+        <div className="max-w-[1140px] mx-auto px-4 sm:px-10 pt-8 sm:pt-10 pb-10 sm:pb-16 flex flex-col lg:flex-row gap-8 lg:gap-16 items-start">
+
           {/* Article body */}
-          <article className="flex-1 min-w-0">
+          <article className="flex-1 min-w-0 w-full">
             {/* Hook */}
-            <p className="text-base text-[#414943] leading-7 mb-10">{article.hook}</p>
+            <p className="text-base text-[#414943] leading-7 mb-8 sm:mb-10">{article.hook}</p>
 
             {/* Problem */}
-            <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] mb-4">
+            <h2 className="font-bold text-fg text-2xl sm:text-[32px] leading-tight sm:leading-10 tracking-[-0.32px] mb-4">
               {t('problem')}
             </h2>
-            <div className="text-base text-[#414943] leading-6 mb-10 whitespace-pre-line">
-              {article.problem}
+            <div className="mb-8 sm:mb-10">
+              <MarkdownContent text={article.problem} />
             </div>
 
             {/* Solution — styled as pro-tip callout */}
-            <div className="bg-[#cde9d8] border-l-4 border-[#002113] pl-9 pr-8 py-8 rounded-r-md mb-10">
+            <div className="bg-[#cde9d8] border-l-4 border-[#002113] pl-6 sm:pl-9 pr-5 sm:pr-8 py-6 sm:py-8 rounded-r-md mb-8 sm:mb-10">
               <p className="font-semibold text-[#003924] text-sm tracking-[0.8px] uppercase mb-3">
                 {t('solution')}
               </p>
-              <p className="text-base text-[#414943] leading-6 whitespace-pre-line">
-                {article.explanation}
-              </p>
+              <MarkdownContent text={article.explanation} />
             </div>
 
             {/* Checklist */}
-            <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] mb-5">
+            <h2 className="font-bold text-fg text-2xl sm:text-[32px] leading-tight sm:leading-10 tracking-[-0.32px] mb-5">
               {t('checklist')}
             </h2>
             <ul className="flex flex-col gap-3">
@@ -106,12 +106,12 @@ export default async function ArticlePage({ params }: Props) {
             </ul>
           </article>
 
-          {/* Sidebar */}
-          <aside className="w-80 shrink-0 sticky top-24">
-            <div className="bg-[#f6f3f2] border border-[#c0c9c1] rounded-[12px] p-8 flex flex-col gap-6">
+          {/* Sidebar — below article on mobile, sticky on desktop */}
+          <aside className="w-full lg:w-80 shrink-0 lg:sticky top-24">
+            <div className="bg-[#f6f3f2] border border-[#c0c9c1] rounded-[12px] p-6 sm:p-8 flex flex-col gap-6">
               {/* TOC */}
               <div>
-                <p className="font-semibold text-fg text-base tracking-[0.8px] uppercase mb-4">
+                <p className="font-semibold text-fg text-sm tracking-[0.8px] uppercase mb-4">
                   {t('tocTitle')}
                 </p>
                 <ul className="flex flex-col gap-3">
@@ -129,7 +129,7 @@ export default async function ArticlePage({ params }: Props) {
 
               {/* CTA widget */}
               <div>
-                <h3 className="font-bold text-fg text-2xl leading-8 mb-2">
+                <h3 className="font-bold text-fg text-xl sm:text-2xl leading-8 mb-2">
                   {t('sidebarCtaTitle')}
                 </h3>
                 <p className="text-base text-[#414943] leading-6 mb-5">
@@ -147,12 +147,12 @@ export default async function ArticlePage({ params }: Props) {
         </div>
 
         {/* ── Full-width CTA section ── */}
-        <section className="bg-[#37684f] py-24 text-center text-white">
-          <div className="max-w-[672px] mx-auto px-6">
-            <h2 className="font-bold text-5xl leading-[56px] tracking-[-0.96px] mb-3">
+        <section className="bg-[#37684f] py-14 sm:py-24 text-center text-white">
+          <div className="max-w-[672px] mx-auto px-4 sm:px-6">
+            <h2 className="font-bold text-3xl sm:text-5xl leading-tight sm:leading-[56px] tracking-[-0.5px] sm:tracking-[-0.96px] mb-3">
               {tHome('ctaTitle')}
             </h2>
-            <p className="text-white/80 text-lg leading-7 mb-7">
+            <p className="text-white/80 text-base sm:text-lg leading-7 mb-7">
               {tHome('ctaSubtitle')}
             </p>
             <Link

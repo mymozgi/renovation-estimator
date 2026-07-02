@@ -80,22 +80,27 @@ export default async function LandingPage({ params }: Props) {
 
       {/* ── Dla kogo? ─────────────────────────────────────────────── */}
       <section className="max-w-[1140px] mx-auto px-4 sm:px-10 py-12 sm:py-24">
-        <h2 className="font-bold text-fg text-2xl sm:text-[32px] leading-tight sm:leading-10 tracking-[-0.32px] text-center mb-8 sm:mb-10">{t('forWhomTitle')}</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {[
-            { Icon: Home,       title: t('forWhom1Title'), desc: t('forWhom1Desc') },
-            { Icon: TrendingUp, title: t('forWhom2Title'), desc: t('forWhom2Desc') },
-          ].map(({ Icon, title, desc }) => (
-            <div key={title} className="flex gap-4 bg-surface border border-border rounded-2xl p-6">
-              <div className="w-16 h-16 rounded-full bg-[#b9efcf] flex items-center justify-center shrink-0">
-                <Icon size={24} className="text-primary" strokeWidth={1.8} />
+        <div className="flex flex-col gap-16 items-center">
+          <div className="flex flex-col gap-4 items-center text-center">
+            <h2 className="font-semibold text-fg text-2xl sm:text-[32px] leading-tight sm:leading-10 tracking-[-0.32px]">{t('forWhomTitle')}</h2>
+            <p className="text-base text-[#414943] leading-6 max-w-[480px]">{t('forWhomSubtitle')}</p>
+          </div>
+          <div className="flex flex-col md:flex-row gap-12 w-full">
+            {[
+              { Icon: Home,       title: t('forWhom1Title'), desc: t('forWhom1Desc') },
+              { Icon: TrendingUp, title: t('forWhom2Title'), desc: t('forWhom2Desc') },
+            ].map(({ Icon, title, desc }) => (
+              <div key={title} className="flex flex-1 gap-6 items-start">
+                <div className="w-16 h-16 rounded-full bg-[#b9efcf] flex items-center justify-center shrink-0">
+                  <Icon size={32} className="text-primary" strokeWidth={1.5} />
+                </div>
+                <div className="flex flex-col gap-3">
+                  <h3 className="font-semibold text-fg text-2xl leading-8">{title}</h3>
+                  <p className="text-[#414943] text-base leading-6">{desc}</p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-fg text-2xl leading-8 mb-2">{title}</h3>
-                <p className="text-muted text-base leading-6">{desc}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 

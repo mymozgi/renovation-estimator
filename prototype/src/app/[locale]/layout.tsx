@@ -30,8 +30,8 @@ export const metadata: Metadata = {
   title: 'Remontowo — kalkulator kosztów remontu',
   description: 'Oblicz realistyczny kosztorys remontu na podstawie powierzchni, standardu wykończenia i cen regionalnych.',
   icons: {
-    icon: '/favicon-remonta.svg',
-    shortcut: '/favicon-remonta.svg',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
   },
 }
 

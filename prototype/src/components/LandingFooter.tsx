@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 
 export function LandingFooter() {
@@ -13,7 +14,9 @@ export function LandingFooter() {
       <div className="max-w-[1280px] mx-auto px-10 py-10">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
-            <div className="font-semibold text-fg text-base mb-2">Remontowo</div>
+            <Link href={`/${locale}`} className="inline-block mb-3">
+              <Image src="/logo-header-remonta.png" alt="Remontowo" width={140} height={28} />
+            </Link>
             <p className="text-base text-[#969998] leading-relaxed max-w-xs">{t('tagline')}</p>
           </div>
 

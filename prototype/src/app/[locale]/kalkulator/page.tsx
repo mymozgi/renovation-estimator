@@ -75,8 +75,8 @@ function Radio({ checked, label, desc, onClick }: { checked: boolean; label: str
         {checked && <div className="w-2 h-2 rounded-full bg-white" />}
       </div>
       <div>
-        <div className="font-semibold text-fg text-sm mb-0.5">{label}</div>
-        {desc && <div className="text-muted text-xs leading-relaxed">{desc}</div>}
+        <div className="font-semibold text-fg text-base mb-0.5">{label}</div>
+        {desc && <div className="text-muted text-sm leading-relaxed">{desc}</div>}
       </div>
     </button>
   )
@@ -84,13 +84,13 @@ function Radio({ checked, label, desc, onClick }: { checked: boolean; label: str
 
 function Chk({ checked, label, desc, onToggle }: { checked: boolean; label: string; desc?: string; onToggle: () => void }) {
   return (
-    <button onClick={onToggle} className={`flex items-start gap-4 p-4 rounded-2xl border-2 text-left transition-colors w-full ${checked ? 'border-primary bg-primary-fixed/20' : 'border-border bg-surface hover:border-primary/40'}`}>
+    <button onClick={onToggle} className={`flex items-start gap-4 p-5 rounded-2xl border-2 text-left transition-colors w-full ${checked ? 'border-primary bg-primary-fixed/20' : 'border-border bg-surface hover:border-primary/40'}`}>
       <div className={`w-5 h-5 rounded border-2 shrink-0 mt-0.5 flex items-center justify-center ${checked ? 'border-primary bg-primary' : 'border-border'}`}>
         {checked && <Check size={11} className="text-white" />}
       </div>
       <div>
-        <div className="font-semibold text-fg text-sm mb-0.5">{label}</div>
-        {desc && <div className="text-muted text-xs leading-relaxed">{desc}</div>}
+        <div className="font-semibold text-fg text-base mb-0.5">{label}</div>
+        {desc && <div className="text-muted text-sm leading-relaxed">{desc}</div>}
       </div>
     </button>
   )
@@ -102,9 +102,9 @@ function FinishCard({ selected, label, desc, img, onClick }: { selected: boolean
       <div className="relative aspect-video w-full">
         <Image src={img} alt={label} fill className="object-cover" />
       </div>
-      <div className={`p-4 ${selected ? 'bg-primary-fixed/20' : ''}`}>
-        <div className="font-semibold text-fg text-sm mb-0.5">{label}</div>
-        <div className="text-muted text-xs">{desc}</div>
+      <div className={`p-5 ${selected ? 'bg-primary-fixed/20' : ''}`}>
+        <div className="font-semibold text-fg text-base mb-1">{label}</div>
+        <div className="text-muted text-sm">{desc}</div>
       </div>
     </button>
   )
@@ -299,7 +299,7 @@ export default function KalkulatorPage() {
   if (f.phase === 'setup' && f.ss < 0) {
     return (
       <CalcWizardLayout stepLabel={t('stepStart')} progress={5} onBack={() => router.push(`/${locale}`)} showBack={false} hideFooterNav>
-        <h2 className="font-bold text-fg text-3xl md:text-4xl text-center mb-2">{t('startTitle')}</h2>
+        <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-2">{t('startTitle')}</h2>
         <p className="text-muted text-base text-center mb-10">{t('startSubtitle')}</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {CALC_TYPES.map(ct => (
@@ -308,9 +308,9 @@ export default function KalkulatorPage() {
               <div className="relative aspect-[4/3] w-full">
                 <Image src={ct.img} alt={ct.label} fill className="object-cover" />
               </div>
-              <div className="p-4">
-                <h3 className="font-semibold text-fg text-base mb-1">{ct.label}</h3>
-                <p className="text-muted text-xs leading-relaxed">{ct.desc}</p>
+              <div className="p-5">
+                <h3 className="font-semibold text-fg text-lg mb-1">{ct.label}</h3>
+                <p className="text-muted text-sm leading-relaxed">{ct.desc}</p>
               </div>
             </button>
           ))}
@@ -323,7 +323,7 @@ export default function KalkulatorPage() {
   if (f.phase === 'setup' && curSS === 'city') {
     return (
       <CalcWizardLayout stepLabel={stepLabel} progress={progress} onBack={back} onNext={() => f.city && nextSetup()} nextDisabled={!f.city}>
-        <h2 className="font-bold text-fg text-4xl text-center mb-3">{t('cityTitle')}</h2>
+        <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-3">{t('cityTitle')}</h2>
         <p className="text-muted text-base text-center mb-10">{t('citySubtitle')}</p>
         <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
           {CITIES.map(({ id, icon }) => (
@@ -332,7 +332,7 @@ export default function KalkulatorPage() {
               <div className="w-14 h-14 rounded-full bg-primary-fixed flex items-center justify-center">
                 <Image src={icon} alt={id} width={28} height={28} style={{ filter: 'invert(20%) sepia(60%) saturate(400%) hue-rotate(115deg)' }} />
               </div>
-              <span className="font-medium text-fg text-sm capitalize">{id === 'lodz' ? 'Łódź' : id.charAt(0).toUpperCase() + id.slice(1)}</span>
+              <span className="font-medium text-fg text-base capitalize">{id === 'lodz' ? 'Łódź' : id.charAt(0).toUpperCase() + id.slice(1)}</span>
             </button>
           ))}
         </div>
@@ -344,7 +344,7 @@ export default function KalkulatorPage() {
   if (f.phase === 'setup' && curSS === 'property-type') {
     return (
       <CalcWizardLayout stepLabel={stepLabel} progress={progress} onBack={back} onNext={() => f.propType && nextSetup()} nextDisabled={!f.propType}>
-        <h2 className="font-bold text-fg text-4xl text-center mb-3">{t('propTypeTitle')}</h2>
+        <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-3">{t('propTypeTitle')}</h2>
         <p className="text-muted text-base text-center mb-10">{t('propTypeSubtitle')}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {PROP_TYPES.map(pt => (
@@ -353,9 +353,9 @@ export default function KalkulatorPage() {
               <div className="relative aspect-[4/3] w-full">
                 <Image src={pt.img} alt={pt.label} fill className="object-cover" />
               </div>
-              <div className={`p-4 ${f.propType === pt.id ? 'bg-primary-fixed/20' : 'bg-surface'}`}>
-                <h3 className="font-semibold text-fg text-base mb-1">{pt.label}</h3>
-                <p className="text-muted text-xs">{pt.desc}</p>
+              <div className={`p-5 ${f.propType === pt.id ? 'bg-primary-fixed/20' : 'bg-surface'}`}>
+                <h3 className="font-semibold text-fg text-lg mb-1">{pt.label}</h3>
+                <p className="text-muted text-sm">{pt.desc}</p>
               </div>
             </button>
           ))}
@@ -368,7 +368,7 @@ export default function KalkulatorPage() {
   if (f.phase === 'setup' && curSS === 'area') {
     return (
       <CalcWizardLayout stepLabel={stepLabel} progress={progress} onBack={back} onNext={nextSetup}>
-        <h2 className="font-bold text-fg text-4xl text-center mb-3">{t('areaTitle')}</h2>
+        <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-3">{t('areaTitle')}</h2>
         <p className="text-muted text-base text-center mb-10">{t('areaSubtitle')}</p>
         <div className="bg-surface border border-border rounded-2xl p-8 max-w-md mx-auto">
           <div className="flex items-baseline justify-center gap-1.5 mb-1">
@@ -420,7 +420,7 @@ export default function KalkulatorPage() {
   if (f.phase === 'setup' && curSS === 'standard') {
     return (
       <CalcWizardLayout stepLabel={stepLabel} progress={progress} onBack={back} onNext={() => f.standard && nextSetup()} nextDisabled={!f.standard}>
-        <h2 className="font-bold text-fg text-4xl text-center mb-3">{t('standardTitle')}</h2>
+        <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-3">{t('standardTitle')}</h2>
         <p className="text-muted text-base text-center mb-10">{t('standardSubtitle')}</p>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {STANDARDS.map(s => (
@@ -429,9 +429,9 @@ export default function KalkulatorPage() {
               <div className="relative aspect-[4/3] w-full">
                 <Image src={s.img} alt={s.label} fill className="object-cover" />
               </div>
-              <div className={`p-4 ${f.standard === s.id ? 'bg-primary-fixed/20' : 'bg-surface'}`}>
-                <h3 className="font-semibold text-fg text-base mb-1">{s.label}</h3>
-                <p className="text-muted text-xs">{s.desc}</p>
+              <div className={`p-5 ${f.standard === s.id ? 'bg-primary-fixed/20' : 'bg-surface'}`}>
+                <h3 className="font-semibold text-fg text-lg mb-1">{s.label}</h3>
+                <p className="text-muted text-sm">{s.desc}</p>
               </div>
             </button>
           ))}
@@ -444,7 +444,7 @@ export default function KalkulatorPage() {
   if (f.phase === 'setup' && curSS === 'conditions') {
     return (
       <CalcWizardLayout stepLabel={stepLabel} progress={progress} onBack={back} onNext={nextSetup}>
-        <h2 className="font-bold text-fg text-4xl text-center mb-3">{t('condTitle')}</h2>
+        <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-3">{t('condTitle')}</h2>
         <p className="text-muted text-base text-center mb-8">{t('condSubtitle')}</p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {COND_ITEMS.map(({ key, label, desc }) => (
@@ -461,10 +461,10 @@ export default function KalkulatorPage() {
     const canNext = !!f.rynek.age && !!f.rynek.finish
     return (
       <CalcWizardLayout stepLabel={stepLabel} progress={progress} onBack={back} onNext={() => canNext && nextSetup()} nextDisabled={!canNext}>
-        <h2 className="font-bold text-fg text-4xl text-center mb-3">{t('rynekTitle')}</h2>
+        <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-3">{t('rynekTitle')}</h2>
         <p className="text-muted text-base text-center mb-8">{t('rynekSubtitle')}</p>
 
-        <h3 className="font-semibold text-fg text-sm mb-3">{t('rynekAgeTitle')}</h3>
+        <h3 className="font-semibold text-fg text-base mb-3">{t('rynekAgeTitle')}</h3>
         <div className="flex gap-3 mb-6">
           {AGE_OPTS.map(o => (
             <button key={o.id} onClick={() => upd({ rynek: { ...f.rynek, age: o.id } })}
@@ -474,7 +474,7 @@ export default function KalkulatorPage() {
           ))}
         </div>
 
-        <h3 className="font-semibold text-fg text-sm mb-3">{t('rynekFinishTitle')}</h3>
+        <h3 className="font-semibold text-fg text-base mb-3">{t('rynekFinishTitle')}</h3>
         <div className="flex flex-col gap-2 mb-6">
           {FINISH_OPTS.map(o => (
             <Radio key={o.id} checked={f.rynek.finish === o.id} label={o.label} desc={o.desc}
@@ -482,7 +482,7 @@ export default function KalkulatorPage() {
           ))}
         </div>
 
-        <h3 className="font-semibold text-fg text-sm mb-3">
+        <h3 className="font-semibold text-fg text-base mb-3">
           {t('rynekReplaceTitle')} <span className="text-muted font-normal">{t('rynekReplaceOptional')}</span>
         </h3>
         <div className="grid grid-cols-2 gap-2">
@@ -500,20 +500,20 @@ export default function KalkulatorPage() {
     const completedCount = f.rooms.filter(isDone).length
     return (
       <div className="flex flex-col min-h-screen bg-bg">
-        <div className="bg-surface border-b border-border">
-          <div className="max-w-[1440px] mx-auto px-10 h-14 flex items-center gap-4">
-            <span className="font-bold text-fg text-base">Remontowo</span>
+        <div className="bg-white border-b border-border">
+          <div className="max-w-[1280px] mx-auto px-10 h-20 flex items-center gap-4">
+            <span className="font-semibold text-fg text-2xl">Remontowo</span>
             <div className="w-px h-5 bg-border" />
-            <span className="bg-primary-fixed text-primary text-xs font-semibold px-3 py-1 rounded-full">{t('roomsBadge')}</span>
+            <span className="font-mono text-xs text-fg">{t('roomsBadge')}</span>
           </div>
           <div className="h-0.5 bg-border">
             <div className="h-full bg-primary transition-all duration-300" style={{ width: '65%' }} />
           </div>
         </div>
 
-        <div className="flex-1 max-w-[1440px] mx-auto px-10 py-10 w-full">
-          <h2 className="font-bold text-fg text-3xl mb-1">{t('roomsTitle')}</h2>
-          <p className="text-muted text-sm mb-8">{t('roomsSubtitle')}</p>
+        <div className="flex-1 max-w-[1280px] mx-auto px-10 py-12 w-full">
+          <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] mb-1">{t('roomsTitle')}</h2>
+          <p className="text-muted text-base mb-8">{t('roomsSubtitle')}</p>
 
           {f.rooms.length > 0 && (
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
@@ -521,7 +521,7 @@ export default function KalkulatorPage() {
                 const rt = ROOM_TYPES.find(rtt => rtt.id === room.type)
                 const done = isDone(room)
                 return (
-                  <div key={room.id} className={`bg-surface border-2 rounded-2xl p-4 flex items-center gap-4 ${done ? 'border-primary/30' : 'border-border'}`}>
+                  <div key={room.id} className={`bg-surface border-2 rounded-2xl p-5 flex items-center gap-4 ${done ? 'border-primary/30' : 'border-border'}`}>
                     <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center shrink-0">
                       {rt ? (
                         <Image src={rt.icon} alt={rt.label} width={24} height={24}
@@ -532,9 +532,9 @@ export default function KalkulatorPage() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <div className="font-semibold text-fg text-sm truncate">{getDisplayLabel(room, f.rooms)}</div>
-                      <div className="text-muted text-xs">{(room.width * room.length).toFixed(0)} m² · {room.height.toFixed(1)} m</div>
-                      <span className={`inline-block text-[10px] font-semibold px-2 py-0.5 rounded-full mt-1 ${done ? 'bg-primary-fixed text-primary' : 'bg-border/60 text-muted'}`}>
+                      <div className="font-semibold text-fg text-base truncate">{getDisplayLabel(room, f.rooms)}</div>
+                      <div className="text-muted text-sm">{(room.width * room.length).toFixed(0)} m² · {room.height.toFixed(1)} m</div>
+                      <span className={`inline-block text-xs font-semibold px-2 py-0.5 rounded-full mt-1 ${done ? 'bg-primary-fixed text-fg' : 'bg-border/60 text-muted'}`}>
                         {done ? t('roomComplete') : t('roomIncomplete')}
                       </span>
                     </div>
@@ -555,30 +555,30 @@ export default function KalkulatorPage() {
           )}
 
           <button onClick={addRoom}
-            className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl border-2 border-dashed border-border text-muted hover:border-primary hover:text-primary transition-colors text-sm font-medium mb-6">
+            className="w-full flex items-center justify-center gap-2 py-4 rounded-2xl border-2 border-dashed border-border text-muted hover:border-primary hover:text-primary transition-colors text-base font-medium mb-6">
             <Plus size={18} /> {t('addRoom')}
           </button>
 
           {f.rooms.length > 0 && (
-            <div className="bg-surface border border-border rounded-2xl p-4 flex items-center justify-between">
+            <div className="bg-surface border border-border rounded-2xl p-5 flex items-center justify-between">
               <div>
-                <div className="text-[10px] text-muted uppercase tracking-wide mb-0.5">{t('totalLabel')}</div>
-                <div className="font-bold text-fg text-sm">
+                <div className="font-mono text-xs text-muted mb-0.5">{t('totalLabel')}</div>
+                <div className="font-bold text-fg text-base">
                   {f.rooms.reduce((s, r) => s + r.width * r.length, 0).toFixed(0)} m² · {getRoomCountLabel(f.rooms.length)}
                 </div>
               </div>
-              <div className="text-xs text-muted">{completedCount}/{f.rooms.length}</div>
+              <div className="text-sm text-muted">{completedCount}/{f.rooms.length}</div>
             </div>
           )}
         </div>
 
-        <div className="sticky bottom-0 z-10 border-t border-border bg-surface shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
-          <div className="max-w-[1440px] mx-auto px-10 py-4 flex items-center justify-between">
-            <button onClick={back} className="px-5 py-2 rounded-full border border-border text-fg text-sm font-medium hover:bg-bg transition-colors">
+        <div className="sticky bottom-0 z-10 border-t border-border bg-white shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
+          <div className="max-w-[1280px] mx-auto px-10 py-4 flex items-center justify-between">
+            <button onClick={back} className="px-5 py-2 rounded-full border border-border text-fg text-base font-medium hover:bg-bg transition-colors">
               {t('prevStep')}
             </button>
             <button onClick={() => upd({ phase: 'estimate' })} disabled={f.rooms.length === 0}
-              className="px-7 py-2.5 rounded-full bg-primary text-white text-sm font-medium hover:bg-primary/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed">
+              className="px-8 py-3 rounded-[12px] bg-primary text-white text-base font-semibold tracking-[0.08em] hover:bg-primary/90 transition-colors disabled:opacity-40 disabled:cursor-not-allowed">
               {f.rooms.length === 0 ? t('addFirstRoom') : t('calcEstimate')}
             </button>
           </div>
@@ -616,7 +616,7 @@ export default function KalkulatorPage() {
         {/* Step 0: Room type */}
         {f.res === 0 && (
           <>
-            <h2 className="font-bold text-fg text-3xl text-center mb-8">{t('typeTitle')}</h2>
+            <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-8">{t('typeTitle')}</h2>
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
               {ROOM_TYPES.map(rt => (
                 <button key={rt.id} onClick={() => updRoom(er.id, { type: rt.id, label: rt.label })}
@@ -635,8 +635,8 @@ export default function KalkulatorPage() {
         {/* Step 1: Measurements */}
         {f.res === 1 && (
           <>
-            <h2 className="font-bold text-fg text-3xl text-center mb-2">{t('dimTitle')}</h2>
-            <p className="text-muted text-sm text-center mb-8">{t('dimSubtitle')}</p>
+            <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-2">{t('dimTitle')}</h2>
+            <p className="text-muted text-base text-center mb-8">{t('dimSubtitle')}</p>
             <div className="grid md:grid-cols-[1fr_220px] gap-6">
               <div className="bg-surface border border-border rounded-2xl p-6 flex flex-col gap-5">
                 {DIM_SLIDERS.map(({ key, label, min, max }) => (
@@ -695,8 +695,8 @@ export default function KalkulatorPage() {
         {/* Step 2: Wall finish */}
         {f.res === 2 && (
           <>
-            <h2 className="font-bold text-fg text-3xl text-center mb-2">{t('wallsTitle')}</h2>
-            <p className="text-muted text-sm text-center mb-8">{t('wallsSubtitle')}</p>
+            <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-2">{t('wallsTitle')}</h2>
+            <p className="text-muted text-base text-center mb-8">{t('wallsSubtitle')}</p>
             <div className="grid grid-cols-2 gap-3">
               {WALL_FINISHES.map(fin => (
                 <FinishCard key={fin.id} selected={er.walls === fin.id} label={fin.label} desc={fin.desc} img={fin.img}
@@ -709,8 +709,8 @@ export default function KalkulatorPage() {
         {/* Step 3: Floor finish */}
         {f.res === 3 && (
           <>
-            <h2 className="font-bold text-fg text-3xl text-center mb-2">{t('floorTitle')}</h2>
-            <p className="text-muted text-sm text-center mb-8">{t('floorSubtitle')}</p>
+            <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-2">{t('floorTitle')}</h2>
+            <p className="text-muted text-base text-center mb-8">{t('floorSubtitle')}</p>
             <div className="grid grid-cols-2 gap-3">
               {FLOOR_FINISHES.map(fin => (
                 <FinishCard key={fin.id} selected={er.floor === fin.id} label={fin.label} desc={fin.desc} img={fin.img}
@@ -723,8 +723,8 @@ export default function KalkulatorPage() {
         {/* Step 4: Ceiling finish */}
         {f.res === 4 && (
           <>
-            <h2 className="font-bold text-fg text-3xl text-center mb-2">{t('ceilingTitle')}</h2>
-            <p className="text-muted text-sm text-center mb-8">{t('ceilingSubtitle')}</p>
+            <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] text-center mb-2">{t('ceilingTitle')}</h2>
+            <p className="text-muted text-base text-center mb-8">{t('ceilingSubtitle')}</p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
               {CEILING_FINISHES.map(fin => (
                 <FinishCard key={fin.id} selected={er.ceiling === fin.id} label={fin.label} desc={fin.desc} img={fin.img}
@@ -772,21 +772,21 @@ export default function KalkulatorPage() {
 
     return (
       <div className="flex flex-col min-h-screen bg-bg">
-        <div className="bg-surface border-b border-border">
-          <div className="max-w-[1440px] mx-auto px-10 h-14 flex items-center gap-4">
-            <span className="font-bold text-fg text-base">Remontowo</span>
+        <div className="bg-white border-b border-border">
+          <div className="max-w-[1280px] mx-auto px-10 h-20 flex items-center gap-4">
+            <span className="font-semibold text-fg text-2xl">Remontowo</span>
           </div>
         </div>
 
-        <div className="flex-1 max-w-[1440px] mx-auto px-10 py-12 w-full">
-          <h1 className="font-bold text-fg text-4xl text-center mb-2">{t('estTitle')}</h1>
-          <p className="text-muted text-sm text-center mb-10">{t('estSubtitle')}</p>
+        <div className="flex-1 max-w-[1280px] mx-auto px-10 py-12 w-full">
+          <h1 className="font-bold text-fg text-5xl leading-[56px] tracking-[-0.96px] text-center mb-2">{t('estTitle')}</h1>
+          <p className="text-muted text-base text-center mb-10">{t('estSubtitle')}</p>
 
           {/* Total cost */}
           <div className="bg-surface border border-border rounded-2xl p-6 mb-6">
-            <h2 className="font-semibold text-fg text-sm mb-1">{t('estTotalTitle')}</h2>
-            <p className="text-muted text-xs mb-4">{t('estTotalSubtitle')}</p>
-            <div className="font-bold text-fg text-4xl mb-3">{fmt(est.min)} – {fmt(est.max)} PLN</div>
+            <h2 className="font-semibold text-fg text-base mb-1">{t('estTotalTitle')}</h2>
+            <p className="text-muted text-sm mb-4">{t('estTotalSubtitle')}</p>
+            <div className="font-bold text-fg text-5xl leading-[56px] mb-3">{fmt(est.min)} – {fmt(est.max)} PLN</div>
             <span className="inline-flex items-center gap-1 bg-primary-fixed text-primary text-xs font-medium px-3 py-1 rounded-full">
               <Check size={11} /> {t('estPrecision')}
             </span>
@@ -807,7 +807,7 @@ export default function KalkulatorPage() {
 
           {/* Cost structure */}
           <div className="bg-surface border border-border rounded-2xl p-6 mb-6">
-            <h2 className="font-semibold text-fg text-sm mb-5">{t('estCostStructure')}</h2>
+            <h2 className="font-semibold text-fg text-base mb-5">{t('estCostStructure')}</h2>
             <div className="flex rounded-full overflow-hidden h-2 mb-1 gap-px">
               <div className="bg-primary rounded-l-full"        style={{ width: `${matPct}%` }} />
               <div className="bg-green-400"                     style={{ width: `${laborPct}%` }} />
@@ -838,7 +838,7 @@ export default function KalkulatorPage() {
           {/* Per-room breakdown */}
           {f.rooms.length > 0 && (
             <div className="bg-surface border border-border rounded-2xl p-6 mb-6">
-              <h2 className="font-semibold text-fg text-sm mb-4">{t('estPerRoom')}</h2>
+              <h2 className="font-semibold text-fg text-base mb-4">{t('estPerRoom')}</h2>
               <div className="flex flex-col">
                 {f.rooms.map(room => {
                   const rt = ROOM_TYPES.find(rtt => rtt.id === room.type)
@@ -909,19 +909,19 @@ export default function KalkulatorPage() {
                 </svg>
               </div>
 
-              <h3 className="font-bold text-fg text-lg mb-1">{t('pdfTitle')}</h3>
-              <p className="text-muted text-xs leading-relaxed mb-4 max-w-xs mx-auto">{t('pdfSubtitle')}</p>
+              <h3 className="font-bold text-fg text-xl mb-1">{t('pdfTitle')}</h3>
+              <p className="text-muted text-sm leading-relaxed mb-4 max-w-xs mx-auto">{t('pdfSubtitle')}</p>
 
               <ul className="flex flex-col gap-1.5 text-left mb-5 max-w-xs mx-auto">
                 {[t('pdfFeature1'), t('pdfFeature2'), t('pdfFeature3')].map(item => (
-                  <li key={item} className="flex items-start gap-2 text-xs text-muted">
-                    <Check size={12} className="text-primary mt-0.5 shrink-0" />{item}
+                  <li key={item} className="flex items-start gap-2 text-sm text-muted">
+                    <Check size={13} className="text-primary mt-0.5 shrink-0" />{item}
                   </li>
                 ))}
               </ul>
 
-              <div className="font-bold text-fg text-3xl mb-0.5">{t('pdfPrice')}</div>
-              <div className="text-muted text-xs mb-5">{t('pdfPriceNote')}</div>
+              <div className="font-bold text-fg text-[32px] leading-10 mb-0.5">{t('pdfPrice')}</div>
+              <div className="text-muted text-sm mb-5">{t('pdfPriceNote')}</div>
 
               <BuyPDFButton
                 data={pdfData}
@@ -933,15 +933,15 @@ export default function KalkulatorPage() {
           </div>
         </div>
 
-        <div className="sticky bottom-0 z-10 border-t border-border bg-surface shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
-          <div className="max-w-[1440px] mx-auto px-10 py-3.5 flex justify-between items-center gap-4">
+        <div className="sticky bottom-0 z-10 border-t border-border bg-white shadow-[0_-2px_12px_rgba(0,0,0,0.06)]">
+          <div className="max-w-[1280px] mx-auto px-10 py-4 flex justify-between items-center gap-4">
             <button onClick={() => setF({
                 calcType: null, city: null, propType: null, area: 65, standard: null,
                 conds: { electrical: false, plumbing: false, wallDemo: false, newWalls: false, ceilingReplace: false, floorRemoval: false },
                 rynek: { age: null, finish: null, windows: false, doors: false, heating: false, plaster: false },
                 rooms: [], phase: 'setup', ss: -1, erid: null, res: 0,
               })}
-              className="px-5 py-2 rounded-full border border-border text-fg text-sm font-medium hover:bg-bg transition-colors shrink-0">
+              className="px-5 py-2 rounded-full border border-border text-fg text-base font-medium hover:bg-bg transition-colors shrink-0">
               {t('estStartOver')}
             </button>
             <button

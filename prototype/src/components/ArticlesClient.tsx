@@ -1,14 +1,10 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import type { Article } from '@/content/articles'
-import { CLUSTER_COLORS } from '@/content/clusters'
-
-export { CLUSTER_COLORS }
+import { ArticleCard } from './ArticleCard'
 
 const PAGE_SIZE = 9
 
@@ -67,40 +63,16 @@ export function ArticlesClient({ articles, locale }: Props) {
           {t('noArticles')}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-16">
-          {paged.map((article) => {
-            const tagClass = CLUSTER_COLORS[article.cluster] ?? 'bg-primary-fixed text-fg'
-            return (
-              <Link
-                key={article.slug}
-                href={`/${locale}/articles/${article.slug}`}
-                className="group flex flex-col bg-white rounded-[12px] overflow-hidden shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow"
-              >
-                <div className="relative aspect-[364/205] w-full overflow-hidden shrink-0 bg-border">
-                  <Image
-                    src={article.img}
-                    alt={article.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
-                  />
-                </div>
-                <div className="p-4 flex flex-col gap-3">
-                  <div className="flex items-center gap-2">
-                    <span className={`${tagClass} font-medium text-xs px-3 py-1 rounded-sm tracking-[0.06em]`}>
-                      {t(`clusters.${article.cluster}`)}
-                    </span>
-                    <span className="text-sm text-[#717973]">{article.publishedAt}</span>
-                  </div>
-                  <h2 className="font-semibold text-fg text-2xl leading-8 line-clamp-2">{article.title}</h2>
-                  <p className="text-[#414943] text-base leading-6 line-clamp-2">{article.description}</p>
-                  <div className="flex items-center gap-1 text-primary text-base mt-1">
-                    {t('readMore')} <ArrowRight size={14} />
-                  </div>
-                </div>
-              </Link>
-            )
-          })}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+          {paged.map((article) => (
+            <ArticleCard
+              key={article.slug}
+              article={article}
+              locale={locale}
+              clusterLabel={t(`clusters.${article.cluster}`)}
+              readMoreLabel={t('readMore')}
+            />
+          ))}
         </div>
       )}
 

@@ -1,12 +1,12 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { ArrowRight, CheckCircle2, Shield, Clock, Home, TrendingUp } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 import { HeroSlider } from '@/components/HeroSlider'
 import { articles } from '@/content/articles'
-import { CLUSTER_LABELS, CLUSTER_COLORS } from '@/content/clusters'
+import { CLUSTER_LABELS } from '@/content/clusters'
+import { ArticleCard } from '@/components/ArticleCard'
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -156,34 +156,15 @@ export default async function LandingPage({ params }: Props) {
           </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {localeArticles.map((article) => {
-            const tagClass = CLUSTER_COLORS[article.cluster] ?? 'bg-primary-fixed text-fg'
-            return (
-              <Link key={article.slug} href={`/${locale}/articles/${article.slug}`}
-                className="group flex flex-col gap-3">
-                <div className="relative aspect-[364/205] w-full overflow-hidden rounded-[12px] shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] shrink-0">
-                  <Image
-                    src={article.img}
-                    alt={article.title}
-                    fill
-                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
-                  />
-                </div>
-                <div className="flex items-center gap-3">
-                  <span className={`${tagClass} font-medium text-[12px] px-3 py-1 rounded-[4px] tracking-[0.05em]`}>
-                    {CLUSTER_LABELS[article.cluster] ?? article.cluster}
-                  </span>
-                  <span className="text-[14px] text-[#717973] leading-[22px]">{article.publishedAt}</span>
-                </div>
-                <h3 className="font-semibold text-fg text-2xl leading-8 line-clamp-2 pt-1">{article.title}</h3>
-                <p className="text-[#414943] text-base leading-6 line-clamp-2">{article.description}</p>
-                <div className="flex items-center gap-1 text-primary text-base">
-                  {t('articlesReadMore')} <ArrowRight size={20} />
-                </div>
-              </Link>
-            )
-          })}
+          {localeArticles.map((article) => (
+            <ArticleCard
+              key={article.slug}
+              article={article}
+              locale={locale}
+              clusterLabel={CLUSTER_LABELS[article.cluster] ?? article.cluster}
+              readMoreLabel={t('articlesReadMore')}
+            />
+          ))}
         </div>
       </section>
 

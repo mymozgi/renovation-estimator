@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { NextIntlClientProvider } from 'next-intl'
 import { getMessages } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { Manrope, Work_Sans } from 'next/font/google'
+import { Manrope, Work_Sans, Roboto_Mono } from 'next/font/google'
 import { routing } from '@/i18n/routing'
 import '../globals.css'
 
@@ -15,6 +15,12 @@ const manrope = Manrope({
 const workSans = Work_Sans({
   subsets: ['latin'],
   variable: '--font-work-sans',
+  display: 'swap',
+})
+
+const robotoMono = Roboto_Mono({
+  subsets: ['latin'],
+  variable: '--font-roboto-mono',
   display: 'swap',
 })
 
@@ -32,7 +38,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages()
 
   return (
-    <html lang={locale} className={`${manrope.variable} ${workSans.variable}`}>
+    <html lang={locale} className={`${manrope.variable} ${workSans.variable} ${robotoMono.variable}`}>
       <body className="min-h-full bg-bg">
         <NextIntlClientProvider messages={messages}>
           {children}

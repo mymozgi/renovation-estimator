@@ -38,10 +38,10 @@ export function ArticlesClient({ articles, locale }: Props) {
       <div className="flex gap-2 flex-wrap mb-8">
         <button
           onClick={() => handleCategory(null)}
-          className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
+          className={`px-4 py-[10px] rounded-full text-sm font-medium tracking-[0.07em] transition-colors ${
             active === null
-              ? 'bg-primary text-white'
-              : 'border border-border text-fg hover:border-primary/40'
+              ? 'bg-[#002113] text-[#f3f0ef]'
+              : 'bg-[#f0edec] text-[#414943]'
           }`}
         >
           {t('filterAll')}
@@ -50,10 +50,10 @@ export function ArticlesClient({ articles, locale }: Props) {
           <button
             key={c}
             onClick={() => handleCategory(c)}
-            className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
+            className={`px-4 py-[10px] rounded-full text-sm font-medium tracking-[0.07em] transition-colors ${
               active === c
-                ? 'bg-primary text-white'
-                : 'border border-border text-fg hover:border-primary/40'
+                ? 'bg-[#002113] text-[#f3f0ef]'
+                : 'bg-[#f0edec] text-[#414943]'
             }`}
           >
             {t(`clusters.${c}`)}
@@ -67,16 +67,16 @@ export function ArticlesClient({ articles, locale }: Props) {
           {t('noArticles')}
         </div>
       ) : (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12 mb-16">
           {paged.map((article) => {
-            const tagClass = CLUSTER_COLORS[article.cluster] ?? 'bg-primary-fixed text-primary'
+            const tagClass = CLUSTER_COLORS[article.cluster] ?? 'bg-primary-fixed text-fg'
             return (
               <Link
                 key={article.slug}
                 href={`/${locale}/articles/${article.slug}`}
-                className="group flex flex-col bg-surface rounded-xl overflow-hidden border border-border hover:shadow-md transition-shadow"
+                className="group flex flex-col bg-white rounded-[12px] overflow-hidden shadow-[0px_1px_2px_0px_rgba(0,0,0,0.05)] hover:shadow-md transition-shadow"
               >
-                <div className="relative aspect-[16/10] w-full overflow-hidden shrink-0 bg-border">
+                <div className="relative aspect-[364/205] w-full overflow-hidden shrink-0 bg-border">
                   <Image
                     src={article.img}
                     alt={article.title}
@@ -85,17 +85,17 @@ export function ArticlesClient({ articles, locale }: Props) {
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-300"
                   />
                 </div>
-                <div className="p-4 flex flex-col gap-2">
+                <div className="p-4 flex flex-col gap-3">
                   <div className="flex items-center gap-2">
-                    <span className={`${tagClass} text-[10px] font-semibold px-2 py-0.5 rounded-full uppercase tracking-wide`}>
+                    <span className={`${tagClass} font-medium text-xs px-3 py-1 rounded-sm tracking-[0.06em]`}>
                       {t(`clusters.${article.cluster}`)}
                     </span>
-                    <span className="text-xs text-muted">{article.publishedAt}</span>
+                    <span className="text-sm text-[#717973]">{article.publishedAt}</span>
                   </div>
-                  <h2 className="font-bold text-fg text-base leading-snug line-clamp-2">{article.title}</h2>
-                  <p className="text-muted text-sm leading-relaxed line-clamp-2">{article.description}</p>
-                  <div className="flex items-center gap-1 text-primary text-sm font-medium mt-1">
-                    {t('readMore')} <ArrowRight size={13} />
+                  <h2 className="font-semibold text-fg text-2xl leading-8 line-clamp-2">{article.title}</h2>
+                  <p className="text-[#414943] text-base leading-6 line-clamp-2">{article.description}</p>
+                  <div className="flex items-center gap-1 text-primary text-base mt-1">
+                    {t('readMore')} <ArrowRight size={14} />
                   </div>
                 </div>
               </Link>
@@ -110,7 +110,7 @@ export function ArticlesClient({ articles, locale }: Props) {
           <button
             onClick={() => setPage(p => Math.max(1, p - 1))}
             disabled={page === 1}
-            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-bg transition-colors text-muted disabled:opacity-30 disabled:cursor-not-allowed"
+            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#f0edec] transition-colors text-muted disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <ChevronLeft size={16} />
           </button>
@@ -119,7 +119,7 @@ export function ArticlesClient({ articles, locale }: Props) {
               key={n}
               onClick={() => setPage(n)}
               className={`w-8 h-8 flex items-center justify-center rounded-full text-sm font-medium transition-colors ${
-                n === page ? 'bg-primary text-white' : 'text-muted hover:bg-bg'
+                n === page ? 'bg-[#002113] text-[#f3f0ef]' : 'text-muted hover:bg-[#f0edec]'
               }`}
             >
               {n}
@@ -128,7 +128,7 @@ export function ArticlesClient({ articles, locale }: Props) {
           <button
             onClick={() => setPage(p => Math.min(totalPages, p + 1))}
             disabled={page === totalPages}
-            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-bg transition-colors text-muted disabled:opacity-30 disabled:cursor-not-allowed"
+            className="w-8 h-8 flex items-center justify-center rounded-full hover:bg-[#f0edec] transition-colors text-muted disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <ChevronRight size={16} />
           </button>

@@ -43,15 +43,15 @@
   --color-primary:         #1D5039;   /* green/700 — interactive elements  */
   --color-primary-fixed:   #B9EFCF;   /* green/200 — light green accent bg */
   --color-primary-inverse: #9ED2B4;   /* green/300                         */
-  --color-fg:              #191C1C;   /* charcoal/900 — primary text       */
-  --color-muted:           #717975;   /* charcoal/400 — secondary text     */
+  --color-fg:              #002113;   /* Figma on-surface/default — dark green heading color */
+  --color-muted:           #414943;   /* Figma on-surface/variant — body text               */
   --color-border:          #E1E3E2;   /* charcoal/050 — borders, dividers  */
   --color-destructive:     #BA1A1A;   /* error/500                         */
 
   /* ── Typography ──────────────────────────────────────────────────── */
   --font-sans:      var(--font-manrope, 'Manrope', sans-serif);
   --font-secondary: var(--font-work-sans, 'Work Sans', sans-serif);
-  --font-mono:      'Roboto Mono', monospace;
+  --font-mono:      var(--font-roboto-mono, 'Roboto Mono', monospace);
 }
 
 html {

@@ -24,11 +24,11 @@ export default async function ArticlesPage({ params }: Props) {
     <div className="min-h-screen bg-surface flex flex-col">
       <LandingHeader />
 
-      <main className="flex-1 max-w-[1440px] mx-auto w-full px-10 pt-10 pb-20">
+      <main className="flex-1 max-w-[1280px] mx-auto w-full px-10 pt-24 pb-24">
         <div className="mb-8">
-          <p className="text-xs font-semibold text-muted uppercase tracking-widest mb-3">{t('badge')}</p>
-          <h1 className="font-bold text-fg text-4xl leading-tight mb-3 max-w-md">{t('title')}</h1>
-          <p className="text-muted text-sm leading-relaxed max-w-lg">{t('subtitle')}</p>
+          <p className="font-mono text-xs text-fg mb-3">{t('badge')}</p>
+          <h1 className="font-bold text-fg text-5xl leading-[56px] tracking-[-0.96px] mb-3 max-w-md">{t('title')}</h1>
+          <p className="font-semibold text-[#414943] text-xl leading-7 max-w-lg">{t('subtitle')}</p>
         </div>
 
         <ArticlesClient articles={localeArticles} locale={locale} />

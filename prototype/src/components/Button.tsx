@@ -10,7 +10,7 @@ export interface ButtonVariantProps {
 }
 
 const BASE =
-  'inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-colors disabled:cursor-not-allowed'
+  'inline-flex items-center justify-center gap-2 font-semibold rounded-xl tracking-[0.08em] transition-colors disabled:cursor-not-allowed'
 
 const VARIANTS: Record<Variant, string> = {
   primary:     'bg-primary text-white hover:bg-primary/90 disabled:opacity-70',
@@ -22,7 +22,7 @@ const VARIANTS: Record<Variant, string> = {
 const SIZES: Record<Size, string> = {
   xs: 'py-2 px-4 text-sm',
   sm: 'py-3 px-5 text-sm',
-  md: 'py-4 px-6 text-base',
+  md: 'py-4 px-8 text-base',
 }
 
 export function buttonVariants({

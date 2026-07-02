@@ -24,15 +24,15 @@ export default async function ArticlePage({ params }: Props) {
     <div className="flex flex-col min-h-screen bg-bg">
       <LandingHeader />
 
-      <main className="flex-1 max-w-[1464px] mx-auto w-full px-8 py-10">
+      <main className="flex-1 max-w-[1280px] mx-auto w-full px-10 py-24">
         {/* Cluster badge */}
-        <div className="text-xs font-medium text-muted tracking-wide uppercase mb-4">
+        <div className="font-mono text-xs text-fg mb-4">
           {t(`clusters.${article.cluster}`)}
         </div>
 
         {/* Title */}
-        <div className="text-xs text-muted mb-2">{article.publishedAt}</div>
-        <h1 className="font-serif font-bold text-fg text-3xl leading-tight mb-6">{article.title}</h1>
+        <div className="text-sm text-[#717973] mb-2">{article.publishedAt}</div>
+        <h1 className="font-bold text-fg text-5xl leading-[56px] tracking-[-0.96px] mb-6">{article.title}</h1>
 
         {/* Hero image */}
         <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-8">
@@ -47,23 +47,23 @@ export default async function ArticlePage({ params }: Props) {
 
         <article>
           {/* Hook */}
-          <p className="text-muted text-base leading-relaxed mb-8 border-l-2 border-primary pl-4">{article.hook}</p>
+          <p className="text-muted text-lg leading-7 mb-8 border-l-2 border-primary pl-4">{article.hook}</p>
 
           {/* Problem */}
-          <h2 className="font-serif font-bold text-fg text-xl mb-3">{t('problem')}</h2>
-          <div className="text-muted text-sm leading-relaxed mb-8 whitespace-pre-line">{article.problem}</div>
+          <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] mb-3">{t('problem')}</h2>
+          <div className="text-muted text-base leading-6 mb-8 whitespace-pre-line">{article.problem}</div>
 
           {/* Explanation */}
-          <h2 className="font-serif font-bold text-fg text-xl mb-3">{t('solution')}</h2>
-          <div className="text-muted text-sm leading-relaxed mb-8 whitespace-pre-line">{article.explanation}</div>
+          <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] mb-3">{t('solution')}</h2>
+          <div className="text-muted text-base leading-6 mb-8 whitespace-pre-line">{article.explanation}</div>
 
           {/* Checklist */}
-          <h2 className="font-serif font-bold text-fg text-xl mb-4">{t('checklist')}</h2>
+          <h2 className="font-bold text-fg text-[32px] leading-10 tracking-[-0.32px] mb-4">{t('checklist')}</h2>
           <div className="space-y-3 mb-10">
             {article.checklist.map((item, i) => (
               <div key={i} className="flex items-start gap-3">
                 <CheckCircle2 size={18} className="text-primary shrink-0 mt-0.5" />
-                <span className="text-sm text-fg leading-relaxed">{item}</span>
+                <span className="text-base text-fg leading-6">{item}</span>
               </div>
             ))}
           </div>

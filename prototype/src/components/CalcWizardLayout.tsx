@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { useTranslations } from 'next-intl'
 
 interface CalcWizardLayoutProps {
@@ -33,7 +34,7 @@ export function CalcWizardLayout({
       {/* Header */}
       <div className="bg-white border-b border-border w-full">
         <div className="max-w-[1280px] mx-auto px-10 h-20 flex items-center gap-4">
-          <span className="font-semibold text-fg text-2xl">Remontowo</span>
+          <Image src="/logo-header-remonta.png" alt="Remontowo" width={160} height={32} priority />
           <div className="w-px h-5 bg-border" />
           <span className="font-mono text-xs text-fg">
             {stepLabel}

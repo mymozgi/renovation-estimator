@@ -27,8 +27,12 @@ const robotoMono = Roboto_Mono({
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> }
 
 export const metadata: Metadata = {
-  title: 'Renovation Estimator',
-  description: 'Get a realistic renovation budget based on room size, finish quality, and regional Polish pricing.',
+  title: 'Remontowo — kalkulator kosztów remontu',
+  description: 'Oblicz realistyczny kosztorys remontu na podstawie powierzchni, standardu wykończenia i cen regionalnych.',
+  icons: {
+    icon: '/favicon-remonta.svg',
+    shortcut: '/favicon-remonta.svg',
+  },
 }
 
 export default async function LocaleLayout({ children, params }: Props) {

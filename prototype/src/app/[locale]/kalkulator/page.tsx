@@ -925,7 +925,7 @@ export default function KalkulatorPage() {
 
               <BuyPDFButton
                 data={pdfData}
-                className="w-full bg-primary text-white py-3 rounded-full font-semibold text-sm hover:bg-primary/90 transition-colors flex items-center justify-center"
+                className="w-full bg-primary text-white py-4 rounded-[12px] font-semibold text-base tracking-[0.08em] hover:bg-primary/90 transition-colors flex items-center justify-center"
                 label={t('pdfBuyButton')}
               />
               <p className="text-[10px] text-muted/70 mt-2.5">{t('pdfPaymentNote')}</p>
@@ -946,7 +946,7 @@ export default function KalkulatorPage() {
             </button>
             <button
               onClick={() => document.getElementById('pdf-paywall')?.scrollIntoView({ behavior: 'smooth', block: 'start' })}
-              className="flex items-center gap-3 bg-primary hover:bg-primary/90 transition-colors text-white pl-5 pr-4 py-2.5 rounded-full"
+              className="flex items-center gap-3 bg-primary hover:bg-primary/90 transition-colors text-white pl-5 pr-4 py-3 rounded-[12px]"
             >
               <div className="text-left">
                 <div className="text-xs font-semibold leading-none mb-0.5">{t('pdfStickyTitle')}</div>

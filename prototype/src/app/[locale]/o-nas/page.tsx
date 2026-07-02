@@ -48,7 +48,7 @@ export default async function AboutPage({ params }: Props) {
           </p>
           <Link
             href={`/${locale}/kalkulator`}
-            className="inline-flex items-center gap-2 bg-primary text-white px-7 py-3 rounded-full font-medium text-sm hover:bg-primary/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-[12px] font-semibold text-base tracking-[0.08em] hover:bg-primary/90 transition-colors"
           >
             {t('cta')}
           </Link>
@@ -121,7 +121,7 @@ export default async function AboutPage({ params }: Props) {
           <p className="text-white/70 text-sm mb-7 max-w-md mx-auto">{t('ctaSubtitle')}</p>
           <Link
             href={`/${locale}/kalkulator`}
-            className="inline-flex items-center gap-2 bg-white text-primary px-7 py-3 rounded-full font-medium text-sm hover:bg-white/90 transition-colors"
+            className="inline-flex items-center gap-2 bg-white text-primary px-8 py-4 rounded-[12px] font-semibold text-base tracking-[0.08em] hover:bg-white/90 transition-colors"
           >
             {t('ctaButton')}
           </Link>

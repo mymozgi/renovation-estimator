@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useLocale, useTranslations } from 'next-intl'
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
@@ -20,8 +21,8 @@ export function LandingHeader() {
   return (
     <header className="sticky top-0 z-30 bg-white border-b border-border">
       <div className="max-w-[1280px] mx-auto px-10 h-20 flex items-center justify-between gap-4">
-        <Link href={`/${locale}`} className="font-semibold text-fg text-2xl tracking-tight">
-          Remontowo
+        <Link href={`/${locale}`} className="shrink-0">
+          <Image src="/logo-header-remonta.png" alt="Remontowo" width={160} height={32} priority />
         </Link>
 
         <nav className="hidden md:flex items-center gap-8">

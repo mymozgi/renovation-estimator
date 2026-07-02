@@ -191,7 +191,7 @@ export default async function RegulaminPage({ params }: Props) {
           </div>
           <Link
             href={`/${locale}/kalkulator`}
-            className="shrink-0 inline-flex items-center gap-2 bg-primary text-white px-6 py-2.5 rounded-full font-medium text-sm hover:bg-primary/90 transition-colors"
+            className="shrink-0 inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-[12px] font-semibold text-base tracking-[0.08em] hover:bg-primary/90 transition-colors"
           >
             Oblicz kosztorys
           </Link>

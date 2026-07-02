@@ -36,7 +36,7 @@ export default function PobierzPage() {
         <p className="text-muted text-sm">Wróć do kalkulatora i spróbuj ponownie.</p>
         <button
           onClick={() => router.push(`/${locale}/kalkulator`)}
-          className="mt-2 bg-primary text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-primary/90 transition-colors"
+          className="mt-2 bg-primary text-white px-8 py-4 rounded-[12px] font-semibold text-base tracking-[0.08em] hover:bg-primary/90 transition-colors"
         >
           Wróć do kalkulatora
         </button>
@@ -68,7 +68,7 @@ export default function PobierzPage() {
 
       <PDFDownloadButton
         data={pdfData}
-        className="inline-flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-full font-semibold text-base hover:bg-primary/90 transition-colors"
+        className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-[12px] font-semibold text-base tracking-[0.08em] hover:bg-primary/90 transition-colors"
       />
 
       <button

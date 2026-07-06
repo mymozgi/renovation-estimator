@@ -14,47 +14,52 @@ Font.register({
 
 const LOGO_SRC = `${_o}/logo-header-remonta.png`
 
-/* ─── Finish descriptions ──────────────────────────────────────────────── */
+/* ─── Lookup tables ─────────────────────────────────────────────────────── */
 const MAT: Record<string, string[]> = {
-  farba:     ['Farba lateksowa akrylowa (2×)', 'Preparat gruntujący'],
-  tapeta:    ['Tapeta dekoracyjna', 'Klej tapetarski'],
-  tynk:      ['Tynk strukturalny / mikro-cement', 'Preparat gruntujący'],
-  plytki:    ['Gres / terakota', 'Klej C2TE', 'Fuga'],
-  panele:    ['Panele laminowane AC4/AC5', 'Podkład akustyczny 3mm'],
-  deska:     ['Deska drewniana / parkiet', 'Lakier lub olej podłogowy'],
-  'plytki-p':['Gres antypoślizgowy', 'Klej C2TE', 'Fuga'],
-  wykl:      ['Wykładzina PVC / dywanowa', 'Klej do wykładzin'],
-  'farba-s': ['Farba sufitowa biała (2×)', 'Grunt izolacyjny'],
-  gladz:     ['Gładź gipsowa', 'Farba sufitowa biała'],
-  pod:       ['Profile stalowe K-G', 'Płyty gipsowo-kartonowe', 'Oświetlenie LED'],
+  farba:      ['Farba lateksowa akrylowa (2×)', 'Preparat gruntujący'],
+  tapeta:     ['Tapeta dekoracyjna', 'Klej tapetarski'],
+  tynk:       ['Tynk strukturalny / mikro-cement', 'Preparat gruntujący'],
+  plytki:     ['Gres / terakota', 'Klej C2TE', 'Fuga'],
+  panele:     ['Panele laminowane AC4/AC5', 'Podkład akustyczny 3mm'],
+  deska:      ['Deska drewniana / parkiet', 'Lakier lub olej podłogowy'],
+  'plytki-p': ['Gres antypoślizgowy', 'Klej C2TE', 'Fuga'],
+  wykl:       ['Wykładzina PVC / dywanowa', 'Klej do wykładzin'],
+  'farba-s':  ['Farba sufitowa biała (2×)', 'Grunt izolacyjny'],
+  gladz:      ['Gładź gipsowa', 'Farba sufitowa biała'],
+  pod:        ['Profile stalowe K-G', 'Płyty gipsowo-kartonowe', 'Oświetlenie LED'],
 }
 const ROB: Record<string, string> = {
-  farba:     'Malarz — gruntowanie, szpachlowanie i 2× malowanie ścian',
-  tapeta:    'Tapetarz — klejenie i wykończenie tapety',
-  tynk:      'Tynkarz — nakładanie i modelowanie faktury',
-  plytki:    'Płytkarz — układanie płytek i fugowanie ścian',
-  panele:    'Układacz — montaż paneli z podkładem i listwami',
-  deska:     'Parkieciarz — układanie, szlifowanie i lakierowanie',
-  'plytki-p':'Płytkarz — układanie gresu i fugowanie podłogi',
-  wykl:      'Układacz — klejenie lub montaż wykładziny',
-  'farba-s': 'Malarz — gruntowanie i 2× malowanie sufitu',
-  gladz:     'Gładziarz — nakładanie, szlifowanie i malowanie',
-  pod:       'Sufitkarz — montaż stelaża, płyt i oświetlenia',
+  farba:      'Malarz — gruntowanie, szpachlowanie i 2× malowanie ścian',
+  tapeta:     'Tapetarz — klejenie i wykończenie tapety',
+  tynk:       'Tynkarz — nakładanie i modelowanie faktury',
+  plytki:     'Płytkarz — układanie płytek i fugowanie ścian',
+  panele:     'Układacz — montaż paneli z podkładem i listwami',
+  deska:      'Parkieciarz — układanie, szlifowanie i lakierowanie',
+  'plytki-p': 'Płytkarz — układanie gresu i fugowanie podłogi',
+  wykl:       'Układacz — klejenie lub montaż wykładziny',
+  'farba-s':  'Malarz — gruntowanie i 2× malowanie sufitu',
+  gladz:      'Gładziarz — nakładanie, szlifowanie i malowanie',
+  pod:        'Sufitkarz — montaż stelaża, płyt i oświetlenia',
 }
 const PREP: Record<string, string[]> = {
-  farba:     ['Szlifowanie nierówności ścian', 'Gruntowanie powierzchni'],
-  tapeta:    ['Gruntowanie ścian', 'Wyrównanie podłoża'],
-  tynk:      ['Czyszczenie i zagruntowanie podłoża'],
-  plytki:    ['Wyrównanie ściany', 'Hydroizolacja strefy mokrej'],
-  panele:    ['Wylewka samopoziomująca', 'Folia paroizolacyjna'],
-  deska:     ['Wylewka anhydrytowa', 'Stabilizacja podłoża'],
-  'plytki-p':['Wylewka samopoziomująca', 'Zagruntowanie podłoża'],
-  wykl:      ['Wyrównanie podłoża', 'Zagruntowanie'],
-  'farba-s': ['Szlifowanie i zagruntowanie sufitu'],
-  gladz:     ['Oczyszczenie i zagruntowanie sufitu'],
-  pod:       ['Pomiary i projekt sufitu podwieszanego', 'Zakotwienia i stelaż nośny'],
+  farba:      ['Szlifowanie nierówności ścian', 'Gruntowanie powierzchni'],
+  tapeta:     ['Gruntowanie ścian', 'Wyrównanie podłoża'],
+  tynk:       ['Czyszczenie i zagruntowanie podłoża'],
+  plytki:     ['Wyrównanie ściany', 'Hydroizolacja strefy mokrej'],
+  panele:     ['Wylewka samopoziomująca', 'Folia paroizolacyjna'],
+  deska:      ['Wylewka anhydrytowa', 'Stabilizacja podłoża'],
+  'plytki-p': ['Wylewka samopoziomująca', 'Zagruntowanie podłoża'],
+  wykl:       ['Wyrównanie podłoża', 'Zagruntowanie'],
+  'farba-s':  ['Szlifowanie i zagruntowanie sufitu'],
+  gladz:      ['Oczyszczenie i zagruntowanie sufitu'],
+  pod:        ['Pomiary i projekt sufitu podwieszanego', 'Zakotwienia i stelaż nośny'],
 }
-
+const CAT_MAP: Record<string, string> = {
+  farba: 'Malowanie ścian', tapeta: 'Tapetowanie', tynk: 'Tynkowanie',
+  plytki: 'Płytkarstwo ścian', panele: 'Panele podłogowe', deska: 'Deska / parkiet',
+  'plytki-p': 'Płytkarstwo podłogi', wykl: 'Wykładziny',
+  'farba-s': 'Malowanie sufitu', gladz: 'Gładź sufitowa', pod: 'Sufit podwieszany',
+}
 const CITY_L: Record<string, string> = {
   warszawa: 'Warszawa', krakow: 'Kraków', gdansk: 'Gdańsk',
   poznan: 'Poznań', wroclaw: 'Wrocław', lodz: 'Łódź',
@@ -62,238 +67,241 @@ const CITY_L: Record<string, string> = {
 const STD_L: Record<string, string> = {
   ekonomiczny: 'Ekonomiczny', optymalny: 'Optymalny', premium: 'Premium',
 }
-const CT_L: Record<string, string> = {
-  'wykończenie': 'Wykończenie pod klucz',
-  'rynek-wtorny': 'Rynek wtórny',
-  'remont-generalny': 'Remont generalny',
+
+const WARNINGS = [
+  { title: 'Elektryka', desc: 'Sprawdź stan instalacji aluminiowej — wymiana na miedzianą jest kluczowa dla bezpieczeństwa.' },
+  { title: 'Hydraulika', desc: 'Weryfikacja ciśnienia wody i drożności pionów kanalizacyjnych przed zabudową.' },
+  { title: 'Osiadanie budynku', desc: 'Pęknięcia na ścianach i dylatacje wymagają zbrojenia siatką przed tynkowaniem.' },
+  { title: 'Nasłonecznienie', desc: 'Orientacja okien wpływa na dobór mocy klimatyzacji i zyski ciepła zimą.' },
+  { title: 'Wilgoć i Wentylacja', desc: 'Niezbędna kontrola drożności kratek wentylacyjnych i sprawdzenie poziomu wilgoci.' },
+  { title: 'Izolacja akustyczna', desc: 'Dodatkowa izolacja między kondygnacjami zmniejsza hałas z sąsiednich lokali.' },
+]
+
+/* ─── Helpers ───────────────────────────────────────────────────────────── */
+const fmt = (n: number) => Math.round(n).toLocaleString('pl-PL')
+const round100 = (n: number) => Math.round(n / 100) * 100
+
+type TableItem = { cat: string; desc: string; cost: number }
+
+function getTableItems(r: PDFRoomData) {
+  const types = [r.walls, r.floor, r.ceiling].filter(Boolean) as string[]
+  const n = types.length || 1
+  const mat: TableItem[] = []
+  const rob: TableItem[] = []
+  const prep: TableItem[] = []
+
+  for (const t of types) {
+    const cat = CAT_MAP[t] ?? 'Materiały'
+    const mItems = MAT[t] ?? []
+    const rItem  = ROB[t]
+    const pItems = PREP[t] ?? []
+
+    const matShare  = r.cost.mat   / n
+    const labShare  = r.cost.labor / n
+    const prepShare = r.cost.prep  / n
+
+    mItems.forEach((desc, i) => {
+      mat.push({ cat, desc, cost: round100(matShare / Math.max(mItems.length, 1)) })
+    })
+    if (rItem) rob.push({ cat, desc: rItem, cost: round100(labShare) })
+    pItems.forEach(desc => prep.push({ cat, desc, cost: round100(prepShare / Math.max(pItems.length, 1)) }))
+  }
+  return { mat, rob, prep }
 }
 
-const fmt = (n: number) => n.toLocaleString('pl-PL')
-
-function matItems(r: PDFRoomData): string[] {
-  return [
-    ...(r.walls   ? MAT[r.walls]   ?? [] : []),
-    ...(r.floor   ? MAT[r.floor]   ?? [] : []),
-    ...(r.ceiling ? MAT[r.ceiling] ?? [] : []),
-  ]
-}
-function robItems(r: PDFRoomData): string[] {
-  return [
-    ...(r.walls   ? [ROB[r.walls]]   : []),
-    ...(r.floor   ? [ROB[r.floor]]   : []),
-    ...(r.ceiling ? [ROB[r.ceiling]] : []),
-  ].filter(Boolean) as string[]
-}
-function prepItems(r: PDFRoomData): string[] {
-  return [
-    ...(r.walls   ? PREP[r.walls]   ?? [] : []),
-    ...(r.floor   ? PREP[r.floor]   ?? [] : []),
-    ...(r.ceiling ? PREP[r.ceiling] ?? [] : []),
-  ]
+function projectId(data: PDFData) {
+  const city = (CITY_L[data.city] ?? data.city).slice(0, 3).toUpperCase()
+  const yr   = new Date().getFullYear()
+  const num  = String(data.area + data.rooms.length).padStart(3, '0')
+  return `#PL-${yr}-${num}-RW`
 }
 
-/* ─── Styles ───────────────────────────────────────────────────────────── */
+/* ─── Styles ────────────────────────────────────────────────────────────── */
 const s = StyleSheet.create({
   page: { backgroundColor: '#FFFFFF', fontFamily: 'Manrope', fontSize: 10 },
 
-  // ── Footer (fixed on every page, white with top border) ──────────────
+  // ── Footer ──────────────────────────────────────────────────────────────
   footer: {
-    position: 'absolute', bottom: 0, left: 0, right: 0,
-    height: 52,
+    position: 'absolute', bottom: 0, left: 0, right: 0, height: 44,
     backgroundColor: '#FFFFFF',
-    borderTopWidth: 1, borderTopColor: '#f0eded', borderTopStyle: 'solid',
+    borderTopWidth: 1, borderTopColor: '#F0EDEC', borderTopStyle: 'solid',
     flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
     paddingLeft: 44, paddingRight: 44,
   },
-  footerLeft:  { flexDirection: 'row', alignItems: 'center' },
-  footerCopy:  { color: '#717975', fontSize: 7.5 },
-  footerSep:   { color: '#c0c9c1', fontSize: 7.5, marginLeft: 14, marginRight: 14 },
-  footerPage:  { color: '#717975', fontSize: 7.5 },
-  footerEmail: { color: '#717975', fontSize: 7.5 },
+  footerText: { color: '#717975', fontSize: 7 },
 
-  // ── Document header (page 1 only) ─────────────────────────────────────
-  docHeader: {
-    borderBottomWidth: 1, borderBottomColor: '#f0eded', borderBottomStyle: 'solid',
+  // ── Header ──────────────────────────────────────────────────────────────
+  header: {
     flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start',
-    paddingLeft: 44, paddingRight: 44, paddingTop: 44, paddingBottom: 40,
+    paddingLeft: 44, paddingRight: 44, paddingTop: 40, paddingBottom: 24,
+    borderBottomWidth: 1, borderBottomColor: '#E1E3E2', borderBottomStyle: 'solid',
   },
-  docBadge: {
-    backgroundColor: '#b9efcf', borderRadius: 9999,
-    paddingLeft: 10, paddingRight: 10, paddingTop: 4, paddingBottom: 4,
-    alignSelf: 'flex-start', marginBottom: 12,
+  headerTitle: {
+    fontWeight: 700, fontSize: 22, color: '#002113',
+    letterSpacing: 1, textTransform: 'uppercase', marginBottom: 8,
   },
-  docBadgeText: { color: '#002113', fontSize: 9 },
-  docTitle: {
-    color: '#002113', fontFamily: 'Manrope', fontWeight: 700,
-    fontSize: 36, letterSpacing: -0.9, marginBottom: 14,
+  headerMeta: { fontSize: 7.5, color: '#717975', letterSpacing: 0.3 },
+  headerRight:    { alignItems: 'flex-end' },
+  headerLogo:     { width: 130, height: 26 },
+  headerSubtext:  {
+    fontSize: 6.5, color: '#717975', textTransform: 'uppercase',
+    letterSpacing: 0.8, marginTop: 5,
   },
-  docMeta:  { color: '#414943', fontSize: 10, marginBottom: 4 },
-  docLogo:  { width: 160, height: 32 },
 
-  // ── Cover body ────────────────────────────────────────────────────────
-  coverBody: { paddingLeft: 44, paddingRight: 44, paddingTop: 32, paddingBottom: 72 },
+  // ── Cover body ───────────────────────────────────────────────────────────
+  body:    { paddingLeft: 44, paddingRight: 44, paddingTop: 28, paddingBottom: 72 },
 
-  // ── Config meta row ───────────────────────────────────────────────────
-  metaRow:   { flexDirection: 'row', backgroundColor: '#F6F3F2', borderRadius: 10, padding: 14, marginBottom: 20 },
-  metaItem:  { flex: 1 },
-  metaLabel: { color: '#717975', fontSize: 7, textTransform: 'uppercase', letterSpacing: 0.8 },
-  metaValue: { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 9, marginTop: 2 },
+  // ── Dark card ────────────────────────────────────────────────────────────
+  darkCard: {
+    backgroundColor: '#002113', borderRadius: 10,
+    paddingLeft: 28, paddingRight: 28, paddingTop: 26, paddingBottom: 26,
+    marginBottom: 14,
+  },
+  darkLabel:  { color: '#71a488', fontSize: 7.5, textTransform: 'uppercase', letterSpacing: 0.8, marginBottom: 8 },
+  darkAmount: { color: '#FFFFFF', fontWeight: 700, fontSize: 28, letterSpacing: -0.8, marginBottom: 18 },
+  ratioBar:   { flexDirection: 'row', height: 6, borderRadius: 999, overflow: 'hidden', marginBottom: 10 },
+  legend:     { flexDirection: 'row' },
+  legendItem: { flexDirection: 'row', alignItems: 'center', marginRight: 18 },
+  legendDot:  { width: 7, height: 7, borderRadius: 999, marginRight: 5 },
+  legendText: { color: '#FFFFFF', fontSize: 8 },
 
-  // ── Dark green total cost card ────────────────────────────────────────
-  totalDarkCard: {
-    backgroundColor: '#002113', borderRadius: 12,
-    paddingLeft: 32, paddingRight: 32, paddingTop: 28, paddingBottom: 28,
-    marginBottom: 20,
-  },
-  totalDarkLabel: {
-    color: '#71a488', fontFamily: 'Manrope', fontWeight: 700,
-    fontSize: 9, textTransform: 'uppercase', letterSpacing: 0.7, marginBottom: 6,
-  },
-  totalDarkRange: {
-    color: '#FFFFFF', fontFamily: 'Manrope', fontWeight: 700,
-    fontSize: 32, letterSpacing: -0.9, marginBottom: 20,
-  },
-  ratioBar: {
-    flexDirection: 'row', height: 8, borderRadius: 9999,
-    overflow: 'hidden', marginBottom: 12,
-  },
-  ratioLegend:     { flexDirection: 'row' },
-  ratioLegendItem: { flexDirection: 'row', alignItems: 'center', marginRight: 20 },
-  ratioLegendDot:  { width: 8, height: 8, borderRadius: 9999, marginRight: 6 },
-  ratioLegendText: { color: '#FFFFFF', fontSize: 11 },
+  // ── 3-col summary ────────────────────────────────────────────────────────
+  summaryRow:      { flexDirection: 'row', marginBottom: 24 },
+  summaryCard:     { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 16, paddingBottom: 16 },
+  summaryCardMid:  { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 16, paddingBottom: 16, marginLeft: 8, marginRight: 8 },
+  summaryCardDark: { flex: 1, backgroundColor: '#002113', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 16, paddingBottom: 16 },
+  summaryLabel:     { fontSize: 7, textTransform: 'uppercase', letterSpacing: 0.8, color: '#717975', marginBottom: 8 },
+  summaryLabelDark: { fontSize: 7, textTransform: 'uppercase', letterSpacing: 0.8, color: '#71a488', marginBottom: 8 },
+  summaryAmount:    { fontWeight: 700, fontSize: 17, color: '#191C1C' },
+  summaryAmountDark:{ fontWeight: 700, fontSize: 17, color: '#FFFFFF' },
 
-  // ── Cost structure card ───────────────────────────────────────────────
-  structCard:     { backgroundColor: '#F6F3F2', borderRadius: 10, padding: 16 },
-  structTitle:    { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 10, marginBottom: 12 },
-  structBar:      { flexDirection: 'row', height: 7, borderRadius: 4, overflow: 'hidden', marginBottom: 10 },
-  structItemsRow: { flexDirection: 'row' },
-  structItem:     { flex: 1, backgroundColor: '#FFFFFF', borderRadius: 7, padding: 9 },
-  structItemMid:  { flex: 1, backgroundColor: '#FFFFFF', borderRadius: 7, padding: 9, marginLeft: 6, marginRight: 6 },
-  structDot:      { width: 7, height: 7, borderRadius: 2, marginBottom: 4 },
-  structName:     { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 7.5 },
-  structPct:      { color: '#717975', fontSize: 7, marginTop: 1 },
-  structAmt:      { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 8.5, marginTop: 3 },
-
-  // ── Disclaimer ────────────────────────────────────────────────────────
-  disclaimer:     { marginTop: 16, padding: 12, backgroundColor: '#f6f3f2', borderRadius: 8 },
+  // ── Disclaimer ────────────────────────────────────────────────────────────
+  disclaimer:     { marginTop: 14, paddingLeft: 14, paddingRight: 14, paddingTop: 12, paddingBottom: 12, backgroundColor: '#F6F3F2', borderRadius: 8 },
   disclaimerText: { color: '#717975', fontSize: 7.5, lineHeight: 1.5, textAlign: 'center' },
 
-  // ── Rooms page ────────────────────────────────────────────────────────
-  roomsBody:  { paddingLeft: 44, paddingRight: 44, paddingTop: 36, paddingBottom: 72 },
-  roomsTitle: { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 18, marginBottom: 4 },
-  roomsSub:   { color: '#717975', fontSize: 9, marginBottom: 24 },
+  // ── Rooms page: table ─────────────────────────────────────────────────────
+  roomsBody: { paddingLeft: 44, paddingRight: 44, paddingTop: 32, paddingBottom: 72 },
 
-  roomCard: { marginBottom: 18, borderWidth: 1, borderColor: '#E1E3E2', borderStyle: 'solid', borderRadius: 10 },
-  roomHead: { backgroundColor: '#F6F3F2', paddingLeft: 16, paddingRight: 16, paddingTop: 12, paddingBottom: 12, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', borderBottomWidth: 1, borderBottomColor: '#E1E3E2', borderBottomStyle: 'solid', borderTopLeftRadius: 10, borderTopRightRadius: 10 },
-  roomName: { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 13 },
-  roomDims: { color: '#717975', fontSize: 8, marginTop: 2 },
-  roomTotal:{ color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 13 },
+  tableHeaderRow: {
+    flexDirection: 'row', paddingBottom: 8,
+    borderBottomWidth: 1, borderBottomColor: '#E1E3E2', borderBottomStyle: 'solid',
+  },
+  colHead: { fontSize: 7, textTransform: 'uppercase', letterSpacing: 0.8, color: '#717975' },
 
-  secRow:     { paddingLeft: 16, paddingRight: 16, paddingTop: 10, paddingBottom: 10, borderBottomWidth: 1, borderBottomColor: '#E1E3E2', borderBottomStyle: 'solid' },
-  secRowLast: { paddingLeft: 16, paddingRight: 16, paddingTop: 10, paddingBottom: 10 },
-  secHeader:  { flexDirection: 'row', alignItems: 'center', marginBottom: 7 },
-  secDot:     { width: 7, height: 7, borderRadius: 2, marginRight: 7 },
-  secName:    { color: '#191C1C', fontFamily: 'Manrope', fontWeight: 700, fontSize: 8.5, textTransform: 'uppercase', letterSpacing: 0.5, flex: 1 },
-  secAmt:     { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 9 },
-  secItem:    { flexDirection: 'row', alignItems: 'flex-start', marginBottom: 3 },
-  secBullet:  { color: '#717975', fontSize: 8, width: 10 },
-  secText:    { color: '#717975', fontSize: 7.5, flex: 1, lineHeight: 1.4 },
+  roomTitleRow: {
+    flexDirection: 'row', alignItems: 'center',
+    paddingTop: 14, paddingBottom: 10, marginTop: 6,
+    borderBottomWidth: 1, borderBottomColor: '#E1E3E2', borderBottomStyle: 'solid',
+  },
+  roomName:  { fontWeight: 700, fontSize: 11, color: '#002113', textTransform: 'uppercase', letterSpacing: 0.5, flex: 5 },
+  roomM2:    { fontSize: 8.5, color: '#717975', flex: 4, textAlign: 'center' },
+  roomCostV: { fontWeight: 700, fontSize: 11, color: '#002113', flex: 3, textAlign: 'right' },
 
-  summaryRow:   { backgroundColor: '#E8F5E9', borderRadius: 10, padding: 14, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', marginTop: 4 },
-  summaryLabel: { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 10 },
-  summaryValue: { color: '#1D5039', fontFamily: 'Manrope', fontWeight: 700, fontSize: 14 },
+  sectionBar: {
+    flexDirection: 'row', alignItems: 'center',
+    paddingLeft: 10, paddingRight: 10, paddingTop: 5, paddingBottom: 5,
+  },
+  sectionBarText: { color: '#FFFFFF', fontSize: 7, textTransform: 'uppercase', letterSpacing: 0.8, fontWeight: 700 },
+  sectionBarAmt:  { color: '#FFFFFF', fontSize: 7, marginLeft: 'auto' },
 
-  noRooms:     { backgroundColor: '#F6F3F2', borderRadius: 10, padding: 24 },
-  noRoomsText: { color: '#717975', fontSize: 9, textAlign: 'center', lineHeight: 1.6 },
+  itemRow: {
+    flexDirection: 'row', alignItems: 'flex-start',
+    paddingTop: 6, paddingBottom: 6,
+    borderBottomWidth: 1, borderBottomColor: '#F6F3F2', borderBottomStyle: 'solid',
+  },
+  itemCat:  { fontSize: 8.5, color: '#191C1C', flex: 5 },
+  itemDesc: { fontSize: 8, color: '#717975', flex: 4 },
+  itemAmt:  { fontSize: 8.5, color: '#191C1C', flex: 3, textAlign: 'right' },
+
+  // ── Warnings section ─────────────────────────────────────────────────────
+  warnSection:   { marginTop: 28 },
+  warnBorder:    { borderLeftWidth: 3, borderLeftColor: '#1D5039', borderLeftStyle: 'solid', paddingLeft: 12, marginBottom: 16 },
+  warnTitle:     { fontWeight: 700, fontSize: 11, color: '#002113', textTransform: 'uppercase', letterSpacing: 0.5 },
+  warnRow:       { flexDirection: 'row', marginBottom: 10 },
+  warnCard:      { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 12, paddingRight: 12, paddingTop: 12, paddingBottom: 12 },
+  warnCardRight: { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 12, paddingRight: 12, paddingTop: 12, paddingBottom: 12, marginLeft: 10 },
+  warnCardTitle: { fontWeight: 700, fontSize: 8.5, color: '#002113', marginBottom: 4 },
+  warnCardDesc:  { fontSize: 7.5, color: '#717975', lineHeight: 1.5 },
 })
 
-/* ─── Footer ───────────────────────────────────────────────────────────── */
+/* ─── Footer component ──────────────────────────────────────────────────── */
 function Footer() {
   return (
     <View style={s.footer} fixed>
-      <View style={s.footerLeft}>
-        <Text style={s.footerCopy}>© {new Date().getFullYear()} Remontowo. Wszystkie prawa zastrzeżone.</Text>
-        <Text style={s.footerSep}>·</Text>
-        <Text
-          style={s.footerPage}
-          render={({ pageNumber, totalPages }) => `Strona ${pageNumber} z ${totalPages}`}
-          fixed
-        />
-      </View>
-      <Text style={s.footerEmail}>remontapoland@gmail.com</Text>
+      <Text style={s.footerText}>© {new Date().getFullYear()} Remontowo. Wszelkie prawa zastrzeżone.</Text>
+      <Text
+        style={s.footerText}
+        render={({ pageNumber, totalPages }) => `Strona ${pageNumber} z ${totalPages}`}
+        fixed
+      />
     </View>
   )
 }
 
-/* ─── Room card ─────────────────────────────────────────────────────────── */
-function RoomCard({ room }: { room: PDFRoomData }) {
-  const m2 = (room.width * room.length).toFixed(1)
-  const mItems = matItems(room)
-  const rItems = robItems(room)
-  const pItems = prepItems(room)
+/* ─── Room section (table rows) ─────────────────────────────────────────── */
+function RoomSection({ room }: { room: PDFRoomData }) {
+  const m2 = (room.width * room.length).toFixed(0)
+  const { mat, rob, prep } = getTableItems(room)
 
   return (
-    <View style={s.roomCard} wrap={false}>
-      <View style={s.roomHead}>
-        <View>
-          <Text style={s.roomName}>{room.label.toUpperCase()}</Text>
-          <Text style={s.roomDims}>
-            {room.width}m × {room.length}m = {m2} m²  ·  wys. {room.height.toFixed(1)} m
-          </Text>
-        </View>
-        <Text style={s.roomTotal}>~{fmt(room.cost.total)} PLN</Text>
+    <View wrap={false}>
+      {/* Room title row */}
+      <View style={s.roomTitleRow}>
+        <Text style={s.roomName}>{room.label}</Text>
+        <Text style={s.roomM2}>{m2} m²</Text>
+        <Text style={s.roomCostV}>{fmt(room.cost.total)} PLN</Text>
       </View>
 
-      <View style={s.secRow}>
-        <View style={s.secHeader}>
-          <View style={[s.secDot, { backgroundColor: '#1D5039' }]} />
-          <Text style={s.secName}>Materiały</Text>
-          <Text style={s.secAmt}>~{fmt(room.cost.mat)} PLN</Text>
-        </View>
-        {mItems.length === 0
-          ? <Text style={s.secText}>Brak wybranych wykończeń</Text>
-          : mItems.map((item, i) => (
-            <View key={i} style={s.secItem}>
-              <Text style={s.secBullet}>•</Text>
-              <Text style={s.secText}>{item}</Text>
+      {/* MATERIAŁY */}
+      {mat.length > 0 && (
+        <>
+          <View style={[s.sectionBar, { backgroundColor: '#1D5039' }]}>
+            <Text style={s.sectionBarText}>Materiały</Text>
+            <Text style={s.sectionBarAmt}>{fmt(room.cost.mat)} PLN</Text>
+          </View>
+          {mat.map((item, i) => (
+            <View key={i} style={s.itemRow}>
+              <Text style={s.itemCat}>{item.cat}</Text>
+              <Text style={s.itemDesc}>{item.desc}</Text>
+              <Text style={s.itemAmt}>{fmt(item.cost)} PLN</Text>
             </View>
-          ))
-        }
-      </View>
+          ))}
+        </>
+      )}
 
-      <View style={s.secRow}>
-        <View style={s.secHeader}>
-          <View style={[s.secDot, { backgroundColor: '#4D8F6A' }]} />
-          <Text style={s.secName}>Robocizna</Text>
-          <Text style={s.secAmt}>~{fmt(room.cost.labor)} PLN</Text>
-        </View>
-        {rItems.length === 0
-          ? <Text style={s.secText}>Brak wybranych wykończeń</Text>
-          : rItems.map((item, i) => (
-            <View key={i} style={s.secItem}>
-              <Text style={s.secBullet}>•</Text>
-              <Text style={s.secText}>{item}</Text>
+      {/* ROBOCIZNA */}
+      {rob.length > 0 && (
+        <>
+          <View style={[s.sectionBar, { backgroundColor: '#002113' }]}>
+            <Text style={s.sectionBarText}>Robocizna</Text>
+            <Text style={s.sectionBarAmt}>{fmt(room.cost.labor)} PLN</Text>
+          </View>
+          {rob.map((item, i) => (
+            <View key={i} style={s.itemRow}>
+              <Text style={s.itemCat}>{item.cat}</Text>
+              <Text style={s.itemDesc}>{item.desc}</Text>
+              <Text style={s.itemAmt}>{fmt(item.cost)} PLN</Text>
             </View>
-          ))
-        }
-      </View>
+          ))}
+        </>
+      )}
 
-      <View style={s.secRowLast}>
-        <View style={s.secHeader}>
-          <View style={[s.secDot, { backgroundColor: '#C4C7C5' }]} />
-          <Text style={s.secName}>Przygotowanie</Text>
-          <Text style={s.secAmt}>~{fmt(room.cost.prep)} PLN</Text>
-        </View>
-        {pItems.length === 0
-          ? <Text style={s.secText}>Brak wybranych wykończeń</Text>
-          : pItems.map((item, i) => (
-            <View key={i} style={s.secItem}>
-              <Text style={s.secBullet}>•</Text>
-              <Text style={s.secText}>{item}</Text>
+      {/* PRZYGOTOWANIE */}
+      {prep.length > 0 && (
+        <>
+          <View style={[s.sectionBar, { backgroundColor: '#4D8F6A' }]}>
+            <Text style={s.sectionBarText}>Przygotowanie</Text>
+            <Text style={s.sectionBarAmt}>{fmt(room.cost.prep)} PLN</Text>
+          </View>
+          {prep.map((item, i) => (
+            <View key={i} style={s.itemRow}>
+              <Text style={s.itemCat}>{item.cat}</Text>
+              <Text style={s.itemDesc}>{item.desc}</Text>
+              <Text style={s.itemAmt}>{fmt(item.cost)} PLN</Text>
             </View>
-          ))
-        }
-      </View>
+          ))}
+        </>
+      )}
     </View>
   )
 }
@@ -305,47 +313,44 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
   const matPct  = Math.round(est.mat   / total * 100)
   const labPct  = Math.round(est.labor / total * 100)
   const prepPct = 100 - matPct - labPct
+  const pid     = projectId(data)
+
+  const warnPairs = WARNINGS.reduce<(typeof WARNINGS)[]>((rows, item, i) => {
+    if (i % 2 === 0) rows.push([item])
+    else rows[rows.length - 1].push(item)
+    return rows
+  }, [])
 
   return (
-    <Document title="Kosztorys Remontu — Remontowo" author="Remontowo">
+    <Document title="Raport Kosztorysowy — Remontowo" author="Remontowo">
 
-      {/* ══ Page 1 — Cover + Summary ══ */}
+      {/* ══ Page 1 — Cover ══════════════════════════════════════════════ */}
       <Page size="A4" style={s.page}>
 
-        {/* Document header: title left, logo right */}
-        <View style={s.docHeader}>
+        {/* Header */}
+        <View style={s.header}>
           <View>
-            <View style={s.docBadge}>
-              <Text style={s.docBadgeText}>RAPORT KOSZTORYSOWY</Text>
-            </View>
-            <Text style={s.docTitle}>Kosztorys{'\n'}Remontu</Text>
-            <Text style={s.docMeta}>Data wygenerowania: {data.generatedAt}</Text>
-            <Text style={s.docMeta}>Lokalizacja: {CITY_L[data.city] ?? data.city}, Polska</Text>
+            <Text style={s.headerTitle}>Raport Kosztorysowy</Text>
+            <Text style={s.headerMeta}>
+              PROJECT ID: {pid}{'   '}|{'   '}DATA: {data.generatedAt}
+            </Text>
+            <Text style={[s.headerMeta, { marginTop: 3 }]}>
+              {CITY_L[data.city] ?? data.city}, Polska{'   '}·{'   '}{STD_L[data.standard] ?? data.standard}{'   '}·{'   '}{data.area.toFixed(0)} m²
+            </Text>
           </View>
-          <Image src={LOGO_SRC} style={s.docLogo} />
+          <View style={s.headerRight}>
+            <Image src={LOGO_SRC} style={s.headerLogo} />
+            <Text style={s.headerSubtext}>PRECISION GUARANTEE™</Text>
+          </View>
         </View>
 
-        <View style={s.coverBody}>
-          {/* Config meta */}
-          <View style={s.metaRow}>
-            {[
-              { label: 'Miasto',       value: CITY_L[data.city]      ?? data.city },
-              { label: 'Typ',          value: data.propType === 'dom' ? 'Dom' : 'Mieszkanie' },
-              { label: 'Rodzaj prac',  value: CT_L[data.calcType]    ?? data.calcType },
-              { label: 'Standard',     value: STD_L[data.standard]   ?? data.standard },
-              { label: 'Powierzchnia', value: `${data.area.toFixed(0)} m²` },
-            ].map(({ label, value }) => (
-              <View key={label} style={s.metaItem}>
-                <Text style={s.metaLabel}>{label}</Text>
-                <Text style={s.metaValue}>{value}</Text>
-              </View>
-            ))}
-          </View>
+        {/* Cover body */}
+        <View style={s.body}>
 
-          {/* Total cost — dark green, prominent */}
-          <View style={s.totalDarkCard}>
-            <Text style={s.totalDarkLabel}>SZACOWANY KOSZT CAŁKOWITY</Text>
-            <Text style={s.totalDarkRange}>{fmt(est.min)} – {fmt(est.max)} PLN</Text>
+          {/* Dark green total cost card */}
+          <View style={s.darkCard}>
+            <Text style={s.darkLabel}>SZACOWANY KOSZT CAŁKOWITY</Text>
+            <Text style={s.darkAmount}>{fmt(est.min)} – {fmt(est.max)} PLN</Text>
 
             <View style={s.ratioBar}>
               <View style={{ flex: matPct,  backgroundColor: '#b9efcf' }} />
@@ -353,41 +358,33 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
               <View style={{ flex: prepPct, backgroundColor: '#c5c7c6' }} />
             </View>
 
-            <View style={s.ratioLegend}>
+            <View style={s.legend}>
               {[
                 { label: `Materiały (${matPct}%)`,      dot: '#b9efcf' },
                 { label: `Robocizna (${labPct}%)`,      dot: '#71a488' },
                 { label: `Przygotowanie (${prepPct}%)`, dot: '#c5c7c6' },
               ].map(({ label, dot }) => (
-                <View key={label} style={s.ratioLegendItem}>
-                  <View style={[s.ratioLegendDot, { backgroundColor: dot }]} />
-                  <Text style={s.ratioLegendText}>{label}</Text>
+                <View key={label} style={s.legendItem}>
+                  <View style={[s.legendDot, { backgroundColor: dot }]} />
+                  <Text style={s.legendText}>{label}</Text>
                 </View>
               ))}
             </View>
           </View>
 
-          {/* Cost structure breakdown */}
-          <View style={s.structCard}>
-            <Text style={s.structTitle}>Struktura kosztów</Text>
-            <View style={s.structBar}>
-              <View style={{ flex: matPct,  backgroundColor: '#1D5039' }} />
-              <View style={{ flex: labPct,  backgroundColor: '#4D8F6A' }} />
-              <View style={{ flex: prepPct, backgroundColor: '#C4C7C5' }} />
+          {/* 3-col summary */}
+          <View style={s.summaryRow}>
+            <View style={s.summaryCard}>
+              <Text style={s.summaryLabel}>Materiały</Text>
+              <Text style={s.summaryAmount}>{fmt(est.mat)} PLN</Text>
             </View>
-            <View style={s.structItemsRow}>
-              {([
-                { label: 'Materiały',     pct: matPct,  amt: est.mat,   dot: '#1D5039', style: s.structItem    },
-                { label: 'Robocizna',     pct: labPct,  amt: est.labor, dot: '#4D8F6A', style: s.structItemMid },
-                { label: 'Przygotowanie', pct: prepPct, amt: est.prep,  dot: '#C4C7C5', style: s.structItem    },
-              ] as const).map(({ label, pct, amt, dot, style }) => (
-                <View key={label} style={style}>
-                  <View style={[s.structDot, { backgroundColor: dot }]} />
-                  <Text style={s.structName}>{label}</Text>
-                  <Text style={s.structPct}>{pct}% udziału</Text>
-                  <Text style={s.structAmt}>~{fmt(amt)} PLN</Text>
-                </View>
-              ))}
+            <View style={s.summaryCardMid}>
+              <Text style={s.summaryLabel}>Robocizna</Text>
+              <Text style={s.summaryAmount}>{fmt(est.labor)} PLN</Text>
+            </View>
+            <View style={s.summaryCardDark}>
+              <Text style={s.summaryLabelDark}>Suma razem</Text>
+              <Text style={s.summaryAmountDark}>{fmt(total)} PLN</Text>
             </View>
           </View>
 
@@ -404,31 +401,60 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
         <Footer />
       </Page>
 
-      {/* ══ Page 2+ — Room details ══ */}
+      {/* ══ Page 2+ — Room details ══════════════════════════════════════ */}
       <Page size="A4" style={s.page}>
         <View style={s.roomsBody}>
-          <Text style={s.roomsTitle}>Szczegóły pomieszczeń</Text>
-          <Text style={s.roomsSub}>
-            Podział kosztów materiałów, robocizny i przygotowania dla każdego pomieszczenia
-          </Text>
 
+          {/* Table header */}
+          <View style={s.tableHeaderRow}>
+            <Text style={[s.colHead, { flex: 5 }]}>Kategoria</Text>
+            <Text style={[s.colHead, { flex: 4, textAlign: 'center' }]}>Opcja / Standard</Text>
+            <Text style={[s.colHead, { flex: 3, textAlign: 'right' }]}>Koszt</Text>
+          </View>
+
+          {/* Rooms */}
           {data.rooms.length === 0 ? (
-            <View style={s.noRooms}>
-              <Text style={s.noRoomsText}>
+            <View style={{ backgroundColor: '#F6F3F2', borderRadius: 10, padding: 24, marginTop: 16 }}>
+              <Text style={{ color: '#717975', fontSize: 9, textAlign: 'center', lineHeight: 1.6 }}>
                 Kosztorys oparty na łącznej powierzchni {data.area.toFixed(0)} m² bez podziału na pomieszczenia.{'\n'}
                 Aby uzyskać szczegółowy podział, wróć do kalkulatora i dodaj poszczególne pomieszczenia.
               </Text>
             </View>
           ) : (
-            data.rooms.map((room, i) => <RoomCard key={i} room={room} />)
+            data.rooms.map((room, i) => <RoomSection key={i} room={room} />)
           )}
 
-          <View style={s.summaryRow}>
-            <Text style={s.summaryLabel}>Suma szacunkowa (wszystkie pomieszczenia)</Text>
-            <Text style={s.summaryValue}>{fmt(est.min)} – {fmt(est.max)} PLN</Text>
+          {/* Total summary row */}
+          <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: '#002113', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 14, paddingBottom: 14, marginTop: 20 }}>
+            <Text style={{ color: '#71a488', fontSize: 8, textTransform: 'uppercase', letterSpacing: 0.8, flex: 5 }}>Suma szacunkowa</Text>
+            <Text style={{ color: '#FFFFFF', fontSize: 8, flex: 4, textAlign: 'center' }}>Wszystkie pomieszczenia</Text>
+            <Text style={{ color: '#FFFFFF', fontWeight: 700, fontSize: 11, flex: 3, textAlign: 'right' }}>{fmt(est.min)} – {fmt(est.max)} PLN</Text>
           </View>
-        </View>
 
+          {/* Na co zwrócić uwagę */}
+          <View style={s.warnSection}>
+            <View style={s.warnBorder}>
+              <Text style={s.warnTitle}>Na co zwrócić uwagę</Text>
+            </View>
+            {warnPairs.map((pair, i) => (
+              <View key={i} style={s.warnRow}>
+                <View style={s.warnCard}>
+                  <Text style={s.warnCardTitle}>{pair[0].title}</Text>
+                  <Text style={s.warnCardDesc}>{pair[0].desc}</Text>
+                </View>
+                {pair[1] ? (
+                  <View style={s.warnCardRight}>
+                    <Text style={s.warnCardTitle}>{pair[1].title}</Text>
+                    <Text style={s.warnCardDesc}>{pair[1].desc}</Text>
+                  </View>
+                ) : (
+                  <View style={{ flex: 1, marginLeft: 10 }} />
+                )}
+              </View>
+            ))}
+          </View>
+
+        </View>
         <Footer />
       </Page>
     </Document>

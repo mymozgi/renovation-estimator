@@ -7,8 +7,8 @@ const _o = typeof window !== 'undefined' ? window.location.origin : ''
 Font.register({
   family: 'Manrope',
   fonts: [
-    { src: `${_o}/fonts/Manrope-Variable.ttf`, fontWeight: 400 },
-    { src: `${_o}/fonts/Manrope-Variable.ttf`, fontWeight: 700 },
+    { src: `${_o}/fonts/Manrope-Regular.ttf`, fontWeight: 400 },
+    { src: `${_o}/fonts/Manrope-Bold.ttf`,    fontWeight: 700 },
   ],
 })
 
@@ -128,23 +128,23 @@ const s = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between',
     paddingLeft: 44, paddingRight: 44,
   },
-  footerText: { color: '#717975', fontSize: 7 },
+  footerText: { color: '#717975', fontSize: 8 },
 
   // ── Header ──────────────────────────────────────────────────────────────
   header: {
     flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start',
-    paddingLeft: 44, paddingRight: 44, paddingTop: 40, paddingBottom: 24,
+    paddingLeft: 44, paddingRight: 44, paddingTop: 56, paddingBottom: 24,
     borderBottomWidth: 1, borderBottomColor: '#E1E3E2', borderBottomStyle: 'solid',
   },
   headerTitle: {
     fontWeight: 700, fontSize: 22, color: '#002113',
     letterSpacing: 1, textTransform: 'uppercase', marginBottom: 8,
   },
-  headerMeta: { fontSize: 7.5, color: '#717975', letterSpacing: 0.3 },
+  headerMeta: { fontSize: 8.5, color: '#717975', letterSpacing: 0.3 },
   headerRight:    { alignItems: 'flex-end' },
   headerLogo:     { width: 130, height: 26 },
   headerSubtext:  {
-    fontSize: 6.5, color: '#717975', textTransform: 'uppercase',
+    fontSize: 8, color: '#717975', textTransform: 'uppercase',
     letterSpacing: 0.8, marginTop: 5,
   },
 
@@ -157,27 +157,27 @@ const s = StyleSheet.create({
     paddingLeft: 28, paddingRight: 28, paddingTop: 26, paddingBottom: 26,
     marginBottom: 14,
   },
-  darkLabel:  { color: '#71a488', fontSize: 7.5, textTransform: 'uppercase', letterSpacing: 0.8, marginBottom: 8 },
+  darkLabel:  { color: '#71a488', fontSize: 8.5, textTransform: 'uppercase', letterSpacing: 0.8, marginBottom: 8 },
   darkAmount: { color: '#FFFFFF', fontWeight: 700, fontSize: 28, letterSpacing: -0.8, marginBottom: 18 },
   ratioBar:   { flexDirection: 'row', height: 6, borderRadius: 999, overflow: 'hidden', marginBottom: 10 },
   legend:     { flexDirection: 'row' },
   legendItem: { flexDirection: 'row', alignItems: 'center', marginRight: 18 },
   legendDot:  { width: 7, height: 7, borderRadius: 999, marginRight: 5 },
-  legendText: { color: '#FFFFFF', fontSize: 8 },
+  legendText: { color: '#FFFFFF', fontSize: 9 },
 
   // ── 3-col summary ────────────────────────────────────────────────────────
   summaryRow:      { flexDirection: 'row', marginBottom: 24 },
   summaryCard:     { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 16, paddingBottom: 16 },
   summaryCardMid:  { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 16, paddingBottom: 16, marginLeft: 8, marginRight: 8 },
   summaryCardDark: { flex: 1, backgroundColor: '#002113', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 16, paddingBottom: 16 },
-  summaryLabel:     { fontSize: 7, textTransform: 'uppercase', letterSpacing: 0.8, color: '#717975', marginBottom: 8 },
-  summaryLabelDark: { fontSize: 7, textTransform: 'uppercase', letterSpacing: 0.8, color: '#71a488', marginBottom: 8 },
+  summaryLabel:     { fontSize: 8, textTransform: 'uppercase', letterSpacing: 0.8, color: '#717975', marginBottom: 8 },
+  summaryLabelDark: { fontSize: 8, textTransform: 'uppercase', letterSpacing: 0.8, color: '#71a488', marginBottom: 8 },
   summaryAmount:    { fontWeight: 700, fontSize: 17, color: '#191C1C' },
   summaryAmountDark:{ fontWeight: 700, fontSize: 17, color: '#FFFFFF' },
 
   // ── Disclaimer ────────────────────────────────────────────────────────────
   disclaimer:     { marginTop: 14, paddingLeft: 14, paddingRight: 14, paddingTop: 12, paddingBottom: 12, backgroundColor: '#F6F3F2', borderRadius: 8 },
-  disclaimerText: { color: '#717975', fontSize: 7.5, lineHeight: 1.5, textAlign: 'center' },
+  disclaimerText: { color: '#717975', fontSize: 8.5, lineHeight: 1.5, textAlign: 'center' },
 
   // ── Rooms page: table ─────────────────────────────────────────────────────
   roomsBody: { paddingLeft: 44, paddingRight: 44, paddingTop: 32, paddingBottom: 72 },
@@ -186,7 +186,7 @@ const s = StyleSheet.create({
     flexDirection: 'row', paddingBottom: 8,
     borderBottomWidth: 1, borderBottomColor: '#E1E3E2', borderBottomStyle: 'solid',
   },
-  colHead: { fontSize: 7, textTransform: 'uppercase', letterSpacing: 0.8, color: '#717975' },
+  colHead: { fontSize: 8, textTransform: 'uppercase', letterSpacing: 0.8, color: '#717975' },
 
   roomTitleRow: {
     flexDirection: 'row', alignItems: 'center',
@@ -201,8 +201,8 @@ const s = StyleSheet.create({
     flexDirection: 'row', alignItems: 'center',
     paddingLeft: 10, paddingRight: 10, paddingTop: 5, paddingBottom: 5,
   },
-  sectionBarText: { color: '#FFFFFF', fontSize: 7, textTransform: 'uppercase', letterSpacing: 0.8, fontWeight: 700 },
-  sectionBarAmt:  { color: '#FFFFFF', fontSize: 7, marginLeft: 'auto' },
+  sectionBarText: { color: '#FFFFFF', fontSize: 8, textTransform: 'uppercase', letterSpacing: 0.8, fontWeight: 700 },
+  sectionBarAmt:  { color: '#FFFFFF', fontSize: 8, marginLeft: 'auto' },
 
   itemRow: {
     flexDirection: 'row', alignItems: 'flex-start',
@@ -210,7 +210,7 @@ const s = StyleSheet.create({
     borderBottomWidth: 1, borderBottomColor: '#F6F3F2', borderBottomStyle: 'solid',
   },
   itemCat:  { fontSize: 8.5, color: '#191C1C', flex: 5 },
-  itemDesc: { fontSize: 8, color: '#717975', flex: 4 },
+  itemDesc: { fontSize: 9, color: '#717975', flex: 4 },
   itemAmt:  { fontSize: 8.5, color: '#191C1C', flex: 3, textAlign: 'right' },
 
   // ── Warnings section ─────────────────────────────────────────────────────
@@ -221,14 +221,14 @@ const s = StyleSheet.create({
   warnCard:      { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 12, paddingRight: 12, paddingTop: 12, paddingBottom: 12 },
   warnCardRight: { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 12, paddingRight: 12, paddingTop: 12, paddingBottom: 12, marginLeft: 10 },
   warnCardTitle: { fontWeight: 700, fontSize: 8.5, color: '#002113', marginBottom: 4 },
-  warnCardDesc:  { fontSize: 7.5, color: '#717975', lineHeight: 1.5 },
+  warnCardDesc:  { fontSize: 8.5, color: '#717975', lineHeight: 1.5 },
 })
 
 /* ─── Footer component ──────────────────────────────────────────────────── */
 function Footer() {
   return (
     <View style={s.footer} fixed>
-      <Text style={s.footerText}>© {new Date().getFullYear()} Remontowo. Wszelkie prawa zastrzeżone.</Text>
+      <Text style={s.footerText}>© {new Date().getFullYear()} Remonta. Wszelkie prawa zastrzeżone.</Text>
       <Text
         style={s.footerText}
         render={({ pageNumber, totalPages }) => `Strona ${pageNumber} z ${totalPages}`}

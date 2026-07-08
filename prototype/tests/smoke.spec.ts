@@ -7,7 +7,7 @@ test.describe('Landing page', () => {
     await page.goto('/pl')
     await expect(page).toHaveURL(/\/pl/)
     await expect(page.locator('h1').first()).toBeVisible()
-    await expect(page.locator('text=Remontowo').first()).toBeVisible()
+    await expect(page.locator('text=Remonta').first()).toBeVisible()
   })
 
   test('hero CTA links to calculator', async ({ page }) => {
@@ -26,7 +26,7 @@ test.describe('Landing page', () => {
   test('footer renders', async ({ page }) => {
     await page.goto('/pl')
     await expect(page.locator('footer')).toBeVisible()
-    await expect(page.locator('footer').getByText('Remontowo')).toBeVisible()
+    await expect(page.locator('footer').getByText('Remonta')).toBeVisible()
   })
 })
 
@@ -157,7 +157,7 @@ test.describe('Article detail page', () => {
 test.describe('Calculator', () => {
   test('calculator start screen loads', async ({ page }) => {
     await page.goto('/pl/kalkulator')
-    await expect(page.locator('text=Remontowo').first()).toBeVisible()
+    await expect(page.locator('text=Remonta').first()).toBeVisible()
   })
 
   test('can select renovation type and advance', async ({ page }) => {
@@ -179,7 +179,7 @@ test.describe('Calculator', () => {
 
   test('calculator loads in Russian', async ({ page }) => {
     await page.goto('/ru/kalkulator')
-    await expect(page.locator('text=Remontowo').first()).toBeVisible()
+    await expect(page.locator('text=Remonta').first()).toBeVisible()
     // Bottom nav should show Russian text
     const nextBtn = page.locator('button').filter({ hasText: 'Далее' })
     // It's conditionally shown, just verify page loaded
@@ -188,7 +188,7 @@ test.describe('Calculator', () => {
 
   test('calculator loads in English', async ({ page }) => {
     await page.goto('/en/kalkulator')
-    await expect(page.locator('text=Remontowo').first()).toBeVisible()
+    await expect(page.locator('text=Remonta').first()).toBeVisible()
   })
 })
 

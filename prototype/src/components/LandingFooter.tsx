@@ -15,7 +15,7 @@ export function LandingFooter() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           <div className="md:col-span-2">
             <Link href={`/${locale}`} className="inline-block mb-3">
-              <Image src="/logo-header-remonta.png" alt="Remontowo" width={140} height={28} />
+              <Image src="/logo-header-remonta.png" alt="Remonta" width={140} height={28} />
             </Link>
             <p className="text-base text-[#969998] leading-relaxed max-w-xs">{t('tagline')}</p>
             <a href="mailto:remontapoland@gmail.com" className="text-base text-[#969998] hover:text-fg transition-colors mt-2 inline-block">
@@ -41,7 +41,7 @@ export function LandingFooter() {
         </div>
 
         <div className="border-t border-border pt-6 flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-base text-[#969998]">© {year} Remontowo. {t('rights')}</p>
+          <p className="text-base text-[#969998]">© {year} Remonta. {t('rights')}</p>
           <div className="flex gap-4">
             <Link href={`/${locale}/regulamin`} className="text-base text-[#969998] hover:text-fg transition-colors">{t('terms')}</Link>
             <Link href={`/${locale}/o-nas`} className="text-base text-[#969998] hover:text-fg transition-colors">{t('aboutUs')}</Link>

@@ -14,7 +14,7 @@ export async function POST(req: Request) {
         price_data: {
           currency: 'pln',
           product_data: {
-            name: 'Kosztorys PDF — Remontowo.pl',
+            name: 'Kosztorys PDF — Remonta.pl',
             description: 'Szczegółowy kosztorys remontu z podziałem na pomieszczenia',
           },
           unit_amount: 2900,

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, CheckCircle2, Shield, Clock, Home, TrendingUp } from 'lucide-react'
+import { ArrowRight, CheckCircle2, Shield, Clock, Home, TrendingUp, X } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
@@ -78,6 +78,75 @@ export default async function LandingPage({ params }: Props) {
         </div>
       </section>
 
+      {/* ── Benchmark: Wykonawca vs Remonta ──────────────────────── */}
+      <section className="bg-surface py-14 sm:py-24">
+        <div className="max-w-[1140px] mx-auto px-4 sm:px-10">
+          <div className="flex flex-col items-center gap-4 mb-12">
+            <span className="text-xs font-semibold uppercase tracking-[0.1em] text-primary bg-primary/10 px-3 py-1 rounded-full">
+              {t('benchmarkBadge')}
+            </span>
+            <h2 className="font-semibold text-fg text-2xl sm:text-[32px] leading-tight sm:leading-10 tracking-[-0.32px] text-center max-w-[600px]">
+              {t('benchmarkTitle')}
+            </h2>
+            <p className="text-base text-[#414943] leading-6 max-w-[520px] text-center">
+              {t('benchmarkSubtitle')}
+            </p>
+          </div>
+
+          <div className="overflow-x-auto rounded-2xl border border-border">
+            <table className="w-full border-collapse">
+              <thead>
+                <tr>
+                  <th className="p-4 sm:p-5 text-left text-sm font-medium text-muted bg-bg border-b border-border w-[36%]" />
+                  <th className="p-4 sm:p-5 text-center text-sm font-semibold text-fg bg-bg border-b border-border w-[32%]">
+                    {t('benchmarkCol1')}
+                  </th>
+                  <th className="p-4 sm:p-5 text-center text-sm font-semibold text-white bg-primary border-b border-primary w-[32%]">
+                    {t('benchmarkCol2')}
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {([
+                  ['benchmarkR1Label', 'benchmarkR1C1', 'benchmarkR1C2'],
+                  ['benchmarkR2Label', 'benchmarkR2C1', 'benchmarkR2C2'],
+                  ['benchmarkR3Label', 'benchmarkR3C1', 'benchmarkR3C2'],
+                  ['benchmarkR4Label', 'benchmarkR4C1', 'benchmarkR4C2'],
+                  ['benchmarkR5Label', 'benchmarkR5C1', 'benchmarkR5C2'],
+                ] as const).map(([labelKey, c1Key, c2Key], i) => (
+                  <tr key={i} className={i % 2 === 0 ? 'bg-white' : 'bg-surface/60'}>
+                    <td className="p-4 sm:p-5 text-sm font-medium text-fg border-b border-border">
+                      {t(labelKey)}
+                    </td>
+                    <td className="p-4 sm:p-5 border-b border-border">
+                      <span className="flex items-center gap-2 text-sm text-muted">
+                        <X size={14} className="text-red-400 shrink-0" />
+                        {t(c1Key)}
+                      </span>
+                    </td>
+                    <td className="p-4 sm:p-5 border-b border-primary/20 bg-primary/5">
+                      <span className="flex items-center gap-2 text-sm text-primary font-medium">
+                        <CheckCircle2 size={14} className="shrink-0" />
+                        {t(c2Key)}
+                      </span>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <div className="text-center mt-8">
+            <Link
+              href={`/${locale}/kalkulator`}
+              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-[12px] font-semibold text-base tracking-[0.08em] hover:bg-primary/90 transition-colors"
+            >
+              {t('benchmarkCta')} <ArrowRight size={20} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── Dla kogo? ─────────────────────────────────────────────── */}
       <section className="max-w-[1140px] mx-auto px-4 sm:px-10 py-12 sm:py-24">
         <div className="flex flex-col gap-16 items-center">
@@ -106,7 +175,7 @@ export default async function LandingPage({ params }: Props) {
 
       {/* ── Wypróbuj kalkulator ───────────────────────────────────── */}
       <section className="max-w-[1140px] mx-auto px-4 sm:px-10 py-12 sm:py-24">
-        <div className="bg-bg border border-border rounded-2xl p-6 sm:p-8 grid md:grid-cols-2 gap-8 items-center">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
             <h2 className="font-bold text-fg text-2xl sm:text-[32px] leading-tight sm:leading-10 tracking-[-0.32px] mb-3">{t('tryTitle')}</h2>
             <p className="text-muted text-base leading-6 mb-5">{t('tryDesc')}</p>
@@ -126,25 +195,14 @@ export default async function LandingPage({ params }: Props) {
             </Link>
           </div>
 
-          <div className="bg-surface rounded-xl border border-border p-6 flex flex-col gap-4">
-            <div>
-              <label className="text-xs font-medium text-muted mb-1.5 block">{t('tryAreaLabel')}</label>
-              <div className="flex items-center justify-between border border-border rounded-lg px-3 py-2">
-                <span className="text-sm text-muted">m²</span>
-                <span className="font-semibold text-fg">65m²</span>
-              </div>
-            </div>
-            <div>
-              <label className="text-xs font-medium text-muted mb-1.5 block">{t('tryFinishLabel')}</label>
-              <div className="flex gap-2">
-                {[t('tryStandard1'), t('tryStandard2'), t('tryStandard3')].map((s, i) => (
-                  <button key={s}
-                    className={`flex-1 text-xs py-2 px-1 rounded-lg border font-medium transition-colors ${i === 0 ? 'bg-primary text-white border-primary' : 'border-border text-fg hover:border-primary/40'}`}>
-                    {s}
-                  </button>
-                ))}
-              </div>
-            </div>
+          {/* Image placeholder — drop your image into /public/ and replace this div with <img> */}
+          <div className="aspect-[4/3] rounded-2xl bg-surface flex flex-col items-center justify-center gap-3 text-muted">
+            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="opacity-30">
+              <rect x="4" y="4" width="40" height="40" rx="8" stroke="currentColor" strokeWidth="2"/>
+              <circle cx="18" cy="20" r="5" stroke="currentColor" strokeWidth="2"/>
+              <path d="M4 36l10-10 6 6 8-10 16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span className="text-sm font-medium opacity-40">Zdjęcie — wkrótce</span>
           </div>
         </div>
       </section>

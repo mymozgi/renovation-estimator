@@ -222,6 +222,28 @@ const s = StyleSheet.create({
   warnCardRight: { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 12, paddingRight: 12, paddingTop: 12, paddingBottom: 12, marginLeft: 10 },
   warnCardTitle: { fontWeight: 700, fontSize: 8.5, color: '#002113', marginBottom: 4 },
   warnCardDesc:  { fontSize: 8.5, color: '#717975', lineHeight: 1.5 },
+
+  // ── Includes box (page 1, before dark card) ───────────────────────────────
+  includesRow:       { flexDirection: 'row', marginBottom: 14 },
+  includesCard:      { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 14, paddingRight: 14, paddingTop: 12, paddingBottom: 12 },
+  includesCardMid:   { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 14, paddingRight: 14, paddingTop: 12, paddingBottom: 12, marginLeft: 8, marginRight: 8 },
+  includesCardDark:  { flex: 1, backgroundColor: '#002113', borderRadius: 8, paddingLeft: 14, paddingRight: 14, paddingTop: 12, paddingBottom: 12 },
+  includesHead:      { fontSize: 7.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.8, color: '#717975', marginBottom: 8 },
+  includesHeadDark:  { fontSize: 7.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.8, color: '#71a488', marginBottom: 8 },
+  includesItem:      { fontSize: 8, color: '#191C1C', marginBottom: 3, lineHeight: 1.4 },
+  includesItemGray:  { fontSize: 8, color: '#717975', marginBottom: 3, lineHeight: 1.4 },
+  includesPrecision: { fontWeight: 700, fontSize: 22, color: '#FFFFFF', marginBottom: 4 },
+  includesNote:      { fontSize: 8, color: '#71a488', lineHeight: 1.4 },
+
+  // ── Next steps section (end of page 2) ───────────────────────────────────
+  nextSection:     { marginTop: 28, paddingTop: 20, borderTopWidth: 1, borderTopColor: '#E1E3E2', borderTopStyle: 'solid' },
+  nextBorder:      { borderLeftWidth: 3, borderLeftColor: '#4D8F6A', borderLeftStyle: 'solid', paddingLeft: 12, marginBottom: 16 },
+  nextTitle:       { fontWeight: 700, fontSize: 11, color: '#002113', textTransform: 'uppercase', letterSpacing: 0.5 },
+  nextRow:         { flexDirection: 'row' },
+  nextCard:        { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 12, paddingRight: 12, paddingTop: 12, paddingBottom: 12, marginRight: 10 },
+  nextNum:         { fontWeight: 700, fontSize: 16, color: '#1D5039', marginBottom: 6 },
+  nextCardTitle:   { fontWeight: 700, fontSize: 8.5, color: '#002113', marginBottom: 4 },
+  nextCardDesc:    { fontSize: 8, color: '#717975', lineHeight: 1.5 },
 })
 
 /* ─── Footer component ──────────────────────────────────────────────────── */
@@ -322,7 +344,7 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
   }, [])
 
   return (
-    <Document title="Raport Kosztorysowy — Remontowo" author="Remontowo">
+    <Document title="Raport Kosztorysowy — Remonta" author="Remonta">
 
       {/* ══ Page 1 — Cover ══════════════════════════════════════════════ */}
       <Page size="A4" style={s.page}>
@@ -346,6 +368,29 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
 
         {/* Cover body */}
         <View style={s.body}>
+
+          {/* Co obejmuje / Nie obejmuje / Precyzja */}
+          <View style={s.includesRow}>
+            <View style={s.includesCard}>
+              <Text style={s.includesHead}>Co obejmuje</Text>
+              <Text style={s.includesItem}>✓  Materiały wykończeniowe</Text>
+              <Text style={s.includesItem}>✓  Robocizna ekipy</Text>
+              <Text style={s.includesItem}>✓  Prace przygotowawcze</Text>
+              <Text style={s.includesItem}>✓  Korekty regionalne</Text>
+            </View>
+            <View style={s.includesCardMid}>
+              <Text style={s.includesHead}>Nie obejmuje</Text>
+              <Text style={s.includesItemGray}>—  Elektryka i hydraulika</Text>
+              <Text style={s.includesItemGray}>—  Meble i AGD</Text>
+              <Text style={s.includesItemGray}>—  Wyburzenia konstrukcyjne</Text>
+              <Text style={s.includesItemGray}>—  Pozwolenia budowlane</Text>
+            </View>
+            <View style={s.includesCardDark}>
+              <Text style={s.includesHeadDark}>Precyzja szacunku</Text>
+              <Text style={s.includesPrecision}>±10–15%</Text>
+              <Text style={s.includesNote}>Typowa zmienność{'\n'}cen rynkowych w Polsce</Text>
+            </View>
+          </View>
 
           {/* Dark green total cost card */}
           <View style={s.darkCard}>
@@ -452,6 +497,27 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
                 )}
               </View>
             ))}
+          </View>
+
+          {/* Następne kroki */}
+          <View style={s.nextSection}>
+            <View style={s.nextBorder}>
+              <Text style={s.nextTitle}>Następne kroki</Text>
+            </View>
+            <View style={s.nextRow}>
+              {[
+                { n: '01', title: 'Zbierz 3 oferty', desc: 'Poproś co najmniej 3 wykonawców o wycenę tego samego zakresu prac.' },
+                { n: '02', title: 'Pokaż ten kosztorys', desc: 'Użyj go jako punktu odniesienia — wykonawca powinien uzasadnić różnice.' },
+                { n: '03', title: 'Porównaj pozycje', desc: 'Sprawdź podział na materiały i robociznę, nie tylko cenę łączną.' },
+                { n: '04', title: 'Negocjuj świadomie', desc: 'Oferta o >20% wyższa od widełek? Zapytaj o szczegóły lub zmień ekipę.' },
+              ].map((step, i, arr) => (
+                <View key={step.n} style={[s.nextCard, i === arr.length - 1 ? { marginRight: 0 } : {}]}>
+                  <Text style={s.nextNum}>{step.n}</Text>
+                  <Text style={s.nextCardTitle}>{step.title}</Text>
+                  <Text style={s.nextCardDesc}>{step.desc}</Text>
+                </View>
+              ))}
+            </View>
           </View>
 
         </View>

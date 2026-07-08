@@ -4,8 +4,8 @@ import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 
 export const metadata: Metadata = {
-  title: 'Regulamin — Remontowo | Kalkulator kosztów remontu',
-  description: 'Regulamin korzystania z serwisu Remontowo.pl — bezpłatnego kalkulatora kosztów remontu. Przeczytaj zasady korzystania z narzędzia oraz politykę prywatności.',
+  title: 'Regulamin — Remonta | Kalkulator kosztów remontu',
+  description: 'Regulamin korzystania z serwisu Remonta.pl — bezpłatnego kalkulatora kosztów remontu. Przeczytaj zasady korzystania z narzędzia oraz politykę prywatności.',
   robots: { index: true, follow: true },
 }
 
@@ -27,7 +27,7 @@ const SECTIONS = [
     id: 'postanowienia-ogolne',
     title: '§2. Postanowienia ogólne',
     content: [
-      'Regulamin określa zasady korzystania z Serwisu Remontowo, a w szczególności z Kalkulatora kosztów remontu.',
+      'Regulamin określa zasady korzystania z Serwisu Remonta, a w szczególności z Kalkulatora kosztów remontu.',
       'Korzystanie z Serwisu jest bezpłatne i nie wymaga rejestracji ani zakładania konta użytkownika.',
       'Przeglądanie Serwisu i korzystanie z Kalkulatora jest możliwe po akceptacji niniejszego Regulaminu, która następuje przez korzystanie z Serwisu.',
       'Serwis jest przeznaczony wyłącznie do celów informacyjnych i nie stanowi oferty handlowej w rozumieniu art. 66 Kodeksu cywilnego.',
@@ -109,7 +109,7 @@ export default async function RegulaminPage({ params }: Props) {
             Regulamin
           </span>
           <h1 className="font-bold text-fg text-3xl md:text-4xl leading-tight mb-3">
-            Regulamin serwisu Remontowo
+            Regulamin serwisu Remonta
           </h1>
           <p className="text-muted text-sm leading-relaxed">
             Ostatnia aktualizacja: 1 stycznia 2026 roku

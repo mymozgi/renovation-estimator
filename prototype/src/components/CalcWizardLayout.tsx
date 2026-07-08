@@ -39,7 +39,7 @@ export function CalcWizardLayout({
       <div className="bg-white border-b border-border w-full">
         <div className="max-w-[1140px] mx-auto px-4 sm:px-10 h-20 flex items-center gap-4">
           <Link href={`/${locale}`} className="shrink-0">
-            <Image src="/logo-header-remonta.png" alt="Remontowo" width={160} height={32} priority />
+            <Image src="/logo-header-remonta.png" alt="Remonta" width={160} height={32} priority />
           </Link>
           <div className="w-px h-5 bg-border" />
           <span className="font-mono text-xs text-fg">

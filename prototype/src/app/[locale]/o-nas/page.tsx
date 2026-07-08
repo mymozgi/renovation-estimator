@@ -6,8 +6,8 @@ import { LandingFooter } from '@/components/LandingFooter'
 import { CheckCircle2, BarChart2, MapPin, Users } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'O nas — Remontowo | Kalkulator kosztów remontu w Polsce',
-  description: 'Remontowo to bezpłatne narzędzie do szacowania kosztów remontu w Polsce.',
+  title: 'O nas — Remonta | Kalkulator kosztów remontu w Polsce',
+  description: 'Remonta to bezpłatne narzędzie do szacowania kosztów remontu w Polsce.',
 }
 
 type Props = { params: Promise<{ locale: string }> }

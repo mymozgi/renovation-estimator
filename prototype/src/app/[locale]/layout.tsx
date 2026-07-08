@@ -27,7 +27,7 @@ const robotoMono = Roboto_Mono({
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> }
 
 export const metadata: Metadata = {
-  title: 'Remontowo — kalkulator kosztów remontu',
+  title: 'Remonta — kalkulator kosztów remontu',
   description: 'Oblicz realistyczny kosztorys remontu na podstawie powierzchni, standardu wykończenia i cen regionalnych.',
   icons: {
     icon: '/favicon.ico',

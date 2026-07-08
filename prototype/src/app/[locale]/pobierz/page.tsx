@@ -8,6 +8,7 @@ import Confetti from '@/components/Confetti'
 
 const PDFDownloadButton = dynamic(() => import('@/components/PDFDownloadButton'), { ssr: false })
 const AutoPDFDownload   = dynamic(() => import('@/components/AutoPDFDownload'),   { ssr: false })
+const SendPDFByEmail    = dynamic(() => import('@/components/SendPDFByEmail'),    { ssr: false })
 
 export default function PobierzPage() {
   const searchParams = useSearchParams()
@@ -68,6 +69,7 @@ export default function PobierzPage() {
       </div>
 
       <AutoPDFDownload data={pdfData} />
+      <SendPDFByEmail data={pdfData} />
 
       <PDFDownloadButton
         data={pdfData}

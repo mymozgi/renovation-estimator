@@ -153,7 +153,7 @@ const s = StyleSheet.create({
 
   // ── Dark card ────────────────────────────────────────────────────────────
   darkCard: {
-    backgroundColor: '#002113', borderRadius: 10,
+    backgroundColor: '#1D5039', borderRadius: 10,
     paddingLeft: 28, paddingRight: 28, paddingTop: 26, paddingBottom: 26,
     marginBottom: 14,
   },
@@ -169,7 +169,7 @@ const s = StyleSheet.create({
   summaryRow:      { flexDirection: 'row', marginBottom: 24 },
   summaryCard:     { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 16, paddingBottom: 16 },
   summaryCardMid:  { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 16, paddingBottom: 16, marginLeft: 8, marginRight: 8 },
-  summaryCardDark: { flex: 1, backgroundColor: '#002113', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 16, paddingBottom: 16 },
+  summaryCardDark: { flex: 1, backgroundColor: '#1D5039', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 16, paddingBottom: 16 },
   summaryLabel:     { fontSize: 8, textTransform: 'uppercase', letterSpacing: 0.8, color: '#717975', marginBottom: 8 },
   summaryLabelDark: { fontSize: 8, textTransform: 'uppercase', letterSpacing: 0.8, color: '#71a488', marginBottom: 8 },
   summaryAmount:    { fontWeight: 700, fontSize: 17, color: '#191C1C' },
@@ -294,7 +294,7 @@ function RoomSection({ room }: { room: PDFRoomData }) {
       {/* ROBOCIZNA */}
       {rob.length > 0 && (
         <>
-          <View style={[s.sectionBar, { backgroundColor: '#002113' }]}>
+          <View style={[s.sectionBar, { backgroundColor: '#1D5039' }]}>
             <Text style={s.sectionBarText}>Robocizna</Text>
             <Text style={s.sectionBarAmt}>{fmt(room.cost.labor)} PLN</Text>
           </View>
@@ -474,7 +474,7 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
           )}
 
           {/* Total summary row */}
-          <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: '#002113', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 14, paddingBottom: 14, marginTop: 20 }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center', backgroundColor: '#1D5039', borderRadius: 8, paddingLeft: 16, paddingRight: 16, paddingTop: 14, paddingBottom: 14, marginTop: 20 }}>
             <Text style={{ color: '#71a488', fontSize: 8, textTransform: 'uppercase', letterSpacing: 0.8, flex: 5 }}>Suma szacunkowa</Text>
             <Text style={{ color: '#FFFFFF', fontSize: 8, flex: 4, textAlign: 'center' }}>Wszystkie pomieszczenia</Text>
             <Text style={{ color: '#FFFFFF', fontWeight: 700, fontSize: 11, flex: 3, textAlign: 'right' }}>{fmt(est.min)} – {fmt(est.max)} PLN</Text>

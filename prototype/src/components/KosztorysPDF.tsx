@@ -227,13 +227,13 @@ const s = StyleSheet.create({
   includesRow:       { flexDirection: 'row', marginBottom: 14 },
   includesCard:      { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 14, paddingRight: 14, paddingTop: 12, paddingBottom: 12 },
   includesCardMid:   { flex: 1, backgroundColor: '#F6F3F2', borderRadius: 8, paddingLeft: 14, paddingRight: 14, paddingTop: 12, paddingBottom: 12, marginLeft: 8, marginRight: 8 },
-  includesCardDark:  { flex: 1, backgroundColor: '#002113', borderRadius: 8, paddingLeft: 14, paddingRight: 14, paddingTop: 12, paddingBottom: 12 },
+  includesCardDark:  { flex: 1, backgroundColor: '#1D5039', borderRadius: 8, paddingLeft: 14, paddingRight: 14, paddingTop: 12, paddingBottom: 12 },
   includesHead:      { fontSize: 7.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.8, color: '#717975', marginBottom: 8 },
-  includesHeadDark:  { fontSize: 7.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.8, color: '#71a488', marginBottom: 8 },
-  includesItem:      { fontSize: 8, color: '#191C1C', marginBottom: 3, lineHeight: 1.4 },
-  includesItemGray:  { fontSize: 8, color: '#717975', marginBottom: 3, lineHeight: 1.4 },
+  includesHeadDark:  { fontSize: 7.5, fontWeight: 700, textTransform: 'uppercase', letterSpacing: 0.8, color: '#b9efcf', marginBottom: 8 },
+  includesItem:      { fontSize: 8.5, color: '#191C1C', marginBottom: 4, lineHeight: 1.5 },
+  includesItemGray:  { fontSize: 8.5, color: '#717975', marginBottom: 4, lineHeight: 1.5 },
   includesPrecision: { fontWeight: 700, fontSize: 22, color: '#FFFFFF', marginBottom: 4 },
-  includesNote:      { fontSize: 8, color: '#71a488', lineHeight: 1.4 },
+  includesNote:      { fontSize: 8, color: '#b9efcf', lineHeight: 1.5 },
 
   // ── Next steps section (end of page 2) ───────────────────────────────────
   nextSection:     { marginTop: 28, paddingTop: 20, borderTopWidth: 1, borderTopColor: '#E1E3E2', borderTopStyle: 'solid' },
@@ -373,17 +373,21 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
           <View style={s.includesRow}>
             <View style={s.includesCard}>
               <Text style={s.includesHead}>Co obejmuje</Text>
-              <Text style={s.includesItem}>✓  Materiały wykończeniowe</Text>
-              <Text style={s.includesItem}>✓  Robocizna ekipy</Text>
-              <Text style={s.includesItem}>✓  Prace przygotowawcze</Text>
-              <Text style={s.includesItem}>✓  Korekty regionalne</Text>
+              {['Materiały wykończeniowe', 'Robocizna ekipy', 'Prace przygotowawcze', 'Korekty regionalne'].map(item => (
+                <View key={item} style={{ flexDirection: 'row', alignItems: 'flex-start', marginBottom: 4 }}>
+                  <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: '#1D5039', marginTop: 2.5, marginRight: 7 }} />
+                  <Text style={s.includesItem}>{item}</Text>
+                </View>
+              ))}
             </View>
             <View style={s.includesCardMid}>
               <Text style={s.includesHead}>Nie obejmuje</Text>
-              <Text style={s.includesItemGray}>—  Elektryka i hydraulika</Text>
-              <Text style={s.includesItemGray}>—  Meble i AGD</Text>
-              <Text style={s.includesItemGray}>—  Wyburzenia konstrukcyjne</Text>
-              <Text style={s.includesItemGray}>—  Pozwolenia budowlane</Text>
+              {['Elektryka i hydraulika', 'Meble i AGD', 'Wyburzenia konstrukcyjne', 'Pozwolenia budowlane'].map(item => (
+                <View key={item} style={{ flexDirection: 'row', alignItems: 'flex-start', marginBottom: 4 }}>
+                  <View style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: '#c5c7c6', marginTop: 2.5, marginRight: 7 }} />
+                  <Text style={s.includesItemGray}>{item}</Text>
+                </View>
+              ))}
             </View>
             <View style={s.includesCardDark}>
               <Text style={s.includesHeadDark}>Precyzja szacunku</Text>
@@ -477,7 +481,7 @@ export function KosztorysPDF({ data }: { data: PDFData }) {
           </View>
 
           {/* Na co zwrócić uwagę */}
-          <View style={s.warnSection}>
+          <View style={s.warnSection} wrap={false}>
             <View style={s.warnBorder}>
               <Text style={s.warnTitle}>Na co zwrócić uwagę</Text>
             </View>

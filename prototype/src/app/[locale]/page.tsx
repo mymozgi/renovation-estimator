@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { existsSync } from 'fs'
+import { join } from 'path'
 import { ArrowRight, CheckCircle2, Shield, Clock, Home, TrendingUp, X } from 'lucide-react'
 import { getTranslations } from 'next-intl/server'
 import { LandingHeader } from '@/components/LandingHeader'
@@ -7,6 +9,29 @@ import { HeroSlider } from '@/components/HeroSlider'
 import { articles } from '@/content/articles'
 import { CLUSTER_LABELS } from '@/content/clusters'
 import { ArticleCard } from '@/components/ArticleCard'
+
+function CalcPreviewImage() {
+  const hasImage = existsSync(join(process.cwd(), 'public', 'calculator-preview.jpg'))
+  if (hasImage) {
+    return (
+      <img
+        src="/calculator-preview.jpg"
+        alt="Przykładowy raport Remonta"
+        className="w-full rounded-2xl object-cover aspect-[4/3] border border-border"
+      />
+    )
+  }
+  return (
+    <div className="aspect-[4/3] rounded-2xl bg-bg border border-border flex flex-col items-center justify-center gap-3 text-muted">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="opacity-20">
+        <rect x="4" y="4" width="40" height="40" rx="8" stroke="currentColor" strokeWidth="2"/>
+        <circle cx="18" cy="20" r="5" stroke="currentColor" strokeWidth="2"/>
+        <path d="M4 36l10-10 6 6 8-10 16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+      <span className="text-sm font-medium opacity-30">Zdjęcie — wkrótce</span>
+    </div>
+  )
+}
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -94,7 +119,7 @@ export default async function LandingPage({ params }: Props) {
           </div>
 
           <div className="overflow-x-auto rounded-2xl border border-border">
-            <table className="w-full border-collapse">
+            <table className="w-full min-w-[480px] border-collapse">
               <thead>
                 <tr>
                   <th className="p-4 sm:p-5 text-left text-sm font-medium text-muted bg-bg border-b border-border w-[36%]" />
@@ -174,47 +199,41 @@ export default async function LandingPage({ params }: Props) {
       </section>
 
       {/* ── Wypróbuj kalkulator ───────────────────────────────────── */}
-      <section className="max-w-[1140px] mx-auto px-4 sm:px-10 py-12 sm:py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h2 className="font-bold text-fg text-2xl sm:text-[32px] leading-tight sm:leading-10 tracking-[-0.32px] mb-3">{t('tryTitle')}</h2>
-            <p className="text-muted text-base leading-6 mb-5">{t('tryDesc')}</p>
-            <ul className="flex flex-col gap-2 mb-6">
-              {[t('tryFeature1'), t('tryFeature2'), t('tryFeature3')].map((item) => (
-                <li key={item} className="flex items-start gap-2 text-base text-muted">
-                  <CheckCircle2 size={16} className="text-primary mt-0.5 shrink-0" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-            <Link
-              href={`/${locale}/kalkulator`}
-              className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-[12px] font-semibold text-base tracking-[0.08em] hover:bg-primary/90 transition-colors"
-            >
-              {t('tryCta')}
-            </Link>
-          </div>
+      <section className="bg-surface py-14 sm:py-24">
+        <div className="max-w-[1140px] mx-auto px-4 sm:px-10">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="md:pl-6 lg:pl-10">
+              <h2 className="font-bold text-fg text-2xl sm:text-[32px] leading-tight sm:leading-10 tracking-[-0.32px] mb-3">{t('tryTitle')}</h2>
+              <p className="text-muted text-base leading-6 mb-5">{t('tryDesc')}</p>
+              <ul className="flex flex-col gap-2 mb-6">
+                {[t('tryFeature1'), t('tryFeature2'), t('tryFeature3')].map((item) => (
+                  <li key={item} className="flex items-start gap-2 text-base text-muted">
+                    <CheckCircle2 size={16} className="text-primary mt-0.5 shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href={`/${locale}/kalkulator`}
+                className="inline-flex items-center gap-2 bg-primary text-white px-8 py-4 rounded-[12px] font-semibold text-base tracking-[0.08em] hover:bg-primary/90 transition-colors"
+              >
+                {t('tryCta')}
+              </Link>
+            </div>
 
-          {/* Image placeholder — drop your image into /public/ and replace this div with <img> */}
-          <div className="aspect-[4/3] rounded-2xl bg-surface flex flex-col items-center justify-center gap-3 text-muted">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" className="opacity-30">
-              <rect x="4" y="4" width="40" height="40" rx="8" stroke="currentColor" strokeWidth="2"/>
-              <circle cx="18" cy="20" r="5" stroke="currentColor" strokeWidth="2"/>
-              <path d="M4 36l10-10 6 6 8-10 16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
-            <span className="text-sm font-medium opacity-40">Zdjęcie — wkrótce</span>
+            <CalcPreviewImage />
           </div>
         </div>
       </section>
 
       {/* ── Poradniki remontowe ───────────────────────────────────── */}
       <section className="max-w-[1140px] mx-auto px-4 sm:px-10 py-12 sm:py-24">
-        <div className="flex items-end justify-between mb-12">
+        <div className="flex items-start justify-between gap-4 mb-12 flex-wrap">
           <div className="flex flex-col gap-2">
-            <h2 className="font-semibold text-fg text-[32px] leading-10 tracking-[-0.32px]">{t('articlesTitle')}</h2>
+            <h2 className="font-semibold text-fg text-2xl sm:text-[32px] sm:leading-10 tracking-[-0.32px]">{t('articlesTitle')}</h2>
             <p className="text-base text-[#414943] leading-6">{t('articlesSubtitle')}</p>
           </div>
-          <Link href={`/${locale}/articles`} className="text-base text-primary font-normal hover:underline flex items-center gap-1 shrink-0 mb-0.5">
+          <Link href={`/${locale}/articles`} className="text-base text-primary font-normal hover:underline flex items-center gap-1 shrink-0 mt-1">
             {t('articlesAll')} <ArrowRight size={20} />
           </Link>
         </div>

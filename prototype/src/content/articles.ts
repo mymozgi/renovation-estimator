@@ -192,6 +192,58 @@ Drzwi wewnętrzne: 600–4 000 PLN/szt., montaż AGD i podpięcie.
       ],
       ctaText: 'Oblicz kosztorys wykończenia nowego mieszkania →',
     },
+    {
+      slug: 'jak-wybrac-ekipe-remontowa-2026',
+      img: '/images/tile.jpg',
+      title: 'Jak wybrać ekipę remontową w 2026? Sprawdzone pytania i czerwone flagi',
+      description: 'Jak nie dać się nabrać podczas wyboru ekipy remontowej? Kompletna lista pytań do weryfikacji wykonawcy, czerwone flagi i kontrakt bez niespodzianek.',
+      cluster: 'contractors',
+      publishedAt: '2026-07-08',
+      hook: 'Zła ekipa remontowa to nie tylko wyższy koszt — to pół roku stresu, porzucony plac budowy i spór sądowy. Sprawdź, jak odróżnić profesjonalistów od przypadkowych wykonawców, zanim podpiszesz umowę.',
+      problem: `Rynek remontowy jest pełen fachowców, którzy wyglądają profesjonalnie na Instagramie, ale nie mają NIP-u, polisy OC ani referencji do sprawdzenia. Większość właścicieli mieszkań wybiera ekipę na podstawie polecenia znajomego lub najtańszej oferty — i obie metody regularnie kończą się katastrofą.
+
+Problem polega na tym, że w momencie wyboru wykonawcy nie wiesz, czego nie wiesz. Brak doświadczenia w zadawaniu właściwych pytań sprawia, że przepłacasz, akceptujesz niekorzystne warunki płatności i nie masz żadnej ochrony, gdy coś pójdzie nie tak.`,
+      explanation: `**Zanim zaczniesz szukać — przygotuj projekt i kosztorys**
+
+Ekipa, która otrzymuje precyzyjny projekt i zakres prac, wycenia uczciwie. Ekipa, która musi sama "oszacować" — buduje margines bezpieczeństwa po swojej stronie lub zaniża wycenę, żeby wygrać zlecenie, a potem dolicza "nieprzewidziane" koszty.
+
+Miej kosztorys niezależny od wykonawcy, zanim poprosisz o oferty. To jedyna metoda weryfikacji, czy 85 000 PLN to uczciwa cena za dany zakres prac.
+
+**5 pytań, które musisz zadać każdej ekipie**
+
+1. **NIP i polisa OC** — sprawdź firmę w CEIDG lub KRS, poproś o numer polisy i zadzwoń do ubezpieczyciela potwierdzić ważność. Brak polisy OC to ryzyko, które przejmujesz na siebie.
+
+2. **Referencje do sprawdzenia (nie zdjęcia)** — poproś o dane kontaktowe poprzednich klientów. Jeśli wykonawca nie może ich podać, pytaj dlaczego. Dobra ekipa ma listę zadowolonych klientów, którzy chętnie potwierdzą jakość pracy.
+
+3. **Kto realnie będzie pracował** — lider ekipy podpisujący umowę to często nie ten, kto będzie kłaść płytki. Zapytaj, kto fizycznie wykonuje poszczególne prace i jakie mają doświadczenie.
+
+4. **Harmonogram płatności** — czerwona flaga: ponad 30% zaliczki przed rozpoczęciem prac lub żądanie całości przed zakończeniem. Uczciwy podział: 20-30% na start, reszta etapami za wykonane i odebrane prace.
+
+5. **Co wchodzi w "sprzątanie po sobie"** — zakres często pomijany w ustnych ustaleniach. Kto wywozi gruz, kto sprząta kurz, kto zabezpiecza inne pomieszczenia?
+
+**Czerwone flagi, które powinny skończyć rozmowę**
+
+- Brak umowy pisemnej lub odmowa jej podpisania
+- Płatność tylko gotówką "żeby taniej" (brak faktury = brak ochrony)
+- Zmiana ceny po pierwszym tygodniu pracy bez nowego zakresu
+- Brak możliwości sprawdzenia poprzednich realizacji
+- Agresywny nacisk na szybką decyzję ("mam inne zlecenie za tydzień")
+
+**Jak sformułować umowę**
+
+Dobra umowa zawiera: dokładny zakres prac (z projektem jako załącznikiem), harmonogram etapów i płatności, kary umowne za opóźnienie, warunki gwarancji (min. 2 lata na prace budowlane) i procedurę zgłaszania usterek. Umowa słowna nie istnieje prawnie przy sporach powyżej 1 000 PLN.`,
+      checklist: [
+        'Sprawdź NIP wykonawcy w CEIDG/KRS przed pierwszym spotkaniem',
+        'Poproś o numer polisy OC i potwierdź jej ważność u ubezpieczyciela',
+        'Zadzwoń do min. 2 poprzednich klientów — pytaj konkretnie o terminy i poprawki',
+        'Nie akceptuj zaliczki powyżej 30% przed rozpoczęciem prac',
+        'Podpisz umowę z zakresem prac, harmonogramem i karami za opóźnienie',
+        'Unikaj płatności wyłącznie gotówkowych — brak faktury = brak ochrony',
+        'Miej niezależny kosztorys przed porównaniem ofert wykonawców',
+        'Sprawdź, kto fizycznie wykona prace (nie tylko kto podpisuje umowę)',
+      ],
+      ctaText: 'Oblicz kosztorys i porównaj oferty wykonawców →',
+    },
   ],
 
   en: [
@@ -373,6 +425,58 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
       ],
       ctaText: 'Calculate new apartment finishing cost →',
     },
+    {
+      slug: 'how-to-choose-renovation-contractor-2026',
+      img: '/images/tile.jpg',
+      title: 'How to choose a renovation contractor in 2026? Key questions and red flags',
+      description: 'A complete guide to vetting renovation contractors in Poland: questions to ask, red flags to watch for, and contract terms that protect your budget.',
+      cluster: 'contractors',
+      publishedAt: '2026-07-08',
+      hook: 'A bad contractor doesn\'t just cost more — it means months of stress, an abandoned worksite, and potential legal disputes. Learn how to separate professionals from opportunists before you sign anything.',
+      problem: `The renovation market is full of tradespeople who look professional on Instagram but have no tax ID, no liability insurance, and no verifiable references. Most homeowners choose a contractor based on a friend\'s recommendation or the cheapest quote — and both methods regularly end in disaster.
+
+The problem is that at the moment of hiring, you don\'t know what questions to ask. Without the right framework, you overpay, accept poor payment terms, and have no protection when things go wrong.`,
+      explanation: `**Before you search — prepare a scope and an independent estimate**
+
+A contractor who receives a precise project brief and scope of work prices honestly. A contractor who has to "guess" the scope builds in a safety margin — or lowballs the quote to win the job, then adds "unexpected" costs later.
+
+Have an independent estimate before asking for quotes. It\'s the only way to know whether 85,000 PLN is a fair price for the work you\'re describing.
+
+**5 questions to ask every contractor**
+
+1. **Tax ID and liability insurance** — verify the company in the official business register (CEIDG or KRS), ask for the policy number, and call the insurer to confirm it\'s active. No insurance means you absorb all risk.
+
+2. **References you can actually call (not just photos)** — ask for contact details of previous clients. If the contractor can\'t provide them, ask why. A good crew has a list of satisfied clients who are happy to confirm quality.
+
+3. **Who will physically do the work** — the person who signs the contract is often not the one laying tiles. Ask who performs each task and what their experience is.
+
+4. **Payment schedule** — red flag: more than 30% deposit before work starts, or demanding full payment before completion. Fair split: 20–30% upfront, the rest paid in stages after each completed and inspected phase.
+
+5. **What "cleaning up" means** — scope often missed in verbal agreements. Who removes rubble, who cleans construction dust, who protects other rooms during work?
+
+**Red flags that should end the conversation**
+
+- Refusal to sign a written contract
+- Cash-only payment "to save on VAT" (no invoice = no legal protection)
+- Price changes after the first week without a revised scope
+- No way to verify previous projects
+- Aggressive pressure to decide quickly ("I have another job next week")
+
+**What a good contract contains**
+
+A solid contract includes: exact scope of work (with the project attached), payment milestone schedule, penalties for delays, warranty terms (minimum 2 years on construction work), and a process for reporting defects. A verbal agreement has no legal standing for disputes above 1,000 PLN.`,
+      checklist: [
+        'Check the contractor\'s tax ID in CEIDG/KRS before the first meeting',
+        'Ask for the liability insurance policy number and confirm it\'s valid',
+        'Call at least 2 previous clients — ask specifically about deadlines and corrections',
+        'Don\'t accept a deposit above 30% before work begins',
+        'Sign a written contract with scope, schedule, and delay penalties',
+        'Avoid cash-only payments — no invoice means no legal protection',
+        'Have an independent estimate before comparing contractor quotes',
+        'Verify who will physically perform the work, not just who signs the contract',
+      ],
+      ctaText: 'Get your estimate and compare contractor quotes →',
+    },
   ],
 
   ru: [
@@ -549,6 +653,58 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
       ],
       ctaText: 'Рассчитать смету отделки новой квартиры →',
     },
+    {
+      slug: 'kak-vybrat-ekipu-dlya-remonta-2026',
+      img: '/images/tile.jpg',
+      title: 'Как выбрать бригаду для ремонта в 2026? Вопросы и красные флаги',
+      description: 'Полное руководство по проверке подрядчиков в Польше: какие вопросы задавать, на что обратить внимание и как составить договор, который защитит ваш бюджет.',
+      cluster: 'contractors',
+      publishedAt: '2026-07-08',
+      hook: 'Плохая бригада — это не просто лишние расходы. Это месяцы стресса, брошенный объект и судебные разбирательства. Узнайте, как отличить профессионалов от случайных людей ещё до подписания договора.',
+      problem: `Рынок ремонтных услуг полон мастеров, которые выглядят профессионально в Instagram, но не имеют ни ИНН, ни полиса OC, ни проверяемых рекомендаций. Большинство владельцев квартир выбирают бригаду по совету знакомых или по самой низкой цене — оба подхода регулярно заканчиваются провалом.
+
+Проблема в том, что в момент найма вы не знаете, какие вопросы задавать. Без нужных инструментов вы переплачиваете, соглашаетесь на невыгодные условия оплаты и остаётесь без защиты, когда что-то идёт не так.`,
+      explanation: `**Сначала — проект и независимая смета**
+
+Бригада, которая получает чёткий проект и объём работ, оценивает честно. Та, которая должна "прикинуть на глаз", закладывает себе запас — или намеренно занижает цену, чтобы получить заказ, а потом добавляет "непредвиденные" расходы.
+
+Имейте независимую смету до того, как просить предложения. Только так вы поймёте, является ли 85 000 PLN справедливой ценой за нужный объём работ.
+
+**5 вопросов, которые нужно задать каждой бригаде**
+
+1. **ИНН и полис OC** — проверьте компанию в реестре CEIDG или KRS, попросите номер полиса и позвоните страховщику, чтобы подтвердить её актуальность. Отсутствие полиса OC — это риск, который вы берёте на себя.
+
+2. **Рекомендации, которым можно позвонить (не фотографии)** — попросите контакты предыдущих клиентов. Хорошая бригада имеет список довольных заказчиков, готовых подтвердить качество работы.
+
+3. **Кто реально будет работать** — человек, подписывающий договор, часто не тот, кто будет класть плитку. Спросите, кто физически выполняет каждый вид работ и какой у них опыт.
+
+4. **График платежей** — красный флаг: аванс более 30% до начала работ или требование полной оплаты до завершения. Честный вариант: 20–30% на старте, остальное поэтапно за принятые работы.
+
+5. **Что входит в "уборку после себя"** — часто забываемая деталь. Кто вывозит строительный мусор, кто убирает пыль, кто защищает другие помещения?
+
+**Красные флаги, которые должны прекратить разговор**
+
+- Отказ подписать письменный договор
+- Оплата только наличными "чтобы сэкономить" (нет счёта = нет защиты)
+- Изменение цены после первой недели работы без нового объёма
+- Невозможность проверить предыдущие объекты
+- Агрессивное давление на быстрое решение
+
+**Что должен содержать договор**
+
+Хороший договор включает: точный объём работ (с проектом в приложении), график этапов и платежей, штрафы за просрочку, условия гарантии (минимум 2 года на строительные работы) и порядок предъявления претензий. Устный договор при спорах свыше 1 000 PLN не имеет юридической силы.`,
+      checklist: [
+        'Проверьте ИНН подрядчика в CEIDG/KRS перед первой встречей',
+        'Попросите номер полиса OC и подтвердите его актуальность у страховщика',
+        'Позвоните минимум 2 предыдущим клиентам — спросите о сроках и исправлениях',
+        'Не принимайте аванс более 30% до начала работ',
+        'Подпишите договор с объёмом работ, графиком и штрафами за задержку',
+        'Избегайте оплаты только наличными — нет счёта, нет защиты',
+        'Имейте независимую смету до сравнения предложений',
+        'Уточните, кто физически будет выполнять работы, не только кто подписывает договор',
+      ],
+      ctaText: 'Рассчитать смету и сравнить предложения →',
+    },
   ],
 
   uk: [
@@ -724,6 +880,58 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
         'Розрахуйте точний кошторис онлайн — знатимете, скільки просити у кредиті на оздоблення',
       ],
       ctaText: 'Розрахувати кошторис оздоблення нової квартири →',
+    },
+    {
+      slug: 'yak-vybrati-ekipu-dlya-remontu-2026',
+      img: '/images/tile.jpg',
+      title: 'Як вибрати бригаду для ремонту в 2026? Запитання і червоні прапори',
+      description: 'Повний посібник із перевірки підрядників у Польщі: які питання ставити, на що звертати увагу і як скласти договір, що захистить ваш бюджет.',
+      cluster: 'contractors',
+      publishedAt: '2026-07-08',
+      hook: 'Погана бригада — це не просто зайві витрати. Це місяці стресу, покинутий об\'єкт і судові суперечки. Дізнайтеся, як відрізнити професіоналів від випадкових людей ще до підписання договору.',
+      problem: `Ринок ремонтних послуг сповнений майстрів, які виглядають професійно в Instagram, але не мають ні ідентифікаційного коду, ні поліса OC, ні перевірених рекомендацій. Більшість власників квартир обирають бригаду за порадою знайомих або за найнижчою ціною — обидва підходи регулярно закінчуються провалом.
+
+Проблема в тому, що в момент найму ви не знаєте, які запитання ставити. Без правильних інструментів ви переплачуєте, погоджуєтесь на невигідні умови оплати і залишаєтеся без захисту, коли щось іде не так.`,
+      explanation: `**Спочатку — проект і незалежний кошторис**
+
+Бригада, яка отримує чіткий проект і обсяг робіт, оцінює чесно. Та, яка має "прикинути на око", закладає собі запас — або навмисно занижує ціну, щоб отримати замовлення, а потім додає "непередбачені" витрати.
+
+Майте незалежний кошторис до того, як запитувати пропозиції. Тільки так ви зрозумієте, чи є 85 000 PLN справедливою ціною за потрібний обсяг робіт.
+
+**5 запитань, які потрібно поставити кожній бригаді**
+
+1. **ІПН і поліс OC** — перевірте компанію в реєстрі CEIDG або KRS, попросіть номер поліса і зателефонуйте страховику, щоб підтвердити його актуальність. Відсутність поліса OC — це ризик, який ви берете на себе.
+
+2. **Рекомендації, яким можна зателефонувати (не фотографії)** — попросіть контакти попередніх клієнтів. Хороша бригада має список задоволених замовників, готових підтвердити якість роботи.
+
+3. **Хто реально буде працювати** — людина, яка підписує договір, часто не та, що укладатиме плитку. Запитайте, хто фізично виконує кожен вид робіт і який у них досвід.
+
+4. **Графік платежів** — червоний прапор: аванс більше 30% до початку робіт або вимога повної оплати до завершення. Чесний варіант: 20–30% на старті, решта поетапно за прийняті роботи.
+
+5. **Що входить у "прибирання після себе"** — деталь, яку часто забувають. Хто вивозить будівельне сміття, хто прибирає пил, хто захищає інші приміщення?
+
+**Червоні прапори, які повинні завершити розмову**
+
+- Відмова підписати письмовий договір
+- Оплата тільки готівкою "щоб заощадити" (немає рахунку = немає захисту)
+- Зміна ціни після першого тижня роботи без нового обсягу
+- Неможливість перевірити попередні об'єкти
+- Агресивний тиск на швидке рішення
+
+**Що повинен містити договір**
+
+Хороший договір включає: точний обсяг робіт (з проектом у додатку), графік етапів і платежів, штрафи за затримку, умови гарантії (мінімум 2 роки на будівельні роботи) і порядок пред'явлення претензій. Усний договір при суперечках понад 1 000 PLN не має юридичної сили.`,
+      checklist: [
+        'Перевірте ІПН підрядника в CEIDG/KRS перед першою зустріччю',
+        'Попросіть номер поліса OC і підтвердьте його актуальність у страховика',
+        'Зателефонуйте мінімум 2 попереднім клієнтам — запитайте про терміни і виправлення',
+        'Не приймайте аванс більше 30% до початку робіт',
+        'Підпишіть договір з обсягом робіт, графіком і штрафами за затримку',
+        'Уникайте оплати тільки готівкою — немає рахунку, немає захисту',
+        'Майте незалежний кошторис до порівняння пропозицій',
+        'Уточніть, хто фізично виконуватиме роботи, не лише хто підписує договір',
+      ],
+      ctaText: 'Розрахувати кошторис і порівняти пропозиції →',
     },
   ],
 }

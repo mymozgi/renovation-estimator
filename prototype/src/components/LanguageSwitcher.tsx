@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from 'react'
 import { useLocale } from 'next-intl'
 import { useRouter, usePathname } from 'next/navigation'
 import { ChevronDown, Check } from 'lucide-react'
+import { articles } from '@/content/articles'
 
 const LOCALES = [
   { code: 'pl', label: 'Polski'      },
@@ -37,8 +38,16 @@ export function LanguageSwitcher() {
 
   function switchLocale(next: string) {
     const segments = pathname.split('/')
-    segments[1] = next
-    router.push(segments.join('/'))
+    if (segments.length >= 4 && segments[2] === 'articles') {
+      const currentSlug = segments[3]
+      const idx = (articles[locale] ?? []).findIndex(a => a.slug === currentSlug)
+      const targetArticles = articles[next] ?? []
+      const targetSlug = idx >= 0 ? targetArticles[idx]?.slug : undefined
+      router.push(targetSlug ? `/${next}/articles/${targetSlug}` : `/${next}/articles`)
+    } else {
+      segments[1] = next
+      router.push(segments.join('/'))
+    }
     setOpen(false)
   }
 

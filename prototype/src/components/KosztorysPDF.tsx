@@ -142,7 +142,7 @@ const s = StyleSheet.create({
   },
   headerMeta: { fontSize: 8.5, color: '#717975', letterSpacing: 0.3 },
   headerRight:    { alignItems: 'flex-end' },
-  headerLogo:     { width: 130, height: 26 },
+  headerLogo:     { width: 99, height: 33 },
   headerSubtext:  {
     fontSize: 8, color: '#717975', textTransform: 'uppercase',
     letterSpacing: 0.8, marginTop: 5,

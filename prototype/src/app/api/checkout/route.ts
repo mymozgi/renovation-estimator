@@ -17,7 +17,7 @@ export async function POST(req: Request) {
             name: 'Kosztorys PDF — Remonta.pl',
             description: 'Szczegółowy kosztorys remontu z podziałem na pomieszczenia',
           },
-          unit_amount: 200,
+          unit_amount: 4900,
         },
         quantity: 1,
       },

@@ -31,7 +31,7 @@ export function LandingFooter() {
         <div className="grid grid-cols-1 md:grid-cols-5 gap-8 mb-8">
           <div className="md:col-span-2">
             <Link href={`/${locale}`} className="inline-block mb-3">
-              <Image src="/logo-header-remonta.png" alt="Remonta" width={140} height={28} />
+              <Image src="/logo-footer-remonta.png" alt="Remonta" width={105} height={35} />
             </Link>
             <p className="text-base text-[#969998] leading-relaxed max-w-xs">{t('tagline')}</p>
             <a href="mailto:remontapoland@gmail.com" className="text-base text-[#969998] hover:text-fg transition-colors mt-2 inline-block">

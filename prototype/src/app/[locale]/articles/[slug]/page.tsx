@@ -6,7 +6,6 @@ import { articles } from '@/content/articles'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 import { MarkdownContent } from '@/components/MarkdownContent'
-import { CLUSTER_HERO, CLUSTER_HERO_FALLBACK } from '@/lib/clusterColors'
 
 type Props = { params: Promise<{ locale: string; slug: string }> }
 
@@ -19,7 +18,7 @@ export default async function ArticlePage({ params }: Props) {
   const article = localeArticles.find((a) => a.slug === slug)
   if (!article) notFound()
 
-  const heroSrc = `https://images.unsplash.com/photo-${CLUSTER_HERO[article.cluster] ?? CLUSTER_HERO_FALLBACK}?w=1400&q=80&auto=format&fit=crop`
+  const heroSrc = article.img
   const clusterLabel = t(`clusters.${article.cluster}`)
 
   return (

@@ -1,4 +1,4 @@
-export interface Article {
+﻿export interface Article {
   slug: string
   title: string
   description: string
@@ -57,7 +57,7 @@ Płyty wielkoformatowe 60×120 lub 120×240 cm, prysznic walk-in, ogrzewanie pod
     },
     {
       slug: 'ceny-remontow-polska-2026',
-      img: '/images/house.jpg',
+      img: '/images/flat.jpg',
       title: 'Ceny remontów w Polsce 2026 — Warszawa, Kraków, Wrocław, Gdańsk, Poznań',
       description: 'Porównanie cen robocizny remontowej w największych polskich miastach w 2026 roku. Gdzie remont jest najtańszy, a gdzie zapłacisz najwięcej i dlaczego.',
       cluster: 'regional',
@@ -100,7 +100,7 @@ Skąd biorą się różnice? Ekipa malarska w Warszawie oczekuje 45–70 PLN/m²
     },
     {
       slug: 'na-czym-nie-oszczedzac-przy-remoncie-2026',
-      img: '/images/paint.jpg',
+      img: '/images/premium.jpg',
       title: 'Na czym NIE oszczędzać przy remoncie w 2026 — i gdzie możesz ciąć koszty bezpiecznie',
       description: 'Które elementy remontu warto kupić w wyższym standardzie, a gdzie tańsze materiały sprawdzą się równie dobrze? Praktyczny przewodnik po materiałach budowlanych 2026.',
       cluster: 'materials',
@@ -194,7 +194,7 @@ Drzwi wewnętrzne: 600–4 000 PLN/szt., montaż AGD i podpięcie.
     },
     {
       slug: 'jak-wybrac-ekipe-remontowa-2026',
-      img: '/images/tile.jpg',
+      img: '/images/resale_property.jpg',
       title: 'Jak wybrać ekipę remontową w 2026? Sprawdzone pytania i czerwone flagi',
       description: 'Jak nie dać się nabrać podczas wyboru ekipy remontowej? Kompletna lista pytań do weryfikacji wykonawcy, czerwone flagi i kontrakt bez niespodzianek.',
       cluster: 'contractors',
@@ -290,7 +290,7 @@ Large-format slabs 60×120 or 120×240 cm, walk-in shower, water underfloor heat
     },
     {
       slug: 'renovation-prices-poland-2026',
-      img: '/images/house.jpg',
+      img: '/images/flat.jpg',
       title: 'Renovation prices in Poland 2026 — Warsaw, Kraków, Wrocław, Gdańsk, Poznań',
       description: 'Comparison of renovation labour costs in major Polish cities in 2026. Where is renovation cheapest, where will you pay the most and why.',
       cluster: 'regional',
@@ -333,7 +333,7 @@ Where do the differences come from? A painting crew in Warsaw expects 45–70 PL
     },
     {
       slug: 'what-not-to-save-on-renovation',
-      img: '/images/paint.jpg',
+      img: '/images/premium.jpg',
       title: 'What NOT to save on during renovation in 2026 — and where you can safely cut costs',
       description: 'Which renovation elements are worth buying at a higher standard, and where cheaper materials work just as well? A practical guide to construction materials 2026.',
       cluster: 'materials',
@@ -427,7 +427,7 @@ Interior doors: 600–4,000 PLN each, appliance installation and connection.
     },
     {
       slug: 'how-to-choose-renovation-contractor-2026',
-      img: '/images/tile.jpg',
+      img: '/images/resale_property.jpg',
       title: 'How to choose a renovation contractor in 2026? Key questions and red flags',
       description: 'A complete guide to vetting renovation contractors in Poland: questions to ask, red flags to watch for, and contract terms that protect your budget.',
       cluster: 'contractors',
@@ -523,7 +523,7 @@ A solid contract includes: exact scope of work (with the project attached), paym
     },
     {
       slug: 'tseny-remonta-polsha-2026',
-      img: '/images/house.jpg',
+      img: '/images/flat.jpg',
       title: 'Цены на ремонт в Польше 2026 — Варшава, Краков, Вроцлав, Гданьск, Познань',
       description: 'Сравнение стоимости ремонтных работ в крупнейших городах Польши в 2026 году. Где ремонт дешевле, где дороже и почему.',
       cluster: 'regional',
@@ -564,7 +564,7 @@ A solid contract includes: exact scope of work (with the project attached), paym
     },
     {
       slug: 'na-chem-ne-ekonomit-pri-remonte',
-      img: '/images/paint.jpg',
+      img: '/images/premium.jpg',
       title: 'На чём НЕ экономить при ремонте в 2026 — и где можно безопасно сократить расходы',
       description: 'Какие элементы ремонта стоит покупать в более высоком стандарте, а где более дешёвые материалы подойдут так же хорошо? Практическое руководство по строительным материалам 2026.',
       cluster: 'materials',
@@ -655,7 +655,7 @@ A solid contract includes: exact scope of work (with the project attached), paym
     },
     {
       slug: 'kak-vybrat-ekipu-dlya-remonta-2026',
-      img: '/images/tile.jpg',
+      img: '/images/resale_property.jpg',
       title: 'Как выбрать бригаду для ремонта в 2026? Вопросы и красные флаги',
       description: 'Полное руководство по проверке подрядчиков в Польше: какие вопросы задавать, на что обратить внимание и как составить договор, который защитит ваш бюджет.',
       cluster: 'contractors',
@@ -751,7 +751,7 @@ A solid contract includes: exact scope of work (with the project attached), paym
     },
     {
       slug: 'tsiny-remontu-polshcha-2026',
-      img: '/images/house.jpg',
+      img: '/images/flat.jpg',
       title: 'Ціни на ремонт у Польщі 2026 — Варшава, Краків, Вроцлав, Гданськ, Познань',
       description: 'Порівняння вартості ремонтних робіт у найбільших містах Польщі у 2026 році. Де ремонт дешевший, де дорожчий і чому.',
       cluster: 'regional',
@@ -792,7 +792,7 @@ A solid contract includes: exact scope of work (with the project attached), paym
     },
     {
       slug: 'na-chomu-ne-ekonomyty-pry-remonti',
-      img: '/images/paint.jpg',
+      img: '/images/premium.jpg',
       title: 'На чому НЕ варто економити при ремонті 2026 — і де можна безпечно скорочувати витрати',
       description: 'Які елементи ремонту варто купувати у вищому стандарті, а де дешевші матеріали підійдуть так само добре? Практичний посібник з будівельних матеріалів 2026.',
       cluster: 'materials',
@@ -883,7 +883,7 @@ A solid contract includes: exact scope of work (with the project attached), paym
     },
     {
       slug: 'yak-vybrati-ekipu-dlya-remontu-2026',
-      img: '/images/tile.jpg',
+      img: '/images/resale_property.jpg',
       title: 'Як вибрати бригаду для ремонту в 2026? Запитання і червоні прапори',
       description: 'Повний посібник із перевірки підрядників у Польщі: які питання ставити, на що звертати увагу і як скласти договір, що захистить ваш бюджет.',
       cluster: 'contractors',
@@ -974,3 +974,5 @@ export const CONTENT_CLUSTER_MAP = {
     'poznan-renovation-costs',
   ],
 }
+
+

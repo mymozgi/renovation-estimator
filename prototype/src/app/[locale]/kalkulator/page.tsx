@@ -745,6 +745,12 @@ export default function KalkulatorPage() {
     const laborPct = Math.round(est.labor / total * 100)
     const prepPct = 100 - matPct - laborPct
 
+    const extras = f.calcType === 'remont-generalny'
+      ? Object.values(f.conds).filter(Boolean).length * 0.08
+      : f.calcType === 'rynek-wtorny'
+      ? [f.rynek.windows, f.rynek.doors, f.rynek.heating, f.rynek.plaster].filter(Boolean).length * 0.06
+      : 0
+
     const pdfData: PDFData = {
       city:        f.city        ?? '',
       propType:    f.propType    ?? '',
@@ -754,7 +760,7 @@ export default function KalkulatorPage() {
       est,
       rooms: f.rooms.map(room => {
         const m2 = room.width * room.length
-        const rc = m2 * 2200 * (CITY_M[f.city!] ?? 1) * (STD_M[f.standard!] ?? 1)
+        const rc = m2 * 2200 * (CITY_M[f.city!] ?? 1) * (STD_M[f.standard!] ?? 1) * (1 + extras)
         const rnd = (v: number) => Math.round(v / 100) * 100
         return {
           label:   getDisplayLabel(room, f.rooms),

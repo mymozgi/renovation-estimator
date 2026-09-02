@@ -2,10 +2,13 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
-import { articles } from '@/content/articles'
+import { articles, findPublishedArticle, publishedArticles } from '@/content/articles'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 import { MarkdownContent } from '@/components/MarkdownContent'
+
+// Re-render hourly so a scheduled article appears without a redeploy.
+export const revalidate = 3600
 
 type Props = { params: Promise<{ locale: string; slug: string }> }
 
@@ -14,8 +17,7 @@ export default async function ArticlePage({ params }: Props) {
   const t = await getTranslations({ locale, namespace: 'articles' })
   const tHome = await getTranslations({ locale, namespace: 'home' })
 
-  const localeArticles = articles[locale] ?? articles['pl']
-  const article = localeArticles.find((a) => a.slug === slug)
+  const article = findPublishedArticle(locale, slug)
   if (!article) notFound()
 
   const heroSrc = article.img
@@ -171,8 +173,10 @@ export default async function ArticlePage({ params }: Props) {
 
 export async function generateStaticParams() {
   const params: { locale: string; slug: string }[] = []
-  for (const [locale, arts] of Object.entries(articles)) {
-    for (const article of arts) {
+  // Only articles whose release date has arrived get pre-rendered; a scheduled
+  // one is generated on demand once it is due.
+  for (const locale of Object.keys(articles)) {
+    for (const article of publishedArticles(locale)) {
       params.push({ locale, slug: article.slug })
     }
   }

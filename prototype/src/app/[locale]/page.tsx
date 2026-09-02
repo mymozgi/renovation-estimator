@@ -6,7 +6,7 @@ import { getTranslations } from 'next-intl/server'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 import { HeroSlider } from '@/components/HeroSlider'
-import { articles } from '@/content/articles'
+import { publishedArticles } from '@/content/articles'
 import { CLUSTER_LABELS } from '@/content/clusters'
 import { ArticleCard } from '@/components/ArticleCard'
 
@@ -38,7 +38,7 @@ type Props = { params: Promise<{ locale: string }> }
 export default async function LandingPage({ params }: Props) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'home' })
-  const localeArticles = (articles[locale] ?? articles['pl']).slice(0, 3)
+  const localeArticles = publishedArticles(locale).slice(0, 3)
 
   return (
     <div className="min-h-screen bg-bg">

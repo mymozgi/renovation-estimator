@@ -12,6 +12,40 @@
   ctaText: string
 }
 
+/**
+ * Today in Europe/Warsaw as YYYY-MM-DD, so an article goes live at local
+ * midnight on its publishedAt date rather than at midnight UTC.
+ */
+function todayInWarsaw(now: Date): string {
+  return new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Warsaw' }).format(now)
+}
+
+/**
+ * Articles a visitor may see, newest first.
+ *
+ * An article whose publishedAt lies in the future stays hidden until that date
+ * arrives — that is how the editorial queue is scheduled. Drafts stay visible
+ * in `next dev` so they can be reviewed before their release date.
+ */
+export function publishedArticles(locale: string, now: Date = new Date()): Article[] {
+  const list = articles[locale] ?? articles['pl']
+  const today = todayInWarsaw(now)
+  const visible =
+    process.env.NODE_ENV === 'development'
+      ? list
+      : list.filter((a) => a.publishedAt <= today)
+  return [...visible].sort((a, b) => b.publishedAt.localeCompare(a.publishedAt))
+}
+
+/** A single article, but only once its release date has arrived. */
+export function findPublishedArticle(
+  locale: string,
+  slug: string,
+  now: Date = new Date(),
+): Article | undefined {
+  return publishedArticles(locale, now).find((a) => a.slug === slug)
+}
+
 export const articles: Record<string, Article[]> = {
   pl: [
     {

@@ -1,8 +1,11 @@
 import { getTranslations } from 'next-intl/server'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
-import { articles } from '@/content/articles'
+import { publishedArticles } from '@/content/articles'
 import { ArticlesClient } from '@/components/ArticlesClient'
+
+// Re-render hourly so a scheduled article appears without a redeploy.
+export const revalidate = 3600
 
 type Props = { params: Promise<{ locale: string }> }
 
@@ -18,7 +21,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function ArticlesPage({ params }: Props) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'articlesPage' })
-  const localeArticles = articles[locale] ?? articles['pl']
+  const localeArticles = publishedArticles(locale)
 
   return (
     <div className="min-h-screen bg-surface flex flex-col">

@@ -446,7 +446,7 @@
     "benchmarkR3C2": "Chronić Twój budżet",
     "benchmarkR4Label": "Koszt",
     "benchmarkR4C1": "\"Bezpłatna\" (ukryta marża)",
-    "benchmarkR4C2": "49 PLN jednorazowo",
+    "benchmarkR4C2": "Bezpłatnie · bez ukrytej marży",
     "benchmarkR5Label": "Siła negocjacyjna",
     "benchmarkR5C1": "Brak — nie masz danych",
     "benchmarkR5C2": "Znasz rynkowe widełki",
@@ -611,12 +611,12 @@
     "pdfFeature1": "MATERIAŁY / ROBOCIZNA / PRZYGOTOWANIE dla każdej komnaty",
     "pdfFeature2": "Konkretne pozycje dobrane do wybranych wykończeń",
     "pdfFeature3": "Format A4 · Pobierz natychmiast",
-    "pdfPrice": "49 PLN",
-    "pdfPriceNote": "jednorazowo · bez subskrypcji",
-    "pdfBuyButton": "Kup Kosztorys PDF · 49 PLN",
-    "pdfPaymentNote": "Płatność przez Stripe · bez rejestracji",
+    "pdfPrice": "Bezpłatnie",
+    "pdfPriceNote": "bez opłat · bez rejestracji",
+    "pdfBuyButton": "Pobierz Kosztorys PDF — bezpłatnie",
+    "pdfPaymentNote": "Bez płatności · plik pobierze się od razu",
     "pdfStickyTitle": "Pobierz Kosztorys PDF",
-    "pdfStickySubtitle": "Szczegółowy raport · 49 PLN"
+    "pdfStickySubtitle": "Szczegółowy raport · bezpłatnie"
   },
   "aboutPage": {
     "badge": "O nas",

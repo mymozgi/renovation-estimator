@@ -442,7 +442,7 @@
     "benchmarkR3C2": "Protect your budget",
     "benchmarkR4Label": "Cost",
     "benchmarkR4C1": "\"Free\" (hidden margin)",
-    "benchmarkR4C2": "49 PLN one-time",
+    "benchmarkR4C2": "Free · no hidden margin",
     "benchmarkR5Label": "Negotiating power",
     "benchmarkR5C1": "None — you have no data",
     "benchmarkR5C2": "You know the market range",
@@ -607,12 +607,12 @@
     "pdfFeature1": "MATERIALS / LABOR / PREPARATION for each room",
     "pdfFeature2": "Specific items matched to selected finishes",
     "pdfFeature3": "A4 format · Download instantly",
-    "pdfPrice": "49 PLN",
-    "pdfPriceNote": "one-time · no subscription",
-    "pdfBuyButton": "Buy PDF Estimate · 49 PLN",
-    "pdfPaymentNote": "Payment via Stripe · no registration",
+    "pdfPrice": "Free",
+    "pdfPriceNote": "no fees · no registration",
+    "pdfBuyButton": "Download PDF Estimate — free",
+    "pdfPaymentNote": "No payment · file downloads instantly",
     "pdfStickyTitle": "Download PDF Estimate",
-    "pdfStickySubtitle": "Detailed report · 49 PLN"
+    "pdfStickySubtitle": "Detailed report · free"
   },
   "aboutPage": {
     "badge": "About us",

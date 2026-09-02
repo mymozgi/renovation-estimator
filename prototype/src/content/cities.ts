@@ -41,7 +41,7 @@ export const CITIES: CityData[] = [
           { q: 'Dlaczego remont w Warszawie jest droższy niż w innych miastach?', a: 'Wyższe koszty życia wykonawców, większy popyt ze strony deweloperów i inwestorów, a także koszty logistyki w gęstej zabudowie podnoszą stawki o 15–25% względem mniejszych miast. To rynek sprzedawcy — dobrzy wykonawcy dyktują ceny.' },
           { q: 'Ile kosztuje robocizna za malowanie ścian w Warszawie?', a: 'Malowanie ścian w Warszawie (gruntowanie + gładź + 2× farba) kosztuje 35–55 PLN/m². Samo malowanie bez szpachlowania: 18–28 PLN/m². Sufit: 25–40 PLN/m².' },
           { q: 'Jak długo trwa remont mieszkania w Warszawie?', a: 'Remont 50 m² w Warszawie trwa 6–12 tygodni — zależnie od zakresu, dostępności ekipy i prac mokrych. Łazienka i kuchnia to najdłuższe etapy: po 2–4 tygodnie każda.' },
-          { q: 'Czy warto zamówić niezależny kosztorys przed remontem w Warszawie?', a: 'Tak — przy cenach robocizny w Warszawie różnica między uczciwą ofertą a zawyżoną to 10 000–30 000 PLN. Niezależny kosztorys za 49 PLN daje punkt odniesienia do negocjacji z każdym wykonawcą.' },
+          { q: 'Czy warto zamówić niezależny kosztorys przed remontem w Warszawie?', a: 'Tak — przy cenach robocizny w Warszawie różnica między uczciwą ofertą a zawyżoną to 10 000–30 000 PLN. Bezpłatny niezależny kosztorys daje punkt odniesienia do negocjacji z każdym wykonawcą.' },
         ],
       },
       en: {
@@ -55,7 +55,7 @@ export const CITIES: CityData[] = [
           { q: 'How much does a 50 m² apartment renovation cost in Warsaw in 2026?', a: 'Economy 36,000–48,000 PLN, standard 54,000–72,000 PLN, premium 90,000–150,000 PLN. Prices cover finishing materials and labor — excluding electrical, plumbing, and furniture.' },
           { q: 'Why is renovation in Warsaw more expensive than other Polish cities?', a: 'Higher cost of living for contractors, strong developer demand, and logistics costs in dense urban areas push rates 15–25% above smaller cities.' },
           { q: 'How long does apartment renovation take in Warsaw?', a: 'A standard 50 m² apartment renovation takes 6–12 weeks depending on scope, crew availability, and wet works (bathroom, kitchen).' },
-          { q: 'Is it worth getting an independent renovation estimate in Warsaw?', a: 'Yes — at Warsaw rates, the gap between a fair quote and an inflated one is typically 10,000–30,000 PLN. A 49 PLN independent estimate gives you a benchmark for every negotiation.' },
+          { q: 'Is it worth getting an independent renovation estimate in Warsaw?', a: 'Yes — at Warsaw rates, the gap between a fair quote and an inflated one is typically 10,000–30,000 PLN. A free independent estimate gives you a benchmark for every negotiation.' },
         ],
       },
       ru: {
@@ -68,7 +68,7 @@ export const CITIES: CityData[] = [
         faq: [
           { q: 'Сколько стоит ремонт квартиры 50 м² в Варшаве в 2026 году?', a: 'Эконом 36 000–48 000 PLN, оптимальный 54 000–72 000 PLN, премиум 90 000–150 000 PLN. Цены включают отделочные материалы и работу — без электрики, сантехники и мебели.' },
           { q: 'Почему ремонт в Варшаве дороже, чем в других городах?', a: 'Более высокие расходы на жизнь подрядчиков, высокий спрос со стороны девелоперов и логистические затраты поднимают ставки на 15–25% выше небольших городов.' },
-          { q: 'Стоит ли заказывать независимую смету перед ремонтом в Варшаве?', a: 'Да — при варшавских ценах разница между честной и завышенной офертой составляет 10 000–30 000 PLN. Независимая смета за 49 PLN даёт ориентир для переговоров.' },
+          { q: 'Стоит ли заказывать независимую смету перед ремонтом в Варшаве?', a: 'Да — при варшавских ценах разница между честной и завышенной офертой составляет 10 000–30 000 PLN. Бесплатная независимая смета даёт ориентир для переговоров.' },
         ],
       },
       uk: {
@@ -80,7 +80,7 @@ export const CITIES: CityData[] = [
         marketNote: 'Ринок ремонту у Варшаві найбільш напружений у районах Мокотув, Жолібож, Урсинів та Прага-Пд. Без незалежного кошторису переплата на 15–30% — типова ситуація.',
         faq: [
           { q: 'Скільки коштує ремонт квартири 50 м² у Варшаві в 2026 році?', a: 'Економ 36 000–48 000 PLN, оптимальний 54 000–72 000 PLN, преміум 90 000–150 000 PLN.' },
-          { q: 'Чи варто замовляти незалежний кошторис перед ремонтом у Варшаві?', a: 'Так — різниця між чесною та завищеною пропозицією становить 10 000–30 000 PLN. Незалежний кошторис за 49 PLN дає орієнтир для переговорів.' },
+          { q: 'Чи варто замовляти незалежний кошторис перед ремонтом у Варшаві?', a: 'Так — різниця між чесною та завищеною пропозицією становить 10 000–30 000 PLN. Безкоштовний незалежний кошторис дає орієнтир для переговорів.' },
         ],
       },
     },

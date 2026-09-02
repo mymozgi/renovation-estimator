@@ -442,7 +442,7 @@
     "benchmarkR3C2": "Захистити ваш бюджет",
     "benchmarkR4Label": "Вартість",
     "benchmarkR4C1": "«Безкоштовно» (прихована маржа)",
-    "benchmarkR4C2": "49 PLN одноразово",
+    "benchmarkR4C2": "Безкоштовно · без прихованої маржі",
     "benchmarkR5Label": "Сила переговорів",
     "benchmarkR5C1": "Немає — немає даних",
     "benchmarkR5C2": "Знаєте ринковий діапазон",
@@ -607,12 +607,12 @@
     "pdfFeature1": "МАТЕРІАЛИ / РОБОТИ / ПІДГОТОВКА для кожного приміщення",
     "pdfFeature2": "Конкретні позиції підібрані до обраного оздоблення",
     "pdfFeature3": "Формат A4 · Завантажте миттєво",
-    "pdfPrice": "49 PLN",
-    "pdfPriceNote": "одноразово · без підписки",
-    "pdfBuyButton": "Купити Кошторис PDF · 49 PLN",
-    "pdfPaymentNote": "Оплата через Stripe · без реєстрації",
+    "pdfPrice": "Безкоштовно",
+    "pdfPriceNote": "без оплати · без реєстрації",
+    "pdfBuyButton": "Завантажити Кошторис PDF — безкоштовно",
+    "pdfPaymentNote": "Без оплати · файл завантажиться одразу",
     "pdfStickyTitle": "Завантажити Кошторис PDF",
-    "pdfStickySubtitle": "Детальний звіт · 49 PLN"
+    "pdfStickySubtitle": "Детальний звіт · безкоштовно"
   },
   "aboutPage": {
     "badge": "Про нас",

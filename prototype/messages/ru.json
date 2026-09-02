@@ -442,7 +442,7 @@
     "benchmarkR3C2": "Защитить ваш бюджет",
     "benchmarkR4Label": "Стоимость",
     "benchmarkR4C1": "«Бесплатно» (скрытая маржа)",
-    "benchmarkR4C2": "49 PLN единоразово",
+    "benchmarkR4C2": "Бесплатно · без скрытой маржи",
     "benchmarkR5Label": "Сила переговоров",
     "benchmarkR5C1": "Нет — нет данных",
     "benchmarkR5C2": "Знаете рыночный диапазон",
@@ -607,12 +607,12 @@
     "pdfFeature1": "МАТЕРИАЛЫ / РАБОТЫ / ПОДГОТОВКА для каждого помещения",
     "pdfFeature2": "Конкретные позиции подобраны под выбранную отделку",
     "pdfFeature3": "Формат A4 · Скачайте мгновенно",
-    "pdfPrice": "49 PLN",
-    "pdfPriceNote": "единоразово · без подписки",
-    "pdfBuyButton": "Купить Смету PDF · 49 PLN",
-    "pdfPaymentNote": "Оплата через Stripe · без регистрации",
+    "pdfPrice": "Бесплатно",
+    "pdfPriceNote": "без оплаты · без регистрации",
+    "pdfBuyButton": "Скачать Смету PDF — бесплатно",
+    "pdfPaymentNote": "Без оплаты · файл скачается сразу",
     "pdfStickyTitle": "Скачать Смету PDF",
-    "pdfStickySubtitle": "Подробный отчёт · 49 PLN"
+    "pdfStickySubtitle": "Подробный отчёт · бесплатно"
   },
   "aboutPage": {
     "badge": "О нас",

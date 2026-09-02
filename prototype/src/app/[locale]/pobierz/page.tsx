@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { useSearchParams, useParams, useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import type { PDFData } from '@/lib/kosztorys-types'
 import Confetti from '@/components/Confetti'
@@ -11,17 +11,14 @@ const AutoPDFDownload   = dynamic(() => import('@/components/AutoPDFDownload'), 
 const SendPDFByEmail    = dynamic(() => import('@/components/SendPDFByEmail'),    { ssr: false })
 
 export default function PobierzPage() {
-  const searchParams = useSearchParams()
   const params = useParams()
   const router = useRouter()
   const locale = (params?.locale as string) ?? 'pl'
-  const sessionId = searchParams.get('session_id')
 
   const [pdfData, setPdfData] = useState<PDFData | null>(null)
   const [error, setError] = useState(false)
 
   useEffect(() => {
-    if (!sessionId) { setError(true); return }
     const raw = localStorage.getItem('remontowo_pdf_data')
     if (!raw) { setError(true); return }
     try {
@@ -29,7 +26,7 @@ export default function PobierzPage() {
     } catch {
       setError(true)
     }
-  }, [sessionId])
+  }, [])
 
   if (error) {
     return (
@@ -62,9 +59,9 @@ export default function PobierzPage() {
       </div>
 
       <div className="space-y-2">
-        <h1 className="text-2xl font-bold text-fg">Płatność zakończona!</h1>
+        <h1 className="text-2xl font-bold text-fg">Twój kosztorys jest gotowy!</h1>
         <p className="text-muted text-sm max-w-xs">
-          Twój kosztorys jest pobierany automatycznie. Jeśli pobieranie nie wystartowało, użyj przycisku poniżej.
+          Pobieranie startuje automatycznie. Jeśli nie wystartowało, użyj przycisku poniżej.
         </p>
       </div>
 

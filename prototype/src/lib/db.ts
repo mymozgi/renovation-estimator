@@ -1,5 +1,4 @@
 import { createClient } from '@supabase/supabase-js'
-import crypto from 'crypto'
 
 // Server-only client — uses secret key, never exposed to browser
 function getClient() {
@@ -20,17 +19,6 @@ export interface Subscriber {
   created_at: string
 }
 
-export interface PdfToken {
-  id: string
-  token: string
-  order_id: string
-  email: string
-  payload: unknown
-  used: boolean
-  expires_at: string
-  created_at: string
-}
-
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 /**
@@ -48,73 +36,5 @@ export async function saveSubscriber(
   const { error } = await db
     .from('subscribers')
     .upsert({ email, locale, consent, source }, { onConflict: 'email' })
-  if (error) throw error
-}
-
-/**
- * Create a one-time PDF download token after successful payment.
- * Token is 64-char hex (32 random bytes), expires in 24h.
- */
-export async function savePdfToken(
-  orderId: string,
-  email: string,
-  payload: unknown,
-): Promise<string> {
-  const db = getClient()
-  const token = crypto.randomBytes(32).toString('hex')
-  const expiresAt = new Date(Date.now() + 24 * 60 * 60 * 1000).toISOString()
-
-  const { error } = await db.from('pdf_tokens').insert({
-    token,
-    order_id: orderId,
-    email,
-    payload,
-    used: false,
-    expires_at: expiresAt,
-  })
-  if (error) throw error
-  return token
-}
-
-/**
- * Redeem a PDF token — returns the stored payload if valid, null otherwise.
- * Marks the token as used (single-use).
- */
-export async function redeemToken(token: string): Promise<unknown | null> {
-  const db = getClient()
-
-  const { data, error } = await db
-    .from('pdf_tokens')
-    .select('*')
-    .eq('token', token)
-    .eq('used', false)
-    .gt('expires_at', new Date().toISOString())
-    .single()
-
-  if (error || !data) return null
-
-  // Mark used
-  await db.from('pdf_tokens').update({ used: true }).eq('id', data.id)
-
-  return data.payload
-}
-
-/**
- * Save an order record for audit trail.
- * Idempotent — ignores duplicate order_id.
- */
-export async function saveOrder(
-  orderId: string,
-  email: string,
-  amountEur: number,
-  locale = 'pl',
-): Promise<void> {
-  const db = getClient()
-  const { error } = await db
-    .from('orders')
-    .upsert(
-      { order_id: orderId, email, amount_eur: amountEur, status: 'paid', locale },
-      { onConflict: 'order_id' },
-    )
   if (error) throw error
 }

@@ -11,7 +11,7 @@ import { WizardFooterNav } from '@/components/WizardFooterNav'
 import { Check, Plus, Pencil, Trash2 } from 'lucide-react'
 import type { PDFData } from '@/lib/kosztorys-types'
 
-const BuyPDFButton = dynamic(() => import('@/components/BuyPDFButton'), { ssr: false })
+const GetPDFButton = dynamic(() => import('@/components/GetPDFButton'), { ssr: false })
 
 /* ─── Types ─────────────────────────────────────────────────────────────── */
 type CalcType = 'wykończenie' | 'remont-generalny' | 'rynek-wtorny'
@@ -872,9 +872,9 @@ export default function KalkulatorPage() {
             </div>
           )}
 
-          {/* PDF paywall */}
+          {/* PDF — free download */}
           <div id="pdf-paywall" className="border border-border rounded-2xl overflow-hidden mb-8">
-            <div className="bg-surface px-5 pt-5 pb-3 blur-[3px] pointer-events-none select-none border-b border-border" aria-hidden>
+            <div className="bg-surface px-5 pt-5 pb-3 border-b border-border">
               <div className="text-[10px] font-semibold text-muted uppercase tracking-widest mb-3">{t('pdfPreviewLabel')}</div>
               <div className="grid grid-cols-1 gap-2">
                 {(f.rooms.length > 0 ? f.rooms.slice(0, 2) : [null]).map((room, i) => {
@@ -885,13 +885,15 @@ export default function KalkulatorPage() {
                       <div className="flex-1">
                         <div className="font-bold text-fg text-xs mb-1.5">{label.toUpperCase()}</div>
                         {[
-                          { cat: t('pdfCatMaterials'), pct: '55%' },
-                          { cat: t('pdfCatLabor'),     pct: '35%' },
-                          { cat: t('pdfCatPrep'),      pct: '10%' },
+                          { cat: t('pdfCatMaterials'), pct: matPct },
+                          { cat: t('pdfCatLabor'),     pct: laborPct },
+                          { cat: t('pdfCatPrep'),      pct: prepPct },
                         ].map(({ cat, pct }) => (
                           <div key={cat} className="flex items-center justify-between py-0.5 text-[9px] text-muted border-t border-border/50">
                             <span>{cat}</span>
-                            <span className="text-primary font-medium">{pct} · ████████</span>
+                            <span className="text-primary font-medium">
+                              {pct}%{cost > 0 ? ` · ~${fmt(Math.round(cost * pct / 100))} PLN` : ''}
+                            </span>
                           </div>
                         ))}
                       </div>
@@ -928,10 +930,10 @@ export default function KalkulatorPage() {
                 ))}
               </ul>
 
-              <div className="font-bold text-fg text-[32px] leading-10 mb-0.5">{t('pdfPrice')}</div>
+              <div className="font-bold text-primary text-[32px] leading-10 mb-0.5">{t('pdfPrice')}</div>
               <div className="text-muted text-sm mb-5">{t('pdfPriceNote')}</div>
 
-              <BuyPDFButton
+              <GetPDFButton
                 data={pdfData}
                 className="w-full bg-primary text-white py-4 rounded-[12px] font-semibold text-base tracking-[0.08em] hover:bg-primary/90 transition-colors flex items-center justify-center"
                 label={t('pdfBuyButton')}

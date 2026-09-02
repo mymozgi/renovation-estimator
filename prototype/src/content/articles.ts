@@ -244,6 +244,129 @@ Dobra umowa zawiera: dokładny zakres prac (z projektem jako załącznikiem), ha
       ],
       ctaText: 'Oblicz kosztorys i porównaj oferty wykonawców →',
     },
+    {
+      slug: 'dlaczego-kosztorys-remontu-trzeba-zaplanowac-wczesniej',
+      img: '/images/planning.jpg',
+      title: 'Dlaczego kosztorys remontu trzeba przygotować, zanim zadzwonisz do wykonawcy',
+      description: 'Kosztorys policzony przed rozmowami z ekipami chroni budżet, skraca remont i daje przewagę w negocjacjach. Sprawdź, ile kosztuje planowanie budżetu dopiero w trakcie prac.',
+      cluster: 'budget',
+      publishedAt: '2026-09-03',
+      hook: 'Większość osób liczy koszty remontu dopiero wtedy, gdy ekipa już stoi na budowie. To najdroższy moment na jakąkolwiek decyzję — bo każda zmiana kosztuje wtedy 2-3 razy więcej niż na papierze.',
+      problem: `Typowy scenariusz wygląda tak: podpisujesz umowę na mieszkanie, dzwonisz do dwóch ekip, dostajesz dwie liczby różniące się o 40 000 PLN i wybierasz tę niższą. Budżet powstaje dopiero wtedy — z oferty wykonawcy, a nie z Twojej analizy.
+
+Problem polega na tym, że oferta wykonawcy nie jest kosztorysem. To dokument sprzedażowy. Jego zadaniem jest wygrać zlecenie, a nie pokazać Ci pełny koszt doprowadzenia mieszkania do stanu, w którym chcesz w nim mieszkać.
+
+Co się dzieje, gdy planujesz budżet dopiero w trakcie remontu:
+
+— **Tracisz punkt odniesienia.** Nie wiesz, czy 92 000 PLN za 58 m² to cena uczciwa, czy zawyżona o 25%. Bez własnej liczby przyjmujesz cudzą.
+— **Decyzje podejmujesz pod presją czasu.** Ekipa czeka na wybór płytek, bo od tego zależy termin zamówienia kleju i fugi. Wybierasz w dwa dni to, co powinno zająć dwa tygodnie.
+— **Zmiany kosztują wielokrotnie więcej.** Przesunięcie gniazdka na papierze to zero złotych. Po wylaniu wylewki i położeniu płytek — 800-2 500 PLN i tydzień opóźnienia.
+— **Nie masz jak sfinansować nadwyżki.** Realna kwota ujawnia się w 6-8 tygodniu prac, gdy kredyt jest już uruchomiony, a oszczędności rozdysponowane.
+
+W 2026 roku ten mechanizm boli bardziej niż wcześniej. Stawki robocizny wzrosły o 12-18% rok do roku, a czas oczekiwania na dobrą ekipę wynosi 4-10 tygodni. Nie da się już dokupić terminu ani ekipy w środku sezonu.`,
+      explanation: `**Co realnie daje kosztorys przygotowany z wyprzedzeniem**
+
+**1. Benchmark do negocjacji.** Gdy wiesz, że rynkowa wycena Twojego zakresu to 78 000-92 000 PLN, oferta na 115 000 PLN przestaje być ceną rynkową, a staje się punktem do rozmowy. Bez własnej liczby nie masz argumentu poza tym, że to dla Ciebie za drogo.
+
+**2. Poprawna kolejność prac.** Największe koszty remontu wynikają nie z cen materiałów, tylko z robienia rzeczy w złej kolejności. Instalacje elektryczne i hydraulika muszą być gotowe przed wylewką. Ogrzewanie podłogowe — przed posadzką. Wentylacja — przed sufitem podwieszanym. Kosztorys wymusza przemyślenie tej sekwencji, zanim ktokolwiek zacznie kuć ściany.
+
+**3. Świadome przycięcie zakresu.** Gdy widzisz koszt każdego elementu przed startem, możesz zdecydować, że w tym roku robisz łazienkę i kuchnię, a salon zostaje na przyszły rok. Gdy ten sam wybór podejmujesz w trakcie prac, płacisz za dwa wejścia ekipy zamiast jednego.
+
+**4. Realne finansowanie.** Bank ocenia zdolność kredytową na podstawie kwoty, którą podasz. Kosztorys przygotowany 2-3 miesiące przed startem pozwala wnioskować o właściwą kwotę raz, a nie prosić o podwyższenie w połowie remontu.
+
+**Ile kosztuje spóźniona decyzja — przykłady z rynku 2026**
+
+| Zmiana | Koszt na etapie planowania | Koszt w trakcie prac |
+|---|---|---|
+| Przesunięcie punktu elektrycznego | 0 PLN | 400-900 PLN + opóźnienie |
+| Rezygnacja z ogrzewania podłogowego | 0 PLN | 3 000-8 000 PLN (skucie wylewki) |
+| Zmiana formatu płytek | 0 PLN | 60-140 PLN/m² dopłaty do robocizny |
+| Dodanie ścianki działowej | 0 PLN | 1 800-4 000 PLN + poprawki instalacji |
+| Zmiana układu kuchni | 0 PLN | 2 500-9 000 PLN (hydraulika, elektryka) |
+
+**Kiedy zacząć planować**
+
+Optymalny moment to 2-4 miesiące przed planowanym startem prac. Wtedy zdążysz: policzyć budżet, zweryfikować go u 2-3 wykonawców, zarezerwować ekipę na konkretny termin i zamówić materiały o długim czasie dostawy (płyty wielkoformatowe, stolarka, armatura z importu).
+
+**Trzy poziomy dokładności kosztorysu**
+
+*Poziom 1 — orientacyjny (15 minut).* Stawka za m² pomnożona przez powierzchnię i mnożnik miasta. Wystarczy, by ocenić, czy remont w ogóle mieści się w Twoich możliwościach.
+
+*Poziom 2 — pomieszczeniowy (1 godzina).* Każde pomieszczenie liczone osobno, z uwzględnieniem standardu wykończenia i stanu instalacji. To poziom, na którym rozmowa z wykonawcą staje się merytoryczna.
+
+*Poziom 3 — pozycyjny (praca kosztorysanta).* Rozbicie na konkretne pozycje z obmiarem. Potrzebny przy remontach powyżej 150 000 PLN, kredycie remontowym lub sporze z wykonawcą.
+
+Dla zdecydowanej większości mieszkań poziom 2 w pełni wystarcza — pod warunkiem, że powstaje **przed** pierwszą rozmową z ekipą, a nie po niej.`,
+      checklist: [
+        'Policz kosztorys 2-4 miesiące przed planowanym startem prac',
+        'Zmierz każde pomieszczenie osobno — powierzchnia z aktu notarialnego nie wystarczy',
+        'Ustal standard wykończenia dla każdego pomieszczenia przed wyceną',
+        'Sprawdź stan instalacji elektrycznej i hydraulicznej — to 15-25% budżetu',
+        'Zaplanuj kolejność prac: instalacje, wylewki, tynki, wykończenie',
+        'Dodaj 15-20% rezerwy na koszty ujawnione po skuciu starych warstw',
+        'Miej własną liczbę PRZED pierwszą rozmową z wykonawcą',
+        'Zarezerwuj ekipę z wyprzedzeniem 6-10 tygodni (sezon 2026)',
+      ],
+      ctaText: 'Policz kosztorys swojego remontu →',
+    },
+    {
+      slug: 'pulapki-w-kosztorysach-firm-remontowych',
+      img: '/images/estimate-contract.jpg',
+      title: 'Pułapki w kosztorysach firm remontowych — 9 zapisów, które podnoszą rachunek',
+      description: 'Jak czytać wycenę od wykonawcy: ryczałt bez zakresu, pozycje wg potrzeb, brak wywozu gruzu, zaniżony obmiar i inne zapisy, które podnoszą koszt remontu o 20-40%.',
+      cluster: 'contractors',
+      publishedAt: '2026-09-03',
+      hook: 'Kosztorys od firmy remontowej to dokument handlowy, nie inżynierski. Jego celem jest wygrać zlecenie — dlatego najniższa oferta na starcie bardzo często kończy się najwyższym rachunkiem na końcu.',
+      problem: `Rynek remontowy działa na prostym mechanizmie: klient porównuje oferty po jednej liczbie na dole strony. Firma, która chce wygrać, musi mieć tę liczbę niską. Sposobów na jej obniżenie bez obniżania faktycznego kosztu jest kilkanaście — i wszystkie są całkowicie legalne.
+
+Nie chodzi o oszustwo. Chodzi o to, że oferta i faktyczny koszt to dwa różne dokumenty, a różnica między nimi ujawnia się dopiero w 4-6 tygodniu prac, gdy zmiana wykonawcy jest praktycznie niemożliwa.
+
+Typowa skala rozjazdu na polskim rynku w 2026 roku wynosi 20-40% wartości pierwotnej oferty. Przy remoncie za 90 000 PLN to 18 000-36 000 PLN, których nie było w budżecie.`,
+      explanation: `**9 zapisów, które trzeba sprawdzić przed podpisem**
+
+**1. Ryczałt bez załącznika z zakresem.** Zapis w stylu remont mieszkania 58 m² za 84 000 PLN ryczałt nie znaczy nic. Ryczałt jest bezpieczny tylko wtedy, gdy do umowy dołączony jest szczegółowy opis zakresu prac. Bez niego każda praca, której nie ma w opisie, jest pracą dodatkową — płatną osobno.
+
+**2. Pozycje wg potrzeb i do ustalenia na miejscu.** To otwarty czek. Każda taka pozycja powinna mieć albo cenę jednostkową, albo limit kwotowy. Jeżeli wykonawca nie chce podać stawki za roboczogodzinę prac dodatkowych — to jest odpowiedź sama w sobie.
+
+**3. Brak prac przygotowawczych i rozbiórkowych.** Skucie płytek, demontaż starej armatury, zabezpieczenie pozostałych pomieszczeń folią, wywóz gruzu i kontener. Przy mieszkaniu 60 m² to realnie 4 000-11 000 PLN. Jeśli nie widzisz tych pozycji w wycenie — nie ma ich w cenie.
+
+**4. Materiały po stronie klienta ukryte przed sumą.** Oferta na 84 000 PLN wygląda lepiej niż na 132 000 PLN, jeśli płytki, armatura, drzwi, podłogi i oświetlenie są poza kosztorysem. Zawsze proś o wycenę w dwóch wariantach: robocizna osobno, materiały osobno, i sumę łączną.
+
+**5. Obmiar liczony inaczej niż myślisz.** Powierzchnia podłogi, powierzchnia ścian i powierzchnia rozwinięta to trzy różne liczby. Malowanie mieszkania 60 m² to ok. 170-200 m² powierzchni ścian i sufitów. Sprawdź, w jakiej jednostce liczona jest każda pozycja.
+
+**6. Brak jasności co do VAT.** Remont lokalu mieszkalnego objętego społecznym programem mieszkaniowym to stawka 8%, ale nie na wszystko i nie zawsze. Różnica między 8% a 23% na kwocie 90 000 PLN to 13 500 PLN. Wycena musi jasno mówić: netto czy brutto i przy jakiej stawce.
+
+**7. Materiał liczony bez zapasu technologicznego.** Płytki wymagają 10-15% zapasu na docinki (przy układzie diagonalnym lub jodełce nawet 20%), panele 7-10%, farba 10%. Kosztorys, który liczy dokładnie tyle metrów, ile ma pomieszczenie, jest zaniżony z definicji.
+
+**8. Harmonogram płatności oparty na czasie, nie na etapach.** Zapis 40% po dwóch tygodniach chroni wykonawcę. Zapis 40% po odbiorze instalacji elektrycznej i hydraulicznej chroni Ciebie. Płatność zawsze powinna być powiązana z odebranym, sprawdzalnym etapem prac.
+
+**9. Brak kar umownych i warunków gwarancji.** Umowa bez kary za opóźnienie oznacza, że opóźnienie nic nie kosztuje wykonawcy. Standard rynkowy to 0,1-0,3% wartości umowy za każdy dzień zwłoki i minimum 24 miesiące gwarancji na prace budowlane.
+
+**Jak porównywać oferty, żeby porównanie miało sens**
+
+Trzy oferty można porównać tylko wtedy, gdy dotyczą tego samego zakresu. Przygotuj jeden opis prac i wyślij go do wszystkich wykonawców — zamiast prosić każdego o wycenę remontu. Wtedy różnica w cenie mówi coś o wykonawcy, a nie o tym, co każdy z nich sobie dopowiedział.
+
+Drugi warunek: miej własny, niezależny kosztorys przed otwarciem ofert. Bez niego najniższa oferta zawsze wygląda na najlepszą — a to właśnie ona najczęściej rośnie najbardziej.
+
+**Czerwone flagi, przy których warto się wycofać**
+
+- Odmowa rozbicia ryczałtu na pozycje
+- Zaliczka powyżej 30% przed rozpoczęciem prac
+- Brak NIP-u, polisy OC lub gotowości do podpisania umowy
+- Cena znacząco niższa od dwóch pozostałych ofert przy tym samym zakresie
+- Nacisk na natychmiastową decyzję ze względu na wolny termin`,
+      checklist: [
+        'Zażądaj rozbicia ryczałtu na pozycje z obmiarem i ceną jednostkową',
+        'Sprawdź, czy w wycenie są prace rozbiórkowe, wywóz gruzu i kontener',
+        'Ustal cenę jednostkową dla każdej pozycji wycenianej wg potrzeb',
+        'Poproś o sumę łączną: robocizna plus materiały, nie tylko jedną część',
+        'Zweryfikuj jednostki obmiaru — podłoga, ściany i powierzchnia rozwinięta to różne liczby',
+        'Potwierdź stawkę VAT (8% czy 23%) i czy kwota jest netto czy brutto',
+        'Powiąż każdą płatność z odebranym etapem, nie z upływem czasu',
+        'Wpisz do umowy karę za zwłokę i minimum 24 miesiące gwarancji',
+      ],
+      ctaText: 'Zweryfikuj ofertę wykonawcy niezależnym kosztorysem →',
+    },
   ],
 
   en: [
@@ -477,6 +600,129 @@ A solid contract includes: exact scope of work (with the project attached), paym
       ],
       ctaText: 'Get your estimate and compare contractor quotes →',
     },
+    {
+      slug: 'why-plan-renovation-estimate-in-advance',
+      img: '/images/planning.jpg',
+      title: 'Why you should build your renovation estimate before you call a single contractor',
+      description: 'An estimate prepared before you talk to contractors protects your budget, shortens the build and gives you leverage. Here is what it costs to plan the budget mid-renovation instead.',
+      cluster: 'budget',
+      publishedAt: '2026-09-03',
+      hook: 'Most people work out what a renovation costs only once the crew is already on site. That is the most expensive possible moment to decide anything — every change then costs 2-3 times what it would have cost on paper.',
+      problem: `The typical sequence looks like this: you sign for the flat, call two crews, get two numbers 40,000 PLN apart and pick the lower one. Your budget is created at that moment — out of a contractor quote rather than out of your own analysis.
+
+The problem is that a contractor quote is not an estimate. It is a sales document. Its job is to win the contract, not to show you the full cost of getting the flat to the state you actually want to live in.
+
+Here is what happens when the budget is planned mid-renovation:
+
+— **You lose your reference point.** You cannot tell whether 92,000 PLN for 58 m² is fair or inflated by 25%. Without a number of your own, you adopt somebody else's.
+— **Decisions get made under time pressure.** The crew is waiting on your tile choice because adhesive and grout orders depend on it. You decide in two days what deserved two weeks.
+— **Changes cost many times more.** Moving a socket on paper is zero. Moving it after the screed is poured and the tiles are laid is 800-2,500 PLN and a week of delay.
+— **There is no way to finance the overrun.** The real number surfaces in week 6-8, once the loan is drawn and the savings are committed.
+
+In 2026 this hurts more than it used to. Labour rates are up 12-18% year on year and the wait for a good crew runs 4-10 weeks. You can no longer simply buy a slot or a crew mid-season.`,
+      explanation: `**What an estimate prepared in advance actually gives you**
+
+**1. A negotiating benchmark.** Once you know the market range for your scope is 78,000-92,000 PLN, a 115,000 PLN quote stops being the market price and becomes a conversation. Without your own number, your only argument is that it feels too expensive.
+
+**2. The right sequence of work.** The biggest renovation costs come not from material prices but from doing things in the wrong order. Electrics and plumbing must be finished before the screed. Underfloor heating before the floor finish. Ventilation before the suspended ceiling. Building an estimate forces you to think that sequence through before anybody starts opening walls.
+
+**3. Deliberate scope trimming.** When you can see the cost of each element before you start, you can decide to do the bathroom and kitchen this year and leave the living room for next year. Make that same call mid-works and you pay for two crew mobilisations instead of one.
+
+**4. Realistic financing.** A bank assesses your borrowing against the number you give it. An estimate built 2-3 months before the start lets you apply for the right amount once, instead of asking for an increase halfway through.
+
+**What a late decision costs — 2026 market examples**
+
+| Change | Cost at planning stage | Cost mid-works |
+|---|---|---|
+| Moving an electrical point | 0 PLN | 400-900 PLN + delay |
+| Dropping underfloor heating | 0 PLN | 3,000-8,000 PLN (breaking up screed) |
+| Changing tile format | 0 PLN | 60-140 PLN/m² labour surcharge |
+| Adding a partition wall | 0 PLN | 1,800-4,000 PLN + services rework |
+| Changing the kitchen layout | 0 PLN | 2,500-9,000 PLN (plumbing, electrics) |
+
+**When to start planning**
+
+The optimal window is 2-4 months before the planned start. That leaves enough time to build the budget, sanity-check it against 2-3 contractors, book a crew for a specific date and order long-lead materials (large-format slabs, joinery, imported fittings).
+
+**Three levels of estimate accuracy**
+
+*Level 1 — indicative (15 minutes).* A rate per m² multiplied by area and a city coefficient. Enough to judge whether the renovation fits your means at all.
+
+*Level 2 — room by room (1 hour).* Every room costed separately, accounting for finish standard and the condition of the services. This is the level at which a conversation with a contractor becomes substantive.
+
+*Level 3 — itemised (a quantity surveyor's job).* A breakdown into specific line items with measured quantities. Needed above roughly 150,000 PLN, for a renovation loan, or in a dispute with a contractor.
+
+For the large majority of flats, level 2 is entirely sufficient — provided it exists **before** the first conversation with a crew, not after it.`,
+      checklist: [
+        'Build the estimate 2-4 months before the planned start date',
+        'Measure every room separately — the area on the deed is not enough',
+        'Fix the finish standard for each room before costing it',
+        'Check the condition of the electrics and plumbing — that is 15-25% of the budget',
+        'Plan the sequence: services, screeds, plaster, finishes',
+        'Add a 15-20% reserve for what appears once old layers come off',
+        'Have your own number BEFORE the first contractor conversation',
+        'Book the crew 6-10 weeks ahead (2026 season)',
+      ],
+      ctaText: 'Calculate your renovation estimate →',
+    },
+    {
+      slug: 'hidden-traps-in-contractor-estimates',
+      img: '/images/estimate-contract.jpg',
+      title: 'Hidden traps in contractor estimates — 9 clauses that inflate the final bill',
+      description: 'How to read a contractor quote: lump sums with no scope, as-required line items, missing debris removal, understated quantities and other clauses that push renovation costs up 20-40%.',
+      cluster: 'contractors',
+      publishedAt: '2026-09-03',
+      hook: 'A renovation company estimate is a commercial document, not an engineering one. Its purpose is to win the job — which is exactly why the lowest quote at the start so often becomes the highest bill at the end.',
+      problem: `The renovation market runs on a simple mechanism: clients compare quotes by the single number at the bottom of the page. A company that wants to win needs that number to be low. There are a dozen ways to lower it without lowering the actual cost — and all of them are entirely legal.
+
+This is not about fraud. It is about the fact that a quote and a final cost are two different documents, and the gap between them only becomes visible in week 4-6, when changing contractor is practically impossible.
+
+The typical spread on the Polish market in 2026 runs 20-40% above the original quote. On a 90,000 PLN renovation that is 18,000-36,000 PLN that was never in the budget.`,
+      explanation: `**9 clauses to check before you sign**
+
+**1. A lump sum with no scope annex.** A line reading renovation of a 58 m² flat, 84,000 PLN lump sum means nothing. A lump sum is only safe when a detailed scope of works is attached to the contract. Without it, any work not described is additional work — billed separately.
+
+**2. Line items marked as required or to be agreed on site.** That is a blank cheque. Every such item needs either a unit price or a capped amount. If a contractor will not quote an hourly rate for additional work, that refusal is itself the answer.
+
+**3. No preparation or strip-out works.** Removing tiles, stripping old fittings, sheeting off the rest of the flat, debris removal and a skip. On a 60 m² flat that is realistically 4,000-11,000 PLN. If you cannot see those lines in the quote, they are not in the price.
+
+**4. Client-supplied materials kept out of the total.** An 84,000 PLN quote looks better than a 132,000 PLN one when tiles, fittings, doors, flooring and lighting sit outside it. Always ask for the quote in two parts — labour and materials — plus a combined total.
+
+**5. Quantities measured differently than you assume.** Floor area, wall area and developed area are three different numbers. Painting a 60 m² flat means roughly 170-200 m² of wall and ceiling surface. Check the unit behind every line.
+
+**6. No clarity on VAT.** Renovation of residential premises under the social housing programme carries 8%, but not on everything and not always. The difference between 8% and 23% on 90,000 PLN is 13,500 PLN. The quote has to state plainly whether the figure is net or gross, and at which rate.
+
+**7. Materials costed with no technical waste allowance.** Tiles need a 10-15% cutting allowance (20% on diagonal or herringbone layouts), laminate 7-10%, paint 10%. An estimate that counts exactly as many square metres as the room has is understated by definition.
+
+**8. A payment schedule tied to time rather than stages.** The clause 40% after two weeks protects the contractor. The clause 40% on sign-off of the electrical and plumbing first fix protects you. Payment should always be tied to an accepted, verifiable stage of work.
+
+**9. No penalties and no warranty terms.** A contract with no late-delivery penalty means delay costs the contractor nothing. The market standard is 0.1-0.3% of contract value per day of delay and a minimum 24-month warranty on building works.
+
+**How to compare quotes so the comparison means something**
+
+Three quotes are only comparable when they cover the same scope. Write one scope description and send it to every contractor, instead of asking each of them for a renovation quote. Then the price difference tells you something about the contractor rather than about what each of them silently assumed.
+
+The second condition: have your own independent estimate before you open the quotes. Without it the lowest offer always looks like the best one — and it is usually the one that grows the most.
+
+**Red flags worth walking away from**
+
+- Refusal to break a lump sum into line items
+- A deposit above 30% before work starts
+- No tax registration, no liability insurance, or no willingness to sign a contract
+- A price far below the other two quotes for identical scope
+- Pressure to decide immediately because of an available slot`,
+      checklist: [
+        'Demand the lump sum broken into line items with quantities and unit prices',
+        'Check that strip-out, debris removal and the skip are in the quote',
+        'Fix a unit price for every item priced as required',
+        'Ask for the combined total: labour plus materials, not just one part',
+        'Verify the measurement units — floor, walls and developed area are different numbers',
+        'Confirm the VAT rate (8% or 23%) and whether the figure is net or gross',
+        'Tie every payment to an accepted stage, not to elapsed time',
+        'Put a late-delivery penalty and a minimum 24-month warranty in the contract',
+      ],
+      ctaText: 'Check a contractor quote against an independent estimate →',
+    },
   ],
 
   ru: [
@@ -705,6 +951,129 @@ A solid contract includes: exact scope of work (with the project attached), paym
       ],
       ctaText: 'Рассчитать смету и сравнить предложения →',
     },
+    {
+      slug: 'pochemu-vazhno-planirovat-smetu-remonta-zaranee',
+      img: '/images/planning.jpg',
+      title: 'Почему смету на ремонт нужно составить до того, как вы позвоните подрядчику',
+      description: 'Смета, посчитанная до разговоров с бригадами, защищает бюджет, сокращает сроки и даёт преимущество в переговорах. Разбираем, сколько стоит планировать бюджет уже в процессе работ.',
+      cluster: 'budget',
+      publishedAt: '2026-09-03',
+      hook: 'Большинство людей считают стоимость ремонта только тогда, когда бригада уже стоит на объекте. Это самый дорогой момент для любого решения — каждое изменение стоит здесь в 2-3 раза больше, чем на бумаге.',
+      problem: `Типичный сценарий выглядит так: вы подписываете договор на квартиру, звоните двум бригадам, получаете две цифры с разницей в 40 000 PLN и выбираете меньшую. Бюджет появляется именно в этот момент — из предложения подрядчика, а не из вашего расчёта.
+
+Проблема в том, что предложение подрядчика — это не смета. Это коммерческий документ. Его задача — выиграть заказ, а не показать вам полную стоимость доведения квартиры до состояния, в котором вы хотите в ней жить.
+
+Что происходит, когда бюджет планируется уже в ходе ремонта:
+
+— **Вы теряете точку отсчёта.** Вы не знаете, 92 000 PLN за 58 м² — это честная цена или завышенная на 25%. Без собственной цифры вы принимаете чужую.
+— **Решения принимаются под давлением сроков.** Бригада ждёт выбора плитки, потому что от этого зависит заказ клея и затирки. Вы выбираете за два дня то, что заслуживало двух недель.
+— **Изменения стоят в разы дороже.** Перенести розетку на бумаге — ноль злотых. После стяжки и укладки плитки — 800-2 500 PLN и неделя простоя.
+— **Нечем закрыть перерасход.** Реальная сумма вскрывается на 6-8 неделе работ, когда кредит уже выбран, а накопления распределены.
+
+В 2026 году этот механизм бьёт сильнее, чем раньше. Ставки за работу выросли на 12-18% год к году, а срок ожидания хорошей бригады составляет 4-10 недель. Докупить срок или бригаду в середине сезона уже нельзя.`,
+      explanation: `**Что реально даёт смета, составленная заранее**
+
+**1. Ориентир для переговоров.** Когда вы знаете, что рыночная оценка вашего объёма работ — 78 000-92 000 PLN, предложение на 115 000 PLN перестаёт быть рыночной ценой и становится поводом для разговора. Без собственной цифры у вас нет аргумента, кроме того, что для вас это дорого.
+
+**2. Правильная последовательность работ.** Самые крупные потери в ремонте возникают не из-за цен на материалы, а из-за неверного порядка действий. Электрика и сантехника должны быть готовы до стяжки. Тёплый пол — до финишного покрытия. Вентиляция — до подвесного потолка. Смета заставляет продумать эту последовательность до того, как кто-то начнёт штробить стены.
+
+**3. Осознанное сокращение объёма.** Когда вы видите стоимость каждого элемента до старта, вы можете решить, что в этом году делаете ванную и кухню, а гостиная остаётся на следующий год. Если тот же выбор делается в процессе, вы платите за два выхода бригады вместо одного.
+
+**4. Реальное финансирование.** Банк оценивает кредит по той сумме, которую вы заявили. Смета, готовая за 2-3 месяца до старта, позволяет один раз запросить правильную сумму, а не просить увеличение в середине ремонта.
+
+**Сколько стоит запоздалое решение — примеры рынка 2026**
+
+| Изменение | Стоимость на этапе планирования | Стоимость в ходе работ |
+|---|---|---|
+| Перенос точки электрики | 0 PLN | 400-900 PLN + простой |
+| Отказ от тёплого пола | 0 PLN | 3 000-8 000 PLN (демонтаж стяжки) |
+| Смена формата плитки | 0 PLN | 60-140 PLN/м² доплаты за работу |
+| Добавление перегородки | 0 PLN | 1 800-4 000 PLN + переделка коммуникаций |
+| Смена планировки кухни | 0 PLN | 2 500-9 000 PLN (сантехника, электрика) |
+
+**Когда начинать планировать**
+
+Оптимальный момент — за 2-4 месяца до планируемого старта работ. Этого времени хватит, чтобы посчитать бюджет, проверить его у 2-3 подрядчиков, забронировать бригаду на конкретную дату и заказать материалы с долгим сроком поставки (крупноформатные плиты, столярка, импортная сантехника).
+
+**Три уровня точности сметы**
+
+*Уровень 1 — ориентировочный (15 минут).* Ставка за м², умноженная на площадь и коэффициент города. Достаточно, чтобы понять, вписывается ли ремонт в ваши возможности в принципе.
+
+*Уровень 2 — по помещениям (1 час).* Каждое помещение считается отдельно, с учётом стандарта отделки и состояния коммуникаций. Это уровень, на котором разговор с подрядчиком становится предметным.
+
+*Уровень 3 — позиционный (работа сметчика).* Разбивка на конкретные позиции с обмером. Нужен при ремонтах дороже 150 000 PLN, при кредите на ремонт или в споре с подрядчиком.
+
+Для подавляющего большинства квартир уровня 2 полностью достаточно — при условии, что он появляется **до** первого разговора с бригадой, а не после.`,
+      checklist: [
+        'Посчитайте смету за 2-4 месяца до планируемого старта работ',
+        'Замерьте каждое помещение отдельно — площади из документов недостаточно',
+        'Определите стандарт отделки для каждого помещения до расчёта',
+        'Проверьте состояние электрики и сантехники — это 15-25% бюджета',
+        'Спланируйте порядок работ: коммуникации, стяжки, штукатурка, отделка',
+        'Заложите резерв 15-20% на то, что вскроется после демонтажа старых слоёв',
+        'Имейте собственную цифру ДО первого разговора с подрядчиком',
+        'Забронируйте бригаду за 6-10 недель (сезон 2026)',
+      ],
+      ctaText: 'Рассчитать смету своего ремонта →',
+    },
+    {
+      slug: 'podvodnye-kamni-smet-ot-remontnyh-firm',
+      img: '/images/estimate-contract.jpg',
+      title: 'Подводные камни смет от ремонтных компаний — 9 пунктов, которые поднимают счёт',
+      description: 'Как читать смету подрядчика: паушальная сумма без объёма работ, позиции по необходимости, отсутствие вывоза мусора, заниженный обмер и другие пункты, поднимающие стоимость на 20-40%.',
+      cluster: 'contractors',
+      publishedAt: '2026-09-03',
+      hook: 'Смета ремонтной компании — коммерческий документ, а не инженерный. Её задача — выиграть заказ, поэтому самое дешёвое предложение на старте очень часто заканчивается самым дорогим счётом в финале.',
+      problem: `Рынок ремонта работает по простому механизму: клиент сравнивает предложения по одной цифре внизу страницы. Компания, которая хочет выиграть, должна сделать эту цифру низкой. Способов снизить её, не снижая реальную стоимость, около десятка — и все они полностью законны.
+
+Речь не о мошенничестве. Речь о том, что предложение и фактическая стоимость — два разных документа, а разрыв между ними становится виден только на 4-6 неделе работ, когда сменить подрядчика практически невозможно.
+
+Типичный разрыв на польском рынке в 2026 году составляет 20-40% от первоначального предложения. При ремонте за 90 000 PLN это 18 000-36 000 PLN, которых не было в бюджете.`,
+      explanation: `**9 пунктов, которые нужно проверить до подписания**
+
+**1. Паушальная сумма без приложения с объёмом работ.** Строка вида ремонт квартиры 58 м² за 84 000 PLN под ключ не значит ничего. Фиксированная сумма безопасна только тогда, когда к договору приложено подробное описание работ. Без него любая работа, которой нет в описании, становится дополнительной — и оплачивается отдельно.
+
+**2. Позиции по необходимости и уточняется на месте.** Это открытый чек. У каждой такой позиции должна быть либо цена за единицу, либо предельная сумма. Если подрядчик не хочет называть ставку за час дополнительных работ — это уже ответ.
+
+**3. Отсутствие подготовительных и демонтажных работ.** Снятие плитки, демонтаж старой сантехники, защита остальных помещений плёнкой, вывоз мусора и контейнер. Для квартиры 60 м² это реально 4 000-11 000 PLN. Если этих позиций нет в смете — их нет и в цене.
+
+**4. Материалы со стороны клиента, спрятанные из итога.** Предложение на 84 000 PLN выглядит лучше, чем на 132 000 PLN, если плитка, сантехника, двери, полы и свет вынесены за смету. Всегда просите расчёт в двух частях — работа и материалы — плюс общую сумму.
+
+**5. Обмер считается не так, как вы думаете.** Площадь пола, площадь стен и развёрнутая площадь — три разные цифры. Покраска квартиры 60 м² — это около 170-200 м² поверхности стен и потолков. Проверьте единицу измерения по каждой позиции.
+
+**6. Неясность со ставкой НДС.** Ремонт жилого помещения в рамках социальной жилищной программы облагается по ставке 8%, но не на всё и не всегда. Разница между 8% и 23% на сумме 90 000 PLN — это 13 500 PLN. Смета обязана прямо указывать: нетто или брутто и по какой ставке.
+
+**7. Материал посчитан без технологического запаса.** Плитке нужен запас 10-15% на подрезку (при диагонали или ёлочке — до 20%), ламинату 7-10%, краске 10%. Смета, в которой ровно столько метров, сколько в помещении, занижена по определению.
+
+**8. График платежей привязан ко времени, а не к этапам.** Формулировка 40% через две недели защищает подрядчика. Формулировка 40% после приёмки электрики и сантехники защищает вас. Платёж всегда должен быть привязан к принятому, проверяемому этапу работ.
+
+**9. Нет штрафов и условий гарантии.** Договор без штрафа за просрочку означает, что просрочка ничего не стоит подрядчику. Рыночный стандарт — 0,1-0,3% от суммы договора за каждый день задержки и минимум 24 месяца гарантии на строительные работы.
+
+**Как сравнивать предложения, чтобы сравнение имело смысл**
+
+Три предложения сопоставимы только тогда, когда они об одном и том же объёме работ. Составьте одно описание работ и разошлите его всем подрядчикам — вместо того чтобы просить каждого посчитать ремонт. Тогда разница в цене говорит о подрядчике, а не о том, что каждый из них додумал за вас.
+
+Второе условие: имейте собственную независимую смету до того, как откроете предложения. Без неё самое дешёвое предложение всегда выглядит лучшим — а именно оно чаще всего вырастает сильнее всех.
+
+**Красные флаги, при которых стоит отказаться**
+
+- Отказ разбить фиксированную сумму на позиции
+- Аванс выше 30% до начала работ
+- Отсутствие регистрации, страховки ответственности или готовности подписать договор
+- Цена заметно ниже двух других предложений при одинаковом объёме
+- Давление принять решение немедленно из-за свободного окна в графике`,
+      checklist: [
+        'Потребуйте разбивку фиксированной суммы на позиции с обмером и ценой за единицу',
+        'Проверьте наличие в смете демонтажа, вывоза мусора и контейнера',
+        'Зафиксируйте цену за единицу для каждой позиции по необходимости',
+        'Запросите общий итог: работа плюс материалы, а не только одну часть',
+        'Сверьте единицы обмера — пол, стены и развёрнутая площадь это разные цифры',
+        'Уточните ставку НДС (8% или 23%) и нетто это или брутто',
+        'Привяжите каждый платёж к принятому этапу, а не к прошедшему времени',
+        'Впишите в договор штраф за просрочку и минимум 24 месяца гарантии',
+      ],
+      ctaText: 'Проверить предложение подрядчика независимой сметой →',
+    },
   ],
 
   uk: [
@@ -932,6 +1301,129 @@ A solid contract includes: exact scope of work (with the project attached), paym
         'Уточніть, хто фізично виконуватиме роботи, не лише хто підписує договір',
       ],
       ctaText: 'Розрахувати кошторис і порівняти пропозиції →',
+    },
+    {
+      slug: 'chomu-vazhlyvo-planuvaty-koshtorys-remontu-zazdalehid',
+      img: '/images/planning.jpg',
+      title: 'Чому кошторис на ремонт треба скласти до того, як ви зателефонуєте підряднику',
+      description: 'Кошторис, порахований до розмов з бригадами, захищає бюджет, скорочує терміни й дає перевагу в переговорах. Розбираємо, скільки коштує планувати бюджет уже під час робіт.',
+      cluster: 'budget',
+      publishedAt: '2026-09-03',
+      hook: 'Більшість людей рахують вартість ремонту лише тоді, коли бригада вже стоїть на об’єкті. Це найдорожчий момент для будь-якого рішення — кожна зміна тут коштує у 2-3 рази більше, ніж на папері.',
+      problem: `Типовий сценарій виглядає так: ви підписуєте договір на квартиру, телефонуєте двом бригадам, отримуєте дві цифри з різницею у 40 000 PLN і обираєте меншу. Бюджет виникає саме в цей момент — із пропозиції підрядника, а не з вашого розрахунку.
+
+Проблема в тому, що пропозиція підрядника — це не кошторис. Це комерційний документ. Його завдання — виграти замовлення, а не показати вам повну вартість доведення квартири до стану, у якому ви хочете в ній жити.
+
+Що відбувається, коли бюджет планується вже під час ремонту:
+
+— **Ви втрачаєте точку відліку.** Ви не знаєте, 92 000 PLN за 58 м² — це чесна ціна чи завищена на 25%. Без власної цифри ви приймаєте чужу.
+— **Рішення ухвалюються під тиском строків.** Бригада чекає на вибір плитки, бо від цього залежить замовлення клею та затирки. Ви обираєте за два дні те, що заслуговувало на два тижні.
+— **Зміни коштують у рази дорожче.** Перенести розетку на папері — нуль злотих. Після стяжки та вкладання плитки — 800-2 500 PLN і тиждень простою.
+— **Немає чим закрити перевитрату.** Реальна сума розкривається на 6-8 тижні робіт, коли кредит уже вибрано, а заощадження розподілено.
+
+У 2026 році цей механізм б’є сильніше, ніж раніше. Ставки за роботу зросли на 12-18% рік до року, а термін очікування хорошої бригади становить 4-10 тижнів. Докупити термін або бригаду в середині сезону вже неможливо.`,
+      explanation: `**Що реально дає кошторис, складений заздалегідь**
+
+**1. Орієнтир для переговорів.** Коли ви знаєте, що ринкова оцінка вашого обсягу робіт — 78 000-92 000 PLN, пропозиція на 115 000 PLN перестає бути ринковою ціною і стає приводом для розмови. Без власної цифри у вас немає аргументу, окрім того, що для вас це дорого.
+
+**2. Правильна послідовність робіт.** Найбільші втрати в ремонті виникають не через ціни на матеріали, а через хибний порядок дій. Електрика й сантехніка мають бути готові до стяжки. Тепла підлога — до фінішного покриття. Вентиляція — до підвісної стелі. Кошторис змушує продумати цю послідовність до того, як хтось почне штробити стіни.
+
+**3. Свідоме скорочення обсягу.** Коли ви бачите вартість кожного елемента до старту, ви можете вирішити, що цього року робите ванну й кухню, а вітальня залишається на наступний рік. Якщо той самий вибір робиться під час робіт, ви платите за два виходи бригади замість одного.
+
+**4. Реальне фінансування.** Банк оцінює кредит за тією сумою, яку ви заявили. Кошторис, готовий за 2-3 місяці до старту, дозволяє один раз запросити правильну суму, а не просити збільшення посеред ремонту.
+
+**Скільки коштує запізніле рішення — приклади ринку 2026**
+
+| Зміна | Вартість на етапі планування | Вартість під час робіт |
+|---|---|---|
+| Перенесення точки електрики | 0 PLN | 400-900 PLN + простій |
+| Відмова від теплої підлоги | 0 PLN | 3 000-8 000 PLN (демонтаж стяжки) |
+| Зміна формату плитки | 0 PLN | 60-140 PLN/м² доплати за роботу |
+| Додавання перегородки | 0 PLN | 1 800-4 000 PLN + переробка комунікацій |
+| Зміна планування кухні | 0 PLN | 2 500-9 000 PLN (сантехніка, електрика) |
+
+**Коли починати планувати**
+
+Оптимальний момент — за 2-4 місяці до запланованого старту робіт. Цього часу вистачить, щоб порахувати бюджет, перевірити його у 2-3 підрядників, забронювати бригаду на конкретну дату та замовити матеріали з довгим терміном постачання (великоформатні плити, столярка, імпортна сантехніка).
+
+**Три рівні точності кошторису**
+
+*Рівень 1 — орієнтовний (15 хвилин).* Ставка за м², помножена на площу та коефіцієнт міста. Достатньо, щоб зрозуміти, чи вписується ремонт у ваші можливості загалом.
+
+*Рівень 2 — за приміщеннями (1 година).* Кожне приміщення рахується окремо, з урахуванням стандарту оздоблення та стану комунікацій. Це рівень, на якому розмова з підрядником стає предметною.
+
+*Рівень 3 — позиційний (робота кошторисника).* Розбивка на конкретні позиції з обміром. Потрібен при ремонтах дорожче 150 000 PLN, при кредиті на ремонт або в спорі з підрядником.
+
+Для переважної більшості квартир рівня 2 цілком достатньо — за умови, що він з’являється **до** першої розмови з бригадою, а не після.`,
+      checklist: [
+        'Порахуйте кошторис за 2-4 місяці до запланованого старту робіт',
+        'Виміряйте кожне приміщення окремо — площі з документів недостатньо',
+        'Визначте стандарт оздоблення для кожного приміщення до розрахунку',
+        'Перевірте стан електрики й сантехніки — це 15-25% бюджету',
+        'Сплануйте порядок робіт: комунікації, стяжки, штукатурка, оздоблення',
+        'Закладіть резерв 15-20% на те, що розкриється після демонтажу старих шарів',
+        'Майте власну цифру ДО першої розмови з підрядником',
+        'Забронюйте бригаду за 6-10 тижнів (сезон 2026)',
+      ],
+      ctaText: 'Розрахувати кошторис свого ремонту →',
+    },
+    {
+      slug: 'pidvodni-kameni-koshtorysiv-vid-remontnyh-firm',
+      img: '/images/estimate-contract.jpg',
+      title: 'Підводні камені кошторисів від ремонтних компаній — 9 пунктів, що піднімають рахунок',
+      description: 'Як читати кошторис підрядника: фіксована сума без обсягу робіт, позиції за потреби, відсутність вивезення сміття, занижений обмір та інші пункти, що піднімають вартість на 20-40%.',
+      cluster: 'contractors',
+      publishedAt: '2026-09-03',
+      hook: 'Кошторис ремонтної компанії — комерційний документ, а не інженерний. Його мета — виграти замовлення, тому найдешевша пропозиція на старті дуже часто завершується найдорожчим рахунком у фіналі.',
+      problem: `Ринок ремонту працює за простим механізмом: клієнт порівнює пропозиції за однією цифрою внизу сторінки. Компанія, яка хоче виграти, має зробити цю цифру низькою. Способів знизити її, не знижуючи реальну вартість, близько десятка — і всі вони цілком законні.
+
+Ідеться не про шахрайство. Ідеться про те, що пропозиція та фактична вартість — два різні документи, а розрив між ними стає видимим лише на 4-6 тижні робіт, коли змінити підрядника практично неможливо.
+
+Типовий розрив на польському ринку у 2026 році становить 20-40% від початкової пропозиції. При ремонті за 90 000 PLN це 18 000-36 000 PLN, яких не було в бюджеті.`,
+      explanation: `**9 пунктів, які треба перевірити до підписання**
+
+**1. Фіксована сума без додатка з обсягом робіт.** Рядок на кшталт ремонт квартири 58 м² за 84 000 PLN під ключ не означає нічого. Фіксована сума безпечна лише тоді, коли до договору додано детальний опис робіт. Без нього будь-яка робота, якої немає в описі, стає додатковою — і оплачується окремо.
+
+**2. Позиції за потреби та уточнюється на місці.** Це відкритий чек. Кожна така позиція повинна мати або ціну за одиницю, або граничну суму. Якщо підрядник не хоче назвати ставку за годину додаткових робіт — це вже відповідь.
+
+**3. Відсутність підготовчих і демонтажних робіт.** Зняття плитки, демонтаж старої сантехніки, захист решти приміщень плівкою, вивезення сміття та контейнер. Для квартири 60 м² це реально 4 000-11 000 PLN. Якщо цих позицій немає в кошторисі — їх немає і в ціні.
+
+**4. Матеріали з боку клієнта, приховані з підсумку.** Пропозиція на 84 000 PLN виглядає краще, ніж на 132 000 PLN, якщо плитка, сантехніка, двері, підлоги та світло винесені за кошторис. Завжди просіть розрахунок у двох частинах — робота й матеріали — плюс загальну суму.
+
+**5. Обмір рахується не так, як ви думаєте.** Площа підлоги, площа стін і розгорнута площа — три різні цифри. Фарбування квартири 60 м² — це близько 170-200 м² поверхні стін і стель. Перевірте одиницю вимірювання за кожною позицією.
+
+**6. Неясність зі ставкою ПДВ.** Ремонт житлового приміщення в межах соціальної житлової програми оподатковується за ставкою 8%, але не на все і не завжди. Різниця між 8% і 23% на сумі 90 000 PLN — це 13 500 PLN. Кошторис має прямо вказувати: нетто чи брутто і за якою ставкою.
+
+**7. Матеріал порахований без технологічного запасу.** Плитці потрібен запас 10-15% на підрізку (при діагоналі чи ялинці — до 20%), ламінату 7-10%, фарбі 10%. Кошторис, у якому рівно стільки метрів, скільки в приміщенні, занижений за визначенням.
+
+**8. Графік платежів прив’язаний до часу, а не до етапів.** Формулювання 40% через два тижні захищає підрядника. Формулювання 40% після приймання електрики й сантехніки захищає вас. Платіж завжди має бути прив’язаний до прийнятого, перевірюваного етапу робіт.
+
+**9. Немає штрафів та умов гарантії.** Договір без штрафу за прострочення означає, що прострочення нічого не коштує підряднику. Ринковий стандарт — 0,1-0,3% від суми договору за кожен день затримки та щонайменше 24 місяці гарантії на будівельні роботи.
+
+**Як порівнювати пропозиції, щоб порівняння мало сенс**
+
+Три пропозиції можна порівняти лише тоді, коли вони про той самий обсяг робіт. Складіть один опис робіт і розішліть його всім підрядникам — замість того щоб просити кожного порахувати ремонт. Тоді різниця в ціні говорить про підрядника, а не про те, що кожен із них додумав за вас.
+
+Друга умова: майте власний незалежний кошторис до того, як відкриєте пропозиції. Без нього найдешевша пропозиція завжди виглядає найкращою — а саме вона найчастіше зростає найсильніше.
+
+**Червоні прапорці, за яких варто відмовитися**
+
+- Відмова розбити фіксовану суму на позиції
+- Аванс вище 30% до початку робіт
+- Відсутність реєстрації, страхування відповідальності чи готовності підписати договір
+- Ціна помітно нижча за дві інші пропозиції за однакового обсягу
+- Тиск ухвалити рішення негайно через вільне вікно у графіку`,
+      checklist: [
+        'Вимагайте розбивку фіксованої суми на позиції з обміром і ціною за одиницю',
+        'Перевірте наявність у кошторисі демонтажу, вивезення сміття та контейнера',
+        'Зафіксуйте ціну за одиницю для кожної позиції за потреби',
+        'Запросіть загальний підсумок: робота плюс матеріали, а не лише одну частину',
+        'Звірте одиниці обміру — підлога, стіни й розгорнута площа це різні цифри',
+        'Уточніть ставку ПДВ (8% чи 23%) і нетто це чи брутто',
+        'Прив’яжіть кожен платіж до прийнятого етапу, а не до часу, що минув',
+        'Впишіть у договір штраф за прострочення і щонайменше 24 місяці гарантії',
+      ],
+      ctaText: 'Перевірити пропозицію підрядника незалежним кошторисом →',
     },
   ],
 }

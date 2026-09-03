@@ -53,6 +53,14 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       icon: '/favicon.ico',
       shortcut: '/favicon.ico',
     },
+    // Search Console and Bing ownership is proved by a meta tag. Setting the
+    // token as an env var keeps verification a deploy rather than a code edit.
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+      other: process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION
+        ? { 'msvalidate.01': process.env.NEXT_PUBLIC_BING_SITE_VERIFICATION }
+        : undefined,
+    },
   }
 }
 

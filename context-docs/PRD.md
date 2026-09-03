@@ -80,8 +80,6 @@ Landing
 
 → Preview Estimate
 
-→ Payment
-
 → Generate PDF
 
 → Download Report
@@ -239,9 +237,9 @@ PDF:
 
 * React PDF
 
-Payments:
+Email delivery:
 
-* Stripe
+* Resend
 
 ---
 
@@ -255,13 +253,13 @@ Estimate
 
 → Preview
 
-→ Pay
-
-→ Unlock PDF
+→ Download PDF
 
 Pricing:
 
-5–7 EUR
+Free. The full PDF estimate is delivered at no charge, with no
+registration. Monetisation, if introduced later, comes from contractor
+lead generation rather than from gating the estimate.
 
 No:
 
@@ -276,7 +274,7 @@ No:
 Primary:
 
 * estimate completion rate
-* payment conversion
+* PDF download rate
 * PDF generation
 
 Secondary:

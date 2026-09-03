@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { alternatesFor } from '@/lib/seo'
 import { ArrowLeft } from 'lucide-react'
 import { useTranslations } from 'next-intl'
 import { getTranslations } from 'next-intl/server'
@@ -24,6 +25,16 @@ function Note({ children }: { children: React.ReactNode }) {
 }
 
 type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'methodology' })
+  return {
+    title: `${t('title')} — Remonta`,
+    description: t('subtitle'),
+    alternates: alternatesFor(locale, '/methodology'),
+  }
+}
 
 export default async function MethodologyPage({ params }: Props) {
   const { locale } = await params

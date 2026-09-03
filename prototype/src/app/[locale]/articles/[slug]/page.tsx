@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { notFound } from 'next/navigation'
 import { getTranslations } from 'next-intl/server'
 import { articles, findPublishedArticle, publishedArticles } from '@/content/articles'
+import { SITE_URL, LOCALES, DEFAULT_LOCALE } from '@/lib/seo'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 import { MarkdownContent } from '@/components/MarkdownContent'
@@ -11,6 +12,48 @@ import { MarkdownContent } from '@/components/MarkdownContent'
 export const revalidate = 3600
 
 type Props = { params: Promise<{ locale: string; slug: string }> }
+
+export async function generateMetadata({ params }: Props) {
+  const { locale, slug } = await params
+  const article = findPublishedArticle(locale, slug)
+  if (!article) return { title: 'Remonta', robots: { index: false, follow: false } }
+
+  // Translations of one article share a publish date and a cluster, which is
+  // what lets each locale point hreflang at its own slug.
+  const languages = Object.fromEntries(
+    LOCALES.map(l => {
+      const twin = publishedArticles(l).find(
+        a => a.publishedAt === article.publishedAt && a.cluster === article.cluster,
+      )
+      return [l, `/${l}/articles/${(twin ?? article).slug}`]
+    }),
+  )
+
+  return {
+    title: `${article.title} — Remonta`,
+    description: article.description,
+    alternates: {
+      canonical: `/${locale}/articles/${slug}`,
+      languages: { ...languages, 'x-default': languages[DEFAULT_LOCALE] },
+    },
+    openGraph: {
+      type: 'article',
+      title: article.title,
+      description: article.description,
+      url: `${SITE_URL}/${locale}/articles/${slug}`,
+      siteName: 'Remonta',
+      locale,
+      publishedTime: article.publishedAt,
+      images: [{ url: article.img, width: 1600, height: 900, alt: article.title }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: article.title,
+      description: article.description,
+      images: [article.img],
+    },
+  }
+}
 
 export default async function ArticlePage({ params }: Props) {
   const { locale, slug } = await params
@@ -23,8 +66,36 @@ export default async function ArticlePage({ params }: Props) {
   const heroSrc = article.img
   const clusterLabel = t(`clusters.${article.cluster}`)
 
+  // Article schema: lets search engines show the headline, date and cover
+  // image rather than guessing them out of the markup.
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: article.title,
+    description: article.description,
+    image: `${SITE_URL}${article.img}`,
+    datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
+    inLanguage: locale,
+    articleSection: clusterLabel,
+    author: { '@type': 'Organization', name: 'Remonta', url: SITE_URL },
+    publisher: {
+      '@type': 'Organization',
+      name: 'Remonta',
+      logo: { '@type': 'ImageObject', url: `${SITE_URL}/logo-header-remonta.png` },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/${locale}/articles/${slug}`,
+    },
+  }
+
   return (
     <div className="flex flex-col min-h-screen bg-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <LandingHeader />
 
       <main className="flex-1">

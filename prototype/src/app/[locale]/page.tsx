@@ -7,6 +7,7 @@ import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 import { HeroSlider } from '@/components/HeroSlider'
 import { publishedArticles } from '@/content/articles'
+import { alternatesFor } from '@/lib/seo'
 import { CLUSTER_LABELS } from '@/content/clusters'
 import { ArticleCard } from '@/components/ArticleCard'
 
@@ -34,6 +35,16 @@ function CalcPreviewImage() {
 }
 
 type Props = { params: Promise<{ locale: string }> }
+
+export async function generateMetadata({ params }: Props) {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: 'home' })
+  return {
+    title: `Remonta — ${t('heroTitle')}`,
+    description: t('heroSubtitle'),
+    alternates: alternatesFor(locale),
+  }
+}
 
 export default async function LandingPage({ params }: Props) {
   const { locale } = await params

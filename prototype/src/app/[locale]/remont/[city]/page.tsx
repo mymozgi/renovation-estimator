@@ -4,6 +4,7 @@ import { ArrowRight, CheckCircle2 } from 'lucide-react'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 import { CITIES, CITY_MAP } from '@/content/cities'
+import { SITE_URL } from '@/lib/seo'
 
 type Props = { params: Promise<{ locale: string; city: string }> }
 
@@ -188,6 +189,15 @@ export default async function CityPage({ params }: Props) {
     })),
   }
 
+  const breadcrumbSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Remonta', item: `${SITE_URL}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: c.h1, item: `${SITE_URL}/${locale}/remont/${city}` },
+    ],
+  }
+
   const tileStyles = [
     { label: tiers.economy, range: data.ranges.economy, perM2: data.perM2.economy, highlight: false },
     { label: tiers.standard, range: data.ranges.standard, perM2: data.perM2.standard, highlight: true },
@@ -199,6 +209,10 @@ export default async function CityPage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <LandingHeader />

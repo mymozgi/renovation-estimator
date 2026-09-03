@@ -7,6 +7,7 @@ import { SITE_URL, LOCALES, DEFAULT_LOCALE } from '@/lib/seo'
 import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 import { MarkdownContent } from '@/components/MarkdownContent'
+import { ArticleCard } from '@/components/ArticleCard'
 
 // Re-render hourly so a scheduled article appears without a redeploy.
 export const revalidate = 3600
@@ -66,6 +67,24 @@ export default async function ArticlePage({ params }: Props) {
   const heroSrc = article.img
   const clusterLabel = t(`clusters.${article.cluster}`)
 
+  // Up to three further reads: same cluster first, then the most recent of
+  // whatever is left, so an article is never a dead end for reader or crawler.
+  const pool = publishedArticles(locale).filter(a => a.slug !== slug)
+  const related = [
+    ...pool.filter(a => a.cluster === article.cluster),
+    ...pool.filter(a => a.cluster !== article.cluster),
+  ].slice(0, 3)
+
+  const breadcrumbLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: t('breadcrumbHome'), item: `${SITE_URL}/${locale}` },
+      { '@type': 'ListItem', position: 2, name: t('breadcrumbBlog'), item: `${SITE_URL}/${locale}/articles` },
+      { '@type': 'ListItem', position: 3, name: article.title, item: `${SITE_URL}/${locale}/articles/${slug}` },
+    ],
+  }
+
   // Article schema: lets search engines show the headline, date and cover
   // image rather than guessing them out of the markup.
   const jsonLd = {
@@ -95,6 +114,10 @@ export default async function ArticlePage({ params }: Props) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <LandingHeader />
 
@@ -133,6 +156,7 @@ export default async function ArticlePage({ params }: Props) {
               src={heroSrc}
               alt={article.title}
               fill
+              sizes="(max-width: 1140px) 100vw, 1140px"
               className="object-cover"
               priority
             />
@@ -217,6 +241,26 @@ export default async function ArticlePage({ params }: Props) {
             </div>
           </aside>
         </div>
+
+        {/* ── Related articles ── */}
+        {related.length > 0 && (
+          <section className="max-w-[1140px] mx-auto px-4 sm:px-10 pb-14 sm:pb-20">
+            <h2 className="font-bold text-fg text-2xl sm:text-[32px] leading-tight sm:leading-10 tracking-[-0.32px] mb-6 sm:mb-8">
+              {t('relatedTitle')}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {related.map((a) => (
+                <ArticleCard
+                  key={a.slug}
+                  article={a}
+                  locale={locale}
+                  clusterLabel={t(`clusters.${a.cluster}`)}
+                  readMoreLabel={t('readMore')}
+                />
+              ))}
+            </div>
+          </section>
+        )}
 
         {/* ── Full-width CTA section ── */}
         <section className="bg-[#37684f] py-14 sm:py-24 text-center text-white">

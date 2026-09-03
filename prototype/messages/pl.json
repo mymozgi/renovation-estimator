@@ -225,6 +225,7 @@
   "articles": {
     "title": "Poradniki remontowe",
     "subtitle": "Praktyczna wiedza przed, w trakcie i po remoncie.",
+    "relatedTitle": "Przeczytaj również",
     "readMore": "Czytaj dalej",
     "cta": "Oblicz swój kosztorys →",
     "filterAll": "Wszystkie",

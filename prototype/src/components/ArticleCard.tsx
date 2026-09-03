@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
-import { CLUSTER_COLORS } from '@/content/clusters'
+import { clusterColor } from '@/content/clusters'
 import type { Article } from '@/content/articles'
 
 interface ArticleCardProps {
@@ -12,7 +12,7 @@ interface ArticleCardProps {
 }
 
 export function ArticleCard({ article, locale, clusterLabel, readMoreLabel }: ArticleCardProps) {
-  const tagClass = CLUSTER_COLORS[article.cluster] ?? 'bg-primary-fixed text-fg'
+  const tagClass = clusterColor(article.cluster)
 
   return (
     <Link href={`/${locale}/articles/${article.slug}`} className="group flex flex-col gap-3">
@@ -26,7 +26,7 @@ export function ArticleCard({ article, locale, clusterLabel, readMoreLabel }: Ar
         />
       </div>
       <div className="flex items-center gap-3">
-        <span className={`${tagClass} font-medium text-[12px] px-3 py-1 rounded-[4px] tracking-[0.05em]`}>
+        <span className={`${tagClass} font-semibold text-[13px] leading-[18px] px-3 py-1.5 rounded-[6px] tracking-[0.03em]`}>
           {clusterLabel}
         </span>
         <span className="text-[14px] text-[#717973] leading-[22px]">{article.publishedAt}</span>

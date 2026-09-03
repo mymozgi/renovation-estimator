@@ -8,6 +8,7 @@ import { LandingHeader } from '@/components/LandingHeader'
 import { LandingFooter } from '@/components/LandingFooter'
 import { MarkdownContent } from '@/components/MarkdownContent'
 import { ArticleCard } from '@/components/ArticleCard'
+import { clusterColor } from '@/content/clusters'
 
 // Re-render hourly so a scheduled article appears without a redeploy.
 export const revalidate = 3600
@@ -139,7 +140,7 @@ export default async function ArticlePage({ params }: Props) {
 
           {/* Category badge + date */}
           <div className="flex items-center gap-3 mb-4 flex-wrap">
-            <span className="bg-[#cde9d8] text-[#4b6457] rounded-full px-3 py-1 text-xs font-medium tracking-[0.06em]">
+            <span className={`${clusterColor(article.cluster)} rounded-full px-3.5 py-1.5 text-[13px] font-semibold tracking-[0.03em]`}>
               {clusterLabel}
             </span>
             <span className="text-sm text-[#717973]">{article.publishedAt}</span>

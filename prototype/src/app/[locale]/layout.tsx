@@ -7,6 +7,7 @@ import { Manrope, Work_Sans, Roboto_Mono } from 'next/font/google'
 import { getTranslations } from 'next-intl/server'
 import { routing } from '@/i18n/routing'
 import { SITE_URL, alternatesFor } from '@/lib/seo'
+import { Analytics } from '@vercel/analytics/next'
 import '../globals.css'
 
 const manrope = Manrope({

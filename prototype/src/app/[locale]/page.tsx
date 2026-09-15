@@ -8,7 +8,6 @@ import { LandingFooter } from '@/components/LandingFooter'
 import { HeroSlider } from '@/components/HeroSlider'
 import { publishedArticles } from '@/content/articles'
 import { alternatesFor } from '@/lib/seo'
-import { CLUSTER_LABELS } from '@/content/clusters'
 import { ArticleCard } from '@/components/ArticleCard'
 
 function CalcPreviewImage() {
@@ -49,6 +48,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function LandingPage({ params }: Props) {
   const { locale } = await params
   const t = await getTranslations({ locale, namespace: 'home' })
+  const tArticles = await getTranslations({ locale, namespace: 'articles' })
   const localeArticles = publishedArticles(locale).slice(0, 3)
 
   return (
@@ -254,7 +254,7 @@ export default async function LandingPage({ params }: Props) {
               key={article.slug}
               article={article}
               locale={locale}
-              clusterLabel={CLUSTER_LABELS[article.cluster] ?? article.cluster}
+              clusterLabel={tArticles(`clusters.${article.cluster}`)}
               readMoreLabel={t('articlesReadMore')}
             />
           ))}

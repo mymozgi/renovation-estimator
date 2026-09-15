@@ -1,12 +1,3 @@
-export const CLUSTER_LABELS: Record<string, string> = {
-  budget:      'Budżet',
-  contractors: 'Wykonawcy',
-  rooms:       'Pomieszczenia',
-  regional:    'Regiony',
-  materials:   'Materiały',
-  property:    'Nieruchomości',
-}
-
 /**
  * One colour per cluster, so a category is recognisable before the label is
  * read. Every pair is dark text on a light tint of the same hue, which keeps
